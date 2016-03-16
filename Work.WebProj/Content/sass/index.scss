@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+// var 變數，需放在 @import "helper/var" 之上才能覆蓋掉
+// ------------------------------------------------------------
+$img-path2:         '../images/index';
+$img-banner:        '../images/index/banner';
+
+$btn-color:         #028BA4;
+$btn-hover-color:   #fff;
+$btn-bg-color:      #fff;
+$btn-bg-hover:      #028BA4;
+$btn-font-size:     13px;
+$btn-padding:       12px 20px;
+
+
+// import
+// ------------------------------------------------------------
+@import "helper/function";
+@import "helper/var";
+@import "helper/mixins";
+
+@import "base/basic";
+@import "base/extend";
+@import "base/classes";
+
+@import "layout/layout";
+
+@import "module/hover";
+@import "module/dropdown";
+
+
+// layout
+// ----------------------------------------------------------------------
+
+// == banner
+#banner {
+    background: #F1F1F1;
+    border: 1px solid #E5E5E5;
+    margin: 30px 20px;
+
+    @include mq(wider) {
+        max-width: $max-width;
+        margin: 30px auto;
+    }
+}
+.swiper-wrapper {
+    @extend %list-unstyled;
+    margin-bottom: 0;
+}
+.swiper-slide {
+    text-align: center;
+
+    @include mq-max(tablet) {}
+}
+
+// == main
+.new-product {
+    float: left;
+    display: block;
+}
+
+#main {
+    ul {
+        float: right;
+        width: cp(769px);
+
+        @include mq(wider) { width: cp(845px); }
+
+        a {
+            background-attachment: fixed;
+            background: url(#{$img-path2}/infoPic.png) right 30px no-repeat;
+
+            color: #00987A;
+            font-family: $font-sp;
+            font-size: em(31px);
+            letter-spacing: 2px;
+            text-align: left;
+
+            display: block;
+            height: 156px;
+            padding-top: 32px;
+            padding-left: 20px;
+
+            &:hover, &:active {
+                color: $brand-primary;
+                box-shadow: 6px 10px 15px rgba(0,0,0,0.2) inset;
+            }
+        }
+    }
+    li {
+        background: url(#{$img-path2}/infoBg.gif) center no-repeat;
+        box-shadow: 1px 1px 0 #CBCBCB;
+        width: 48.6%;
+        margin-bottom: 10px;
+
+        @include prefix(transition, all .35s ease, webkit);
+
+        &:nth-child(even) { margin-left: 8px; }
+
+        &:hover, &:active {
+            @include prefix(transform, translate(1px,2px))
+        }
+
+        &:nth-of-type(2) a { background-position: right -210px; }
+        &:nth-of-type(3) a { background-position: right -418px; }
+        &:nth-of-type(4) a { background-position: right -650px; }
+    }
+}

@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+// common
+// ------------------------------------------------------------
+.clearfix { @extend %clearfix; }
+
+.circle { @extend %circle; } // 圓形
+
+.full { @extend %full;  }
+.half { @extend %half; }
+
+.float-l { float: left; }
+.float-r { float: right; }
+.clear { clear: both  }
+
+.hidden { display: none; }
+
+
+
+// text
+// ------------------------------------------------------------
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
+.list-unstyled { @extend %list-unstyled; }
+.list-inline { @extend %list-inline; }
+
+.text-list {
+	@extend %list-unstyled;
+
+	font-size: em(18px);
+	line-height: 1.23;
+
+	li {
+		position: relative;
+		margin-bottom: 15px;
+		padding-left: 18px;
+
+		&::before {
+			content: '';
+			background: #D8DF2B;
+			@include size(6px);
+			@include absolute(top 50% left 0);
+			margin-top: -3px;
+		}
+	}
+}
+
+// 情境: var.scss> $states: true
+// @if $states {
+
+//     [class*="bg-"] {
+//         color: #fff;
+//     }
+
+//     @each $type, $color in $state-type {
+//         .text-#{$type} {
+//             @include state($color);
+//         }
+//         .bg-#{$type} {
+//             @include state($color, bg)
+//         }
+//     }
+// }
