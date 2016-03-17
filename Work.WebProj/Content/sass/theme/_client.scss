@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+// 專案專用樣式
+// -----------------------------------------------------------------
+#wrapper {
+    @extend %center;
+    background: $wrapper-bg;
+}
+
+$menu-color: #368b39 #80A73D #F39311 #F36B1F #C73677;
+$menu-icon: (83px 29px) (-104px 29px) (-294px 29px) (-479px 29px) (-666px 29px);
+
+%menu-active {
+    &:hover, &:active {
+        color: #fff;
+        &::before {
+            height: 100%;
+            background-attachment: fixed;
+            background: url(#{$img-path}/icon-menu2.png) 83px 29px no-repeat;
+        }
+    }
+}
+
+.icon-arrow-down {
+    @include el(before) {
+        @include arrow(down, 5px, $color: #7B6668);
+        @include absolute(left 50% top 60%);
+        margin-left: 172px;
+        z-index: 3;
+    }
+    &:hover, &:active {
+        &::before {
+            border-top-color: #F9C983;
+        }
+    }
+}
+
+#menu {
+    padding-left: cp(270px);
+
+    > li {
+
+        > a {
+            background-attachment: fixed;
+            background: url(#{$img-path}/icon-menu.gif) 83px 29px no-repeat;
+            padding: ($menu-height - $nav-font-size)/3+31px 0 ($menu-height - $nav-font-size)/3 0;
+            position: relative;
+            margin-left: 1px;
+            z-index: 2;
+
+            @include el(before) {
+                @include absolute(left 0 bottom 0);
+                @include prefix(transition, height .5s);
+                width: 100%;
+                height: 5px;
+                z-index: -1;
+            }
+            @extend %menu-active;
+        }
+
+        // 當前選單
+        $current: ();
+        @each $item in $pages {
+            $i: index($pages, $item);
+            $current: $current, unquote(".#{$item} &:nth-of-type(#{$i}) > a");
+
+            &:nth-of-type(#{$i}) > a,
+            .#{$item} &:nth-of-type(#{$i}) > a {
+                background-position: nth($menu-icon, $i);
+                &::before {
+                    background-position: nth($menu-icon, $i);
+                    background-color: nth($menu-color, $i);
+                }
+            }
+        }
+        #{$current} {
+            @extend %menu-active;
+        }
+    }
+}
+
+.sub-nav {
+
+    li {
+        text-align: left;
+        padding: 0 $gutter;
+        margin: 1% -4px;
+        border-left: 1px solid darken($sub-nav-bg, 5%);
+
+        &:first-child { border-left: none; }
+    }
+    a {
+        line-height: 1.4;
+        padding: 6px 10px;
+
+    }
+    .title {
+        font-size: em(20px);
+        color: $info;
+        &:hover, &:active {
+            color: $brand-primary;
+        }
+    }
+    a:nth-child(n+2) {
+        position: relative;
+        font-size: em(15px);
+
+        @include el(before) {
+            @include arrow($color: lighten($brand-primary, 30%));
+            @include absolute(left 5px top 35%);
+            @include prefix(transition, 'left .3s, opacity .6s');
+            opacity: 0;
+        }
+
+        &:hover, &:active, &.current {
+            color: $brand-primary;
+            &::before { left: -3px; opacity: 1; }
+        }
+    }
+}
+
+// 語系
+.lang-nav {
+    @include absolute(right 0 top 23px);
+
+    a {
+        color: #ABACA5;
+        font-size: em(13px);
+        margin-left: 10px;
+
+        &:hover, &:active {
+            color: $brand-secondary;
+        }
+    }
+}
+
+// 頁腳
+#footer {
+    @extend %center;
+    padding: 25px 0 10px;
+    text-align: left;
+    font-size: em(15px);
+
+    dt {
+        color: $brand-primary;
+        font-size: em(18px);
+        margin-bottom: $gutter;
+        letter-spacing: 1px;
+    }
+    nav {
+        padding-left: ($gutter *2);
+        a {
+            display: block;
+            margin: 8px 0;
+        }
+    }
+}
+.contacts {
+    padding-right: ($gutter *2);
+    dd {
+        margin-bottom: 16px;
+        &:nth-of-type(n+3) { clear: both; }
+    }
+}
+.icon-tel, .icon-fax {
+    float: left;
+
+    @include el(before, inline-block, 'T') {
+        @include circle(21px, center, #B2B2B2);
+        color: #E4E2D0;
+        margin-right: 5px;
+    }
+}
+.icon-fax {
+    margin-left: 20px;
+    &::before { content: 'F'}
+}
+
+.copyright {
+    border-top: 1px solid darken($footer-bg, 5%);
+    font-size: em(12px);
+    color: #7F7F7F;
+    padding: 10px ($gutter *2);
+
+    em {
+        @include text-pic('logo_s.gif',41px,27px);
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+
+    @include mq-max(tablet) {
+        // left: 15px; bottom: -30px;
+        // text-align: center;
+    }
+}

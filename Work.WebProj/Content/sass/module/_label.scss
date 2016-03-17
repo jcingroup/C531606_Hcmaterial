@@ -5,11 +5,12 @@
 // --------------------------------------------------
 
 .label {
-    color: #F9E7BC;
-    background: #0A334C;
-    border-radius: 5px;
+    color: #fff;
+    background: $brand-secondary;
+    border-radius: 4px;
+    font-size: em(14px);
 
     display: inline;
     padding: 3px 8px;
-    margin-right: 10px;
+    // margin-right: 10px;
 }

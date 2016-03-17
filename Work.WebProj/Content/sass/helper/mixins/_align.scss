@@ -1,26 +1,29 @@
 @charset "UTF-8";
 
-// 讓某元素垂直置中
-@mixin middle($target) {
-    @extend %middle;
-
-    @if $target == img {
-        #{$target} {
-            display: inline-block;
-            @content;
-        }
-    }
-    @else {
-        #{$target} {
-            display: inline-block;
-            vertical-align: middle;
-            @content;
-        }
-    }
+// 單行文字垂直置中
+@mixin text-center($height) {
+    @extend .text-center;
+    line-height: $height;
 }
 
-// 單行文字垂直置中
-@mixin text-middle($height) {
-    line-height: $height;
+// 讓目標元素垂直置中, 母元素需固定高度
+@mixin middle($target, $height, $align: false) {
     height: $height;
+
+    @if $align == center {
+        text-align: center;
+    }
+
+    @include el(before, inline-block) {
+        vertical-align: middle;
+        height: 100%;
+    }
+
+    #{$target} {
+        @if $target != img {
+            display: inline-block;
+        }
+        vertical-align: middle;
+        @content;
+    }
 }

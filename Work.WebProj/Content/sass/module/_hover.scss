@@ -1,43 +1,50 @@
 @charset "UTF-8";
 
+$underline-color:             darken($brand-gray, 20%);
+$underline-position:          top 100% right 0;
+
+$underline-transform:         scaleY(1);
+$underline-transform-origin:  50%;
+$underline-transform-hover:   scaleY(3);
+$underline-transition:        'transform .35s ease-out, background .4s';
+
+
 .hover-underline {
-	color: #808080;
+	color: $underline-color;
     position: relative;
 
-    &::before {
-        display: block;
-        content: '';
+    @include el(before) {
         height: 1px; width: 100%;
-        background: #808080;
-        @include absolute(bottom 0 right 0);
-        @include prefix(transform, scaleX(0));
-        @include prefix(transform-origin, 50%);
-        @include prefix(transition, transform .35s ease-out, webkit);
+        background: $underline-color;
+        @include absolute($underline-position);
+        @include prefix(transform, $underline-transform);
+        @include prefix(transform-origin, $underline-transform-origin);
+        @include prefix(transition, $underline-transition);
     }
 
     &:hover, &:active {
         &::before {
-            @include prefix(transform, scaleX(1));
+            @include prefix(transform, $underline-transform-hover);
         }
     }
 }
 
-.hover-shadow {
-    @extend %effect-all;
+// .hover-shadow {
+//     @extend %effect-all;
 
-    a {
-        z-index: z(tooltip) + 1;
-        white-space: nowrap;
-        opacity: 0;
-        @include size(100%);
-        @include absolute(left 0 top 0);
-    }
+//     a {
+//         z-index: z(tooltip) + 1;
+//         white-space: nowrap;
+//         opacity: 0;
+//         @include size(100%);
+//         @include absolute(left 0 top 0);
+//     }
 
-    header { @extend %effect-all; }
+//     header { @extend %effect-all; }
 
-    &:hover, &:active {
-        box-shadow: 3px 8px 12px rgba(0,0,0,0.2);
+//     &:hover, &:active {
+//         box-shadow: 3px 8px 12px rgba(0,0,0,0.2);
 
-        header { color: $brand-primary; }
-    }
-}
+//         header { color: $brand-primary; }
+//     }
+// }

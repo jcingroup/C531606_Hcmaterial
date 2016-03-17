@@ -2,12 +2,17 @@
 
 // var
 // -----------------------------------------------------------------
+// base large small
+$padding-vertical:          2px 5px 1px;
+$padding-horizontal:        4px 10px 3px;
+$border-radius:             5px 15px 3px;
+
 $input-radius-base: nth($border-radius,1) !default;
-$input-radius-large: nth($border-radius,2) !default;
-$input-radius-small: nth($border-radius,3) !default;
+// $input-radius-large: nth($border-radius,2) !default;
+// $input-radius-small: nth($border-radius,3) !default;
 $input-height-base: $line-height-computed + (nth($padding-vertical,1) * 2) !default;
-$input-height-large: ceil($font-size-lg * $line-height-lg) + (nth($padding-vertical,2) * 2) !default;
-$input-height-small: floor($font-size-sm * $line-height-sm) + (nth($padding-vertical,3) * 2) !default;
+// $input-height-large: ceil($font-size-lg * $line-height-lg) + (nth($padding-vertical,2) * 2) !default;
+// $input-height-small: floor($font-size-sm * $line-height-sm) + (nth($padding-vertical,3) * 2) !default;
 
 $form-group-margin-bottom:  10px !default; // '.form-group' 邊距
 
@@ -20,7 +25,7 @@ $form-color:(
     input-placeholder:      #C7CBBD,
     input-addon-bg:         $gray-lighter,
     input-addon-border:     #ccc
-);
+) !default;
 
 $input-radius:              5px !default;
 $input-height:              38px !default;

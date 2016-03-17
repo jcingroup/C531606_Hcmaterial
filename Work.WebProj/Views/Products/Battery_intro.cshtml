@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "鋰電池正極材料優缺點:電池材料";
+    ViewBag.BodyClass = "Products";
+    ViewBag.breadCrumb = "鋰電池正極材料優缺點";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section breadCrumb {
+    <li><a href="~/Products">正極材料</a></li>
+}
+
+<article class="text-left">
+
+    <h2>鋰電池正極材料優、缺點</h2>
+    <h3>鋰鐵系：高倍率快速充、放電<br>
+        三元系：超高電容量
+    </h3>
+
+    <table class="full text-center">
+        <tr>
+            <th rowspan="2">Structure</th>
+            <th colspan="2">Layer(層狀結構)</th>
+            <th>Spinel(尖晶石結構)</th>
+            <th colspan="2">Olivine(橄欖石結構)</th>
+        </tr>
+        <tr>
+            <td class="item">LCO</td>
+            <td class="item">NCM(三元)</td>
+            <td class="item">LMO</td>
+            <td class="item">LFP</td>
+            <td class="item">LMFP</td>
+        </tr>
+        <tr>
+            <td class="item">工作電壓(Volt)</td>
+            <td colspan="2">3.6~3.7</td>
+            <td>3.7</td>
+            <td>3.4</td>
+            <td class="text-error bg-gray">3.8~3.9</td>
+        </tr>
+        <tr>
+            <td class="item">克電壓(mh/g)</td>
+            <td>140~160</td>
+            <td class="text-error bg-gray">160~190</td>
+            <td>1110~120</td>
+            <td>150~160</td>
+            <td>150~155</td>
+        </tr>
+        <tr>
+            <td class="item">安全性</td>
+            <td><i class="icon-triangle">三角形</i></td>
+            <td><i class="icon-cross">叉</i></td>
+            <td><i class="icon-circle">圓</i></td>
+            <td class="text-error bg-gray"><i class="icon-circle-d">2圓</i></td>
+            <td class="text-error bg-gray"><i class="icon-circle-d">2圓</i></td>
+        </tr>
+        <tr>
+            <td class="item">高溫特性</td>
+            <td><i class="icon-triangle">三角形</i></td>
+            <td><i class="icon-triangle">三角形</i></td>
+            <td><i class="icon-cross">叉</i><i class="icon-cross">叉</i></td>
+            <td><i class="icon-circle">圓</i></td>
+            <td><i class="icon-circle">圓</i></td>
+        </tr>
+        <tr>
+            <td class="item">低溫特性</td>
+            <td><i class="icon-cross">叉</i></td>
+            <td><i class="icon-triangle">三角形</i></td>
+            <td><i class="icon-circle">圓</i></td>
+            <td class="bg-gray"><i class="icon-circle-d">2圓</i></td>
+            <td class="text-error bg-gray"><i class="icon-circle-d">2圓</i></td>
+        </tr>
+        <tr>
+            <td class="item">壽命(cycle)</td>
+            <td>500</td>
+            <td>500</td>
+            <td>500</td>
+            <td class="text-error bg-gray">>2000</td>
+            <td>>1000</td>
+        </tr>
+        <tr>
+            <td class="item">大電流放電能力</td>
+            <td><i class="icon-cross">叉</i></td>
+            <td><i class="icon-triangle">三角形</i></td>
+            <td class="text-warn"><i class="icon-circle-d text-error">2圓</i></td>
+            <td><i class="icon-circle">圓</i></td>
+            <td><i class="icon-circle">圓</i></td>
+        </tr>
+        <tr>
+            <td class="item">材料成本</td>
+            <td colspan="2">高</td>
+            <td>低</td>
+            <td colspan="2" class="text-error bg-gray">低</td>
+        </tr>
+    </table>
+</article>
+
+<h2>泓辰電池材料所生產的鋰電池正極材料</h2>
+<nav class="nav-battery col-10">
+    <a href="" class="col-4"><small>次世代高電壓正極材料</small>磷酸鋰鐵錳 LMFP</a>
+    <a href="" class="col-4"><small>快速充放電正極材料</small>磷酸鋰鐵 LiFePO4<br>CM-500</a>
+    <a href="" class="col-4"><small>高能量密度正極材料</small>高鎳三元 LNMC</a>
+</nav>

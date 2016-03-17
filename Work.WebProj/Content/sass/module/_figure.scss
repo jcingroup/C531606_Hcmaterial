@@ -1,140 +1,149 @@
 @charset "UTF-8";
 
-$figure-bg:             #fff !default;
-$figure-border-color:   #9CD217 !default;
-$figure-text-align:     center !default;
+$figure-color:            #fff !default;
+$figure-bg:               #fff !default;
+$figure-border-color:     #9CD217 !default;
+$figure-text-align:       center !default;
 
-$figure-min-width:      280px !default;
-$figure-max-width:      280px !default;
-$figure-width:          31.5% !default;
-$figure-height:         220px !default;
-$figure-margin:         0 7px 30px 7px!default;
+$figure-width:            percentage(1/5) !default;
+$figure-height:           215px !default;
+$figure-min-width:        244px !default;
+$figure-max-width:        percentage(1/5) !default;
+$figure-margin:           0 !default;
+
+$figure-title-size:       15px !default;
+$figure-title-color:      #7F7F7F !default;
+$figure-title-position:   bottom 5% left 0 right 0 !default;
+
+$figure-caption-size:     13px !default;
+$figure-caption-color:    $gray !default;
+$figure-caption-position: top 30% left 0 right 0!default;
 
 // common style
-figure {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    float: left;
-
-    width: $figure-width;
-    height: $figure-height;
-    max-width: $figure-max-width;
-    margin: $figure-margin;
-
-    text-align: $figure-text-align;
-
-    img { position: relative; }
-
-    @include mq(wider) { max-width: 335px; }
-    @include mq-max(tablet) {
-        display: inline-block;
-        float: none;
-        margin-left: 0;
-        width: 49.6%;
-        min-width: auto;
-    }
-    @include mq-max(phone) { width: 100%; }
+figcaption, figure > a {
+    @include size(100%);
+    @include absolute(left 0 top 0);
 }
 
 figcaption {
     text-transform: uppercase;
 
+    @extend %effect-all;
     @include prefix(backface-visibility, hidden);
 
     &::before, &::after { pointer-events: none; }
+}
 
-    &, > a {
-        @include size(100%);
-        @include absolute(left 0 top 0);
+figure {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    // float: left;
+    display: inline-block;
+    margin-left: -4px;
+
+    width: $figure-width;
+    height: $figure-height;
+    max-width: $figure-max-width;
+    // margin: $figure-margin;
+
+    text-align: $figure-text-align;
+
+    // @extend %effect-all;
+
+    img {
+        position: relative;
+        min-width: 100%;
+        min-height: 100%;
     }
 
     > a {
-        z-index: z(tooltip) - 1;
+        z-index: z(figure);
         white-space: nowrap;
         opacity: 0;
-
-        line-height: $figure-height;
-        height: $figure-height;
     }
 
-    @extend %effect-all;
+    // RWD
+    @include mq-max(break(desktop, -1)) {
+        float: none;
+        display: inline-block;
+    }
+    @include mq-max(tablet) {
+        width: 48%;
+        max-width: none;
+        margin: 3px; margin-bottom: 15px;
+    }
+    @include mq-max(phone) { width: 100%; }
+
+    // 描述
+    h4, p { margin: 0; }
+    h4 {
+        @include absolute($figure-title-position);
+        // @include prefix(transform, translateY(-100%));
+        color: $figure-title-color;
+        font-size: em($figure-title-size);
+    }
+    p {
+        color: $figure-caption-color;
+        font-size: em($figure-caption-size);
+        @include absolute($figure-caption-position);
+    }
 }
 
 // theme
-figure {
-    @extend %effect-all;
 
-    @include middle(img) {
-        max-width: 95%;
-        max-height: $figure-height - 45px;
-        margin-bottom: 35px;
+// 背景滿版(in index)
+// .img-full {
 
-        @include prefix(transition, transform .7s);
-        @include prefix(transform-origin, 50% 50%);
+//     img {
+//         @include prefix(transition, 'transform 1s, opacity .6s');
+//         opacity: .15;
+//     }
+// }
+
+.quick-nav {
+    letter-spacing: 2px;
+
+    &:nth-of-type(1) { background: #4D96AA; } //old:043969
+    &:nth-of-type(2) { background: #416C95; } //old:015267
+
+    p {
+        @include prefix(transition, background .5s);
+        @include prefix(transform, translateX(-50%));
     }
-
-    h4 {
-        @extend %effect-all;
-        @include absolute(bottom 10px left 0 right 0);
-        color: $brand-primary;
-        font-size: em(22px);
-        margin: 0;
-    }
-    span {
-        @extend %effect-all;
-        @include prefix(transform, translateY(45px));
-        opacity: 0;
-        display: inline-block;
-
-        font-size: em(15px);
-        line-height: 1;
-        padding: 0 7px;
-        margin: 7px 0;
-
-        &:nth-of-type(odd) { border-right: 1px solid #D8DF2B; }
-        &:last-of-type { border: none; }
-    }
-
     &:hover, &:active {
-        border-color: #D7DD19;
-
-        img {
-            @include prefix(transform, scale3d(1.2,1.2,1));
-        }
-        h4 {
-            color: #333;
-        }
-        span {
-            @include prefix(transform, translateY(20px));
+        &:nth-of-type(1) { background: lighten(#4D96AA, 4%); } //old:043969
+        &:nth-of-type(2) { background: lighten(#416C95, 4%); } //old:015267
+        p {
+            background: rgba($gray-base, .3);
             opacity: 1;
-        }
-        figcaption {
-            background: rgba(#fff,.8);
         }
     }
 }
 
-.kind figure {
-    border: 1px solid $figure-border-color;
+// 標題置底(in products series)
+.over-color {
+    border-left: 1px solid darken($brand-gray, 5%);
+    min-width: $figure-min-width;
 
-    span {
-        color: #D8DF2B;
+    &:first-child { border-left: none; }
+
+    img {
+        min-width: 62%;
+        min-height: 62%;
+        margin-top: -8%;
+        @include prefix(transition, 'opacity .5s');
     }
-
+    p {
+        @include prefix(transition, 'opacity .3s, top .5s');
+        opacity: 0;
+    }
+    span { margin: 3px; }
     &:hover, &:active {
-        border: 4px solid #D7DD19;
-
-        h4 {
-            color: #fff;
-            font-size: em(34px);
-            @include prefix(transform, translateY(-($figure-height - 85px)));
-        }
-        span {
-            @include prefix(transform, translateY(80px));
-        }
-        figcaption {
-            background: rgba(#053A04,.9);
-        }
+        p { opacity: 1; top: 35% }
+        img { opacity: .25 }
+        h4 { color: $brand-primary; }
     }
+
+    @include mq-max(phone) { width: 85%; }
 }

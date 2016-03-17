@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+// list
+// ------------------------------------------------------------
+.list-unstyled { @extend %list-unstyled; }
+.list-inline { @extend %list-inline; }
+
+.list-dot, .list-number {
+    $font-size: 15px;
+
+    @extend %list-unstyled;
+
+    li {
+        position: relative;
+        padding-left: $font-size +3;
+
+        @include el(before) {
+            @extend %circle;
+            @include absolute(left 0);
+            background: $info;
+        }
+    }
+}
+.list-dot li::before {
+    @include size(5px);
+    top: (15px/2);
+}
+
+.list-number li {
+    $size: 21px;
+
+    padding-left: $size +10;
+
+    &::before {
+        @include text-center($size);
+        @include size($size);
+        top: 0;
+        font-size: em(13px);
+        color: #fff;
+    }
+    @for $i from 1 through 12 {
+        &:nth-child(#{$i}) {
+            &::before {
+                content: '#{$i}';
+            }
+        }
+    }
+}

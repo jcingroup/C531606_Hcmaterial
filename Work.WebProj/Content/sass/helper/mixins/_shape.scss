@@ -7,15 +7,16 @@
 }
 
 // 做圓形
-@mixin circle($size, $align:center, $display:inline-block) {
-    display: $display;
-
+@mixin circle($size, $align:false, $bg-color:false) {
     @extend %circle;
     @include size($size);
 
     @if $align == "center" {
         text-align: center;
         line-height: $size;
+    }
+    @if $bg-color {
+        background-color: $bg-color;
     }
 }
 
@@ -48,39 +49,37 @@
     }
 }
 
-// 用偽類做三角形
-@mixin arrow($dir:right, $width:5px, $height: $width/2, $color: inherit, $display: inline-block) {
+// 做三角形2
+@mixin arrow($dir:right, $width: 5px, $height: $width, $color: inherit) {
     @include size(0);
-    content: '';
-    display: $display;
     border: $width solid transparent;
 
     @if ($dir == "top" or $dir =="up") {
         border-bottom: $height solid $color;
 
         @if $height != $width {
-            border-top-width: $height;
+            border-top-width: $width - $height;
         }
     }
     @else if ($dir == "bottom" or $dir == "down") {
         border-top: $height solid $color;
 
         @if $height != $width {
-            border-bottom-width: $height;
+            border-bottom-width: $width - $height;
         }
     }
     @else if ($dir == "right") {
         border-left: $height solid $color;
 
         @if $height != $width {
-            border-right-width: $height;
+            border-right-width: $width - $height;
         }
     }
     @else if ($dir == "left") {
         border-right: $width solid $color;
 
         @if $height != $width {
-            border-left-width: $height;
+            border-left-width: $width - $height;
         }
     }
 }

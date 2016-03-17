@@ -11,6 +11,9 @@
 
 .float-l { float: left; }
 .float-r { float: right; }
+
+img.float-l { margin-right: $gutter;}
+
 .clear { clear: both  }
 
 .hidden { display: none; }
@@ -23,43 +26,24 @@
 .text-right { text-align: right; }
 .text-center { text-align: center; }
 
-.list-unstyled { @extend %list-unstyled; }
-.list-inline { @extend %list-inline; }
-
-.text-list {
-	@extend %list-unstyled;
-
-	font-size: em(18px);
-	line-height: 1.23;
-
-	li {
-		position: relative;
-		margin-bottom: 15px;
-		padding-left: 18px;
-
-		&::before {
-			content: '';
-			background: #D8DF2B;
-			@include size(6px);
-			@include absolute(top 50% left 0);
-			margin-top: -3px;
-		}
-	}
+.text-line {
+    border-bottom: 1px solid $info;
+    padding-bottom: $gutter;
 }
 
+
 // 情境: var.scss> $states: true
-// @if $states {
+@if $states {
 
-//     [class*="bg-"] {
-//         color: #fff;
-//     }
+    .text-white { @extend %text-white; }
 
-//     @each $type, $color in $state-type {
-//         .text-#{$type} {
-//             @include state($color);
-//         }
-//         .bg-#{$type} {
-//             @include state($color, bg)
-//         }
-//     }
-// }
+    @each $type, $color in $state-type {
+        .text-#{$type} {
+            // @include state($color);
+            color: $color;
+        }
+        .bg-#{$type} {
+            background: lighten($color, 4.5%);
+        }
+    }
+}

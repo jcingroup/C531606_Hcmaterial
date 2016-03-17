@@ -16,37 +16,45 @@ html, body {
     text-align: center;
     height: 100%;
 }
+
 body {
     background: $body-bg;
     color: $text-color;
     font-family: $font-family-base;
     line-height: $line-height-base;
+
+    // 手機版選單動畫
+    position: relative;
+    overflow-x: hidden;
+    left: 0;
+    @include prefix(transition, left .35s);
 }
 
 a {
     color: $link-color;
     text-decoration: none;
+    blur: expression(this.onFocus=this.blur()); // 清除虛線框
 
-    @include prefix(transition, all .35s ease, webkit);
+    @include prefix(transition, 'color .35s, background .3s');
 
     &:hover, &:active, &.active { color: $link-hover-color; }
-    &:focus { @include tab-focus; }
+    &:focus {
+        @include tab-focus(thin dotted $brand-gray);
+    }
 }
 
-hr {
-    // margin: 35px 0;
-    // margin-top:    $line-height-computed;
-    // margin-bottom: $line-height-computed;
-    // border: 0;
-    // border-top: 1px solid #EAEFDE;
+img {
+    vertical-align: middle;
+    @include mq-max(break(tablet, -1)) { width: 100%; }
 }
 
-img { vertical-align: middle; }
-
-@font-face {
-    font-family: 'trebuc';
-    src: local("Trebuchet MS"), url(../font/trebucit.ttf) format("truetype");
-}
+// @font-face {
+//     font-family: 'NeutraText';
+//     src: url('../font/Neutraface2Text-Book.eot'); // IE9
+//     src: url('../font/Neutraface2Text-Book.eot?#iefix') format('embedded-opentype'), // IE6-IE8
+//          local('Neutraface2Text-Book'),
+//          url('../font/Neutraface2Text-Book.otf') format("opentype");
+// }
 
 .font-sp { font-family: $font-sp; }
 
@@ -54,7 +62,8 @@ img { vertical-align: middle; }
 
 // Headings
 // -----------------------------------------------
-h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font-family;
     font-weight: $heading-font-weight;
     line-height: $heading-line-height;
     color: $heading-color;
@@ -65,7 +74,7 @@ h2, h3, h4, h5, h6 {
         color: $heading-small-color;
     }
 }
-h2, h3 {
+h1, h2, h3 {
     margin-top: em($line-height-computed);
     margin-bottom: em($line-height-computed / 2);
 
@@ -78,7 +87,7 @@ h4, h5, h6 {
     small { font-size: 75%; }
 }
 
-@for $i from 2 through 6 {
+@for $i from 1 through 6 {
     $headings: $font-size-h1 $font-size-h2 $font-size-h3 $font-size-h4 $font-size-h5 $font-size-h6;
 
     h#{$i} { font-size: em(nth($headings, $i)); }
@@ -91,6 +100,10 @@ p {
     line-height: 1.5;
 }
 
+strong {
+    font-size: em(17px);
+    color: $brand-primary;
+}
 
 // 副標題 Ex: (12px small font / 14px base font) * 100% = about 85%
 small {
@@ -111,6 +124,13 @@ hr, %hr {
 }
 %hr { height: 2px; }
 
+hr {
+    // margin: 35px 0;
+    // margin-top:    $line-height-computed;
+    // margin-bottom: $line-height-computed;
+    // border: 0;
+    // border-top: 1px solid #EAEFDE;
+}
 
 // Lists
 // -----------------------------------------------
@@ -120,8 +140,8 @@ hr, %hr {
 //     ul, ol { margin-bottom: 0; }
 // }
 
-address {
-    margin-bottom: $line-height-computed;
-    font-style: normal;
-    line-height: $line-height-base;
-}
+// address {
+//     margin-bottom: $line-height-computed;
+//     font-style: normal;
+//     line-height: $line-height-base;
+// }
