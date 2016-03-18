@@ -1,7 +1,26 @@
 ﻿
 @{
-    ViewBag.Title = "Build";
+    ViewBag.Title = "鋰電池組成:電池材料";
+    ViewBag.BodyClass = "Products";
+    ViewBag.breadCrumb = "鋰電池組成";
+    ViewBag.ProNav4Class = "current";
+    Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2>Build</h2>
+@section Scripts {
+    <script src="~/Content/js/tab.js"></script>
+}
 
+@Html.Partial("sidebar")
+
+<h1 class="clear">鋰電池組成</h1>
+
+<article class="text-left">
+    <div class="col-6">
+        <img src="~/Content/images/Products/Build/p1.jpg" alt="" width="100%">
+    </div>
+    <div class="col-6">
+        <img src="~/Content/images/Products/Build/p2.jpg" alt="" width="100%">
+        <h3>鋰電池種類</h3>
+    </div>
+</article>

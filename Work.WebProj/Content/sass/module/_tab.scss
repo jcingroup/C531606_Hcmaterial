@@ -9,10 +9,12 @@ $underline-transform-hover:   scaleY(3);
 $underline-transition:        'transform .35s ease-out, background .4s';
 
 
+.tabs, .tabs-main {
+    border-bottom: 1px solid $brand-gray;
+}
 .tabs {
     @extend %list-inline;
     margin-top: 35px;
-    border-bottom: 1px solid $brand-gray;
 
     a {
         display: block;
@@ -21,14 +23,15 @@ $underline-transition:        'transform .35s ease-out, background .4s';
         padding: 12px 20px;
         outline: none;
         &:hover, &:active {
-            background: lighten($info, 30%);
+            color: #fff;
+            background: lighten($brand-secondary, 20%);
         }
     }
     li {
         &.active {
             a {
-                color: $heading-color;
-                background: none;
+                color: #fff;
+                background: $brand-secondary;
                 font-size: em(19px);
             }
         }
@@ -36,12 +39,8 @@ $underline-transition:        'transform .35s ease-out, background .4s';
 }
 
 .tabs-main {
-    margin-top: 35px;
-    // text-align: left;
+    padding-bottom: 40px;
 }
 .tab-content {
     @extend .text-left;
-}
-#tab4 {
-    text-align: center;
 }

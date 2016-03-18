@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 
 // list
 // ------------------------------------------------------------
@@ -11,19 +11,12 @@
     @extend %list-unstyled;
 
     li {
-        position: relative;
-        padding-left: $font-size +3;
-
-        @include el(before) {
-            @extend %circle;
-            @include absolute(left 0);
-            background: $info;
-        }
+        line-height: 1.75;
+        @include icon-dot(left, 5px, lighten($brand-secondary, 15%), left 0);
     }
 }
 .list-dot li::before {
-    @include size(5px);
-    top: (15px/2);
+    top: 40%;
 }
 
 .list-number li {

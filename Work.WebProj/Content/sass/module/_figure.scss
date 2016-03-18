@@ -1,37 +1,33 @@
 @charset "UTF-8";
 
-$figure-color:            #fff !default;
-$figure-bg:               #fff !default;
-$figure-border-color:     #9CD217 !default;
-$figure-text-align:       center !default;
+$figure-color:            null !default;
+$figure-bg:               null !default;
+$figure-border:           1px solid $brand-gray !default;
+$figure-text-align:       left !default;
 
-$figure-width:            percentage(1/5) !default;
-$figure-height:           215px !default;
-$figure-min-width:        244px !default;
-$figure-max-width:        percentage(1/5) !default;
-$figure-margin:           0 !default;
+$figure-width:            31% !default;
+$figure-height:           180px !default;
+$figure-min-width:        null !default;
+$figure-max-width:        null !default;
+$figure-mg:               2% 1% !default;
+$figure-pd:               null !default;
+$figure-effect:           all .3s !default;
 
-$figure-title-size:       15px !default;
-$figure-title-color:      #7F7F7F !default;
-$figure-title-position:   bottom 5% left 0 right 0 !default;
+// 圖片樣式
+$figure-img-full:         true !default;
+$figure-img-width:        null !default;
+$figure-img-height:       null !default;
 
-$figure-caption-size:     13px !default;
-$figure-caption-color:    $gray !default;
-$figure-caption-position: top 30% left 0 right 0!default;
+$figure-title-size:       null !default;
+$figure-title-color:      $brand-secondary !default;
+
+$figure-p-size:           null !default;
+$figure-p-color:          null !default;
 
 // common style
 figcaption, figure > a {
     @include size(100%);
     @include absolute(left 0 top 0);
-}
-
-figcaption {
-    text-transform: uppercase;
-
-    @extend %effect-all;
-    @include prefix(backface-visibility, hidden);
-
-    &::before, &::after { pointer-events: none; }
 }
 
 figure {
@@ -40,21 +36,32 @@ figure {
     cursor: pointer;
     // float: left;
     display: inline-block;
-    margin-left: -4px;
+    vertical-align: top;
+    // margin-right: -4px;
 
-    width: $figure-width;
-    height: $figure-height;
-    max-width: $figure-max-width;
-    // margin: $figure-margin;
+    @if $figure-width      { width: $figure-width; }
+    @if $figure-height     { height: $figure-height; }
+    @if $figure-max-width  { max-width: $figure-max-width; }
+    @if $figure-min-width  { min-width: $figure-min-width; }
+    @if $figure-mg         { margin: $figure-mg; }
+    @if $figure-pd         { padding: $figure-pd; }
+    @if $figure-text-align { text-align: $figure-text-align; }
 
-    text-align: $figure-text-align;
+    @if $figure-color      { color: $figure-color; }
+    @if $figure-bg         { background: $figure-bg; }
+    @if $figure-border     { border: $figure-border; }
 
-    // @extend %effect-all;
+    @if $figure-effect     { @include prefix(transition, $figure-effect) }
 
     img {
         position: relative;
-        min-width: 100%;
-        min-height: 100%;
+
+        @if $figure-img-full {
+            min-width: 100%;
+            min-height: 100%;
+        }
+        @if $figure-img-width  { width: $figure-img-width; }
+        @if $figure-img-height { height: $figure-img-height; }
     }
 
     > a {
@@ -71,22 +78,29 @@ figure {
     @include mq-max(tablet) {
         width: 48%;
         max-width: none;
-        margin: 3px; margin-bottom: 15px;
+        margin: 3px; margin-bottom: $gutter;
     }
     @include mq-max(phone) { width: 100%; }
+
+}
+
+figcaption {
+    text-transform: uppercase;
+
+    @extend %effect-all;
+    @include prefix(backface-visibility, hidden);
+
+    &::before, &::after { pointer-events: none; }
 
     // 描述
     h4, p { margin: 0; }
     h4 {
-        @include absolute($figure-title-position);
-        // @include prefix(transform, translateY(-100%));
-        color: $figure-title-color;
-        font-size: em($figure-title-size);
+        @if $figure-title-color { color: $figure-title-color; }
+        @if $figure-title-size  { font-size: em($figure-title-size); }
     }
     p {
-        color: $figure-caption-color;
-        font-size: em($figure-caption-size);
-        @include absolute($figure-caption-position);
+        @if $figure-p-color { color: $figure-p-color; }
+        @if $figure-p-size  { font-size: em($figure-p-size); }
     }
 }
 
@@ -101,49 +115,49 @@ figure {
 //     }
 // }
 
-.quick-nav {
-    letter-spacing: 2px;
+// .quick-nav {
+//     letter-spacing: 2px;
 
-    &:nth-of-type(1) { background: #4D96AA; } //old:043969
-    &:nth-of-type(2) { background: #416C95; } //old:015267
+//     &:nth-of-type(1) { background: #4D96AA; } //old:043969
+//     &:nth-of-type(2) { background: #416C95; } //old:015267
 
-    p {
-        @include prefix(transition, background .5s);
-        @include prefix(transform, translateX(-50%));
-    }
-    &:hover, &:active {
-        &:nth-of-type(1) { background: lighten(#4D96AA, 4%); } //old:043969
-        &:nth-of-type(2) { background: lighten(#416C95, 4%); } //old:015267
-        p {
-            background: rgba($gray-base, .3);
-            opacity: 1;
-        }
-    }
-}
+//     p {
+//         @include prefix(transition, background .5s);
+//         @include prefix(transform, translateX(-50%));
+//     }
+//     &:hover, &:active {
+//         &:nth-of-type(1) { background: lighten(#4D96AA, 4%); } //old:043969
+//         &:nth-of-type(2) { background: lighten(#416C95, 4%); } //old:015267
+//         p {
+//             background: rgba($gray-base, .3);
+//             opacity: 1;
+//         }
+//     }
+// }
 
 // 標題置底(in products series)
-.over-color {
-    border-left: 1px solid darken($brand-gray, 5%);
-    min-width: $figure-min-width;
+// .over-color {
+//     border-left: 1px solid darken($brand-gray, 5%);
+//     min-width: $figure-min-width;
 
-    &:first-child { border-left: none; }
+//     &:first-child { border-left: none; }
 
-    img {
-        min-width: 62%;
-        min-height: 62%;
-        margin-top: -8%;
-        @include prefix(transition, 'opacity .5s');
-    }
-    p {
-        @include prefix(transition, 'opacity .3s, top .5s');
-        opacity: 0;
-    }
-    span { margin: 3px; }
-    &:hover, &:active {
-        p { opacity: 1; top: 35% }
-        img { opacity: .25 }
-        h4 { color: $brand-primary; }
-    }
+//     img {
+//         min-width: 62%;
+//         min-height: 62%;
+//         margin-top: -8%;
+//         @include prefix(transition, 'opacity .5s');
+//     }
+//     p {
+//         @include prefix(transition, 'opacity .3s, top .5s');
+//         opacity: 0;
+//     }
+//     span { margin: 3px; }
+//     &:hover, &:active {
+//         p { opacity: 1; top: 35% }
+//         img { opacity: .25 }
+//         h4 { color: $brand-primary; }
+//     }
 
-    @include mq-max(phone) { width: 85%; }
-}
+//     @include mq-max(phone) { width: 85%; }
+// }

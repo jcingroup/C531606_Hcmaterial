@@ -15,6 +15,10 @@ namespace DotWeb.WebApp.Controllers
             return View("Battery_intro");
         }
         // 正極材料
+        public ActionResult Battery_intro()
+        {
+            return View();
+        }
         public ActionResult Battery()
         {
             return View();

@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+// icon dot
+@mixin icon-dot($direction, $size, $color, $pos: false) {
+    @include el(before) {
+        @include circle($size, $bg-color: $color);
+
+        @if $pos {
+            @include absolute($pos);
+        }
+    }
+    @if $pos {
+        position: relative;
+        padding-#{$direction}: $size * 2;
+    }
+}
+
+// icon arrow
+@mixin icon-arrow($direction, $size, $color-border, $pos: false) {
+    @include el(before) {
+        @include arrow($direction, $size, $color: $color-border);
+
+        @if $pos {
+            @include absolute($pos);
+        }
+    }
+    @if $pos {
+        position: relative;
+    }
+}

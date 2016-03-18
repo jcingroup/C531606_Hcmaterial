@@ -1,7 +1,56 @@
 ﻿
 @{
-    ViewBag.Title = "Technology";
+    ViewBag.Title = "核心技術:電池材料";
+    ViewBag.BodyClass = "Products";
+    ViewBag.breadCrumb = "核心技術";
+    ViewBag.ProNav2Class = "current";
+    Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2>Technology</h2>
+@section Scripts {
+    <script src="~/Content/js/tab.js"></script>
+}
 
+@Html.Partial("sidebar")
+
+<ul class="tabs">
+    <li class="js-tab"><a href="#tab-1">高品質&穩定奈米材料</a></li>
+    <li class="js-tab"><a href="#tab-2">量產技術</a></li>
+    <li class="js-tab"><a href="#tab-3">技術資源</a></li>
+</ul>
+
+<article id="tab-1" class="tab-content">
+    <h3>高品質&穩定奈米材料</h3>
+    <img src="~/Content/images/Products/Tech/p1.jpg" alt="" width="70%">
+</article>
+
+<article id="tab-2" class="tab-content">
+    <h3>量產技術</h3>
+    <div class="col-6">
+        <h4>設備自制</h4>
+        <img src="~/Content/images/Products/Tech/p2.jpg" alt="" width="100%">
+    </div>
+    <div class="col-6">
+        <h4>RD開發設備</h4>
+        <h5>具有中、小量產能量，大幅增口量產掌握度</h5>
+        <img src="~/Content/images/Products/Tech/p2-2.jpg" alt="" width="100%">
+    </div>
+@*     <h5>自製特有奈米化設備，高效率準確掌控製程品質</h5>
+    <img src="~/Content/images/Products/Tech/p2-step.jpg" alt="" width="100%">
+    <img src="~/Content/images/Products/Tech/p2.jpg" alt="" width="100%">
+ *@
+</article>
+
+<article id="tab-3" class="tab-content">
+    <h3>技術資源</h3>
+    <h4>專利支持</h4>
+    <h5>奈米結構二次球型專利：</h5>
+    <p>具高導電網路設計(高導電性)、多孔性結構(高離子傳導)，已通過中、台、日、韓專利；美、歐專利申請中</p>
+    <img src="~/Content/images/Products/Tech/p2-3.jpg" alt="" width="80%">
+   @* <ul class="list-inline">
+       <li class="col-3"><img src="~/Content/images/Products/Tech/p2-3.jpg" alt=""></li>
+       <li class="col-3"><img src="~/Content/images/Products/Tech/p2-3-2.jpg" alt=""></li>
+       <li class="col-3"><img src="~/Content/images/Products/Tech/p2-3-3.jpg" alt=""></li>
+       <li class="col-3"><img src="~/Content/images/Products/Tech/p2-3-4.jpg" alt=""></li>
+   </ul> *@
+</article>

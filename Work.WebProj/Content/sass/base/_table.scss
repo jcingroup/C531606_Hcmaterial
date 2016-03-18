@@ -10,7 +10,7 @@ $table-color:            $info !default;
 $table-font-size:        17px !default;
 $table-line-height:      1.5 !default;
 $table-border:           1px solid #E4E5DC !default;
-$table-pd:               15px 0 !default;
+$table-pd:               15px !default;
 
 // th
 $th-bg:                  false !default;
@@ -26,12 +26,12 @@ $td-item-bg:             false !default;
 $td-item-color:          #7F7F7F !default;
 $td-item-font-size:      false !default;
 
-$caption-font-size:      false !default;
-$caption-pd:             false !default;
-$caption-color:          false !default;
-$caption-font-size:      false !default;
-$caption-line-height:    false !default;
-$caption-align:          false !default;
+$caption-font-size:      20px !default;
+$caption-pd-top:         false !default;
+$caption-pd-bottom:      30px !default;
+$caption-color:          $text-color !default;
+$caption-line-height:    1.7 !default;
+$caption-align:          left !default;
 
 // 滑鼠移過變色
 $table-bg-hover:         lighten($brand-gray, 2%) !default;
@@ -41,7 +41,7 @@ $table-bg-accent:        false !default;
 $table-bg-active:        #F0F1EC !default;
 
 // RWD時，表格出現卷軸
-$table-rwd:              true;
+$table-rwd:              true !default;
 
 // 合併配色
 // $color: map-extend($color, $table-color);
@@ -81,7 +81,7 @@ table {
     @if $table-border      { border: $table-border; }
     @if $table-color       { color: $table-color; }
     @if $table-font-size   { font-size: em($table-font-size); }
-    @if $table-line-height { line-height: $line-height-base; }
+    @if $table-line-height { line-height: $table-line-height; }
 }
 
 th, td {
@@ -115,13 +115,13 @@ td {
     tr:hover {
         background-color: $table-bg-hover;
 
-        th, td { background-color: $table-bg-hover; }
+        td { background-color: $table-bg-hover; }
     }
 }
 
 caption {
-    @if $caption-pd          { padding-top: nth($caption-pd, 1); }
-    @if $caption-pd          { padding-bottom: nth($caption-pd, 2); }
+    @if $caption-pd-top      { padding-top: $caption-pd-top; }
+    @if $caption-pd-bottom   { padding-bottom: $caption-pd-bottom; }
     @if $caption-color       { color: $caption-color; }
     @if $caption-font-size   { font-size: em($caption-font-size); }
     @if $caption-line-height { line-height: $caption-line-height; }

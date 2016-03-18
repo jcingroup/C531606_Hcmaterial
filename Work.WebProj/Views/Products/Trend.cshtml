@@ -1,7 +1,55 @@
 ﻿
 @{
-    ViewBag.Title = "Trend";
+    ViewBag.Title = "市場趨勢:電池材料";
+    ViewBag.BodyClass = "Products";
+    ViewBag.breadCrumb = "市場趨勢";
+    ViewBag.ProNav3Class = "current";
+    Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2>Trend</h2>
+@section Scripts {
+    <script src="~/Content/js/tab.js"></script>
+}
 
+@Html.Partial("sidebar")
+
+<ul class="tabs">
+    <li class="js-tab"><a href="#tab-1">市場資訊</a></li>
+    <li class="js-tab"><a href="#tab-2">動力系統應用</a></li>
+    <li class="js-tab"><a href="#tab-3">儲能系統應用</a></li>
+</ul>
+
+<article id="tab-1" class="tab-content">
+    <h3>市場資訊</h3>
+    <div class="col-6">
+        <h4>鋰電池產業分布</h4>
+        <img src="~/Content/images/Products/Trend/p1.jpg" alt="" width="100%">
+    </div>
+    <div class="col-6">
+        <h4>電池材料應用分佈</h4>
+        <img src="~/Content/images/Products/Trend/p1-2.jpg" alt="" width="100%">
+    </div>
+
+    <h4>未來鋰電池市場需求目標</h4>
+    <img src="~/Content/images/Products/Trend/p1-3.jpg" alt="" width="65%">
+</article>
+
+<article id="tab-2" class="tab-content">
+   <h3>動力系統應用</h3>
+   <p>目前鋰電池的市場集中在IT產業，未來的鋰電池市場將擴大到</p>
+   <ol class="list-unstyled">
+       <li>(1) 電動車包含(<span class="text-error">電動大巴、HEV</span>、<span class="text-info">PHEV</span>、BEV);</li>
+       <li>(2) 儲能裝置</li>
+   </ol>
+   <h4>電動車趨勢</h4>
+   <img src="~/Content/images/Products/Trend/p2.jpg" alt="" width="80%">
+</article>
+
+<article id="tab-3" class="tab-content">
+   <h3>儲能系統應用</h3>
+   <div class="text-center">
+       <img src="~/Content/images/Products/Trend/p3.jpg" alt="" width="80%">
+       <img src="~/Content/images/Products/Trend/p3-2.jpg" alt="" width="80%">
+   </div>
+   <p>儲能系統的電池是以長壽命、降低維修、安全也是一大考量，因此LFP&LMFP也是一大選擇，穩定成長的再生能源儲存裝置</p>
+</article>

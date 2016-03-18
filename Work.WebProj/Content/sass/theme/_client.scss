@@ -8,17 +8,12 @@
 }
 
 $menu-color: #368b39 #80A73D #F39311 #F36B1F #C73677;
-$menu-icon: (83px 29px) (-104px 29px) (-294px 29px) (-479px 29px) (-666px 29px);
+$menu-icon: (-14.5% 19%) (18% 19%) (50% 19%) (82% 19%) (115% 19%);
 
-%menu-active {
-    &:hover, &:active {
-        color: #fff;
-        &::before {
-            height: 100%;
-            background-attachment: fixed;
-            background: url(#{$img-path}/icon-menu2.png) 83px 29px no-repeat;
-        }
-    }
+%menu-active-bg {
+    height: 100%;
+    background-image: url(#{$img-path}/icon-menu2.png);
+    background-repeat: no-repeat;
 }
 
 .icon-arrow-down {
@@ -41,8 +36,8 @@ $menu-icon: (83px 29px) (-104px 29px) (-294px 29px) (-479px 29px) (-666px 29px);
     > li {
 
         > a {
-            background-attachment: fixed;
-            background: url(#{$img-path}/icon-menu.gif) 83px 29px no-repeat;
+            background-image: url(#{$img-path}/icon-menu.gif);
+            background-repeat: no-repeat;
             padding: ($menu-height - $nav-font-size)/3+31px 0 ($menu-height - $nav-font-size)/3 0;
             position: relative;
             margin-left: 1px;
@@ -55,14 +50,13 @@ $menu-icon: (83px 29px) (-104px 29px) (-294px 29px) (-479px 29px) (-666px 29px);
                 height: 5px;
                 z-index: -1;
             }
-            @extend %menu-active;
         }
 
         // 當前選單
         $current: ();
         @each $item in $pages {
             $i: index($pages, $item);
-            $current: $current, unquote(".#{$item} &:nth-of-type(#{$i}) > a");
+            $current: $current, unquote(".#{$item} &:nth-of-type(#{$i})");
 
             &:nth-of-type(#{$i}) > a,
             .#{$item} &:nth-of-type(#{$i}) > a {
@@ -73,8 +67,15 @@ $menu-icon: (83px 29px) (-104px 29px) (-294px 29px) (-479px 29px) (-666px 29px);
                 }
             }
         }
+
+        &:hover, &:active,
         #{$current} {
-            @extend %menu-active;
+            > a {
+                color: #fff;
+                &::before {
+                    @extend %menu-active-bg;
+                }
+            }
         }
     }
 }
@@ -142,7 +143,7 @@ $menu-icon: (83px 29px) (-104px 29px) (-294px 29px) (-479px 29px) (-666px 29px);
     font-size: em(15px);
 
     dt {
-        color: $brand-primary;
+        color: $success;
         font-size: em(18px);
         margin-bottom: $gutter;
         letter-spacing: 1px;

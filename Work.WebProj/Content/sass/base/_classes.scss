@@ -12,8 +12,6 @@
 .float-l { float: left; }
 .float-r { float: right; }
 
-img.float-l { margin-right: $gutter;}
-
 .clear { clear: both  }
 
 .hidden { display: none; }
@@ -43,7 +41,8 @@ img.float-l { margin-right: $gutter;}
             color: $color;
         }
         .bg-#{$type} {
-            background: lighten($color, 4.5%);
+            @extend %text-white;
+            background: $color;
         }
     }
 }

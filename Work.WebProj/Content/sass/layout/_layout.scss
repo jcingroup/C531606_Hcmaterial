@@ -27,7 +27,7 @@ $nav-width:              (100% / length($pages)) - 0.1 !default;
 
 // 第 2 層選單
 $sub-nav-bg:             lighten($header-bg, 2%) !default;
-$sub-nav-transition:     'opacity .3s' !default;
+$sub-nav-transition:     'opacity .3s, visibility .35s' !default;
 $sub-nav-width:          percentage(1/4) !default;
 
 // 行動選單(menu-trigger)

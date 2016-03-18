@@ -61,7 +61,7 @@ $swiper-pagination:       false;
     }
     header {
         font-size: em($font-size-h2);
-        color: #14AE11;
+        color: $success;
         top: 50%;
         margin-left: -357px;
     }
@@ -102,7 +102,7 @@ $swiper-pagination:       false;
     }
     em {
         display: block;
-        color: lighten($brand-primary, 5%);
+        color: lighten($success, 5%);
         font-style: normal;
         font-size: em(16px, 18px);
         margin-bottom: 10px;

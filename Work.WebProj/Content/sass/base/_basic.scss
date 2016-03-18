@@ -37,15 +37,20 @@ a {
 
     @include prefix(transition, 'color .35s, background .3s');
 
-    &:hover, &:active, &.active { color: $link-hover-color; }
+    &:hover, &:active, &.current { color: $link-hover-color; }
     &:focus {
-        @include tab-focus(thin dotted $brand-gray);
+        // @include tab-focus(0 solid $brand-gray);
+        outline: none;
     }
 }
 
 img {
     vertical-align: middle;
     @include mq-max(break(tablet, -1)) { width: 100%; }
+
+    &.float-l { margin-right: $gutter + 10; margin-bottom: $gutter + 10; }
+    &.float-r { margin-left: $gutter + 10; margin-bottom: $gutter + 10; }
+    // &.center  { margin-left: auto; margin-right: auto; }
 }
 
 // @font-face {
@@ -119,8 +124,9 @@ mark {
 hr, %hr {
     height: 0;
 
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #f9f9f9;
+    // border-top: 1px solid #ccc;
+    // border-bottom: 1px solid #f9f9f9;
+    border: none;
 }
 %hr { height: 2px; }
 

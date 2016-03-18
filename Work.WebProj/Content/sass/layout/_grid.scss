@@ -42,6 +42,11 @@ $one_col: 100% / $cols;
 
 // output
 // ------------------------------------------------------------
+%col-padding {
+    padding-left: $gutter/2;
+    padding-right: $gutter/2;
+}
+
 .row {
     @extend %clearfix;
     // @extend %center;
@@ -53,13 +58,10 @@ $one_col: 100% / $cols;
     //     margin-bottom: $gutter;
     // }
 
-    margin-bottom: $gutter;
+    margin-top: 0;
+    margin-bottom: $gutter/2;
 }
 
-%col-padding {
-    padding-left: $gutter/2;
-    padding-right: $gutter/2;
-}
 
 [class*="col-"] {
     // float: left;

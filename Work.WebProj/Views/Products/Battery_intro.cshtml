@@ -2,7 +2,8 @@
 @{
     ViewBag.Title = "鋰電池正極材料優缺點:電池材料";
     ViewBag.BodyClass = "Products";
-    ViewBag.breadCrumb = "鋰電池正極材料優缺點";
+    ViewBag.breadCrumb = "正極材料分類";
+    ViewBag.proNavClass = "current";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
@@ -10,14 +11,18 @@
     <li><a href="~/Products">正極材料</a></li>
 }
 
+@Html.Partial("sidebar")
+
+
+<h2 class="text-left clear">鋰電池正極材料優、缺點</h2>
+
 <article class="text-left">
 
-    <h2>鋰電池正極材料優、缺點</h2>
-    <h3>鋰鐵系：高倍率快速充、放電<br>
-        三元系：超高電容量
-    </h3>
-
     <table class="full text-center">
+        <caption>
+            鋰鐵系：高倍率快速充、放電<br>
+            三元系：超高電容量
+        </caption>
         <tr>
             <th rowspan="2">Structure</th>
             <th colspan="2">Layer(層狀結構)</th>
@@ -95,9 +100,4 @@
     </table>
 </article>
 
-<h2>泓辰電池材料所生產的鋰電池正極材料</h2>
-<nav class="nav-battery col-10">
-    <a href="" class="col-4"><small>次世代高電壓正極材料</small>磷酸鋰鐵錳 LMFP</a>
-    <a href="" class="col-4"><small>快速充放電正極材料</small>磷酸鋰鐵 LiFePO4<br>CM-500</a>
-    <a href="" class="col-4"><small>高能量密度正極材料</small>高鎳三元 LNMC</a>
-</nav>
+@Html.Partial("Battery-catalog")
