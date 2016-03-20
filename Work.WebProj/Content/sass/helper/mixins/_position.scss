@@ -31,10 +31,12 @@
     @if ($horizontal and $vertical) {
         @include absolute(left 50% top 50%);
         @include prefix(transform, translate(-50%,-50%))
-    } @else if ($horizontal) {
+    }
+    @else if ($horizontal) {
         @include absolute(left 50%);
         @include prefix(transform, translateX(-50%))
-    } @else if ($vertical) {
+    }
+    @else if ($vertical) {
         @include absolute(top 50%);
         @include prefix(transform, translate(-50%,-50%))
     }

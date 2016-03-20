@@ -51,7 +51,7 @@ figure {
     @if $figure-bg         { background: $figure-bg; }
     @if $figure-border     { border: $figure-border; }
 
-    @if $figure-effect     { @include prefix(transition, $figure-effect) }
+    @if $figure-effect     { @include transition($figure-effect) }
 
     img {
         position: relative;

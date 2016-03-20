@@ -26,6 +26,20 @@ $prefixes: webkit !default;
     @include prefix($property, $value, $prelist)
 }
 
+@mixin transition($args...) {
+    @include prefix(transition, unquote(#{$args}));
+}
+
+@mixin transform($args...) {
+    @include prefix(transform, unquote(#{$args}));
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
 // @mixin vendorize($property, $value, $keyframe: false){
 //     @if $keyframe != false{
 //         #{$prefix+$property}: $value;
