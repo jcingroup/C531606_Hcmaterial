@@ -54,35 +54,41 @@ $one_col: 100% / $cols;
     // }
 
     & + & {
-        margin-top: 3%;
+        margin: 1% 0;
     }
 
-    @at-root p#{&} {
-        margin-top: 0;
-    }
+    // @at-root p#{&} {
+    //     margin-top: 0;
+    // }
 }
 
-// %col-padding {
-//     padding-left: $gutter/2;
-//     padding-right: $gutter/2;
-// }
+[class*="col-"] {
+    // float: left;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: $gutter/2;
+    padding-right: $gutter/2;
 
-[data-col="first"] { padding-left: 0; }
-[data-col="last"]  { padding-right: 0; }
+    // inline-block模式時 刪除多出間距
+    margin-right: -4px;
 
-// [class*="col-"] {
-//     // float: left;
-//     display: inline-block;
-//     vertical-align: top;
+    @if $lte7 {
+        *display: inline;
+        zoom: 1
+    }
+    &:first-child { padding-left: 0; }
+    &:last-child { padding-right: 0; }
+}
 
-//     // inline-block模式時 刪除多出間距
-//     margin-right: -4px;
+[data-col*="first"],
+[data-col*="1-2"] .col-6:nth-of-type(2n+1),
+[data-col*="1-3"] .col-4:nth-of-type(3n+1),
+[data-col*="1-4"] .col-3:nth-of-type(4n+1) { padding-left: 0; }
+[data-col*="last"],
+[data-col*="1-2"] .col-6:nth-of-type(2n),
+[data-col*="1-3"] .col-4:nth-of-type(3n),  { padding-right: 0; }
+[data-col*="1-4"] .col-3:nth-of-type(4n)  { padding-right: 0; }
 
-//     @if $lte7 {
-//         *display: inline;
-//         zoom: 1
-//     }
-// }
 
 // 等比例(1/3)
 // @include make-col-ratio(3);

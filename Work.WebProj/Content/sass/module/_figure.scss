@@ -2,16 +2,17 @@
 
 $figure-color:            null !default;
 $figure-bg:               null !default;
-$figure-border:           1px solid $brand-gray !default;
-$figure-text-align:       left !default;
+$figure-border:           null !default;
+$figure-text-align:       null !default;
 
-$figure-width:            31% !default;
-$figure-height:           180px !default;
+$figure-width:            null !default;
+$figure-height:           null !default;
 $figure-min-width:        null !default;
 $figure-max-width:        null !default;
-$figure-mg:               2% 1% !default;
+$figure-mg:               null !default;
 $figure-pd:               null !default;
-$figure-effect:           all .3s !default;
+$figure-effect:           null !default;
+$figure-inline-hack:      null !default;
 
 // 圖片樣式
 $figure-img-full:         true !default;
@@ -37,7 +38,7 @@ figure {
     // float: left;
     display: inline-block;
     vertical-align: top;
-    // margin-right: -4px;
+    @if $figure-inline-hack { margin-right: -4px; }
 
     @if $figure-width      { width: $figure-width; }
     @if $figure-height     { height: $figure-height; }

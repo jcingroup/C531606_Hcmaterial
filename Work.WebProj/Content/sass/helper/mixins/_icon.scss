@@ -11,7 +11,7 @@
     }
     @if $pos {
         position: relative;
-        padding-#{$direction}: $size * 2;
+        padding-#{$direction}: $size * 3;
     }
 }
 

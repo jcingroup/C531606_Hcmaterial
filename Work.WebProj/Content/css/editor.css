@@ -215,8 +215,8 @@ a {
   color: #4C4C4C;
   text-decoration: none;
   blur: expression(this.onFocus=this.blur());
-  -webkit-transition: color .35s, background .3s;
-  transition: color .35s, background .3s; }
+  -webkit-transition: color 0.35s, background 0.3s;
+  transition: color 0.35s, background 0.3s; }
   a:hover, a:active, a.current {
     color: #228aac; }
   a:focus {
@@ -231,9 +231,6 @@ img {
   img.float-r {
     margin-left: 25px;
     margin-bottom: 25px; }
-
-.font-sp {
-  font-family: "Open Sans", sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Microsoft Jhenghei", \5FAE\8EDF\6B63\9ED1\9AD4, Verdana, Helvetica, Arial, sans-serif;

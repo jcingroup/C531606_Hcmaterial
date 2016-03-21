@@ -12,39 +12,41 @@
 
     <form action="" class="contact-form col-7" id="ContactUsInfo">
 
-        <p class="row">
-            <div class="col-6">
-                <label for="m_name">* 聯絡人</label>
+        <div class="row">
+            <label class="col-6">
+                <em class="text-error">*</em> 聯絡人
                 <input type="text" id="m_name" required>
-            </div>
+            </label>
 
-            <div class="col-6">
-                <label for="m_company">公司名稱</label>
+            <label class="col-6">
+                公司名稱
                 <input type="text" id="m_company">
-            </div>
-        </p>
+            </label>
+        </div>
 
-        <p class="row">
-            <div class="col-6">
-                <label for="m_tel">聯絡電話</label>
+        <div class="row">
+            <label class="col-6">
+                聯絡電話
                 <input type="tel" id="m_tel">
-            </div>
-            <div class="col-6">
-                <label for="m_fax">聯絡傳真</label>
-                <input type="tel" id="m_fax">
-            </div>
-        </p>
+            </label>
 
-        <p class="row">
-            <div class="col-6">
-                <label for="m_city">城市</label>
+            <label class="col-6">
+                聯絡傳真
+                <input type="tel" id="m_fax">
+            </label>
+        </div>
+
+        <div class="row">
+            <label class="col-6">
+                城市
                 <input type="text" id="m_city">
-            </div>
-            <div class="col-6">
-                <label for="m_email">* 電子信箱</label>
+            </label>
+
+            <label class="col-6">
+                <em class="text-error">*</em> 電子信箱
                 <input type="email" id="m_email" required>
-            </div>
-        </p>
+            </label>
+        </div>
 
         <label for="m_content">您的意見</label>
         <textarea rows="5" id="m_content"></textarea>
@@ -57,12 +59,15 @@
         <button class="btn">發送</button>
     </form>
 
-    <ul class="list-dot col-4 contact">
-        <li>電話: 886-3-4191222</li>
-        <li>傳真: 886-3-4192333 </li>
-        <li>地址：桃園市平鎮區工業一路2-3號 </li>
-        <li>E-mail：hirose@hstech.com.tw </li>
-        <li>網址：http://www.hstech.com.tw</li>
-    </ul>
+    <div class="contact col-5">
+        <img src="~/Content/images/ContactUs/map.gif" alt="">
+        <!-- <ul class="list-dot">
+            <li>電話: 886-3-4191222</li>
+            <li>傳真: 886-3-4192333 </li>
+            <li>地址：桃園市平鎮區工業一路2-3號 </li>
+            <li>E-mail：hirose@hstech.com.tw </li>
+            <li>網址：http://www.hstech.com.tw</li>
+        </ul> -->
+    </div>
 
 </section>

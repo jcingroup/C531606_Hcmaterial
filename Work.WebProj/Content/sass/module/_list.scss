@@ -11,12 +11,13 @@
     @extend %list-unstyled;
 
     li {
-        line-height: 1.75;
         @include icon-dot(left, 5px, lighten($brand-secondary, 15%), left 0);
+        line-height: 1.75;
+        margin-bottom: $gutter/2;
     }
 }
 .list-dot li::before {
-    top: 40%;
+    top: 12px;
 }
 
 .list-number li {

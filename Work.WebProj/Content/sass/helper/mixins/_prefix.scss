@@ -31,7 +31,7 @@ $prefixes: webkit !default;
 }
 
 @mixin transform($args...) {
-    @include prefix(transform, unquote(#{$args}));
+    @include prefix(transform, unquote(#{$args}), ms webkit);
 }
 
 @mixin opacity($opacity) {

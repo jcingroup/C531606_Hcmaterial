@@ -20,7 +20,13 @@ $swiper-button:        true !default;
     width: 100%;
     height: 100%;
 
-    img { @include pos-center; }
+    img {
+        max-width: none;
+        min-height: 100%;
+        @include pos-center(true, false);
+        // @include absolute(left 50%);
+        // @include transform(translateX(-50%));
+    }
 }
 
 // 分頁圓點

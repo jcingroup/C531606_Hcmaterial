@@ -11,9 +11,13 @@ $font-size-h2:            28px;
 $swiper-pagination:       false;
 
 // module/figure
-$figure-img-full:         false;
 $figure-img-width:        100%;
 $figure-effect:           box-shadow .3s;
+$figure-border:           1px solid #f1f1f1;
+$figure-text-align:       left;
+$figure-width:            31%;
+$figure-height:           245px;
+$figure-mg:               2% 1%;
 
 
 @import "helper/function";
@@ -46,9 +50,6 @@ $figure-effect:           box-shadow .3s;
 // == banner
 #banner {
     height: 200px;
-
-    .swiper-slide { height: 100%; }
-    img { min-height: 100%; }
 }
 
 
@@ -84,12 +85,19 @@ $pro-nav-mg:     20px;
     @extend %clearfix;
     @extend %list-inline;
     // display: inline-block;
-    background: url(#{$img-path}/Products/sub-nav-bg2.gif) right bottom no-repeat;
-    padding-right: 168px;
+    // background: url(#{$img-path}/Products/sub-nav-bg2.gif) right bottom no-repeat;
+    // padding-right: 168px;
     padding-bottom: 20px;
     margin: $gutter+10 0 0;
     position: relative;
     z-index: 2;
+
+    @include el(before) {
+        background: url(#{$img-path}/Products/sub-nav-bg2.gif) 0 0 no-repeat;
+        height: 48px;
+        width: 188px;
+        @include absolute(top 60px left 964px);
+    }
 
     > li {
         float: left;
@@ -147,7 +155,7 @@ $pro-nav-mg:     20px;
 }
 
 
-// 正極材料分類選單
+// 鋰電池分類選單
 .catalog {
     margin-top: 70px;
     a {
@@ -203,16 +211,7 @@ $pro-nav-mg:     20px;
         &:nth-of-type(1) { margin-right: 6px; }
     }
 }
-// .row {
-//     span {
-//         margin-right: 8px;
-//         color: darken($brand-gray, 20%);
-//     }
-//     em {
-//         font-style: normal;
-//     }
-// }
-// .AboutUs .row dt { margin-right: $gutter; }
+
 
 // == News
 figure {
@@ -224,49 +223,43 @@ figure {
 }
 figcaption {
     background: #fff;
-    margin-top: 80px;
+    margin-top: $figure-height - 88px;
     padding: $gutter - 5;
 
     small { display: block;  margin-bottom: 10px; }
 }
 
+// == Join Us 人力資源
+.pic-list {
+    @extend %list-unstyled;
 
+    li {
+        float: left;
+        margin-top: 1%;
+        margin-right: 1%;
+        max-width: percentage(1/4) - 1;
+    }
+    span { display: block; }
+}
+.title {
+    display: block;
+    width: 100%;
+    margin-top: 2%;
+    font-size: em(18px);
+    color: $error;
+}
 
 // == Contact Us
 .contact-form {
-    .col-6 {
-        &:nth-of-type(odd) { padding-right: 10px; }
-        &:nth-of-type(even) { padding-left: 10px; }
-    }
+    padding-right: 20px;
     button { margin: 15px 0; }
 
     @include mq-max(tablet) {
-        float: none;
         width: 100%;
     }
 }
 
 .contact {
-    margin-top: 45px;
-    padding-left: 30px;
+    // margin-top: 45px;
+    // padding-left: 30px;
 }
-
-// #map-canvas {
-//     float: right;
-//     width: 46%;
-//     height: 400px;
-//     margin: 0;
-// }
-
-// // 路線選單
-// #floating-panel {
-//     @include absolute(left 50% top 10px);
-//     margin-left: -90px;
-//     background: #fff;
-//     border-radius: 2px;
-//     padding: 0 5px 0 10px;
-//     font-size: em(13px);
-//     line-height: 31px;
-//     color: #666;
-// }
-// #mode { border: none; }
