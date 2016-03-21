@@ -9,12 +9,15 @@
         // content 是否要有值
         @if $content {
             content: $content;
-        } @else {
-            @extend %pseudo;
         }
-        @if $display {
-            display: $display;
+        @else {
+            @include mixin-dryer('pseudo') {
+                content: '';
+            }
         }
+        display: if($display, $display, null);
+        // @if $display {
+        // }
         @content;
     }
 }

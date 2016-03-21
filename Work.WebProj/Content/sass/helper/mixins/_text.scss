@@ -12,10 +12,13 @@
 
 // 文字溢位出現省略號,要設寬度
 @mixin text-overflow($width:100%) {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     width: $width;
+
+    @include mixin-dryer('text-overflow') {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 }
 
 // 文字邊框 ex. @include stroke(2,#fff);

@@ -3,17 +3,6 @@
 // selector::類別名稱(class)
 // -----------------------------------------------------------------
 
-@mixin selector($class, $map: $pages) {
-
-    $selector: ();
-    @each $item in $map {
-        $selector: append($selector, unquote($class), comma);
-    }
-
-    #{$selector} {
-        @content;
-    }
-}
 
 // 繼承名稱用-連結 使用方法:
 // .swiper {

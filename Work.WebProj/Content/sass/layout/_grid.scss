@@ -15,6 +15,7 @@ $one_col: 100% / $cols;
 
         #{$selector} {
             width: ($one_col * $i);
+            // @include col($i, $cols, $first: true, $last: true);
         }
     }
 }
@@ -33,8 +34,7 @@ $one_col: 100% / $cols;
 @mixin make-col-ratio($num) {
     @for $i from 1 through ($num - 1) {
         .col-#{$i}-#{$num} {
-            width: percentage(1 / $num)*$i;
-            @extend %col-padding;
+            @include col($i, $num);
         }
     }
 }
@@ -42,11 +42,6 @@ $one_col: 100% / $cols;
 
 // output
 // ------------------------------------------------------------
-%col-padding {
-    padding-left: $gutter/2;
-    padding-right: $gutter/2;
-}
-
 .row {
     @extend %clearfix;
     // @extend %center;
@@ -58,27 +53,39 @@ $one_col: 100% / $cols;
     //     margin-bottom: $gutter;
     // }
 
-    margin-top: 0;
-    margin-bottom: $gutter/2;
-}
+    & + & {
+        margin-top: 3%;
+    }
 
-
-[class*="col-"] {
-    // float: left;
-    display: inline-block;
-    vertical-align: top;
-
-    // inline-block模式時 刪除多出間距
-    margin-right: -4px;
-
-    @if $lte7 {
-        *display: inline;
-        zoom: 1
+    @at-root p#{&} {
+        margin-top: 0;
     }
 }
 
+// %col-padding {
+//     padding-left: $gutter/2;
+//     padding-right: $gutter/2;
+// }
+
+[data-col="first"] { padding-left: 0; }
+[data-col="last"]  { padding-right: 0; }
+
+// [class*="col-"] {
+//     // float: left;
+//     display: inline-block;
+//     vertical-align: top;
+
+//     // inline-block模式時 刪除多出間距
+//     margin-right: -4px;
+
+//     @if $lte7 {
+//         *display: inline;
+//         zoom: 1
+//     }
+// }
+
 // 等比例(1/3)
-@include make-col-ratio(3);
+// @include make-col-ratio(3);
 @include make-col-ratio(5);
 
 

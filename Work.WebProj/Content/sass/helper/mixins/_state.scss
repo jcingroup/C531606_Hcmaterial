@@ -1,5 +1,35 @@
 @charset "UTF-8";
 
+@mixin selector($element, $values...) {
+
+    $selector: ();
+    $key: ();
+
+    @each $value in $values {
+
+        @if type-of($values) == list {
+            $i: index($values, $value);
+
+            $id: if($element == a ,
+                    '.#{$value} &:nth-of-type(#{$i})',
+                    '.#{$value} &:nth-of-type(#{$i}) > a');
+
+            $selector: $selector, unquote("#{$id}");
+
+            @include mixin-dryer($id) {
+                @content;
+            }
+        }
+        @else if type-of($values) == map {
+            // $key: $key, m-get($values, $value);
+            $selector: $selector, unquote(".#{$element}-#{map-keys($value)}");
+            .#{$element}-#{map-keys($value)} {
+                @content;
+            }
+        }
+    }
+}
+
 // 情境
 // @mixin state($color, $types: false) {
 //     $class: &;

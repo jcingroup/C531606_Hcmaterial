@@ -27,15 +27,6 @@
     @return $page;
 }
 
-@function selector($content: '&:nth-of-type(#{$i})') {
-    $selector: ();
-    @each $item in $pages {
-        $i: index($pages, $item);
-        $selector: append($selector, unquote(".#{$item} #{$content}"), comma);
-    }
-    @return $selector;
-}
-
 
 // var Maps
 // -----------------------------------------------------------------

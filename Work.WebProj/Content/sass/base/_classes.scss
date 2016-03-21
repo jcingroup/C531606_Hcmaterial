@@ -30,18 +30,17 @@
 }
 
 
-// 情境: var.scss> $states: true
+// 情境 helper/var/ $states: true 時才會輸出
 @if $states {
-
-    .text-white { @extend %text-white; }
+    .text-white { color: #fff; }
+    .bg-white { background-color: #fff; }
 
     @each $type, $color in $state-type {
         .text-#{$type} {
-            // @include state($color);
             color: $color;
         }
         .bg-#{$type} {
-            @extend %text-white;
+            @extend .text-white;
             background: $color;
         }
     }

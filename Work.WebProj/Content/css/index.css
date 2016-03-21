@@ -223,10 +223,8 @@ a {
     outline: none; }
 
 img {
+  max-width: 100%;
   vertical-align: middle; }
-  @media (max-width: 47.9375em) {
-    img {
-      width: 100%; } }
   img.float-l {
     margin-right: 25px;
     margin-bottom: 25px; }
@@ -296,12 +294,11 @@ hr {
   height: 0;
   border: none; }
 
-.clearfix::after, .wrap::after, #header::after, #footer::after, #main::after, .menu-trigger span::before, .menu-trigger span::after, .list-dot li::before, .list-number li::before, .hover-underline::before, .icon-arrow-down::before, #menu > li > a::before, .sub-nav a:nth-child(n+2)::before, #main::before, .sidebar::before {
-  content: ''; }
-
 .clearfix::after, .wrap::after, #header::after, #footer::after, #main::after {
   display: table;
   clear: both; }
+  .clearfix::after, .wrap::after, #header::after, #footer::after, #main::after, .menu-trigger span::before, .menu-trigger span::after, .list-dot li::before, .list-number li::before, .hover-underline::before, .icon-arrow-down::before, #menu > li > a::before, .sub-nav a:nth-child(n+2)::before, #main::before, .sidebar::before {
+    content: ''; }
 
 .circle, .list-dot li::before, .list-number li::before, .icon-tel::before, .icon-fax::before {
   border-radius: 50%; }
@@ -325,9 +322,6 @@ hr {
 
 .list-inline > li {
   display: inline-block; }
-
-.text-white, .bg-primary, .bg-gray, .bg-success, .bg-info, .bg-warn, .bg-error, .bg-orange {
-  color: #fff; }
 
 .float-l {
   float: left; }
@@ -353,6 +347,12 @@ hr {
 .text-line {
   border-bottom: 1px solid #12556D;
   padding-bottom: 15px; }
+
+.text-white, .bg-primary, .bg-gray, .bg-success, .bg-info, .bg-warn, .bg-error, .bg-orange {
+  color: #fff; }
+
+.bg-white {
+  background-color: #fff; }
 
 .text-primary {
   color: #368B39; }
@@ -657,7 +657,7 @@ hr {
   .btn:focus, .btn:active:focus, .btn.active:focus {
     outline: 1px solid;
     outline: 1px solid #42b4d9;
-    outline-offset: -2px; }
+    outline-offset: 1px; }
   .btn:active, .btn.active {
     outline: 0; }
   .btn.disabled, .btn[disabled], fieldset[disabled] .btn {

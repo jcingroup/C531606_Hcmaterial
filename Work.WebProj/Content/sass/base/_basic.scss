@@ -45,8 +45,8 @@ a {
 }
 
 img {
+    max-width: 100%;
     vertical-align: middle;
-    @include mq-max(break(tablet, -1)) { width: 100%; }
 
     &.float-l { margin-right: $gutter + 10; margin-bottom: $gutter + 10; }
     &.float-r { margin-left: $gutter + 10; margin-bottom: $gutter + 10; }
