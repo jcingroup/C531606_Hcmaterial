@@ -324,6 +324,7 @@
     <Content Include="Content\backstage\_admin\vendors\toastr.css" />
     <Content Include="Content\css\bootstrap-datetimepicker-build.css" />
     <Content Include="Content\css\editor.css" />
+    <Content Include="Content\css\font-awesome.css" />
     <Content Include="Content\css\grid.css" />
     <Content Include="Content\css\index.css" />
     <Content Include="Content\css\page.css" />
