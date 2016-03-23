@@ -82,12 +82,12 @@ $cursor-disabled:       not-allowed;
 // 情境狀態 + 配色
 $state-type: (
     primary:            $brand-primary,
-    gray:               #F0F1EC,
+    grays:               #F0F1EC,
     success:            $success,
     info:               $brand-secondary,
     warn:               $warning,
     error:              $error,
-    orange:             #EA6A23
+    oranges:             #EA6A23
 );
 
 // 合併配色

@@ -24,8 +24,6 @@ $swiper-button:        true !default;
         max-width: none;
         min-height: 100%;
         @include pos-center(true, false);
-        // @include absolute(left 50%);
-        // @include transform(translateX(-50%));
     }
 }
 

@@ -332,7 +332,7 @@ hr {
   border-bottom: 1px solid #12556D;
   padding-bottom: 15px; }
 
-.text-white, .bg-primary, .bg-gray, .bg-success, .bg-info, .bg-warn, .bg-error, .bg-orange {
+.text-white, .bg-primary, .bg-grays, .bg-success, .bg-info, .bg-warn, .bg-error, .bg-oranges {
   color: #fff; }
 
 .bg-white {
@@ -344,10 +344,10 @@ hr {
 .bg-primary {
   background: #368B39; }
 
-.text-gray {
+.text-grays {
   color: #F0F1EC; }
 
-.bg-gray {
+.bg-grays {
   background: #F0F1EC; }
 
 .text-success {
@@ -374,10 +374,10 @@ hr {
 .bg-error {
   background: #C73677; }
 
-.text-orange {
+.text-oranges {
   color: #EA6A23; }
 
-.bg-orange {
+.bg-oranges {
   background: #EA6A23; }
 
 /*      table

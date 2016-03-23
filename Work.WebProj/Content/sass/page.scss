@@ -157,7 +157,7 @@ $pro-nav-mg:     20px;
 
 // 鋰電池分類選單
 .catalog {
-    margin-top: 70px;
+    // margin-top: 70px;
     a {
         @include circle(256px);
         background-image: url(#{$img-path}/Products/icon-catalog.png);
@@ -176,7 +176,7 @@ $pro-nav-mg:     20px;
 
             &:nth-of-type(1) { background-color: darken(color(success), 5%); }
             &:nth-of-type(2) { background-color: darken(color(warn), 5%); }
-            &:nth-of-type(3) { background-color: darken(color(orange), 5%); }
+            &:nth-of-type(3) { background-color: darken(color(oranges), 5%); }
         }
 
         &.current {
