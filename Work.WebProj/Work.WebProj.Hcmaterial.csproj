@@ -568,6 +568,7 @@
     <Content Include="Views\News\content.cshtml" />
     <Content Include="Views\Products\sidebar.cshtml" />
     <Content Include="Views\Products\Battery-catalog.cshtml" />
+    <Content Include="Views\News\content2.cshtml" />
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
