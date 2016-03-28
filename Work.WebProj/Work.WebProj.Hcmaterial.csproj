@@ -335,6 +335,7 @@
     <Content Include="Content\images\AboutUs\pic5.jpg" />
     <Content Include="Content\images\banner.gif" />
     <Content Include="Content\images\banner2.jpg" />
+    <Content Include="Content\images\banner3.jpg" />
     <Content Include="Content\images\ContactUs\map.gif" />
     <Content Include="Content\images\goTop.png" />
     <Content Include="Content\images\icon-menu.gif" />
@@ -343,6 +344,7 @@
     <Content Include="Content\images\icon-shape.gif" />
     <Content Include="Content\images\Index\banner.jpg" />
     <Content Include="Content\images\Index\banner2.jpg" />
+    <Content Include="Content\images\Index\banner3.jpg" />
     <Content Include="Content\images\Index\icon-plug.gif" />
     <Content Include="Content\images\Index\main.jpg" />
     <Content Include="Content\images\JoinUs\pic1-2.jpg" />
