@@ -50,6 +50,9 @@ $goTop-position:         bottom 30px right 10px !default;
     max-width: $max-width;
     margin: 0 ($gutter+10);
 
+    // 臨時
+    min-width: 1200px;
+
     @include mq(wider) { margin: 0 auto; }
 }
 
@@ -57,11 +60,11 @@ $goTop-position:         bottom 30px right 10px !default;
 %contain {
     @extend %clearfix;
 
-    @include mq-max(tablet) {
-        padding-left: $gutter;
-        padding-right: $gutter;
-        margin: 0;
-    }
+    // @include mq-max(tablet) {
+    //     padding-left: $gutter;
+    //     padding-right: $gutter;
+    //     margin: 0;
+    // }
 }
 
 .wrap {
@@ -82,10 +85,10 @@ $goTop-position:         bottom 30px right 10px !default;
     min-height: 100%;
     padding-bottom: $footer-height + $content-spacing; // 內容與footer間距
 
-    @include mq-max(phone) {
-        padding-bottom: 0;
-        min-height: auto;
-    }
+    // @include mq-max(phone) {
+    //     padding-bottom: 0;
+    //     min-height: auto;
+    // }
 }
 
 #header {
@@ -101,9 +104,9 @@ $goTop-position:         bottom 30px right 10px !default;
     min-height: $footer-height;
     margin-top: -($footer-height);
 
-    @include mq-max(phone) {
-        margin-top: 0;
-    }
+    // @include mq-max(phone) {
+    //     margin-top: 0;
+    // }
 }
 
 // header
@@ -116,10 +119,10 @@ $goTop-position:         bottom 30px right 10px !default;
     @include text-pic($logo-img, nth($logo-size,1), nth($logo-size,2));
     @include absolute($logo-position);
 
-    @include mq-max(break(desktop, -1)) {
-        left: 50%;
-        margin-left: -(nth($logo-size,1) / 2);
-    }
+    // @include mq-max(break(desktop, -1)) {
+    //     left: 50%;
+    //     margin-left: -(nth($logo-size,1) / 2);
+    // }
     // @include mq-max(break(phone, -1)) {
     //     right: -10px; left: auto;
     //     margin-left: 0;
@@ -217,80 +220,84 @@ $goTop-position:         bottom 30px right 10px !default;
     }
 }
 
+// 臨時
+.menu-trigger {
+    display: none;
+}
 
 // == 行動版主選單
-.push {
-    left: $menu-trigger-width;
-    overflow-y: hidden;
-    // .md-overlay {
-    //     opacity: 1;
-    //     visibility: visible;
-    //     left: $menu-trigger-width;
-    // }
-}
-.menu-trigger {
-    @extend %text-hide;
-    display: none;
-    cursor: pointer;
-    // z-index: z(overlay) + 1;
+// .push {
+//     left: $menu-trigger-width;
+//     overflow-y: hidden;
+//     // .md-overlay {
+//     //     opacity: 1;
+//     //     visibility: visible;
+//     //     left: $menu-trigger-width;
+//     // }
+// }
+// .menu-trigger {
+//     @extend %text-hide;
+//     display: none;
+//     cursor: pointer;
+//     // z-index: z(overlay) + 1;
 
 
-    position: relative;
-    left: 0; top: 20px;
-    overflow: hidden;
-    width: $menu-trigger-width;
-    height: $menu-trigger-height;
+//     position: relative;
+//     left: 0; top: 20px;
+//     overflow: hidden;
+//     width: $menu-trigger-width;
+//     height: $menu-trigger-height;
 
-    @include prefix(transition, background 0.3s);
-    @include prefix(apperance, none, webkit moz);
-    @include mq-max(break(desktop,-1)) { display: block; }
-    @include mq-max(break(phone, -1)) { top: 40px; }
+//     @include prefix(transition, background 0.3s);
+//     @include prefix(apperance, none, webkit moz);
+//     @include mq-max(break(desktop,-1)) { display: block; }
+//     @include mq-max(break(phone, -1)) { top: 40px; }
 
-    &:active, &.active {
-        background-color: darken($brand-primary, 10%);
-        span {
-            background: none;
-            &::before {
-                top: 0;
-                @include prefix(transform, rotate(45deg));
-            }
-            &::after {
-                bottom: 0;
-                @include prefix(transform, rotate(-45deg));
-            }
-            &::before, &::after {
-                @include prefix(transition-delay, '0, .3s');
-            }
-        }
-    }
+//     &:active, &.active {
+//         background-color: darken($brand-primary, 10%);
+//         span {
+//             background: none;
+//             &::before {
+//                 top: 0;
+//                 @include prefix(transform, rotate(45deg));
+//             }
+//             &::after {
+//                 bottom: 0;
+//                 @include prefix(transform, rotate(-45deg));
+//             }
+//             &::before, &::after {
+//                 @include prefix(transition-delay, '0, .3s');
+//             }
+//         }
+//     }
 
-    span {
-        @include absolute(left $menu-trigger-pd right $menu-trigger-pd top (($menu-trigger-height / 2) - ($menu-trigger-thickness / 2)));
-        display: block;
+//     span {
+//         @include absolute(left $menu-trigger-pd right $menu-trigger-pd top (($menu-trigger-height / 2) - ($menu-trigger-thickness / 2)));
+//         display: block;
 
-        background: $menu-trigger-color;
-        height: $menu-trigger-thickness;
-        margin: auto;
-        @include prefix(transition, background 0s 0.3s);
+//         background: $menu-trigger-color;
+//         height: $menu-trigger-thickness;
+//         margin: auto;
+//         @include prefix(transition, background 0s 0.3s);
 
-        @include el(all) {
-            width: 100%;
-            height: $menu-trigger-thickness;
-            background-color: $menu-trigger-color;
-            @include absolute(left 0);
-            @include prefix(transition-duration, '.3s, .3s');
-            @include prefix(transition-delay, '.3s, 0');
-        }
-        &::before {
-            top: -(($menu-trigger-height / 2) - ($menu-trigger-thickness / 2) - $menu-trigger-pd);
-            @include prefix(transition-property, 'top, transform');
-        }
-        &::after {
-            bottom: -(($menu-trigger-height / 2) - ($menu-trigger-thickness / 2) - $menu-trigger-pd);
-            @include prefix(transition-property, 'bottom, transform');
-        }
-    }
-}
+//         @include el(all) {
+//             width: 100%;
+//             height: $menu-trigger-thickness;
+//             background-color: $menu-trigger-color;
+//             @include absolute(left 0);
+//             @include prefix(transition-duration, '.3s, .3s');
+//             @include prefix(transition-delay, '.3s, 0');
+//         }
+//         &::before {
+//             top: -(($menu-trigger-height / 2) - ($menu-trigger-thickness / 2) - $menu-trigger-pd);
+//             @include prefix(transition-property, 'top, transform');
+//         }
+//         &::after {
+//             bottom: -(($menu-trigger-height / 2) - ($menu-trigger-thickness / 2) - $menu-trigger-pd);
+//             @include prefix(transition-property, 'bottom, transform');
+//         }
+//     }
+// }
 
 // 滾動到指定y軸時，讓指定物件固定位置
 // .fixed {

@@ -204,12 +204,7 @@ body {
   background: #F6F6F6;
   color: #4C4C4C;
   font-family: "Microsoft Jhenghei", \5FAE\8EDF\6B63\9ED1\9AD4, Verdana, Helvetica, Arial, sans-serif;
-  line-height: 1.25;
-  position: relative;
-  overflow-x: hidden;
-  left: 0;
-  -webkit-transition: left 0.35s;
-  transition: left 0.35s; }
+  line-height: 1.25; }
 
 a {
   color: #4C4C4C;

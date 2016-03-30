@@ -24,10 +24,10 @@ body {
     line-height: $line-height-base;
 
     // 手機版選單動畫
-    position: relative;
-    overflow-x: hidden;
-    left: 0;
-    @include prefix(transition, left .35s);
+    // position: relative;
+    // overflow-x: hidden;
+    // left: 0;
+    // @include prefix(transition, left .35s);
 }
 
 a {
