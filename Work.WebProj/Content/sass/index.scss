@@ -43,6 +43,7 @@ $swiper-pagination:       false;
 #main {
     margin: 13px;
     padding-bottom: 135px;
+    min-height: 553px;
 
     @include el(before) {
         @include absolute(left 0 top 0);

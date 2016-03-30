@@ -913,7 +913,8 @@ hr {
 
 #main {
   margin: 13px;
-  padding-bottom: 135px; }
+  padding-bottom: 135px;
+  min-height: 553px; }
   #main::before {
     display: block;
     position: absolute;

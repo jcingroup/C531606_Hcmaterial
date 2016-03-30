@@ -337,8 +337,6 @@
     <Content Include="Content\images\banner2.jpg" />
     <Content Include="Content\images\banner3.jpg" />
     <Content Include="Content\images\ContactUs\map.gif" />
-    <Content Include="Content\images\goTop.png" />
-    <Content Include="Content\images\icon-menu.gif" />
     <Content Include="Content\images\icon-menu.png" />
     <Content Include="Content\images\icon-menu2.png" />
     <Content Include="Content\images\icon-shape.gif" />
