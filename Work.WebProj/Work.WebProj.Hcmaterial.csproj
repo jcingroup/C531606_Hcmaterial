@@ -364,6 +364,8 @@
     <Content Include="Content\images\logo_s.gif" />
     <Content Include="Content\images\News\pic.jpg" />
     <Content Include="Content\images\News\pic2.jpg" />
+    <Content Include="Content\images\News\pic2_s.jpg" />
+    <Content Include="Content\images\News\pic_s.jpg" />
     <Content Include="Content\images\no-pic.gif" />
     <Content Include="Content\images\Products\Battery\p1-2-2.jpg" />
     <Content Include="Content\images\Products\Battery\p1-2-3.jpg" />

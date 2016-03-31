@@ -215,7 +215,10 @@ $pro-nav-mg:     20px;
 
 // == News
 figure {
-    img { transform: translateY(-20%); }
+    img {
+        // transform: translateY(-20%);
+        min-height: auto;
+    }
 
     &:hover {
         box-shadow: 0 0 20px $gray-light;

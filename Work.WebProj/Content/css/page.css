@@ -1167,7 +1167,7 @@ figcaption {
     margin-right: 6px; }
 
 figure img {
-  transform: translateY(-20%); }
+  min-height: auto; }
 figure:hover {
   box-shadow: 0 0 20px #777777; }
 
