@@ -535,28 +535,29 @@ figcaption {
   max-width: 1400px;
   margin: 0 25px;
   min-width: 1200px; }
-  @media (min-width: 87.5em) {
-    .wrap, #wrapper, #footer {
-      margin: 0 auto; } }
 
-#wrapper, #header, #footer, #main, .wrap {
+@media (max-width: 48em) {
+  .wrap, #header, #footer, #main {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0; } }
+
+#wrapper, #header, #footer, #main {
   position: relative; }
 
 #wrapper {
   min-height: 100%;
   padding-bottom: 264px; }
+  @media (max-width: 48em) {
+    #wrapper {
+      padding-bottom: 0;
+      min-height: auto;
+      margin: 0; } }
 
 #header {
   z-index: 4;
   height: 195px;
   background: #F6F6F6; }
-
-#footer {
-  z-index: 1;
-  background: #f1f1f1;
-  color: #323232;
-  min-height: 239px;
-  margin-top: -239px; }
 
 .logo {
   cursor: pointer;
@@ -611,6 +612,27 @@ figcaption {
 .menu-trigger {
   display: none; }
 
+.lang-nav {
+  position: absolute;
+  top: 23px;
+  right: 0; }
+  .lang-nav a {
+    color: #ABACA5;
+    font-size: 0.8125em;
+    margin-left: 10px; }
+    .lang-nav a:hover, .lang-nav a:active {
+      color: #1E7997; }
+
+#footer {
+  z-index: 1;
+  background: #f1f1f1;
+  color: #323232;
+  min-height: 239px;
+  margin-top: -239px; }
+  @media (max-width: 30em) {
+    #footer {
+      margin-top: 0; } }
+
 .swiper-slide {
   text-align: center;
   overflow: hidden;
@@ -620,11 +642,10 @@ figcaption {
     max-width: none;
     min-height: 100%;
     position: absolute;
-    top: 50%;
     left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
 
 .swiper-button-prev,
 .swiper-button-next {
@@ -983,17 +1004,6 @@ figcaption {
     .sub-nav a:nth-child(n+2):hover::before, .sub-nav a:nth-child(n+2):active::before, .sub-nav a:nth-child(n+2).current::before {
       left: -3px;
       opacity: 1; }
-
-.lang-nav {
-  position: absolute;
-  top: 23px;
-  right: 0; }
-  .lang-nav a {
-    color: #ABACA5;
-    font-size: 0.8125em;
-    margin-left: 10px; }
-    .lang-nav a:hover, .lang-nav a:active {
-      color: #1E7997; }
 
 #footer {
   padding: 25px 0 10px;

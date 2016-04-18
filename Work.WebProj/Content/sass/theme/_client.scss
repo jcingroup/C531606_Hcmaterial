@@ -139,20 +139,6 @@ $menu-icon: 0 -187px -377px -562px -749px;
     }
 }
 
-// 語系
-.lang-nav {
-    @include absolute(right 0 top 23px);
-
-    a {
-        color: #ABACA5;
-        font-size: em(13px);
-        margin-left: 10px;
-
-        &:hover, &:active {
-            color: $brand-secondary;
-        }
-    }
-}
 
 // 頁腳
 #footer {

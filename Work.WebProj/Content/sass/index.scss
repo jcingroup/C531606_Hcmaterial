@@ -41,44 +41,51 @@ $swiper-pagination:       false;
 
 // == main
 #main {
+    $mih: 430px; // old 553px
+
     margin: 13px;
     padding-bottom: 135px;
-    min-height: 553px;
+    min-height: $mih;
 
     @include el(before) {
         @include absolute(left 0 top 0);
-        background: url(#{$img-path2}/main.jpg) right 0 no-repeat;
+        background: url(#{$img-path2}/main.jpg) right bottom no-repeat;
         width: 78.8%;
         max-width: 1061px;
-        height: 553px;
+        height: $mih;
     }
 }
 #slider {
-    height: 212px;
-    header, h3, p {
-        @include absolute(left 50%);
-    }
-    header {
-        font-size: em($font-size-h2);
-        color: $success;
-        top: 50%;
-        margin-left: -357px;
-    }
+    // height: 212px;
+    // header, h3, p {
+    //     @include absolute(left 50%);
+    // }
+    // header {
+    //     font-size: em($font-size-h2);
+    //     color: $success;
+    //     top: 50%;
+    //     margin-left: -357px;
+    // }
+    text-align: left;
+
+    h3, p { position: relative; float: left; }
     h3 {
         color: darken($brand-secondary, 16%);
-        margin-left: -352px;
+        margin-top: 34px;
+        margin-left: 25px;
     }
     p {
         font-size: em(22px);
         color: darken($brand-secondary, 9%);
-        top: 14%;
-        margin-left: 20px;
+        margin-top: 15px;
+        margin-left: 15px;
     }
 }
 .sidebar {
     position: relative;
     // padding-left: 20px;
 
+    // more的插頭底圖
     @include el(before) {
         @include absolute(left 0 right 70% bottom 11px);
         background: url(#{$img-path2}/icon-plug.gif) right center no-repeat;
@@ -86,7 +93,7 @@ $swiper-pagination:       false;
     }
 
     ul {
-        margin-bottom: 60px;
+        margin-bottom: 50px;
         margin-left: 20px;
     }
     li {
