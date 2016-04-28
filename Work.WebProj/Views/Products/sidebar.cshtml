@@ -1,12 +1,11 @@
 ﻿
-<ul class="pro-nav">
+<button class="pro-mobile-nav" data-dropdown="btn">
+    <span>產品選單 <i class="icon-chevron-small-down"></i></span>
+</button>
+
+<ul class="pro-nav" data-dropdown="content">
     <li class="@ViewBag.ProNavClass">
         <a href="~/Products/Battery_intro">正極材料</a>
-        <nav class="pro-sub-nav">
-            <a href="~/Products/Battery">磷酸鋰鐵錳 LMFP</a>
-            <a href="~/Products/Battery2">磷酸鋰鐵 LiFePO4</a>
-            <a href="~/Products/Battery3">高鎳三元 LNMC</a>
-        </nav>
     </li>
     <li class="@ViewBag.ProNav2Class">
         <a href="~/Products/Technology">核心技術</a>

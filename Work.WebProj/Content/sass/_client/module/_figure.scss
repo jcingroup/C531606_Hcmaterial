@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+$figure-color:            null !default;
+$figure-bg:               null !default;
+$figure-border:           null !default;
+$figure-text-align:       null !default;
+
+$figure-width:            null !default;
+$figure-height:           null !default;
+$figure-min-width:        null !default;
+$figure-max-width:        null !default;
+$figure-mg:               null !default;
+$figure-pd:               null !default;
+$figure-effect:           null !default;
+$figure-inline-hack:      null !default;
+
+// 圖片樣式
+$figure-img-full:         true !default;
+$figure-img-width:        null !default;
+$figure-img-height:       null !default;
+
+$figure-title-size:       null !default;
+$figure-title-color:      $brand-secondary !default;
+
+$figure-p-size:           null !default;
+$figure-p-color:          null !default;
+
+// common style
+figcaption, figure > a {
+    @include size(100%);
+    @include absolute(left 0 top 0);
+}
+
+figure {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    // float: left;
+    display: inline-block;
+    vertical-align: top;
+    @if $figure-inline-hack { margin-right: -4px; }
+
+    @if $figure-width      { width: $figure-width; }
+    @if $figure-height     { height: $figure-height; }
+    @if $figure-max-width  { max-width: $figure-max-width; }
+    @if $figure-min-width  { min-width: $figure-min-width; }
+    @if $figure-mg         { margin: $figure-mg; }
+    @if $figure-pd         { padding: $figure-pd; }
+    @if $figure-text-align { text-align: $figure-text-align; }
+
+    @if $figure-color      { color: $figure-color; }
+    @if $figure-bg         { background: $figure-bg; }
+    @if $figure-border     { border: $figure-border; }
+
+    @if $figure-effect     { @include transition($figure-effect) }
+
+    img {
+        position: relative;
+
+        @if $figure-img-full {
+            min-width: 100%;
+            min-height: 100%;
+        }
+        @if $figure-img-width  { width: $figure-img-width; }
+        @if $figure-img-height { height: $figure-img-height; }
+    }
+
+    > a {
+        z-index: z(figure);
+        white-space: nowrap;
+        opacity: 0;
+    }
+
+    // RWD
+    // @include mq-max(break(desktop, -1)) {
+    //     float: none;
+    //     display: inline-block;
+    // }
+    @include mq-max(tablet) {
+        width: 48%;
+        max-width: none;
+        margin: 2% .5%; margin-bottom: $gutter;
+    }
+    @include mq-max(phone) {
+        width: 100%;
+        margin: 2% 0;
+    }
+}
+
+figcaption {
+    text-transform: uppercase;
+
+    @extend %effect-all;
+    @include prefix(backface-visibility, hidden);
+
+    &::before, &::after { pointer-events: none; }
+
+    // 描述
+    h4, p { margin: 0; }
+    h4 {
+        @if $figure-title-color { color: $figure-title-color; }
+        @if $figure-title-size  { font-size: em($figure-title-size); }
+    }
+    p {
+        @if $figure-p-color { color: $figure-p-color; }
+        @if $figure-p-size  { font-size: em($figure-p-size); }
+    }
+}
+
+// theme
+
+// 背景滿版(in index)
+// .img-full {
+
+//     img {
+//         @include prefix(transition, 'transform 1s, opacity .6s');
+//         opacity: .15;
+//     }
+// }
+
+// .quick-nav {
+//     letter-spacing: 2px;
+
+//     &:nth-of-type(1) { background: #4D96AA; } //old:043969
+//     &:nth-of-type(2) { background: #416C95; } //old:015267
+
+//     p {
+//         @include prefix(transition, background .5s);
+//         @include prefix(transform, translateX(-50%));
+//     }
+//     &:hover, &:active {
+//         &:nth-of-type(1) { background: lighten(#4D96AA, 4%); } //old:043969
+//         &:nth-of-type(2) { background: lighten(#416C95, 4%); } //old:015267
+//         p {
+//             background: rgba($gray-base, .3);
+//             opacity: 1;
+//         }
+//     }
+// }
+
+// 標題置底(in products series)
+// .over-color {
+//     border-left: 1px solid darken($brand-gray, 5%);
+//     min-width: $figure-min-width;
+
+//     &:first-child { border-left: none; }
+
+//     img {
+//         min-width: 62%;
+//         min-height: 62%;
+//         margin-top: -8%;
+//         @include prefix(transition, 'opacity .5s');
+//     }
+//     p {
+//         @include prefix(transition, 'opacity .3s, top .5s');
+//         opacity: 0;
+//     }
+//     span { margin: 3px; }
+//     &:hover, &:active {
+//         p { opacity: 1; top: 35% }
+//         img { opacity: .25 }
+//         h4 { color: $brand-primary; }
+//     }
+
+//     @include mq-max(phone) { width: 85%; }
+// }

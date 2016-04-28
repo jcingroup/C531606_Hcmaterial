@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+
+/*      layout
+-----------------------------------------------------------------------*/
+// 置中(有最大寬度限制,非滿版才需要)
+%center {
+    max-width: $max-width;
+    margin: 0 ($gutter+21);
+
+    // 臨時
+    // min-width: 1200px;
+
+    @include mq(wider) { margin: 0 auto; }
+    @include mq-max(tablet) { margin: 0; }
+}
+
+// RWD容器
+%contain {
+    @extend %clearfix;
+
+    @include mq-max(tablet) {
+        padding-left: $gutter;
+        padding-right: $gutter;
+    }
+}
+
+html, body {
+    text-align: center;
+    height: 100%;
+}
+
+.wrap {
+    @extend %center;
+    @extend %contain;
+}
+
+#header, #footer, #main {
+    @extend %contain;
+}
+
+#wrapper, #header, #footer, #main {
+    position: relative;
+}
+
+#wrapper {
+    @if $lte7 { _height: 100%; }
+    min-height: 100%;
+    padding-bottom: $footer-height + $content-spacing; // 內容與footer間距
+
+    @if $wrapper-bg {
+        background: $wrapper-bg;
+    }
+
+    // 專案樣式
+    @extend %center;
+}
+
+
+// header
+// ----------------------------------------------------------------------
+#header {
+    @if $header-bg { background: $header-bg; }
+    height: $header-height;
+    z-index: z(header);
+
+    // 專案樣式
+    @include el(before) {
+        @include absolute($menu-pos);
+        background: $wrapper-bg;
+        height: $menu-height;
+    }
+    @include mq-max(break(desktop, -1)) {
+        height: $header-mobile-height;
+        &::before { top: 0; height: $header-mobile-height; }
+    }
+}
+
+.logo {
+    cursor: pointer; cursor: hand; // for ie
+    z-index: z(logo);
+
+    @include text-pic($logo-img, nth($logo-size,1), nth($logo-size,2));
+    @include absolute($logo-pos);
+
+    @include mq-max(break(desktop, -1)) {
+        @include pos-center;
+        background-size: contain;
+        height: 85%;
+    }
+}
+
+
+// footer 頁腳
+// ----------------------------------------------------------------------
+$foot-pd: ($gutter - 3)*2;
+
+#footer {
+    @if $footer-bg { background: $footer-bg; }
+    color: $footer-color;
+    min-height: $footer-height;
+    margin-top: -($footer-height);
+    z-index: z(footer);
+
+    // 專案樣式
+    @extend %center;
+    padding: 25px 0 10px;
+    text-align: left;
+    font-size: em(15px);
+
+    dt {
+        color: $success;
+        font-size: em(18px);
+        margin-bottom: $gutter;
+        letter-spacing: 1px;
+    }
+    nav {
+        padding-left: $foot-pd;
+    }
+}
+
+.foot-nav {
+    a {
+        display: block;
+        margin: 8px 0;
+
+        @include mq-max(break(phone,-1)) {
+            display: inline-block;
+            margin: 5px 0;
+            padding: 0 7px;
+            border-left: 1px solid #ccc;
+
+            &:first-child {
+                padding-left: 0;
+                border-left: none;
+            }
+        }
+    }
+    @include mq-max(break(phone,-1)) {
+        dl {
+            display: block;
+            width: auto;
+            padding: 0;
+            margin-bottom: $gutter;
+            // margin-left: $foot-pd;
+        }
+        @at-root #footer #{&} dt {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.contacts {
+    padding-right: $foot-pd;
+
+    dd {
+        margin-bottom: $gutter;
+        &:nth-of-type(n+3) { clear: both; }
+        @include mq-max(break(phone,-1)) { margin-bottom: 10px; }
+    }
+
+    @include mq-max(tablet) {
+        margin-left: 0;
+        padding-left: $foot-pd
+    }
+}
+.icon-tel, .icon-fax {
+    float: left;
+
+    @include mq-max(break(desktop,-1)) { float: none; }
+
+    @include el(before, inline-block, 'T') {
+        @include circle(21px, center, #B2B2B2);
+        color: #E4E2D0;
+        margin-right: 5px;
+    }
+}
+.icon-fax {
+    margin-left: 20px;
+
+    @include mq-max(break(desktop,-1)) { margin-left: 0; }
+
+    &::before { content: 'F'}
+}
+
+.copyright {
+    border-top: 1px solid darken($footer-bg, 5%);
+    font-size: em(12px);
+    color: #7F7F7F;
+    padding: 10px $foot-pd;
+
+    em {
+        @include text-pic('logo_s.gif',41px,27px);
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+}

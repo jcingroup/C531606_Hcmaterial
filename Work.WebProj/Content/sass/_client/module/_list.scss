@@ -1,0 +1,20 @@
+﻿@charset "UTF-8";
+
+// list
+// ------------------------------------------------------------
+.list-unstyled { @extend %list-unstyled; }
+.list-inline { @extend %list-inline; }
+
+.list-dot {
+    $font-size: 15px;
+
+    @extend %list-unstyled;
+
+    li {
+        @include icon-dot(left, 5px, lighten($brand-secondary, 15%), left 0);
+        line-height: 1.75;
+
+        & + & { margin-top: $gutter/2; }
+        &::before { top: 12px; }
+    }
+}

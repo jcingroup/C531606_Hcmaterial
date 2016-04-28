@@ -25,19 +25,19 @@
     @include position(fixed, $args);
 }
 
-// $horizontal = 水平
-// $vertical = 垂直
-@mixin pos-center($horizontal: true, $vertical: true) {
-    @if $horizontal {
-        @include absolute(left 50%);
-        @include transform(translateX(-50%))
-    }
-    @if $vertical {
-        @include absolute(top 50%);
-        @include transform(translateY(-50%))
-    }
-    @if $horizontal and $vertical {
+// horizontal = 水平
+// vertical = 垂直
+@mixin pos-center($dir: all) {
+    @if $dir == all {
         @include absolute(left 50% top 50%);
-        @include transform(translate(-50%,-50%))
+        @include transform(translate(-50%,-50%));
+    }
+    @if $dir == horizontal {
+        @include absolute(left 50%);
+        @include transform(translateX(-50%));
+    }
+    @if $dir == vertical {
+        @include absolute(top 50%);
+        @include transform(translateY(-50%));
     }
 }

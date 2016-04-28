@@ -4,100 +4,135 @@
 // ------------------------------------------------------------
 $img-path2:               '../images/index';
 
+$content-spacing:         0;
 $font-size-h2:            70px;
-$font-size-h3:            40px;
-
-$swiper-pagination:       false;
+$font-size-h3:            37px;
 
 
 // import
 // ------------------------------------------------------------
+@import "_client/var"; // 覆蓋掉下面的變數
+
 @import "helper/function";
 @import "helper/var";
 @import "helper/mixins";
 
 @import "base/basic";
-@import "base/extend";
-@import "base/classes";
+@import "base/util";
 
-@import "layout/layout";
+@import "_client/layout";
+@import "_client/module";
 
-@import "module/list";
-@import "module/slider";
-@import "module/btn";
-@import "module/hover";
-
-@import "theme/client";
 
 
 // layout
 // ----------------------------------------------------------------------
 
-// == banner
-#banner {
-    height: 460px;
-}
-
-
 // == main
 #main {
-    $mih: 430px; // old 553px
+    padding: 13px;
+    padding-bottom: 10%;
+}
 
-    margin: 13px;
-    padding-bottom: 135px;
-    min-height: $mih;
+.content, .sidebar {
+    float: left;
 
-    @include el(before) {
-        @include absolute(left 0 top 0);
-        background: url(#{$img-path2}/main.jpg) right bottom no-repeat;
-        width: 78.8%;
-        max-width: 1061px;
-        height: $mih;
+    @include mq-max(break(phone-plus,-1)) {
+        float: none;
     }
 }
-#slider {
-    // height: 212px;
-    // header, h3, p {
-    //     @include absolute(left 50%);
-    // }
-    // header {
-    //     font-size: em($font-size-h2);
-    //     color: $success;
-    //     top: 50%;
-    //     margin-left: -357px;
-    // }
-    text-align: left;
 
-    h3, p { position: relative; float: left; }
+.content {
+    width: 65%;
+    background: #E6E6E6 url(#{$img-path2}/contentBg.gif) right bottom no-repeat;
+    text-align: left;
+    padding-top: 3%;
+    padding-bottom: 13%;
+
+    @include mq-max(break(wide,-1)) {
+        text-align: center;
+    }
+    @include mq-max(break(phone-plus,-1)) {
+        width: 100%;
+        padding-bottom: 16%;
+    }
+
+    @include el(after) {
+        background: url(#{$img-path2}/pic.png) right bottom no-repeat;
+        background-size: contain;
+        height: 60%;
+        max-height: 350px;
+
+        @include absolute(left 13px right 25.9% bottom -1%);
+
+        @include mq(wide) { height: 100%; bottom: -3.6%}
+        @include mq-max(break(phone-plus,-1)) {
+            top: 130px;
+            right: 13px;
+            bottom: none;
+            background-position: 0 0;
+            background-size: cover;
+            height: 158px;
+        }
+        @include mq-max(break(phone,-1)) { top: 110px; }
+    }
+
     h3 {
         color: darken($brand-secondary, 16%);
-        margin-top: 34px;
         margin-left: 25px;
+        margin-bottom: 0;
+
+        @include mq-max(break(phone-plus,-1)) {
+            font-size: em(26px);
+        }
     }
     p {
         font-size: em(22px);
         color: darken($brand-secondary, 9%);
-        margin-top: 15px;
         margin-left: 15px;
+
+        @include mq-max(break(wide,-1)) { margin-top: 15px; }
+        @include mq-max(break(phone-plus,-1)) { font-size: em(19px); }
+        @include mq-max(break(phone,-1)) { font-size: em(16px); }
+    }
+    h3, p {
+        float: left;
+
+        @include mq-max(break(wide,-1)) {
+            float: none;
+            margin-left: 0;
+        }
     }
 }
 .sidebar {
+    width: 35%;
     position: relative;
-    // padding-left: 20px;
 
-    // more的插頭底圖
+    @include mq-max(break(phone-plus,-1)) {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    // more的插頭icon
     @include el(before) {
-        @include absolute(left 0 right 70% bottom 11px);
-        background: url(#{$img-path2}/icon-plug.gif) right center no-repeat;
+        background: url(#{$img-path2}/icon-plug.png) right center no-repeat;
         height: 24px;
+
+        @include absolute(left 0 right 74% bottom 11px);
+
+        @include mq-max(tablet) { display: none; }
     }
 
     ul {
         margin-bottom: 50px;
         margin-left: 20px;
+
+        @include mq-max(break(phone-plus,-1)) {
+            margin-bottom: 20px;
+        }
     }
     li {
-        margin: 20px 0 35px;
+        margin: 24px 0;
         font-size: em(18px);
         a {
             @include el(after, inline-block, '...') {
@@ -114,6 +149,7 @@ $swiper-pagination:       false;
         color: lighten($success, 5%);
         font-style: normal;
         font-size: em(16px, 18px);
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 }
+

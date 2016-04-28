@@ -1,444 +1,56 @@
-html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%; }
-
-body {
-  margin: 0; }
-
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-  display: block; }
-
-audio, canvas, progress, video {
-  display: inline-block;
-  vertical-align: baseline; }
-
-audio:not([controls]) {
-  display: none;
-  height: 0; }
-
-[hidden], template {
-  display: none; }
-
-a {
-  background-color: transparent; }
-  a:active, a:hover {
-    outline: 0; }
-
-abbr[title] {
-  border-bottom: 1px dotted; }
-
-b, strong {
-  font-weight: bold; }
-
-dfn {
-  font-style: italic; }
-
-mark {
-  background: #ff0;
-  color: #000; }
-
-small {
-  font-size: 80%; }
-
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
-
-sup {
-  top: -0.5em; }
-
-sub {
-  bottom: -0.25em; }
-
-img {
-  border: 0; }
-
-svg:not(:root) {
-  overflow: hidden; }
-
-hr {
-  box-sizing: content-box;
-  height: 0; }
-
-pre {
-  overflow: auto; }
-
-code, kbd, pre, samp {
-  font-family: monospace, monospace;
-  font-size: 1em; }
-
-button, input, optgroup, select, textarea {
-  color: inherit;
-  font: inherit;
-  margin: 0; }
-
-button {
-  overflow: visible; }
-
-button, select {
-  text-transform: none; }
-
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer; }
-
-button[disabled],
-html input[disabled] {
-  cursor: default; }
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0; }
-
-input {
-  line-height: normal; }
-
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  padding: 0; }
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto; }
-
-input[type="search"] {
-  -webkit-appearance: textfield;
-  box-sizing: content-box; }
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
-
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
-
-legend {
-  border: 0;
-  padding: 0; }
-
-textarea {
-  overflow: auto;
-  vertical-align: top;
-  resize: vertical; }
-
-optgroup {
-  font-weight: bold; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-td, th {
-  padding: 0; }
-
-@media print {
-  *, *:before, *:after {
-    background: transparent !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important; }
-
-  a, a:visited {
-    text-decoration: underline; }
-
-  a[href]:after {
-    content: " (" attr(href) ")"; }
-
-  abbr[title]:after {
-    content: " (" attr(title) ")"; }
-
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: ""; }
-
-  pre, blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid; }
-
-  thead {
-    display: table-header-group; }
-
-  tr, img {
-    page-break-inside: avoid; }
-
-  img {
-    max-width: 100% !important; }
-
-  p, h2, h3 {
-    orphans: 3;
-    widows: 3; }
-
-  h2, h3 {
-    page-break-after: avoid; } }
-/*      basic elements
------------------------------------------------------------------------*/
-h1, h2, h3, h4, h5, h6, p, figure, form, blockquote {
-  margin: 0; }
-
-ul, ol, li, dl, dt, dd {
-  margin: 0;
-  padding: 0; }
-
-button {
-  outline: none;
-  border: none; }
-
-*, *::before, *::after {
-  box-sizing: border-box; }
-
-html, body {
-  text-align: center;
-  height: 100%; }
-
-body {
-  background: #F6F6F6;
-  color: #4C4C4C;
-  font-family: "Microsoft Jhenghei", \5FAE\8EDF\6B63\9ED1\9AD4, Verdana, Helvetica, Arial, sans-serif;
-  line-height: 1.25; }
-
-a {
-  color: #4C4C4C;
-  text-decoration: none;
-  blur: expression(this.onFocus=this.blur());
-  -webkit-transition: color 0.35s, background 0.3s;
-  transition: color 0.35s, background 0.3s; }
-  a:hover, a:active, a.current {
-    color: #228aac; }
-  a:focus {
-    outline: none; }
-
-img {
-  max-width: 100%;
-  vertical-align: middle; }
-  img.float-l {
-    margin-right: 25px;
-    margin-bottom: 25px; }
-  img.float-r {
-    margin-left: 25px;
-    margin-bottom: 25px; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Microsoft Jhenghei", \5FAE\8EDF\6B63\9ED1\9AD4, Verdana, Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  line-height: 1.1;
-  color: #44b048; }
-  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-    font-weight: normal;
-    line-height: 1;
-    color: #5d975f; }
-
-h1, h2, h3 {
-  margin-top: 1.25em;
-  margin-bottom: 0.625em; }
-  h1 small, h2 small, h3 small {
-    font-size: 65%; }
-
-h4, h5, h6 {
-  margin-top: 0.625em;
-  margin-bottom: 0.625em; }
-  h4 small, h5 small, h6 small {
-    font-size: 75%; }
-
-h1 {
-  font-size: 2.25em; }
-
-h2 {
-  font-size: 3.875em; }
-
-h3 {
-  font-size: 2.1875em; }
-
-h4 {
-  font-size: 1.125em; }
-
-h5 {
-  font-size: 1em; }
-
-h6 {
-  font-size: 0.875em; }
-
-p {
-  margin: 0 0 0.625em;
-  line-height: 1.5; }
-
-strong {
-  font-size: 1.0625em;
-  color: #368B39; }
-
-small {
-  font-size: 85%; }
-
-mark {
-  background-color: #fbdaac;
-  padding: .2em; }
-
-hr {
-  height: 0;
-  border: none; }
-
-.clearfix::after {
-  display: table;
-  clear: both; }
-  .clearfix::after {
-    content: ''; }
-
-.circle {
-  border-radius: 50%; }
-
-.full {
-  width: 100%;
-  max-width: 100%; }
-
-.half {
-  width: 49.5%; }
-
-.float-l {
-  float: left; }
-
-.float-r {
-  float: right; }
-
-.clear {
-  clear: both; }
-
-.hidden {
-  display: none; }
-
-.text-left {
-  text-align: left; }
-
-.text-right {
-  text-align: right; }
-
-.text-center {
-  text-align: center; }
-
-.text-line {
-  border-bottom: 1px solid #12556D;
-  padding-bottom: 15px; }
-
-.text-white, .bg-primary, .bg-grays, .bg-success, .bg-info, .bg-warn, .bg-error, .bg-oranges {
-  color: #fff; }
-
-.bg-white {
-  background-color: #fff; }
-
-.text-primary {
-  color: #368B39; }
-
-.bg-primary {
-  background: #368B39; }
-
-.text-grays {
-  color: #F0F1EC; }
-
-.bg-grays {
-  background: #F0F1EC; }
-
-.text-success {
-  color: #14AE11; }
-
-.bg-success {
-  background: #14AE11; }
-
-.text-info {
-  color: #1E7997; }
-
-.bg-info {
-  background: #1E7997; }
-
-.text-warn {
-  color: #F3991B; }
-
-.bg-warn {
-  background: #F3991B; }
-
-.text-error {
-  color: #C73677; }
-
-.bg-error {
-  background: #C73677; }
-
-.text-oranges {
-  color: #EA6A23; }
-
-.bg-oranges {
-  background: #EA6A23; }
-
-/*      table
------------------------------------------------------------------------*/
-table {
-  margin-bottom: 20px;
-  border: 1px solid #E4E5DC;
-  color: #12556D;
-  font-size: 1.0625em;
-  line-height: 1.5; }
-
-th, td {
-  text-align: center;
-  vertical-align: middle;
-  padding: 15px;
-  border: 1px solid #E4E5DC; }
-
-th {
-  color: #1E7997;
-  font-weight: normal; }
-
-td.item {
-  color: #7F7F7F; }
-
-tr:hover {
-  background-color: #f6f6f6; }
-  tr:hover td {
-    background-color: #f6f6f6; }
-
-caption {
-  padding-bottom: 30px;
-  color: #4C4C4C;
-  font-size: 1.25em;
-  line-height: 1.7;
-  text-align: left; }
-
-table.fixed {
-  table-layout: fixed;
-  word-wrap: break-word;
-  word-break: break-all; }
-
-.table-rwd {
-  overflow-x: auto;
-  min-height: 0.01%;
-  max-width: 1400px; }
-  .table-rwd table {
-    width: 100%; }
-  @media (max-width: 48em) {
-    .table-rwd {
-      width: 100%;
-      margin-bottom: 15px;
-      overflow-y: hidden;
-      -ms-overflow-style: -ms-autohiding-scrollbar; }
-      .table-rwd table {
-        margin-bottom: 0; }
-        .table-rwd table th, .table-rwd table td {
-          white-space: nowrap; } }
-
-h1, h2, h3, h4, h5, h6, p, blockquote,
-ul, ol, li, dl, dt, dd {
-  text-align: left; }
-
-h2 {
-  margin-top: 0;
-  margin-bottom: 20px; }
-
-p {
-  color: #333;
-  line-height: 1.9; }
+/*
+Error: File to import not found or unreadable: base/extend.
+       Load path: D:/VSTF2/C531606_Hcmaterial/Work.WebProj/Content/sass
+        on line 13 of D:\VSTF2\C531606_Hcmaterial\Work.WebProj\Content\sass\editor.scss
+
+8: @import "helper/function";
+9: @import "helper/var";
+10: @import "helper/mixins";
+11: 
+12: @import "base/basic";
+13: @import "base/extend";
+14: @import "base/classes";
+15: @import "base/table";
+16: 
+17: h1,h2,h3,h4,h5,h6,p,blockquote,
+18: ul,ol,li,dl,dt,dd { text-align: left; }
+
+Backtrace:
+D:\VSTF2\C531606_Hcmaterial\Work.WebProj\Content\sass\editor.scss:13
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:66:in `rescue in import'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:45:in `import'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:28:in `imported_file'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:37:in `css_import?'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:301:in `visit_import'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `with_base'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `map'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:157:in `visit'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:8:in `visit'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:36:in `css_tree'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:20:in `render'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:269:in `render'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:404:in `run'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
+D:/S_Tool/koala/rubygems/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
+D:/S_Tool/koala/bin/sass:18:in `load'
+D:/S_Tool/koala/bin/sass:18:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: base/extend.\A        Load path: D:/VSTF2/C531606_Hcmaterial/Work.WebProj/Content/sass\A         on line 13 of D:\VSTF2\C531606_Hcmaterial\Work.WebProj\Content\sass\editor.scss\A \A 8: @import \"helper/function\";\A 9: @import \"helper/var\";\A 10: @import \"helper/mixins\";\A 11: \A 12: @import \"base/basic\";\A 13: @import \"base/extend\";\A 14: @import \"base/classes\";\A 15: @import \"base/table\";\A 16: \A 17: h1,h2,h3,h4,h5,h6,p,blockquote,\A 18: ul,ol,li,dl,dt,dd { text-align: left; }"; }

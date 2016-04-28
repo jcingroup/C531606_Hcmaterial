@@ -5,24 +5,24 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    @* <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> *@
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>::@Resources.Res.System_FrontName::@ViewBag.Title</title>
     <!--[if lt IE 9]><script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script><![endif]-->
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-    <link rel="stylesheet" href="~/Content/css/font-awesome.css">
     <link rel="stylesheet" href="~/Content/css/swiper.min.css">
-    <link rel="stylesheet" href="~/Content/css/grid.css">
-    @RenderSection("css", false)
+    <link rel="stylesheet" href="~/Content/css/grid.css?v=@CommWebSetup.CacheVer">
     @if (ViewBag.IsFirstPage)
     {
-        <link rel="stylesheet" href="~/Content/css/index.css">
+        <link rel="stylesheet" href="~/Content/css/index.css?v=@CommWebSetup.CacheVer">
     }
     else
     {
-        <link rel="stylesheet" href="~/Content/css/page.css">
+        <link rel="stylesheet" href="~/Content/css/page.css?v=@CommWebSetup.CacheVer">
     }
+    <link rel="stylesheet" href="~/Content/css/icomoon.css?v=@CommWebSetup.CacheVer">
+    @RenderSection("css", false)
 </head>
 
 <body class="@ViewBag.BodyClass">
@@ -30,38 +30,16 @@
     <div id="wrapper">
 
         <header id="header">
-            <h1 onclick="location.href='@Url.Content("~/index")'" title="HOME" class="logo">@Resources.Res.System_FrontName</h1>
-            <button class="menu-trigger"><span>MENU</span></button>
-            <ul id="menu" class="list-inline">
-                <li><a href="~/AboutUs">公司簡介</a></li>
-                <li><a href="~/News">最新消息</a></li>
-                <li><a href="~/Products">電池材料</a>
-                    @* <ul class="sub-nav list-inline">
-                        <li>
-                            <a class="title" href="~/Products">正極材料</a>
-                            <a href="~/Products/Battery_intro">鋰電池正材料優缺點</a>
-                            <a href="~/Products/Battery"><small>次世代高電壓正極材料</small>磷酸鋰鐵錳 LMFP</a>
-                            <a href="~/Products/Battery2"><small>快速充放電正極材料</small>磷酸鋰鐵 LiFePO4</a>
-                            <a href="~/Products/Battery3"><small>高能量密度正極材料</small>高鎳三元 LNMC</a>
-                        </li>
-                        <li>
-                            <a class="title" href="~/Products/Technology">核心技術</a>
-                            <a href="~/Products/Technology#tab-1">高品質&穩定奈米材料</a>
-                            <a href="~/Products/Technology#tab-2">量產技術</a>
-                            <a href="~/Products/Technology#tab-3">技術資源</a>
-                        </li>
-                        <li>
-                            <a class="title" href="~/Products/Trend">市場趨勢</a>
-                            <a href="~/Products/Trend#tab-1">市場資訊</a>
-                            <a href="~/Products/Trend#tab-2">動力系統</a>
-                            <a href="~/Products/Trend#tab-3">儲能系統</a>
-                        </li>
-                        <li><a class="title" href="~/Products/Build">鋰電池組成</a></li>
-                    </ul> *@
-                </li>
-                <li><a href="~/JoinUs">人力資源</a></li>
-                <li><a href="~/ContactUs">聯絡我們</a></li>
-            </ul>
+            <h1 onclick="location.href='@Url.Content("~/index")'" title="回首頁" class="logo">@Resources.Res.System_FrontName</h1>
+            <button class="menu-trigger"><span class="icon-menu2">MENU</span></button>@* 手機menu *@
+            <nav id="menu">
+                <span class="icon-cross toggle"></span>@* 手機close menu *@
+                <a href="~/AboutUs"><i class="icon-trophy"></i>公司簡介</a>
+                <a href="~/News"><i class="icon-megaphone"></i>最新消息</a>
+                <a href="~/Products"><i class="icon-battery"></i>電池材料</a>
+                <a href="~/JoinUs"><i class="icon-power-plug"></i>人力資源</a>
+                <a href="~/ContactUs"><i class="icon-paper-plane"></i>聯絡我們</a>
+            </nav>
             <nav class="lang-nav">
                 <a href="@Url.Action("SetLanguage")?L=zh-TW&A=index">繁體中文</a>
                 <a href="@Url.Action("SetLanguage")?L=zh-CN&A=index">简体中文</a>
@@ -106,44 +84,42 @@
     </div><!-- wrapper //-->
 
     <footer id="footer">
-        <div class="row">
-            <nav class="col-6">
-               <dl class="col-4">
-                   <dt>INFORMATION</dt>
-                   <dd>
-                       <a href="~/AboutUs">關於我們</a>
-                       <a href="~/News">最新消息</a>
-                       <a href="~/ContactUs">聯絡我們</a>
-                   </dd>
-               </dl>
-               <dl class="col-4">
-                   <dt>PRODUCTS</dt>
-                   <dd>
-                       <a href="~/Products">正極材料</a>
-                       <a href="~/Products/Technology">核心技術</a>
-                       <a href="~/Products/Trend">市場趨勢</a>
-                       <a href="~/Products/Build">鋰電池組成</a>
-                   </dd>
-               </dl>
-               <dl class="col-4">
-                   <dt>JOIN US</dt>
-                   <dd>
-                       <a href="~/JoinUs/#tab-1">生活在泓辰</a>
-                       <a href="~/JoinUs/#tab-2">員工福利</a>
-                       <a href="~/JoinUs/#tab-3">社團</a>
-                       <a href="~/Content/download/record.doc">應徵人員資料表(下載)</a>
-                   </dd>
-               </dl>
-            </nav>
+        <nav class="foot-nav col-7 col-xs-12 col-lg-6">
+           <dl class="col-4">
+               <dt>INFORMATION</dt>
+               <dd>
+                   <a href="~/AboutUs">關於我們</a>
+                   <a href="~/News">最新消息</a>
+                   <a href="~/ContactUs">聯絡我們</a>
+               </dd>
+           </dl>
+           <dl class="col-4">
+               <dt>PRODUCTS</dt>
+               <dd>
+                   <a href="~/Products">正極材料</a>
+                   <a href="~/Products/Technology">核心技術</a>
+                   <a href="~/Products/Trend">市場趨勢</a>
+                   <a href="~/Products/Build">鋰電池組成</a>
+               </dd>
+           </dl>
+           <dl class="col-4">
+               <dt>JOIN US</dt>
+               <dd>
+                   <a href="~/JoinUs/#tab-1">生活在泓辰</a>
+                   <a href="~/JoinUs/#tab-2">員工福利</a>
+                   <a href="~/JoinUs/#tab-3">社團</a>
+                   <a href="~/Content/download/record.doc">應徵人員資料表(下載)</a>
+               </dd>
+           </dl>
+        </nav>
 
-            <dl class="contacts col-5 offset-1">
-                <dt>CONTACT US</dt>
-                <dd class="icon-tel">886-3-4191222</dd>
-                <dd class="icon-fax">886-3-4192333</dd>
-                <dd>桃園市平鎮區工業一路2-3號</dd>
-                <dd><a href="mailto:hirose@hstech.com.tw">hirose@hstech.com.tw</a></dd>
-            </dl>
-        </div><!-- row //-->
+        <dl class="contacts col-5 col-xs-12 offset-lg-1">
+            <dt>CONTACT US</dt>
+            <dd class="icon-tel">886-3-4191222</dd>
+            <dd class="icon-fax">886-3-4192333</dd>
+            <dd>桃園市平鎮區工業一路2-3號</dd>
+            <dd><a href="mailto:hirose@hstech.com.tw">hirose@hstech.com.tw</a></dd>
+        </dl>
 
         <div class="copyright"><em>HCM</em> &copy; 2016</div>
     </footer>

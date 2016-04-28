@@ -18,13 +18,20 @@
     @return ceil(($target / $container) * 100%);
 }
 
-// 取第n個之後的pages值
-@function page($item) {
-    $page: ();
-    @for $i from $item through length($pages) {
-        $page: append($page, nth($pages, $i));
+// 當前頁選單
+@function current($map: $pages) {
+    $current: ();
+
+    @each $item in $map {
+        $i: index($map, $item);
+        $current: $current, unquote(".#{$item} &:nth-of-type(#{$i})");
     }
-    @return $page;
+
+    // @for $i from $num through length($pages) {
+    //     $item: nth($pages, $i);
+    //     $current: $current, unquote(".#{$item} &:nth-of-type(#{$i})");
+    // }
+    @return $current;
 }
 
 

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+// common
+// ------------------------------------------------------------
+.clearfix { @extend %clearfix; }
+
+.circle { @extend %circle; } // 圓形
+
+.full { @extend %full;  }
+.half { @extend %half; }
+
+.float-l { float: left; }
+.float-r { float: right; }
+
+.clear { clear: both  }
+
+.hidden { display: none; }
+
+.img-center {
+    @include mixin-dryer(imgCenter) {
+        display: block;
+        margin: auto;
+    }
+}
+
+
+
+// text
+// ------------------------------------------------------------
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
+.text-line {
+    border-bottom: 1px solid $info;
+    padding-bottom: $gutter;
+}
+
+
+// 情境 helper/var/ $states: true 時才會輸出
+@if $states {
+    .text-white { color: #fff; }
+    .bg-white { background-color: #fff; }
+
+    @each $type, $color in $state-type {
+        .text-#{$type} {
+            color: $color;
+        }
+        .bg-#{$type} {
+            @extend .text-white;
+            background: $color;
+        }
+    }
+}

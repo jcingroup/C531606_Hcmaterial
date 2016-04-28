@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "次世代高壓電正極材";
+    ViewBag.IsFirstPage = true;
+    ViewBag.BodyClass = "index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@* @section Scripts {
+    <script>
+        var mySwiper = new Swiper('#banner', {
+            autoplay: 4000,
+            speed: 1000,
+            effect: 'fade',
+            autoplayDisableOnInteraction: false,
+            fade: {
+              crossFade: true
+            },
+            pagination : '.swiper-pagination',
+            paginationClickable :true,
+        })
+    </script>
+} *@
+
+<section id="main">
+
+    <article id="slider" class="col-8">
+        <h3>次世代高電壓正極材</h3>
+        <p>與國際前三大化學廠共同合作開發<br>2014正式量產次世代高電壓LMFP</p>
+        @*<ul class="swiper-wrapper">
+            <li class="swiper-slide">
+                 <header>磷酸鋰鐵錳 LMFP</header>
+            </li>
+        </ul>*@
+    </article>
+
+    <aside class="sidebar col-4">
+        <ul class="list-unstyled text-left">
+            <li>
+                <a href="~/News/Content"><em>2015.08.12</em>泓辰開幕典禮</a>
+            </li>
+            <li>
+                <a href="~/News/Content2"><em>2015.04.08</em>平鎮廠遷移</a>
+            </li>
+            @* <li>
+                <a href="~/News/Content"><em>2014.03.05</em>今年磷酸鋰鐵電池材料市場又添一黑馬搶食市場大餅，泓辰電池材料</a>
+            </li> *@
+        </ul>
+        <a href="~/News" class="btn">MORE</a>
+    </aside>
+
+</section><!-- main //-->

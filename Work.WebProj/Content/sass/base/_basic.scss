@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-@import "basic/normalize"; // 重置復位
-@import "basic/print";  // 列印樣式
+@import "../vendor/normalize"; // 重置復位
+@import "../vendor/print";  // 列印樣式
 
 /*      basic elements
 -----------------------------------------------------------------------*/
@@ -10,24 +10,31 @@ h1,h2,h3,h4,h5,h6,p,figure,form,blockquote{margin:0;}
 ul,ol,li,dl,dt,dd{margin:0;padding:0;}
 button{outline:none;border:none;}
 
-*, *::before, *::after { box-sizing: border-box; }
+html {
+    box-sizing: border-box;
+    font-size: $font-size-base;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 
-html, body {
-    text-align: center;
-    height: 100%;
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+@at-root {
+    @-moz-viewport      { width: device-width; }
+    @-ms-viewport       { width: device-width; }
+    @-o-viewport        { width: device-width; }
+    @-webkit-viewport   { width: device-width; }
+    @viewport           { width: device-width; }
 }
 
 body {
-    background: $body-bg;
-    color: $text-color;
     font-family: $font-family-base;
     line-height: $line-height-base;
-
-    // 手機版選單動畫
-    // position: relative;
-    // overflow-x: hidden;
-    // left: 0;
-    // @include prefix(transition, left .35s);
+    color: $text-color;
+    background: $body-bg;
 }
 
 a {
@@ -39,13 +46,11 @@ a {
 
     &:hover, &:active, &.current { color: $link-hover-color; }
     &:focus {
-        // @include tab-focus(0 solid $brand-gray);
         outline: none;
     }
 }
 
 img {
-    max-width: 100%;
     vertical-align: middle;
 
     &.float-l { margin-right: $gutter + 10; margin-bottom: $gutter + 10; }
@@ -72,24 +77,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: $heading-font-weight;
     line-height: $heading-line-height;
     color: $heading-color;
+    margin-bottom: em($line-height-computed / 2);
 
     small {
         font-weight: normal;
-        line-height: 1;
-        color: $heading-small-color;
     }
-}
-h1, h2, h3 {
-    margin-top: em($line-height-computed);
-    margin-bottom: em($line-height-computed / 2);
-
-    small { font-size: 65%; }
-}
-h4, h5, h6 {
-    margin-top: em($line-height-computed / 2);
-    margin-bottom: em($line-height-computed / 2);
-
-    small { font-size: 75%; }
 }
 
 @for $i from 1 through 6 {
@@ -101,18 +93,16 @@ h4, h5, h6 {
 // Body text
 // -----------------------------------------------
 p {
-    margin: 0 0 em($line-height-computed / 2);
     line-height: 1.5;
+
+    & + & {
+        margin-top: 1em;
+    }
 }
 
 strong {
     font-size: em(17px);
     color: $brand-primary;
-}
-
-// 副標題 Ex: (12px small font / 14px base font) * 100% = about 85%
-small {
-    font-size: floor((100% * $font-size-sm / $font-size-base));
 }
 
 // 螢光筆註記

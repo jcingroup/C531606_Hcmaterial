@@ -5,6 +5,7 @@
 $table-margin-bottom:    $line-height-computed !default;
 
 // 共用
+$table-collapse:         collapse !default;
 $table-bg:               false !default;
 $table-color:            $info !default;
 $table-font-size:        17px !default;
@@ -77,6 +78,7 @@ table {
     margin-bottom: $table-margin-bottom;
 
     // 下列變數有值才會顯示，false or null 則不顯示
+    @if $table-collapse    { border-collapse: $table-collapse; }
     @if $table-bg          { background: $table-bg; }
     @if $table-border      { border: $table-border; }
     @if $table-color       { color: $table-color; }

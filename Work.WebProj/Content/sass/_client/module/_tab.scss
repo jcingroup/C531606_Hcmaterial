@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+$underline-color:             darken($brand-gray, 20%);
+$underline-position:          top 100% right 0;
+
+$underline-transform:         scaleY(1);
+$underline-transform-origin:  50%;
+$underline-transform-hover:   scaleY(3);
+$underline-transition:        'transform .35s ease-out, background .4s';
+
+
+// .tabs, .tabs-main {
+//     border-bottom: 1px solid $brand-gray;
+// }
+.tabs {
+    @extend %list-inline;
+
+    background: $brand-gray;
+    padding: 5px 10px;
+    // margin: 35px 0 30px;
+    margin-bottom: 30px;
+
+    .Products & { margin-top: 8px; }
+
+    @include mq-max(phone) {
+        text-align: left;
+    }
+
+    a {
+        display: block;
+        color: darken($brand-gray, 50%);
+        background: #fff;
+        box-shadow: inset 2px 2px 10px rgba(#000,.3);
+        border-radius: 4px;
+        padding: 12px 20px;
+        outline: none;
+        &:hover, &:active {
+            color: #fff;
+            background: lighten($brand-secondary, 20%);
+        }
+    }
+    li {
+        margin: 5px;
+
+        &.active {
+            a {
+                color: #fff;
+                background: $brand-secondary;
+            }
+        }
+
+        @include mq-max(mobile) {
+            display: block;
+        }
+    }
+}
+
+.tabs-main {
+    padding-bottom: 40px;
+}
+.tab-content {
+    @extend .text-left;
+
+    div { margin-bottom: $gutter+10; }
+
+    img {
+        height: auto;
+        display: block;
+        margin: auto;
+        width: auto;
+    }
+}

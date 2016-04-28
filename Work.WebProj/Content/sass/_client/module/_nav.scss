@@ -1,0 +1,273 @@
+@charset "UTF-8";
+
+$current: current();
+
+#menu {
+    @include absolute($menu-pos);
+    height: $menu-height;
+
+    padding-left: nth($logo-size,1) + 100;
+    z-index: z(menu);
+
+
+    i {
+        color: #ddd;
+        font-size: em(21px);
+
+        @include absolute(left 50% top 21px);
+        @include transform(translateX(-50%));
+        @include transition(color 1s);
+
+        @include mq-max(break(desktop,-1)) {
+            @include transform(translate(0,-50%));
+            left: auto; top: 50%;
+            margin-left: -50px;
+            color: rgba(#fff,.4);
+            font-size: em(29px,30px);
+        }
+    }
+
+    a {
+        display: block; float: left;
+        position: relative;
+
+        color: $nav-link;
+        font-size: em($nav-font-size);
+        letter-spacing: 1px;
+
+        padding-top: (($menu-height - $nav-font-size)/2 + 10px);
+        margin-left: 1px;
+        width: $nav-width;
+        height: $menu-height;
+        z-index: 2;
+
+        @include mq(desktop, wide) {
+            width: $nav-width - 0.05;
+        }
+
+        @include mq-max(break(desktop,-1)) {
+            float: none;
+            margin: auto;
+            width: 75%;
+            height: auto;
+            line-height: $menu-height - 20;
+            padding: 0;
+            font-size: em(28px);
+            color: #fff;
+        }
+
+        // 底線
+        @include el(before) {
+            @include absolute(left 0 bottom 0);
+            @include transition(height .5s, background .8s);
+            width: 100%;
+            height: 5px;
+            z-index: -1;
+
+            @include mq-max(break(desktop,-1)) {
+                height: 1px;
+            }
+        }
+
+        // 個別選單
+        @each $item in $pages {
+            $i: index($pages, $item);
+
+            &:nth-of-type(#{$i}),
+            .#{$item} &:nth-of-type(#{$i}) {
+                &::before { background-color: nth($menu-color, $i); }
+            }
+        }
+
+        // 當前選單
+        &:hover, &:active,
+        #{$current} {
+            color: $nav-link-hover;
+            &::before { height: 100%; }
+            i { color: #F1F1F1; }
+        }
+    }
+
+    // 行動版面
+    .toggle { display: none; }
+
+    @include mq-max(break(desktop,-1)) {
+
+        @include fixed(top 0);
+        overflow-y: auto;
+        z-index: z(logo) + 1;
+
+        background: $menu-mobile-bg;
+        width: $menu-mobile-width;
+        height: 100%;
+
+        padding-left: 0;
+
+        // 推拉樣式
+        @if $menu-mobile-style == 'push' {
+            left: -$menu-mobile-width;
+
+            @include transition(left .35s);
+
+            .push & { left: 0; }
+        }
+
+        // 全版樣式
+        @else if $menu-mobile-style == 'overlay' {
+            overflow-x: hidden;
+            visibility: hidden;
+            top: -50%;
+            opacity: 0;
+            padding: 3% 0;
+
+            @include transition(top .3s, opacity 1s);
+
+            .overlay & {
+                top: 0;
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        .toggle {
+            display: block;
+            cursor: pointer; cursor: hand;
+            z-index: 3;
+            color: #fff;
+            font-size: em(50px);
+
+            @include absolute(top 2px right 2px);
+
+            &:hover, &:active {
+                color: $brand-primary;
+            }
+        }
+    }
+}
+
+.lang-nav {
+    @include absolute(right 0 top 23px);
+
+    @include mq-max(break(desktop, -1)) {
+        @include pos-center(vertical);
+        right: cp($gutter+15);
+    }
+    a {
+        color: #ABACA5;
+        font-size: em(13px);
+        margin-left: 10px;
+
+        &:hover, &:active {
+            color: $brand-secondary;
+        }
+
+        @include mq-max(break(phone-plus, -1)) {
+            display: block;
+            margin: 3px 0;
+            text-align: left;
+        }
+    }
+}
+
+// == 選單出現時 版面變化
+@if $menu-mobile-style == 'push' {
+    .push {
+        left: $menu-mobile-width;
+        overflow-y: hidden;
+    }
+}
+@else if $menu-mobile-style == 'overlay' {
+    .overlay {
+        overflow: hidden;
+
+        // @include el(after) {
+        //     background: $menu-mobile-bg;
+        //     z-index: z(overlay);
+
+        //     @include fixed(top 0 left 0);
+        //     @include size(100%);
+        //     @include transition(background .35s);
+        // }
+    }
+}
+
+// == 行動版主選單
+.menu-trigger {
+    @extend %text-hide;
+
+    display: none;
+    cursor: pointer;
+    overflow: hidden;
+
+    position: relative;
+    left: $gutter;
+    top: 50%;
+    @include transform(translateY(-50%));
+
+    @include mq-max(break(desktop,-1)) { display: block; }
+    @include mq-max(phone) { left: 0; }
+
+    // 專案樣式
+    span {
+        &::before {
+            color: $menu-trigger-color;
+            font-size: 38px;
+        }
+    }
+
+    // 變形 X 效果
+    @if $menu-trigger-animate {
+        z-index: z(overlay) + 1;
+
+        width: $menu-trigger-width;
+        height: $menu-trigger-height;
+
+        @include transition(background 0.3s);
+        @include prefix(apperance, none, webkit moz);
+
+        &:active, &.active {
+            background-color: darken($brand-primary, 10%);
+            span {
+                background: none;
+                &::before {
+                    top: 0;
+                    @include transform(rotate(45deg));
+                }
+                &::after {
+                    bottom: 0;
+                    @include transform(rotate(-45deg));
+                }
+                &::before, &::after {
+                    @include prefix(transition-delay, '0, .3s');
+                }
+            }
+        }
+
+        span {
+            @include absolute(left $menu-trigger-pd right $menu-trigger-pd top (($menu-trigger-height / 2) - ($menu-trigger-thickness / 2)));
+            display: block;
+
+            background: $menu-trigger-color;
+            height: $menu-trigger-thickness;
+            margin: auto;
+            @include transition(background 0s 0.3s);
+
+            @include el(all) {
+                width: 100%;
+                height: $menu-trigger-thickness;
+                background-color: $menu-trigger-color;
+                @include absolute(left 0);
+                @include prefix(transition-duration, '.3s, .3s');
+                @include prefix(transition-delay, '.3s, 0');
+            }
+            &::before {
+                top: -(($menu-trigger-height / 2) - ($menu-trigger-thickness / 2) - $menu-trigger-pd);
+                @include prefix(transition-property, 'top, transform');
+            }
+            &::after {
+                bottom: -(($menu-trigger-height / 2) - ($menu-trigger-thickness / 2) - $menu-trigger-pd);
+                @include prefix(transition-property, 'bottom, transform');
+            }
+        }
+    }
+}

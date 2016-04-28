@@ -6,14 +6,18 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<article class="container">
-    <h3>泓辰開幕典禮</h3>
-    <h5>2015.08.12</h5>
+<article class="container news-panel">
+    <header>
+        泓辰開幕典禮
+        <small class="text-error">2015.08.12</small>
+    </header>
+
+    @* 下為編輯器內容 *@
     <img src="~/Content/images/News/pic.jpg" alt="消息圖" class="float-r">
     <p>祝賀開幕</p>
 
 </article>
 
-<div class="text-center clear">
+<footer class="text-center clear">
     <a href="~/News" class="btn">回列表</a>
-</div>
+</footer>

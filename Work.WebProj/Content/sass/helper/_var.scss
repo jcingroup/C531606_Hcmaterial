@@ -2,8 +2,6 @@
 
 // == config
 // ----------------------------------------------------------------------
-$img-path:              '../images' !default;
-$font-path:             '../font' !default;
 $lte7:                  false !default;           // 是否兼容IE6-7
 $states:                true !default;           // 情境文字是否輸出
 
@@ -21,12 +19,14 @@ $gray-lighter:          lighten($gray-base, 93.5%);   // #eee
 // 抽象色
 $brand-primary:         #368B39 !default;             // 主色
 $brand-secondary:       #1E7997 !default;             // 輔色
-$brand-gray:            #f1f1f1 !default;             // 主題灰
 $success:               #14AE11 !default;             // 綠
 $info:                  #12556D !default;             // 藍
 $warning:               #F3991B !default;             // 黃
 $error:                 #C73677 !default;             // 紅
 
+
+// == basic
+// ----------------------------------------------------------------------
 // <body> 背景 & 文字色
 $body-bg:               #F6F6F6 !default;
 $text-color:            #4C4C4C !default;
@@ -40,7 +40,6 @@ $link-hover-color:      lighten($brand-secondary, 5%) !default;
 // ----------------------------------------------------------------------
 // 微軟正黑體
 $font-family-base:      'Microsoft Jhenghei', \5FAE\8EDF\6B63\9ED1\9AD4, Verdana, Helvetica, Arial, sans-serif !default;
-$font-sp:               'Open Sans', sans-serif; //'NeutraText', 'Microsoft Jhenghei', sans-serif;
 
 $font-size-base:        16px !default;
 $font-size-lg:          $font-size-base * 1.25 !default;     // 20px
@@ -66,16 +65,10 @@ $heading-color:         lighten($brand-primary, 10%) !default;
 $heading-small-color:   desaturate($heading-color, 20%) !default;
 
 
-// == layout
-// ----------------------------------------------------------------------
-$min-width:             1008px !default;     // 網頁最小尺寸
-$max-width:             1400px !default;     // 網頁最寬尺寸: .wrap
-$pages:                 'AboutUs' 'News' 'Products' 'JoinUs' 'ContactUs';
-$gutter:                15px !default;
-
-
 // == module
 // ----------------------------------------------------------------------
+$gutter:                15px !default;
+
 // 表單元素(停用)上的滑鼠樣式
 $cursor-disabled:       not-allowed;
 
@@ -88,29 +81,10 @@ $state-type: (
     warn:               $warning,
     error:              $error,
     oranges:             #EA6A23
-);
+) !default;
 
-// 合併配色
+// 合併情境配色
 $color: $state-type;
-
-
-// == z-index
-// ----------------------------------------------------------------------
-$z-index: (
-    header:           4,
-    main:             2,
-    footer:           1,
-    banner:           3,
-    logo:             10,
-    menu:             20,
-    figure:           19,
-    dropdown:         21,
-    tooltip:          22,
-    modal:            23,
-    toggle:           25,
-    goTop:            99,
-    overlay:          999
-);
 
 
 // == RWD-break
