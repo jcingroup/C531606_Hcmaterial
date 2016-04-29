@@ -7,6 +7,7 @@ $font-size-h2:            28px;
 
 
 // module/figure
+$figure-img-full:         false;
 $figure-img-width:        100%;
 $figure-effect:           box-shadow .3s;
 $figure-border:           1px solid #f1f1f1;
@@ -18,7 +19,8 @@ $figure-mg:               2% 1%;
 
 // import
 // ------------------------------------------------------------
-@import "_client/var"; // 覆蓋掉下面的變數
+// 本次專案設定值，可覆蓋掉下面的變數
+@import "_client/settings";
 
 @import "helper/function";
 @import "helper/var";
@@ -29,9 +31,11 @@ $figure-mg:               2% 1%;
 @import "base/table";
 @import "base/form";
 
+// 本次專案專用版面 + 共用模組(index,page)
 @import "_client/layout";
-@import "_client/module";
+@import "_client/main";
 
+// 本頁面專用模組
 @import "_client/module/breadcrumb";
 @import "_client/module/figure";
 @import "_client/module/tab";
@@ -99,7 +103,6 @@ $pro-nav-pd-l:            10px;
 
 .pro-nav li,
 .pro-mobile-nav {
-    background: #fff;
     border: 4px solid #E6E6E6;
     border-left: none;
     border-radius: 10px;
@@ -121,7 +124,6 @@ $pro-nav-pd-l:            10px;
     color: color(success);
     font-size: em(26px);
     text-align: center;
-
     z-index: 3;
 
     @include el(before) {
@@ -144,9 +146,11 @@ $pro-nav-pd-l:            10px;
     margin: 20px auto;
 
     &, span { position: relative; }
+    span {
+        line-height: 2;
+    }
+    span:hover,
     &.active span { @extend %pro-nav-current; }
-
-    span { line-height: 2; }
 
     @include mq-max(phone) { display: block; }
 }
@@ -172,6 +176,7 @@ $pro-nav-pd-l:            10px;
         float: left;
         margin-right: 20px;
         margin-bottom: 20px;
+        background: #fff;
 
         &.current a { @extend %pro-nav-current; }
 
@@ -334,10 +339,10 @@ $pro-nav-pd-l:            10px;
 
 // == News
 figure {
-    img {
-        // transform: translateY(-20%);
-        min-height: auto;
-    }
+    // img {
+    //     // transform: translateY(-20%);
+    //     min-height: auto;
+    // }
 
     &:hover {
         box-shadow: 0 0 20px $gray-light;

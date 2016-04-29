@@ -11,7 +11,7 @@ $font-size-h3:            37px;
 
 // import
 // ------------------------------------------------------------
-@import "_client/var"; // 覆蓋掉下面的變數
+@import "_client/settings";  // 本次專案設定值，可覆蓋掉下面的變數
 
 @import "helper/function";
 @import "helper/var";
@@ -21,7 +21,7 @@ $font-size-h3:            37px;
 @import "base/util";
 
 @import "_client/layout";
-@import "_client/module";
+@import "_client/main";
 
 
 

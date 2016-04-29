@@ -463,8 +463,6 @@
     <Content Include="Content\sass\_client\module\_tab.scss" />
     <Content Include="Content\sass\_client\module\_tooltip.scss" />
     <Content Include="Content\sass\_client\_layout.scss" />
-    <Content Include="Content\sass\_client\_module.scss" />
-    <Content Include="Content\sass\_client\_var.scss" />
     <Content Include="Content\sass\vendor\icomoon\_style.scss" />
     <Content Include="Content\sass\vendor\icomoon\_variables.scss" />
     <Content Include="Content\sass\vendor\_normalize.scss" />
@@ -483,6 +481,8 @@
     <Content Include="Content\images\noIE\noIE.css" />
     <Content Include="Content\images\noIE\noIE.html" />
     <None Include="Content\publih.wpp.targets" />
+    <Content Include="Content\sass\_client\_main.scss" />
+    <Content Include="Content\sass\_client\_settings.scss" />
     <Content Include="index.html" />
     <Content Include="ckeditor\build-config.js" />
     <Content Include="ckeditor\ckeditor.js" />

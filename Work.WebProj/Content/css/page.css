@@ -1096,8 +1096,6 @@ figure {
   transition: box-shadow 0.3s; }
   figure img {
     position: relative;
-    min-width: 100%;
-    min-height: 100%;
     width: 100%; }
   figure > a {
     z-index: 19;
@@ -1221,7 +1219,6 @@ figcaption {
 
 .pro-nav li,
 .pro-mobile-nav {
-  background: #fff;
   border: 4px solid #E6E6E6;
   border-left: none;
   border-radius: 10px;
@@ -1285,7 +1282,8 @@ figcaption {
   .pro-nav li {
     float: left;
     margin-right: 20px;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    background: #fff; }
     @media (max-width: 74.9375em) {
       .pro-nav li {
         width: 21%;
@@ -1408,8 +1406,6 @@ figcaption {
       .AboutUs .table-rwd th:first-child {
         width: 28%; } }
 
-figure img {
-  min-height: auto; }
 figure:hover {
   box-shadow: 0 0 20px #777777; }
 
