@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "高能量密度正极材料-高镍三元 LNMC:电池材料";
+    ViewBag.BodyClass = "Products";
+    ViewBag.breadCrumb = "高镍三元 LNMC";
+    ViewBag.ProNavClass = "current";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section Scripts {
+    <script src="~/Content/js/tab.js"></script>
+}
+
+@section breadCrumb {
+    <li><a href="~/Products">正极材料</a></li>
+}
+
+@Html.Partial("sidebar")
+
+@Html.Partial("Battery-catalog")
+
+
+<h1 class="clear"><small>高能量密度正极材料</small>高镍三元 LNMC</h1>
+
+<ul class="tabs">
+    <li class="js-tab"><a href="#tab-1">NCM结构与特色</a></li>
+    <li class="js-tab"><a href="#tab-2">NCM基本性能</a></li>
+</ul>
+
+@* <section class="tabs-main"> *@
+    <article id="tab-1" class="tab-content">
+        <div class="col-4 col-xs-12">
+            <img src="~/Content/images/Products/Battery/p3.jpg" alt="" width="100%" style="max-height: 350px">
+        </div>
+
+        <div class="col-8 col-xs-12">
+            <h3>NCM结构与特色</h3>
+            <p>泓辰自主开发，以独特的喷雾造粒技术，制造具有高能量密度NCM</p>
+            <h4>开发目标</h4>
+            <ul class="list-dot">
+                <li>高容量 0.1C放电＞170mAh/g</li>
+                <li>高压实密度 >3.7g/ml</li>
+                <li>高首充放电效率>88%</li>
+                <li>具有快速充电性能</li>
+            </ul>
+        </div>
+    </article>
+
+    <article id="tab-2" class="tab-content">
+       <h3>NCM基本性能</h3>
+       <h4>Coin Cell电性</h4>
+       <h2>目前持续开发中，预计2014第二季进行小量投产</h2>
+       <p>25 ℃，活物比例90%，导电碳添加比例5%，涂物重15mg/cm<sup>2</sup></p>
+
+       <img src="~/Content/images/Products/Battery/p3-2.jpg" alt="" width="80%">
+       @* <img src="~/Content/images/Products/Battery/p3-2-2.jpg" alt="" class="col-6"> *@
+    </article>
+@* </section> *@

@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "快速充放电正极材料-磷酸锂铁 LiFePO4:电池材料";
+    ViewBag.BodyClass = "Products";
+    ViewBag.breadCrumb = "磷酸锂铁 LiFePO4";
+    ViewBag.ProNavClass = "current";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section Scripts {
+    <script src="~/Content/js/tab.js"></script>
+}
+
+@section breadCrumb {
+    <li><a href="~/Products">正极材料</a></li>
+}
+
+@Html.Partial("sidebar")
+
+@Html.Partial("Battery-catalog")
+
+<h1 class="clear"><small>快速充放电正极材料</small>磷酸锂铁 LiFePO<sub>4</sub></h1>
+
+<ul class="tabs">
+    <li class="js-tab"><a href="#tab-1">LFP结构与特色</a></li>
+    <li class="js-tab"><a href="#tab-2">LFP规格</a></li>
+</ul>
+
+@* <section class="tabs-main"> *@
+    <article id="tab-1" class="tab-content">
+        <div class="col-6 col-xs-12">
+            <img src="~/Content/images/Products/Battery/p2.jpg" alt="均匀的粒径分布" style="max-height: 280px">
+        </div>
+        <div class="col-6 col-xs-12">
+            <h3>LFP结构与特色</h3>
+            <p>与台湾工研院技转，生产具奈米结构丶高导电路路设计LFP</p>
+            <h4>优点</h4>
+            <ul class="list-dot">
+                <li>具有快速充丶放电特性</li>
+                <li>兼具『容量』及『倍率』特性</li>
+                <li>一致性高</li>
+                <li>超低温放电特性(1C＠-40 ℃)</li>
+            </ul>
+        </div>
+
+        <div class="col-6 col-xs-12">
+            <h4 class="clear">球型化二次粒子结构</h4>
+            <img src="~/Content/images/Products/Battery/p2-2.jpg" alt="球型化二次粒子结构">
+        </div>
+        <div class="col-6 col-xs-12">
+            <h4>LFP致密化球型</h4>
+            <p>特有的致密化技术，可提高体积能量密度，且兼具<strong>『容量』</strong>及<strong>『倍率』充丶放电特性</strong></p>
+            <h5>二次粒子FIB</h5>
+            <img src="~/Content/images/Products/Battery/p2-2-4.jpg" alt="">
+        </div>
+
+    </article>
+
+    <article id="tab-2" class="tab-content">
+        <h3>LFP规格</h3>
+
+        <div class="col-6 col-xs-12">
+            <h4>基本规格</h4>
+            <img src="~/Content/images/Products/Battery/p2-4.jpg" alt="">
+        </div>
+        <div class="col-6 col-xs-12">
+            <h4>Coin Cell电性</h4>
+            <p>25 ℃，活物比例90%，导电碳添加比例5%，涂物重12mg/cm<sup>2</sup></p>
+            <img src="~/Content/images/Products/Battery/p2-5.jpg" alt="">
+        </div>
+
+        <h4>Coin Cell Cycle Life</h4>
+        <p>1C charge/3C discharge : <span class="text-info">50cycle, 98%</span></p>
+        <p>25 ℃，活物比例90%，导电碳添加比例5%，涂物重12mg/cm<sup>2</sup></p>
+        <img src="~/Content/images/Products/Battery/p2-6.jpg" alt="">
+    </article>
+@* </section> *@
+
