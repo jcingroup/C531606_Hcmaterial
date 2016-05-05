@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<!-- saved from url=(0014)about:internet -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>::@Resources.Res.System_FrontName::@ViewBag.Title</title>
+    <!--[if lt IE 9]><script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script><![endif]-->
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <link rel="stylesheet" href="~/Content/css/swiper.min.css">
+    <link rel="stylesheet" href="~/Content/css/grid.css?v=@CommWebSetup.CacheVer">
+    @if (ViewBag.IsFirstPage)
+    {
+        <link rel="stylesheet" href="~/Content/css/index.css?v=@CommWebSetup.CacheVer">
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/Content/css/page.css?v=@CommWebSetup.CacheVer">
+    }
+    <link rel="stylesheet" href="~/Content/css/icomoon.css?v=@CommWebSetup.CacheVer">
+    @RenderSection("css", false)
+</head>
+
+<body class="@ViewBag.BodyClass">
+
+    <div id="wrapper">
+
+        <header id="header">
+            <h1 onclick="location.href='@Url.Content("~/index")'" title="回首页" class="logo">@Resources.Res.System_FrontName</h1>
+            <button class="menu-trigger"><span class="icon-menu2">MENU</span></button>@* 手机menu *@
+            <nav id="menu">
+                <span class="icon-cross toggle"></span>@* 手机close menu *@
+                <a href="~/AboutUs"><i class="icon-trophy"></i>公司简介</a>
+                <a href="~/News"><i class="icon-megaphone"></i>最新消息</a>
+                <a href="~/Products"><i class="icon-battery"></i>电池材料</a>
+                <a href="~/JoinUs"><i class="icon-power-plug"></i>人力资源</a>
+                <a href="~/ContactUs"><i class="icon-paper-plane"></i>联络我们</a>
+            </nav>
+            <nav class="lang-nav">
+                <a href="@Url.Action("SetLanguage")?L=zh-TW&A=index">繁体中文</a>
+                <a href="@Url.Action("SetLanguage")?L=zh-CN&A=index">简体中文</a>
+                <a href="@Url.Action("SetLanguage")?L=en-US&A=index">English</a>
+            </nav>
+        </header>
+
+        @if (ViewBag.IsFirstPage)
+        {
+            <div id="banner" class="swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><img src="~/Content/images/index/banner.jpg" alt="轮播图1"></li>
+                    <li class="swiper-slide"><img src="~/Content/images/index/banner2.jpg" alt="轮播图2"></li>
+                    <li class="swiper-slide"><img src="~/Content/images/index/banner3.jpg" alt="轮播图3"></li>
+                </ul>
+            </div><!-- banner //-->
+
+            @RenderBody()
+        }
+        else
+        {
+            <div id="banner" class="swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><img src="~/Content/images/banner.gif" alt="轮播图1"></li>
+                    <li class="swiper-slide"><img src="~/Content/images/banner2.jpg" alt="轮播图2"></li>
+                    <li class="swiper-slide"><img src="~/Content/images/banner3.jpg" alt="轮播图3"></li>
+                </ul>
+            </div><!-- banner //-->
+
+            <main id="main">
+                <ul class="breadcrumb">
+                    <li><a href="~/index">HOME</a></li>
+                    @RenderSection("breadCrumb", required: false)
+                    <li>@ViewBag.breadCrumb</li> @* 当前页名称 *@
+                </ul>
+
+                @RenderBody()
+
+            </main>
+        }
+
+    </div><!-- wrapper //-->
+
+    <footer id="footer">
+        <nav class="foot-nav col-7 col-xs-12 col-lg-6">
+           <dl class="col-4">
+               <dt>INFORMATION</dt>
+               <dd>
+                   <a href="~/AboutUs">关於我们</a>
+                   <a href="~/News">最新消息</a>
+                   <a href="~/ContactUs">联络我们</a>
+               </dd>
+           </dl>
+           <dl class="col-4">
+               <dt>PRODUCTS</dt>
+               <dd>
+                   <a href="~/Products">正极材料</a>
+                   <a href="~/Products/Technology">核心技术</a>
+                   <a href="~/Products/Trend">市场趋势</a>
+                   <a href="~/Products/Build">锂电池组成</a>
+               </dd>
+           </dl>
+           <dl class="col-4">
+               <dt>JOIN US</dt>
+               <dd>
+                   <a href="~/JoinUs/#tab-1">生活在泓辰</a>
+                   <a href="~/JoinUs/#tab-2">员工福利</a>
+                   <a href="~/JoinUs/#tab-3">社团</a>
+                   <a href="~/Content/download/record.doc">应徵人员资料表(下载)</a>
+               </dd>
+           </dl>
+        </nav>
+
+        <dl class="contacts col-5 col-xs-12 offset-lg-1">
+            <dt>CONTACT US</dt>
+            <dd class="icon-tel">886-3-4191222</dd>
+            <dd class="icon-fax">886-3-4192333</dd>
+            <dd>桃园市平镇区工业一路2-3号</dd>
+            <dd><a href="mailto:hirose@hstech.com.tw">hirose@hstech.com.tw</a></dd>
+        </dl>
+
+        <div class="copyright"><em>HCM</em> &copy; 2016</div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script src="~/Content/js/swiper.min.js"></script>
+    <script src="~/Content/js/common.js"></script>
+    <script>
+        var mySwiper = new Swiper('#banner', {
+            autoplay: 4000,
+            speed: 1000,
+            effect: 'fade',
+            autoplayDisableOnInteraction: false,
+            fade: {
+              crossFade: true
+            },
+            pagination : '.swiper-pagination',
+            paginationClickable :true,
+        })
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

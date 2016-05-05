@@ -573,6 +573,23 @@
     <Content Include="Views\Products\sidebar.cshtml" />
     <Content Include="Views\Products\Battery-catalog.cshtml" />
     <Content Include="Views\News\content2.cshtml" />
+    <Content Include="Views\Shared\Layout.zh-CN.cshtml" />
+    <Content Include="Views\AboutUs\AboutUs.zh-CN.cshtml" />
+    <Content Include="Views\ContactUs\ContactUs.zh-CN.cshtml" />
+    <Content Include="Views\Index\Index.zh-CN.cshtml" />
+    <Content Include="Views\JoinUs\JoinUs.zh-CN.cshtml" />
+    <Content Include="Views\News\list.zh-CN.cshtml" />
+    <Content Include="Views\News\content.zh-CN.cshtml" />
+    <Content Include="Views\News\content2.zh-CN.cshtml" />
+    <Content Include="Views\Products\Battery-catalog.zh-CN.cshtml" />
+    <Content Include="Views\Products\Battery.zh-CN.cshtml" />
+    <Content Include="Views\Products\Battery2.zh-CN.cshtml" />
+    <Content Include="Views\Products\Battery3.zh-CN.cshtml" />
+    <Content Include="Views\Products\Battery_intro.zh-CN.cshtml" />
+    <Content Include="Views\Products\Build.zh-CN.cshtml" />
+    <Content Include="Views\Products\sidebar.zh-CN.cshtml" />
+    <Content Include="Views\Products\Technology.zh-CN.cshtml" />
+    <Content Include="Views\Products\Trend.zh-CN.cshtml" />
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

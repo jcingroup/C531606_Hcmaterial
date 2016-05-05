@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "公司简介";
+    ViewBag.BodyClass = "AboutUs";
+    ViewBag.breadCrumb = "公司简介";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section Scripts {
+    <script src="~/Content/js/tab.js"></script>
+}
+
+<ul class="tabs">
+    <li class="js-tab"><a href="#tab-1">关於泓辰</a></li>
+    <li class="js-tab"><a href="#tab-2">公司沿革</a></li>
+    <li class="js-tab"><a href="#tab-3">公司组织</a></li>
+    <li class="js-tab"><a href="#tab-4">工厂及研发</a></li>
+</ul>
+
+<article id="tab-1" class="tab-content">
+    <h2>关於泓辰</h2>
+    <p>泓辰成立於2015年, 当全球正全力推动节能减碳绿化地球时, 为台湾第一家生产磷酸锂铁锰正极材料制造商。伴随环保节能趋势, 泓辰於2015年与国际大厂投入新能源事业—磷酸锂铁锰正极材料的制造。泓辰是唯一正极材料厂中同时具备「设备研制能力」及「研发能力」的公司。</p>
+    <p>高导电网路的磷酸锂铁锰正极材料，具有极高的稳定及安全性丶快速充放电丶可逆能力佳丶一致性高及超低温放电等优势，近期陆续获得许多国际一级大厂的高度评价及订单。</p>
+    <p>泓辰公司的母公司(宏濑科技)拥有十多年粉体设备制造经验(研磨机丶乾燥机等)，藉由设备与制程的不断改进下，提高生产效率，降低设备成本。於2013年与国际化学大厂共同研发的新世代磷酸锂铁锰正极材料，此材料於2014年进入量产，双方决定进一步合作，共同携手开发全球市场。</p>
+</article>
+
+<article id="tab-2" class="tab-content">
+    <h2>公司沿革</h2>
+
+    <div class="table-rwd">
+        <table>
+            <tr>
+                <th class="bg-gray text-error">时间表</th>
+                <th class="bg-gray text-error">公司营运</th>
+            </tr>
+            <tr><td class="item">1997</td><td class="text-left">与日本坂本技研合资「宏坂科技」公司</td></tr>
+            <tr><td class="item">2001</td><td class="text-left">成立「宏濑科技」公司，生产&销售光学检测设备</td></tr>
+            <tr><td class="item">2004</td><td class="text-left">宏坂丶宏濑公司合并</td></tr>
+            <tr><td class="item">2008</td><td class="text-left">公司登录兴柜</td></tr>
+            <tr><td class="item">2009</td><td class="text-left">成立锂铁材料处<br>增资至3.5亿</td></tr>
+            <tr><td class="item">2010</td><td class="text-left">申请进驻新竹科学园区-龙潭基地<br>6月龙潭新厂动工</td></tr>
+            <tr><td class="item">2011</td><td class="text-left">增资至4.76亿</td></tr>
+            <tr><td class="item">2015</td><td class="text-left">成立泓辰电池材料</td></tr>
+            <tr><td class="item">2015</td><td class="text-left">成立山东泓辰电池材料</td></tr>
+        </table>
+    </div>
+
+    <div class="table-rwd">
+        <table>
+            <tr>
+                <th class="bg-gray text-error">时间表</th>
+                <th class="bg-gray text-error">技术研发</th>
+            </tr>
+            <tr><td class="item">1998</td><td class="text-left">制造世界最大喷雾乾燥机</td></tr>
+            <tr><td class="item">2000</td><td class="text-left">设计销售卧式砂磨机</td></tr>
+            <tr><td class="item">2002</td><td class="text-left">於工研院合作开发电将反应器，制造奈米粉末</td></tr>
+            <tr><td class="item">2008</td><td class="text-left">完成PIAOI开发</td></tr>
+            <tr><td class="item">2003</td><td class="text-left">台湾第一家FPD AOI设备商</td></tr>
+            <tr><td class="item">2005</td><td class="text-left">跨足PDP丶 G7.5丶Marco目检机开发完成</td></tr>
+            <tr><td class="item">2006</td><td class="text-left">膜厚及色度机开发完成</td></tr>
+            <tr><td class="item">2007</td><td class="text-left">PDP八面取APO设备开发</td></tr>
+            <tr><td class="item">2008</td><td class="text-left">工研院技转锂电池材料技术</td></tr>
+            <tr><td class="item">2013</td><td class="text-left">与国际大厂共同开发磷酸锂铁锰材料</td></tr>
+            <tr><td class="item">2015</td><td class="text-left">磷酸锂铁锰正式量产</td></tr>
+        </table>
+    </div>
+
+    @* <div class="text-center">
+        <img src="~/Content/images/AboutUs/pic.jpg" alt="">
+    </div>
+
+    <h3>组织</h3> *@
+
+</article>
+
+<article id="tab-3" class="tab-content">
+    <h2>公司组织</h2>
+    <div class="text-center">
+        <img src="~/Content/images/AboutUs/pic2.gif" alt="公司组织">
+    </div>
+</article>
+
+<article id="tab-4" class="tab-content">
+    <h2>工厂及研发</h2>
+    <div class="text-center">
+        @* <img src="~/Content/images/AboutUs/pic3.jpg" alt=""><br> *@
+        <img src="~/Content/images/AboutUs/pic4.jpg" alt=""><br>
+        <img src="~/Content/images/AboutUs/pic5.jpg" alt=""><br>
+        <img src="~/Content/images/AboutUs/pic6.jpg" alt="">
+    </div>
+</article>

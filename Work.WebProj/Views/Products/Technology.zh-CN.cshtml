@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "核心技术:电池材料";
+    ViewBag.BodyClass = "Products";
+    ViewBag.breadCrumb = "核心技术";
+    ViewBag.ProNav2Class = "current";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section Scripts {
+    <script src="~/Content/js/tab.js"></script>
+}
+
+@Html.Partial("sidebar")
+
+<ul class="tabs">
+    <li class="js-tab"><a href="#tab-1">高品质&稳定奈米材料</a></li>
+    <li class="js-tab"><a href="#tab-2">量产技术</a></li>
+    <li class="js-tab"><a href="#tab-3">技术资源</a></li>
+</ul>
+
+<article id="tab-1" class="tab-content">
+    <h3>高品质&稳定奈米材料</h3>
+    <div class="text-center">
+        <img src="~/Content/images/Products/Tech/p1.gif" alt="">
+    </div>
+</article>
+
+<article id="tab-2" class="tab-content">
+    <h3>量产技术</h3>
+    <div class="col-6 col-xs-12">
+        <h4>设备自制</h4>
+        <img src="~/Content/images/Products/Tech/p2.jpg" alt="" width="100%">
+    </div>
+    <div class="col-6 col-xs-12">
+        <h4>RD开发设备</h4>
+        <h5>具有中丶小量产能量，大幅增口量产掌握度</h5>
+        <img src="~/Content/images/Products/Tech/p2-2.jpg" alt="" width="100%">
+    </div>
+</article>
+
+<article id="tab-3" class="tab-content">
+    <h3>技术资源</h3>
+    <h4>专利支持</h4>
+    <h5>奈米结构二次球型专利：</h5>
+    <p>具高导电网路设计(高导电性)丶多孔性结构(高离子传导)，已通过中丶台丶日丶韩专利；美丶欧专利申请中</p>
+    <img src="~/Content/images/Products/Tech/p2-3.jpg" alt="" width="80%">
+</article>

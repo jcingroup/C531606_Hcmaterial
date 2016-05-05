@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "锂电池正极材料优缺点:电池材料";
+    ViewBag.BodyClass = "Products";
+    ViewBag.breadCrumb = "正极材料分类";
+    ViewBag.proNavClass = "current";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section breadCrumb {
+    <li><a href="~/Products">正极材料</a></li>
+}
+
+@Html.Partial("sidebar")
+
+@Html.Partial("Battery-catalog")
+
+<h2 class="text-left clear">锂电池正极材料优丶缺点</h2>
+
+<article class="text-left table-rwd">
+
+    <table class="full text-center">
+        <caption>
+            锂铁系：高倍率快速充丶放电<br>
+            三元系：超高电容量
+        </caption>
+        <tr>
+            <th rowspan="2">Structure</th>
+            <th colspan="2">Layer(层状结构)</th>
+            <th>Spinel(尖晶石结构)</th>
+            <th colspan="2">Olivine(橄榄石结构)</th>
+        </tr>
+        <tr>
+            <td class="item">LCO</td>
+            <td class="item">NCM(三元)</td>
+            <td class="item">LMO</td>
+            <td class="item">LFP</td>
+            <td class="item">LMFP</td>
+        </tr>
+        <tr>
+            <td class="item">工作电压(Volt)</td>
+            <td colspan="2">3.6~3.7</td>
+            <td>3.7</td>
+            <td>3.4</td>
+            <td class="text-error bg-gray">3.8~3.9</td>
+        </tr>
+        <tr>
+            <td class="item">克电压(mh/g)</td>
+            <td>140~160</td>
+            <td class="text-error bg-gray">160~190</td>
+            <td>1110~120</td>
+            <td>150~160</td>
+            <td>150~155</td>
+        </tr>
+        <tr>
+            <td class="item">安全性</td>
+            <td><i class="icon-triangle">三角形</i></td>
+            <td><i class="icon-cross-img">叉</i></td>
+            <td><i class="icon-circle">圆</i></td>
+            <td class="text-error bg-gray"><i class="icon-circle-d">2圆</i></td>
+            <td class="text-error bg-gray"><i class="icon-circle-d">2圆</i></td>
+        </tr>
+        <tr>
+            <td class="item">高温特性</td>
+            <td><i class="icon-triangle">三角形</i></td>
+            <td><i class="icon-triangle">三角形</i></td>
+            <td><i class="icon-cross-img">叉</i><i class="icon-cross-img">叉</i></td>
+            <td><i class="icon-circle">圆</i></td>
+            <td><i class="icon-circle">圆</i></td>
+        </tr>
+        <tr>
+            <td class="item">低温特性</td>
+            <td><i class="icon-cross-img">叉</i></td>
+            <td><i class="icon-triangle">三角形</i></td>
+            <td><i class="icon-circle">圆</i></td>
+            <td class="bg-gray"><i class="icon-circle-d">2圆</i></td>
+            <td class="text-error bg-gray"><i class="icon-circle-d">2圆</i></td>
+        </tr>
+        <tr>
+            <td class="item">寿命(cycle)</td>
+            <td>500</td>
+            <td>500</td>
+            <td>500</td>
+            <td class="text-error bg-gray">>2000</td>
+            <td>>1000</td>
+        </tr>
+        <tr>
+            <td class="item">大电流放电能力</td>
+            <td><i class="icon-cross-img">叉</i></td>
+            <td><i class="icon-triangle">三角形</i></td>
+            <td class="text-warn"><i class="icon-circle-d text-error">2圆</i></td>
+            <td><i class="icon-circle">圆</i></td>
+            <td><i class="icon-circle">圆</i></td>
+        </tr>
+        <tr>
+            <td class="item">材料成本</td>
+            <td colspan="2">高</td>
+            <td>低</td>
+            <td colspan="2" class="text-error bg-gray">低</td>
+        </tr>
+    </table>
+</article>
+
