@@ -45,7 +45,7 @@ namespace DotWeb.WebApp.Controllers
         protected override void OnException(ExceptionContext filterContext)
         {
             base.OnException(filterContext);
-            Response.Redirect("~/NoID.html");
+            //Response.Redirect("~/NoID.html");
         }
     }
 }

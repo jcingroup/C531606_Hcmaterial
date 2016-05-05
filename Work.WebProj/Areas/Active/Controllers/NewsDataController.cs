@@ -54,7 +54,7 @@ namespace DotWeb.Areas.Active.Controllers
         {
             SerializeFileList r = new SerializeFileList();
 
-            r.files = listImgFiles(id, filekind, "Active", "News");
+            r.files = listImgFiles(id, filekind, "Active", "NewsData");
             r.result = true;
             return defJSON(r);
         }
@@ -63,7 +63,7 @@ namespace DotWeb.Areas.Active.Controllers
         public string aj_FDelete(string id, string filekind, string filename)
         {
             ResultInfo r = new ResultInfo();
-            DeleteSysFile(id, filekind, filename, ImageFileUpParm.NewsBasicSingle, "Active", "News");
+            DeleteSysFile(id, filekind, filename, ImageFileUpParm.NewsBasicSingle, "Active", "NewsData");
             r.result = true;
             return defJSON(r);
         }

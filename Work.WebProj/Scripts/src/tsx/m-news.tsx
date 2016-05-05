@@ -216,7 +216,7 @@ namespace News {
                 edit_type: 1,
                 fieldData: {
                     state: 'A',
-                    set_date: Moment().format(dt.dateFT)
+                        set_date: Moment().format(dt.dateFT)
                 }
             });
         }
