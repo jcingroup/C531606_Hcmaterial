@@ -12,14 +12,14 @@ namespace DotWeb.WebApp.Controllers
         public ActionResult Index()
         {
             db0 = getDB0();
-            var items = db0.News.ToList();
+            var items = db0.News.Where(x => x.state == "A").OrderByDescending(x => x.set_date).ToList();
 
             foreach (var item in items)
             {
                 item.img_list = ImgSrc("Active", "NewsData", item.news_id, "List", "origin");
             }
 
-            return View("list",items);
+            return View("list", items);
         }
         public ActionResult content(int id)
         {
@@ -29,8 +29,11 @@ namespace DotWeb.WebApp.Controllers
             {
                 return Redirect("~/NoID.html");
             }
-            else {
-
+            else
+            {
+                if (item.state != "A") {
+                    return Redirect("~/NoID.html");
+                }
                 item.img_list = ImgSrc("Active", "NewsData", item.news_id, "List", "origin");
                 return View(item);
             }

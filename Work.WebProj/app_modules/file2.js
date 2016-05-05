@@ -12,4 +12,4 @@ var Tips2 = (function (_super) {
         return React.createElement("div", null);
     };
     return Tips2;
-})(React.Component);
+}(React.Component));

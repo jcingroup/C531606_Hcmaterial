@@ -212,7 +212,13 @@ namespace News {
             this.setState(newState);
         }
         insertType() {
-            this.setState({ edit_type: 1, fieldData: { i_Hide: false, set_date: Moment().format(dt.dateFT) } });
+            this.setState({
+                edit_type: 1,
+                fieldData: {
+                    state: 'A',
+                    set_date: Moment().format(dt.dateFT)
+                }
+            });
         }
         updateType(id: number | string) {
 
@@ -395,37 +401,15 @@ namespace News {
                                 </div>
 
                                 <div className="form-group">
-                                    <label className="col-xs-2 control-label">排序</label>
-                                    <div className="col-xs-8">
-                                        <input type="number" className="form-control" onChange={this.changeFDValue.bind(this, 'sort') } value={fieldData.sort}  />
-                                    </div>
-                                </div>
-
-                                <div className="form-group">
                                     <label className="col-xs-2 control-label">狀態</label>
                                     <div className="col-xs-4">
-                                        <div className="radio-inline">
-                                            <label>
-                                                <input type="radio"
-                                                    name="i_Hide"
-                                                    value={true}
-                                                    checked={fieldData.i_Hide === true}
-                                                    onChange={this.changeFDValue.bind(this, 'i_Hide') }
-                                                    />
-                                                <span>隱藏</span>
-                                            </label>
-                                        </div>
-                                        <div className="radio-inline">
-                                            <label>
-                                                <input type="radio"
-                                                    name="i_Hide"
-                                                    value={false}
-                                                    checked={fieldData.i_Hide === false}
-                                                    onChange={this.changeFDValue.bind(this, 'i_Hide') }
-                                                    />
-                                                <span>顯示</span>
-                                            </label>
-                                        </div>
+                                        <select className="form-control"
+                                            required
+                                            value={fieldData.state}
+                                            onChange={this.changeFDValue.bind(this, 'state') }>
+                                            <option value="A">前台顯示</option>
+                                            <option value="C">前台關閉</option>
+                                        </select>
                                     </div>
                                 </div>
 

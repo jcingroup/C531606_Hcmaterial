@@ -509,6 +509,15 @@
     <Content Include="ckeditor\config.js" />
     <Content Include="ckeditor\contents.css" />
     <Content Include="ckeditor\styles.js" />
+    <Content Include="Scripts\build\app\m_change_password.js" />
+    <Content Include="Scripts\build\app\m_community.js" />
+    <Content Include="Scripts\build\app\m_login.js" />
+    <Content Include="Scripts\build\app\m_menu.js" />
+    <Content Include="Scripts\build\app\m_menu_set.js" />
+    <Content Include="Scripts\build\app\m_news.js" />
+    <Content Include="Scripts\build\app\m_roles.js" />
+    <Content Include="Scripts\build\app\m_users.js" />
+    <Content Include="Scripts\build\app\vendors.js" />
     <Content Include="Scripts\cdn\BootSideMenu.js" />
     <Content Include="Scripts\cdn\bootstrap.min.js" />
     <Content Include="Scripts\cdn\codrops\classie.js" />
@@ -587,15 +596,15 @@
     <Content Include="Views\News\content.cshtml" />
     <Content Include="Views\Products\sidebar.cshtml" />
     <Content Include="Views\Products\Battery-catalog.cshtml" />
-    <Content Include="Views\News\Bak\content2.cshtml" />
+    <None Include="Views\News\Bak\content2.cshtml" />
     <Content Include="Views\Shared\Layout.zh-CN.cshtml" />
     <Content Include="Views\AboutUs\AboutUs.zh-CN.cshtml" />
     <Content Include="Views\ContactUs\ContactUs.zh-CN.cshtml" />
     <Content Include="Views\Index\Index.zh-CN.cshtml" />
     <Content Include="Views\JoinUs\JoinUs.zh-CN.cshtml" />
-    <Content Include="Views\News\Bak\list.zh-CN.cshtml" />
-    <Content Include="Views\News\Bak\content.zh-CN.cshtml" />
-    <Content Include="Views\News\Bak\content2.zh-CN.cshtml" />
+    <None Include="Views\News\Bak\list.zh-CN.cshtml" />
+    <None Include="Views\News\Bak\content.zh-CN.cshtml" />
+    <None Include="Views\News\Bak\content2.zh-CN.cshtml" />
     <Content Include="Views\Products\Battery-catalog.zh-CN.cshtml" />
     <Content Include="Views\Products\Battery.zh-CN.cshtml" />
     <Content Include="Views\Products\Battery2.zh-CN.cshtml" />
@@ -716,7 +725,6 @@
     <Folder Include="Areas\Base\Views\Shared\" />
     <Folder Include="Content\images\Email\" />
     <Folder Include="Properties\PublishProfiles\" />
-    <Folder Include="Scripts\build\app\" />
     <Folder Include="_Code\CReport\" />
   </ItemGroup>
   <ItemGroup>
