@@ -15,7 +15,7 @@ using System.Data.Entity.Infrastructure;
 
 namespace DotWeb.Api
 {
-    public class NewsController : ajaxApi<News, q_Community>
+    public class NewsController : ajaxApi<News, q_News>
     {
         public async Task<IHttpActionResult> Get(int id)
         {
@@ -26,15 +26,15 @@ namespace DotWeb.Api
                 return Ok(r);
             }
         }
-        public async Task<IHttpActionResult> Get([FromUri]q_Community q)
+        public async Task<IHttpActionResult> Get([FromUri]q_News q)
         {
             #region 連接BusinessLogicLibary資料庫並取得資料
 
             db0 = getDB0();
             var predicate = PredicateBuilder.True<News>();
 
-            if (q.name != null)
-                predicate = predicate.And(x => x.news_title.Contains(q.name));
+            if (q.title != null)
+                predicate = predicate.And(x => x.news_title.Contains(q.title));
 
             int page = (q.page == null ? 1 : (int)q.page);
             var result = db0.News.AsExpandable().Where(predicate);
@@ -177,9 +177,9 @@ namespace DotWeb.Api
             }
         }
     }
-    public class q_Community : QueryBase
+    public class q_News : QueryBase
     {
-        public string name { set; get; }
+        public string title { set; get; }
 
     }
 }
