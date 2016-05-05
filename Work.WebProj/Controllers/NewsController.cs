@@ -9,7 +9,6 @@ namespace DotWeb.WebApp.Controllers
 {
     public class NewsController : WebUserController
     {
-        // GET: News
         public ActionResult Index()
         {
             db0 = getDB0();
@@ -40,8 +39,10 @@ namespace DotWeb.WebApp.Controllers
         {
             return View();
         }
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            base.OnException(filterContext);
+            Response.Redirect("~/NoID.html");
+        }
     }
-
-
-
 }
