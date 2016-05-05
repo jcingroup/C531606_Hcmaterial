@@ -3,10 +3,12 @@ import React = require('react');
 import ReactDOM = require('react-dom');
 import Moment = require('moment');
 import ReactBootstrap = require("react-bootstrap");
+import update = require('react-addons-update');
 import CommCmpt = require('comm-cmpt');
 import CommFunc = require('comm-func');
-import DT = require('dt');
-import "Pikaday/css/pikaday.css";
+import dt = require('dt');
+import DatePicker = require('react-datepicker');
+import "react-datepicker/dist/react-datepicker.css";
 
 namespace News {
     interface Rows {
@@ -45,12 +47,12 @@ namespace News {
         render() {
 
             return <tr>
-                       <td className="text-center"><CommCmpt.GridCheckDel iKey={this.props.ikey} chd={this.props.itemData.check_del} delCheck={this.delCheck} /></td>
-                       <td className="text-center"><CommCmpt.GridButtonModify modify={this.modify} /></td>
-                       <td>{this.props.itemData.news_title}</td>
-                       <td>{Moment(this.props.itemData.news_date).format(DT.dateFT) }</td>
-                       <td>{this.props.itemData.i_Hide ? <span className="label label-default">隱藏</span> : <span className="label label-primary">顯示</span>}</td>
-                </tr>;
+                <td className="text-center"><CommCmpt.GridCheckDel iKey={this.props.ikey} chd={this.props.itemData.check_del} delCheck={this.delCheck} /></td>
+                <td className="text-center"><CommCmpt.GridButtonModify modify={this.modify} /></td>
+                <td>{this.props.itemData.news_title}</td>
+                <td>{Moment(this.props.itemData.news_date).format(dt.dateFT) }</td>
+                <td>{this.props.itemData.i_Hide ? <span className="label label-default">隱藏</span> : <span className="label label-primary">顯示</span>}</td>
+            </tr>;
 
         }
     }
@@ -71,7 +73,7 @@ namespace News {
             this.changeGDValue = this.changeGDValue.bind(this);
             this.changeFDValue = this.changeFDValue.bind(this);
             this.setInputValue = this.setInputValue.bind(this);
-            this.changeDatePicker = this.changeDatePicker.bind(this);
+            this.setChangeDate = this.setChangeDate.bind(this);
             this.componentDidUpdate = this.componentDidUpdate.bind(this);
             this.handleSearch = this.handleSearch.bind(this);
             this.render = this.render.bind(this);
@@ -210,7 +212,7 @@ namespace News {
             this.setState(newState);
         }
         insertType() {
-            this.setState({ edit_type: 1, fieldData: { i_Hide: false, news_date: Moment().format(DT.dateFT) } });
+            this.setState({ edit_type: 1, fieldData: { i_Hide: false, set_date: Moment().format(dt.dateFT) } });
         }
         updateType(id: number | string) {
 
@@ -251,12 +253,19 @@ namespace News {
             this.setState({ fieldData: obj });
         }
 
-        changeDatePicker(name: string, v: Date) {
-            let obj = this.state.fieldData
-            obj[name] = Moment(v).toJSON();
-            this.setState({
-                fieldData: obj
-            });
+        setChangeDate(collentName: string, name: string, date: moment.Moment) {
+
+            var v = date == null ? null : date.format();
+            var objForUpdate = {
+                [collentName]:
+                {
+                    [name]: {
+                        $set: v
+                    }
+                }
+            };
+            var newState = update(this.state, objForUpdate);
+            this.setState(newState);
         }
         render() {
 
@@ -267,172 +276,179 @@ namespace News {
                 let GridNavPage = CommCmpt.GridNavPage;
 
                 outHtml =
-                (
-                    <div>
+                    (
+                        <div>
 
-                    <ul className="breadcrumb">
-                        <li><i className="fa-list-alt"></i> {this.props.menuName}</li>
-                        </ul>
-                    <h3 className="title">
-                        {this.props.caption}
-                        </h3>
-                    <form onSubmit={this.handleSearch}>
-                        <div className="table-responsive">
-                            <div className="table-header">
-                                <div className="table-filter">
-                                    <div className="form-inline">
-                                        <div className="form-group">
-                                            <label>標題</label> { }
-                                            <input type="text" className="form-control"
-                                                onChange={this.changeGDValue.bind(this, 'keyword') }
-                                                value={searchData.keyword}
-                                                placeholder="請輸入關鍵字..." /> { }
-                                            <button className="btn-primary" type="submit"><i className="fa-search"></i> 搜尋</button>
+                            <ul className="breadcrumb">
+                                <li><i className="fa-list-alt"></i> {this.props.menuName}</li>
+                            </ul>
+                            <h3 className="title">
+                                {this.props.caption}
+                            </h3>
+                            <form onSubmit={this.handleSearch}>
+                                <div className="table-responsive">
+                                    <div className="table-header">
+                                        <div className="table-filter">
+                                            <div className="form-inline">
+                                                <div className="form-group">
+                                                    <label>標題</label> { }
+                                                    <input type="text" className="form-control"
+                                                        onChange={this.changeGDValue.bind(this, 'keyword') }
+                                                        value={searchData.keyword}
+                                                        placeholder="請輸入關鍵字..." /> { }
+                                                    <button className="btn-primary" type="submit"><i className="fa-search"></i> 搜尋</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th className="col-xs-1 text-center">
+                                                    <label className="cbox">
+                                                        <input type="checkbox" checked={this.state.checkAll} onChange={this.checkAll} />
+                                                        <i className="fa-check"></i>
+                                                    </label>
+                                                </th>
+                                                <th className="col-xs-1 text-center">修改</th>
+                                                <th className="col-xs-4">標題</th>
+                                                <th className="col-xs-3">日期</th>
+                                                <th className="col-xs-3">狀態</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {
+                                                this.state.gridData.rows.map(
+                                                    (itemData, i) =>
+                                                        <GridRow key={i}
+                                                            ikey={i}
+                                                            primKey={itemData.news_id}
+                                                            itemData={itemData}
+                                                            delCheck={this.delCheck}
+                                                            updateType={this.updateType} />
+                                                )
+                                            }
+                                        </tbody>
+                                    </table>
                                 </div>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th className="col-xs-1 text-center">
-                                            <label className="cbox">
-                                                <input type="checkbox" checked={this.state.checkAll} onChange={this.checkAll} />
-                                                <i className="fa-check"></i>
-                                                </label>
-                                            </th>
-                                        <th className="col-xs-1 text-center">修改</th>
-                                        <th className="col-xs-4">標題</th>
-                                        <th className="col-xs-3">日期</th>
-                                        <th className="col-xs-3">狀態</th>
-                                        </tr>
-                                    </thead>
-                                <tbody>
-                                    {
-                                    this.state.gridData.rows.map(
-                                        (itemData, i) =>
-                                            <GridRow key={i}
-                                                ikey={i}
-                                                primKey={itemData.news_id}
-                                                itemData={itemData}
-                                                delCheck={this.delCheck}
-                                                updateType={this.updateType} />
-                                    )
-                                    }
-                                    </tbody>
-                                </table>
-                            </div>
-                    <GridNavPage
-                        startCount={this.state.gridData.startcount}
-                        endCount={this.state.gridData.endcount}
-                        recordCount={this.state.gridData.records}
-                        totalPage={this.state.gridData.total}
-                        nowPage={this.state.gridData.page}
-                        onQueryGridData={this.queryGridData}
-                        InsertType={this.insertType}
-                        deleteSubmit={this.deleteSubmit}
-                        />
-                        </form>
+                                <GridNavPage
+                                    startCount={this.state.gridData.startcount}
+                                    endCount={this.state.gridData.endcount}
+                                    recordCount={this.state.gridData.records}
+                                    totalPage={this.state.gridData.total}
+                                    nowPage={this.state.gridData.page}
+                                    onQueryGridData={this.queryGridData}
+                                    InsertType={this.insertType}
+                                    deleteSubmit={this.deleteSubmit}
+                                    />
+                            </form>
                         </div>
-                );
+                    );
             }
             else if (this.state.edit_type == 1 || this.state.edit_type == 2) {
                 let fieldData = this.state.fieldData;
                 let InputDate = CommCmpt.InputDate;
 
+
+                let mnt_start_date = CommFunc.MntV(fieldData.set_date);
+
                 outHtml = (
                     <div>
-    <ul className="breadcrumb">
-        <li><i className="fa-list-alt"></i>
-            {this.props.menuName}
-            </li>
-        </ul>
-    <h4 className="title"> {this.props.caption} 基本資料維護</h4>
-    <form className="form-horizontal" onSubmit={this.handleSubmit}>
-        <div className="col-xs-10">
-            <div className="form-group">
-                <label className="col-xs-2 control-label">首頁列表圖</label>
-                <div className="col-xs-8">
-                    <CommCmpt.MasterImageUpload FileKind="List" MainId={fieldData.news_id} ParentEditType={this.state.edit_type} url_upload={gb_approot + 'Active/NewsData/aj_FUpload'} url_list={gb_approot + 'Active/NewsData/aj_FList'}
-                        url_delete={gb_approot + 'Active/NewsData/aj_FDelete'} />
-                    <small className="help-block">最多1張圖，建議尺寸 180*180 px</small>
-                    </div>
-                </div>
+                        <ul className="breadcrumb">
+                            <li><i className="fa-list-alt"></i>
+                                {this.props.menuName}
+                            </li>
+                        </ul>
+                        <h4 className="title"> {this.props.caption} 基本資料維護</h4>
+                        <form className="form-horizontal" onSubmit={this.handleSubmit}>
+                            <div className="col-xs-10">
+                                <div className="form-group">
+                                    <label className="col-xs-2 control-label">首頁列表圖</label>
+                                    <div className="col-xs-8">
+                                        <CommCmpt.MasterImageUpload FileKind="List" MainId={fieldData.news_id} ParentEditType={this.state.edit_type} url_upload={gb_approot + 'Active/NewsData/aj_FUpload'} url_list={gb_approot + 'Active/NewsData/aj_FList'}
+                                            url_delete={gb_approot + 'Active/NewsData/aj_FDelete'} />
+                                        <small className="help-block">最多1張圖，建議尺寸 180*180 px</small>
+                                    </div>
+                                </div>
 
-            <div className="form-group">
-                <label className="col-xs-2 control-label">標題</label>
-                <div className="col-xs-8">
-                    <input type="text" className="form-control" onChange={this.changeFDValue.bind(this, 'news_title') } value={fieldData.news_title} maxLength={64}
-                        required />
-                    </div>
-                <small className="col-xs-2 text-danger">(必填) </small>
-                </div>
+                                <div className="form-group">
+                                    <label className="col-xs-2 control-label">標題</label>
+                                    <div className="col-xs-8">
+                                        <input type="text" className="form-control" onChange={this.changeFDValue.bind(this, 'news_title') } value={fieldData.news_title} maxLength={64}
+                                            required />
+                                    </div>
+                                    <small className="col-xs-2 text-danger">(必填) </small>
+                                </div>
 
-            <div className="form-group">
-                <label className="col-xs-2 control-label">日期</label>
-                <div className="col-xs-8">
-                    <InputDate id="news_date"
-                        onChange={this.changeDatePicker}
-                        field_name="news_date"
-                        value={fieldData.news_date}
-                        disabled={false} required={true} ver={1} />
-                    </div>
-                <small className="col-xs-2 text-danger">(必填) </small>
-                </div>
+                                <div className="form-group">
+                                    <label className="col-xs-2 control-label">日期</label>
+                                    <div className="col-xs-8">
+                                        <DatePicker selected={mnt_start_date}
+                                            dateFormat={dt.dateFT}
+                                            isClearable={true}
+                                            required={true}
+                                            locale="zh-TW"
+                                            showYearDropdown
+                                            minDate={Moment() }
+                                            onChange={this.setChangeDate.bind(this, this.props.fdName, 'start_date') }
+                                            className="form-control" />
+                                    </div>
+                                    <small className="col-xs-2 text-danger">(必填) </small>
+                                </div>
 
-            <div className="form-group">
-                <label className="col-xs-2 control-label">排序</label>
-                <div className="col-xs-8">
-                    <input type="number" className="form-control" onChange={this.changeFDValue.bind(this, 'sort') } value={fieldData.sort}  />
-                    </div>
-                </div>
+                                <div className="form-group">
+                                    <label className="col-xs-2 control-label">排序</label>
+                                    <div className="col-xs-8">
+                                        <input type="number" className="form-control" onChange={this.changeFDValue.bind(this, 'sort') } value={fieldData.sort}  />
+                                    </div>
+                                </div>
 
-            <div className="form-group">
-                <label className="col-xs-2 control-label">狀態</label>
-                <div className="col-xs-4">
-                   <div className="radio-inline">
-                       <label>
-                            <input type="radio"
-                                name="i_Hide"
-                                value={true}
-                                checked={fieldData.i_Hide === true}
-                                onChange={this.changeFDValue.bind(this, 'i_Hide') }
-                                />
-                            <span>隱藏</span>
-                           </label>
-                       </div>
-                   <div className="radio-inline">
-                       <label>
-                            <input type="radio"
-                                name="i_Hide"
-                                value={false}
-                                checked={fieldData.i_Hide === false}
-                                onChange={this.changeFDValue.bind(this, 'i_Hide') }
-                                />
-                            <span>顯示</span>
-                           </label>
-                       </div>
-                    </div>
-                </div>
+                                <div className="form-group">
+                                    <label className="col-xs-2 control-label">狀態</label>
+                                    <div className="col-xs-4">
+                                        <div className="radio-inline">
+                                            <label>
+                                                <input type="radio"
+                                                    name="i_Hide"
+                                                    value={true}
+                                                    checked={fieldData.i_Hide === true}
+                                                    onChange={this.changeFDValue.bind(this, 'i_Hide') }
+                                                    />
+                                                <span>隱藏</span>
+                                            </label>
+                                        </div>
+                                        <div className="radio-inline">
+                                            <label>
+                                                <input type="radio"
+                                                    name="i_Hide"
+                                                    value={false}
+                                                    checked={fieldData.i_Hide === false}
+                                                    onChange={this.changeFDValue.bind(this, 'i_Hide') }
+                                                    />
+                                                <span>顯示</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
 
-            <div className="form-group">
-                <label className="col-xs-2 control-label">內容</label>
-                <div className="col-xs-10">
-                    <textarea type="date" className="form-control" id="news_content" name="news_content" value={fieldData.news_content} onChange={this.changeFDValue.bind(this, 'news_content') } />
-                    </div>
-                </div>
+                                <div className="form-group">
+                                    <label className="col-xs-2 control-label">內容</label>
+                                    <div className="col-xs-10">
+                                        <textarea type="date" className="form-control" id="news_content" name="news_content" value={fieldData.news_content} onChange={this.changeFDValue.bind(this, 'news_content') } />
+                                    </div>
+                                </div>
 
 
-            <div className="form-action">
-                <div className="col-xs-4 col-xs-offset-2">
-                    <button type="submit" className="btn-primary"><i className="fa-check"></i> 儲存</button>
-                    {}
-                    <button type="button" onClick={this.noneType}><i className="fa-times"></i> 回前頁</button>
+                                <div className="form-action">
+                                    <div className="col-xs-4 col-xs-offset-2">
+                                        <button type="submit" className="btn-primary"><i className="fa-check"></i> 儲存</button>
+                                        {}
+                                        <button type="button" onClick={this.noneType}><i className="fa-times"></i> 回前頁</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </div>
-            </div>
-        </form>
-                        </div>
                 );
             }
 

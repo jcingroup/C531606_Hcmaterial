@@ -11,7 +11,7 @@ module.exports = {
         m_change_password: path.resolve(__dirname, 'Scripts/src/tsx/m-change_password.js'),
         m_users: path.resolve(__dirname, 'Scripts/src/tsx/m-users.js'),
         //後台 管理者
-        m_community: path.resolve(__dirname, 'Scripts/src/tsx/m-community.js'),
+        m_news: path.resolve(__dirname, 'Scripts/src/tsx/m-news.js'),
         vendors: ['jquery', 'react', 'react-bootstrap', 'moment']
     },
     output: {
@@ -20,7 +20,7 @@ module.exports = {
     },
     module: {
         loaders: [
-          { test: /\.jsx$/, loader: 'babel' },
+          { test: /\.jsx$/, loader: 'babel', query: { presets: ['react', 'es2015'] } },
           { test: /\.css$/, loader: "style-loader!css-loader" }
         ]
     },

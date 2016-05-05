@@ -1,5 +1,6 @@
 ﻿import $ = require('jquery');
 import toastr = require('toastr');
+import Moment = require('moment');
 
 export function uniqid() {
     /*
@@ -320,4 +321,10 @@ interface ParmMealCount {
     breakfast: number;
     lunch: number;
     dinner: number;
+}
+
+export function MntV(date) {
+    //將日期設定成moment物件
+    var r = date === null || date === undefined ? null : Moment(date);
+    return r;
 }

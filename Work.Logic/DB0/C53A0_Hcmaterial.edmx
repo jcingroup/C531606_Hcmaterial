@@ -140,6 +140,7 @@
           </Key>
           <Property Name="news_id" Type="int" Nullable="false" />
           <Property Name="news_title" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="set_date" Type="smalldatetime" />
           <Property Name="sort" Type="int" Nullable="false" />
           <Property Name="state" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="news_content" Type="ntext" />
@@ -405,6 +406,7 @@
           <Property Name="i_UpdateDateTime" Type="DateTime" Precision="3" />
           <Property Name="i_Lang" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
           <Property Name="state" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="set_date" Type="DateTime" Precision="0" />
         </EntityType>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
@@ -600,6 +602,7 @@
           <EntitySetMapping Name="News">
             <EntityTypeMapping TypeName="C53A0_HcmaterialModel.News">
               <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="set_date" ColumnName="set_date" />
                 <ScalarProperty Name="state" ColumnName="state" />
                 <ScalarProperty Name="news_id" ColumnName="news_id" />
                 <ScalarProperty Name="news_title" ColumnName="news_title" />

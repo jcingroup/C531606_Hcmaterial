@@ -27,5 +27,6 @@ namespace ProcCore.Business.DB0
         public Nullable<System.DateTime> i_UpdateDateTime { get; set; }
         public string i_Lang { get; set; }
         public string state { get; set; }
+        public Nullable<System.DateTime> set_date { get; set; }
     }
 }

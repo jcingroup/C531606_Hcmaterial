@@ -9,6 +9,7 @@
     function formatFileSize(byte_size: number): string
     function moneyFormat(n: number): string
     function clone(obj)
+    function MntV(date: any): moment.Moment
     var Ajax: {
         xhr: XMLHttpRequest,
         request(url: string, method: string, data: any, success: (response: any) => void, failure: (responseText: string) => void)
