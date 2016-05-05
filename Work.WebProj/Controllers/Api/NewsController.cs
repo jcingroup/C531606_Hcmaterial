@@ -71,6 +71,8 @@ namespace DotWeb.Api
                 item = await db0.News.FindAsync(md.news_id);
                 item.news_title = md.news_title;
                 item.news_content = md.news_content;
+                item.set_date = md.set_date;
+                item.state = md.state;
 
                 await db0.SaveChangesAsync();
                 rAjaxResult.result = true;
@@ -147,7 +149,8 @@ namespace DotWeb.Api
                     r.result = true;
                     return Ok(r);
                 }
-                else {
+                else
+                {
                     r.result = false;
                     r.message = Resources.Res.Log_Err_Delete_NotFind;
                     return Ok(r);

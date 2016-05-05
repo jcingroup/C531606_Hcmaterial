@@ -1,25 +1,19 @@
-﻿
+﻿@model IList<ProcCore.Business.DB0.News>
 @{
-    ViewBag.Title = "最新消息";
+    ViewBag.Title = Resources.Web.News;
     ViewBag.BodyClass = "News";
-    ViewBag.breadCrumb = "最新消息";
+    ViewBag.breadCrumb = Resources.Web.News;
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h1>最新消息</h1>
-
-<figure>
-    <img src="~/Content/images/News/pic_s.jpg" alt="消息圖">
-    <a href="~/News/content">READ MORE</a>
-    <figcaption>
-        <h4><small>2015.08.12</small>泓辰開幕典禮</h4>
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="~/Content/images/News/pic2_s.jpg" alt="消息圖">
-    <a href="~/News/content2">READ MORE</a>
-    <figcaption>
-        <h4><small>2015.04.08</small>平鎮廠遷移</h4>
-    </figcaption>
-</figure>
+<h1>@Resources.Web.News</h1>
+@foreach (var item in Model)
+{
+    <figure>
+        <img src="@item.img_list" alt="@item.news_title">
+        <a href="~/News/content?id=@item.news_id">READ MORE</a>
+        <figcaption>
+            <h4><small>@( ((DateTime)item.set_date).ToString("yyyy-MM-dd"))</small>@item.news_title</h4>
+        </figcaption>
+    </figure>
+}

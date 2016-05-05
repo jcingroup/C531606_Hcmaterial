@@ -13,17 +13,35 @@ namespace DotWeb.WebApp.Controllers
         public ActionResult Index()
         {
             db0 = getDB0();
-            var item = db0.News.ToList();
+            var items = db0.News.ToList();
 
-            return View("list");
+            foreach (var item in items)
+            {
+                item.img_list = ImgSrc("Active", "NewsData", item.news_id, "List", "origin");
+            }
+
+            return View("list",items);
         }
-        public ActionResult content()
+        public ActionResult content(int id)
         {
-            return View();
+            db0 = getDB0();
+            var item = db0.News.Find(id);
+            if (item == null)
+            {
+                return Redirect("~/NoID.html");
+            }
+            else {
+
+                item.img_list = ImgSrc("Active", "NewsData", item.news_id, "List", "origin");
+                return View(item);
+            }
         }
         public ActionResult content2()
         {
             return View();
         }
     }
+
+
+
 }

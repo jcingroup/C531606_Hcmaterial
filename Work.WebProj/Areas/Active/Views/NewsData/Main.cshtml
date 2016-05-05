@@ -6,7 +6,7 @@
     <li>@ViewBag.Caption</li>
 }
 @section IncludeCSS{
-
+    <link rel="stylesheet" href="~/node_modules/react-datepicker/dist/react-datepicker.css">
 }
 @section IncludeScript{
     @Html.Partial("Manage/JSGlobalVar")
@@ -14,6 +14,7 @@
         var gb_menuname = '@ViewBag.MenuName';
         var gb_caption = '@ViewBag.Caption';
     </script>
+    <script src="~/ckeditor/ckeditor.js?v=@CommWebSetup.CacheVer"></script>
     <script src="~/Scripts/build/app/m_news.js?v=@CommWebSetup.CacheVer"></script>
 }
 @section sidebar{

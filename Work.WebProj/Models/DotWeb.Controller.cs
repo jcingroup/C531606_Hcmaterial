@@ -881,7 +881,7 @@ namespace DotWeb.Controller
         //protected Log.LogPlamInfo plamInfo = new Log.LogPlamInfo() { AllowWrite = true };
         //protected readonly string sessionShoppingString = "CestLaVie.Shopping";
         //protected readonly string sessionMemberLoginString = "CestLaVie.loginMail";
-        private readonly string sysUpFilePathTpl = "~/_Code/SysUpFiles/{0}.{1}/{2}/{3}/{4}";
+        private readonly string sysUpFilePathTpl = "~/_Code/SysUpFiles/{0}/{1}/{2}/{3}/{4}";
         private string getImg_path_tpl = "~/_Code/SysUpFiles/{0}/{1}/{2}/{3}";
         protected WebInfo wi;
         protected string MemberId;
@@ -1039,9 +1039,9 @@ namespace DotWeb.Controller
             }
             return File(DownFilePath, "application/" + fi.Extension.Replace(".", ""), Url.Encode(fi.Name));
         }
-        public string ImgSrc(string AreaName, string ContorllerName, Int32 Id, String FilesKind, Int32 ImageSizeTRype)
+        public string ImgSrc(string AreaName, string ContorllerName, Int32 Id, String FilesKind, string ImageSizeTRype)
         {
-            String ImgSizeString = "s_" + ImageSizeTRype;
+            String ImgSizeString = "" + ImageSizeTRype;
             String SearchPath = String.Format(sysUpFilePathTpl, AreaName, ContorllerName, Id, FilesKind, ImgSizeString);
             String FolderPth = Server.MapPath(SearchPath);
 

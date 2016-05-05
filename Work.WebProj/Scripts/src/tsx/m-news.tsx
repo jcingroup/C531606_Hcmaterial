@@ -15,7 +15,7 @@ namespace News {
         news_id?: string;
         check_del?: boolean,
         news_title?: string;
-        news_date?: any;
+        set_date?: string;
         i_Hide?: boolean;
     }
     interface FormState<G, F> extends BaseDefine.GirdFormStateBase<G, F> {
@@ -50,7 +50,7 @@ namespace News {
                 <td className="text-center"><CommCmpt.GridCheckDel iKey={this.props.ikey} chd={this.props.itemData.check_del} delCheck={this.delCheck} /></td>
                 <td className="text-center"><CommCmpt.GridButtonModify modify={this.modify} /></td>
                 <td>{this.props.itemData.news_title}</td>
-                <td>{Moment(this.props.itemData.news_date).format(dt.dateFT) }</td>
+                <td>{Moment(this.props.itemData.set_date).format(dt.dateFT) }</td>
                 <td>{this.props.itemData.i_Hide ? <span className="label label-default">隱藏</span> : <span className="label label-primary">顯示</span>}</td>
             </tr>;
 
@@ -97,7 +97,7 @@ namespace News {
         componentDidUpdate(prevProps, prevState) {
             if ((prevState.edit_type == 0 && (this.state.edit_type == 1 || this.state.edit_type == 2)) ||
                 (prevState.edit_type == 1 && this.state.edit_type == 2)) {
-                console.log('CKEDITOR');
+                //console.log('CKEDITOR');
                 CKEDITOR.replace('news_content');
             }
         }
@@ -269,7 +269,7 @@ namespace News {
         }
         render() {
 
-            var outHtml: JSX.Element = null;
+            var outHtml: JSX.Element = <div></div>;
 
             if (this.state.edit_type == 0) {
                 let searchData = this.state.searchData;
@@ -349,8 +349,7 @@ namespace News {
                 let fieldData = this.state.fieldData;
                 let InputDate = CommCmpt.InputDate;
 
-
-                let mnt_start_date = CommFunc.MntV(fieldData.set_date);
+                let mnt_set_date = CommFunc.MntV(fieldData.set_date);
 
                 outHtml = (
                     <div>
@@ -383,14 +382,13 @@ namespace News {
                                 <div className="form-group">
                                     <label className="col-xs-2 control-label">日期</label>
                                     <div className="col-xs-8">
-                                        <DatePicker selected={mnt_start_date}
+                                        <DatePicker selected={mnt_set_date}
                                             dateFormat={dt.dateFT}
                                             isClearable={true}
                                             required={true}
                                             locale="zh-TW"
                                             showYearDropdown
-                                            minDate={Moment() }
-                                            onChange={this.setChangeDate.bind(this, this.props.fdName, 'start_date') }
+                                            onChange={this.setChangeDate.bind(this, this.props.fdName, 'set_date') }
                                             className="form-control" />
                                     </div>
                                     <small className="col-xs-2 text-danger">(必填) </small>

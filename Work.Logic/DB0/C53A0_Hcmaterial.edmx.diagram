@@ -14,7 +14,7 @@
         <EntityTypeShape EntityType="C53A0_HcmaterialModel.i_Parm" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="C53A0_HcmaterialModel.i_SN" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="C53A0_HcmaterialModel.Menu" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="C53A0_HcmaterialModel.News" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C53A0_HcmaterialModel.News" Width="2.625" PointX="9.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="C53A0_HcmaterialModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="C53A0_HcmaterialModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="C53A0_HcmaterialModel.AspNetUserRoles" ManuallyRouted="false" />

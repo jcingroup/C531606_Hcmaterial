@@ -191,6 +191,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Res.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_GlobalResources\Web.en-US.designer.cs">
+      <DependentUpon>Web.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Web.zh-CN.designer.cs">
+      <DependentUpon>Web.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Web.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Web.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -487,6 +502,7 @@
     <None Include="Content\publih.wpp.targets" />
     <Content Include="Content\sass\_client\_main.scss" />
     <Content Include="Content\sass\_client\_settings.scss" />
+    <Content Include="NoID.html" />
     <Content Include="index.html" />
     <Content Include="ckeditor\build-config.js" />
     <Content Include="ckeditor\ckeditor.js" />
@@ -571,15 +587,15 @@
     <Content Include="Views\News\content.cshtml" />
     <Content Include="Views\Products\sidebar.cshtml" />
     <Content Include="Views\Products\Battery-catalog.cshtml" />
-    <Content Include="Views\News\content2.cshtml" />
+    <Content Include="Views\News\Bak\content2.cshtml" />
     <Content Include="Views\Shared\Layout.zh-CN.cshtml" />
     <Content Include="Views\AboutUs\AboutUs.zh-CN.cshtml" />
     <Content Include="Views\ContactUs\ContactUs.zh-CN.cshtml" />
     <Content Include="Views\Index\Index.zh-CN.cshtml" />
     <Content Include="Views\JoinUs\JoinUs.zh-CN.cshtml" />
-    <Content Include="Views\News\list.zh-CN.cshtml" />
-    <Content Include="Views\News\content.zh-CN.cshtml" />
-    <Content Include="Views\News\content2.zh-CN.cshtml" />
+    <Content Include="Views\News\Bak\list.zh-CN.cshtml" />
+    <Content Include="Views\News\Bak\content.zh-CN.cshtml" />
+    <Content Include="Views\News\Bak\content2.zh-CN.cshtml" />
     <Content Include="Views\Products\Battery-catalog.zh-CN.cshtml" />
     <Content Include="Views\Products\Battery.zh-CN.cshtml" />
     <Content Include="Views\Products\Battery2.zh-CN.cshtml" />
@@ -738,6 +754,18 @@
     <Content Include="Areas\Active\Views\NewsData\App_LocalResources\Main.cshtml.resx" />
     <Content Include="Areas\Base\Views\Menu\App_LocalResources\ChangePassword.cshtml.resx" />
     <Content Include="Areas\Base\Views\Menu\App_LocalResources\Main.cshtml.resx" />
+    <Content Include="App_GlobalResources\Web.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Web.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Web.zh-CN.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Web.zh-CN.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Web.en-US.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Web.en-US.designer.cs</LastGenOutput>
+    </Content>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
