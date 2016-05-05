@@ -909,9 +909,9 @@ namespace DotWeb.Controller
             MemberId = getMemberIdCookie == null ? null : EncryptString.desDecryptBase64(Server.UrlDecode(getMemberIdCookie.Value));
             try
             {
-                var db = getDB0();
-                var Async = db.SaveChangesAsync();
-                Async.Wait();
+                //var db = getDB0();
+                //var Async = db.SaveChangesAsync();
+                //Async.Wait();
 
                 ViewBag.VisitCount = visitCount;
                 ViewBag.IsFirstPage = false; //是否為首頁，請在首頁的Action此值設為True

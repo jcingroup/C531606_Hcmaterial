@@ -199,7 +199,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Active\ActiveAreaRegistration.cs" />
-    <Compile Include="Areas\Active\Controllers\CommunityController.cs" />
+    <Compile Include="Areas\Active\Controllers\NewsDataController.cs" />
     <Compile Include="Areas\Base\Controllers\LoginController.cs" />
     <Content Include="app_modules\comm-cmpt\package.js" />
     <Content Include="app_modules\comm-func\package.js" />
@@ -217,7 +217,7 @@
     <Content Include="app_modules\simple-ajax-uploader\bower.json" />
     <Content Include="app_modules\simple-ajax-uploader\package.json" />
     <Content Include="app_modules\dt\package.json" />
-    <Content Include="Areas\Active\Views\Community\Main.cshtml" />
+    <Content Include="Areas\Active\Views\NewsData\Main.cshtml" />
     <Content Include="app_modules\comm-typeahead\package.json" />
     <None Include="Areas\Base\Controllers\ReportChartController.cs" />
     <Compile Include="Areas\Base\Controllers\RolesController.cs" />
@@ -330,6 +330,7 @@
     <Content Include="Content\css\page.css" />
     <Content Include="Content\css\swiper.min.css" />
     <Content Include="Content\font\fa\fontawesome-webfont.svg" />
+    <Content Include="Content\font\fontAwesome\fontawesome-webfont.svg" />
     <Content Include="Content\font\icomoon\icomoon.svg" />
     <Content Include="Content\images\AboutUs\pic2.gif" />
     <Content Include="Content\images\AboutUs\pic3.jpg" />
@@ -469,6 +470,10 @@
     <Content Include="Content\font\icomoon\icomoon.eot" />
     <Content Include="Content\font\icomoon\icomoon.ttf" />
     <Content Include="Content\font\icomoon\icomoon.woff" />
+    <Content Include="Content\font\fontAwesome\fontawesome-webfont.eot" />
+    <Content Include="Content\font\fontAwesome\fontawesome-webfont.ttf" />
+    <Content Include="Content\font\fontAwesome\fontawesome-webfont.woff" />
+    <Content Include="Content\font\fontAwesome\FontAwesome.otf" />
     <None Include="gulpfile.js" />
     <Content Include="Content\images\noIE\bg.gif" />
     <Content Include="Content\images\noIE\brow.gif" />
@@ -715,7 +720,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Active\Views\Community\App_LocalResources\Main.cshtml.resx" />
+    <Content Include="Areas\Active\Views\NewsData\App_LocalResources\Main.cshtml.resx" />
     <Content Include="Areas\Base\Views\Menu\App_LocalResources\ChangePassword.cshtml.resx" />
     <Content Include="Areas\Base\Views\Menu\App_LocalResources\Main.cshtml.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">

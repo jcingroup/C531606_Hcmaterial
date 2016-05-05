@@ -12,6 +12,9 @@ namespace DotWeb.WebApp.Controllers
         // GET: News
         public ActionResult Index()
         {
+            db0 = getDB0();
+            var item = db0.News.ToList();
+
             return View("list");
         }
         public ActionResult content()
