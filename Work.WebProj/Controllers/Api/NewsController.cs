@@ -134,35 +134,30 @@ namespace DotWeb.Api
                 db0.Dispose();
             }
         }
-        public async Task<IHttpActionResult> Delete([FromUri]int id)
+        public async Task<IHttpActionResult> Delete([FromUri]int[] ids)
         {
             try
             {
                 db0 = getDB0();
                 r = new ResultInfo<News>();
-
-                item = await db0.News.FindAsync(id);
-                if (item != null)
+                foreach (var id in ids)
                 {
+                    item = new News() { news_id = id };
+                    db0.News.Attach(item);
                     db0.News.Remove(item);
-                    await db0.SaveChangesAsync();
-                    r.result = true;
-                    return Ok(r);
                 }
-                else
-                {
-                    r.result = false;
-                    r.message = Resources.Res.Log_Err_Delete_NotFind;
-                    return Ok(r);
-                }
+                await db0.SaveChangesAsync();
 
+                r.result = true;
+                return Ok(r);
             }
             catch (DbUpdateException ex)
             {
                 r.result = false;
                 if (ex.InnerException != null)
                 {
-                    r.message = Resources.Res.Log_Err_Delete_DetailExist + "\r\n" + getErrorMessage(ex);
+                    r.message = Resources.Res.Log_Err_Delete_DetailExist
+                        + "\r\n" + getErrorMessage(ex);
                 }
                 else
                 {
