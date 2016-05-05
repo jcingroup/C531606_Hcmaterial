@@ -68,9 +68,9 @@ namespace ProcCore.Business.DB0
         public bool role_use { get; set; }
         public string role_name { get; set; }
     }
-    public partial class C51A0_BuyNowEntities : DbContext
+    public partial class C53A0_HcmaterialEntities : DbContext
     {
-        public C51A0_BuyNowEntities(string connectionstring)
+        public C53A0_HcmaterialEntities(string connectionstring)
             : base(connectionstring)
         {
         }

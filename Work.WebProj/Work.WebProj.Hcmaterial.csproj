@@ -273,7 +273,7 @@
     <Compile Include="Controllers\Api\GetActionController.cs" />
     <Compile Include="Controllers\Api\MenuController.cs" />
     <Compile Include="Controllers\Api\RolesController.cs" />
-    <Compile Include="Controllers\Api\CommunityController.cs" />
+    <Compile Include="Controllers\Api\NewsController.cs" />
     <Compile Include="Controllers\Api\UsersController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\IndexController.cs" />

@@ -74,53 +74,53 @@
   <ItemGroup>
     <Compile Include="Base.cs" />
     <Compile Include="DB0\AspNetRoles.cs">
-      <DependentUpon>C51A0_BuyNow.tt</DependentUpon>
+      <DependentUpon>C53A0_Hcmaterial.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB0\AspNetUserClaims.cs">
+      <DependentUpon>C53A0_Hcmaterial.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB0\AspNetUserLogins.cs">
+      <DependentUpon>C53A0_Hcmaterial.tt</DependentUpon>
     </Compile>
     <Compile Include="DB0\AspNetUsers.cs">
-      <DependentUpon>C51A0_BuyNow.tt</DependentUpon>
+      <DependentUpon>C53A0_Hcmaterial.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB0\C51A0_BuyNow.Context.cs">
+    <Compile Include="DB0\C53A0_Hcmaterial.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>C51A0_BuyNow.Context.tt</DependentUpon>
+      <DependentUpon>C53A0_Hcmaterial.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB0\C51A0_BuyNow.cs">
+    <Compile Include="DB0\C53A0_Hcmaterial.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>C51A0_BuyNow.tt</DependentUpon>
+      <DependentUpon>C53A0_Hcmaterial.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB0\C51A0_BuyNow.Designer.cs">
+    <Compile Include="DB0\C53A0_Hcmaterial.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>C51A0_BuyNow.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DB0\Community.cs">
-      <DependentUpon>C51A0_BuyNow.tt</DependentUpon>
+      <DependentUpon>C53A0_Hcmaterial.edmx</DependentUpon>
     </Compile>
     <Compile Include="DB0\DBPart.cs" />
     <Compile Include="DB0\Department.cs">
-      <DependentUpon>C51A0_BuyNow.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB0\i_Currency.cs">
-      <DependentUpon>C51A0_BuyNow.tt</DependentUpon>
+      <DependentUpon>C53A0_Hcmaterial.tt</DependentUpon>
     </Compile>
     <Compile Include="DB0\i_IDX.cs">
-      <DependentUpon>C51A0_BuyNow.tt</DependentUpon>
+      <DependentUpon>C53A0_Hcmaterial.tt</DependentUpon>
     </Compile>
     <Compile Include="DB0\i_Lang.cs">
-      <DependentUpon>C51A0_BuyNow.tt</DependentUpon>
+      <DependentUpon>C53A0_Hcmaterial.tt</DependentUpon>
     </Compile>
     <Compile Include="DB0\i_Parm.cs">
-      <DependentUpon>C51A0_BuyNow.tt</DependentUpon>
+      <DependentUpon>C53A0_Hcmaterial.tt</DependentUpon>
     </Compile>
     <Compile Include="DB0\i_SN.cs">
-      <DependentUpon>C51A0_BuyNow.tt</DependentUpon>
+      <DependentUpon>C53A0_Hcmaterial.tt</DependentUpon>
     </Compile>
     <Compile Include="DB0\Menu.cs">
-      <DependentUpon>C51A0_BuyNow.tt</DependentUpon>
+      <DependentUpon>C53A0_Hcmaterial.tt</DependentUpon>
     </Compile>
     <Compile Include="DB0\News.cs">
-      <DependentUpon>C51A0_BuyNow.tt</DependentUpon>
+      <DependentUpon>C53A0_Hcmaterial.tt</DependentUpon>
     </Compile>
     <Compile Include="LogicCenter.cs" />
     <Compile Include="Models\Menu.cs" />
@@ -130,12 +130,12 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <EntityDeploy Include="DB0\C51A0_BuyNow.edmx">
+    <EntityDeploy Include="DB0\C53A0_Hcmaterial.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>C51A0_BuyNow.Designer.cs</LastGenOutput>
+      <LastGenOutput>C53A0_Hcmaterial.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DB0\C51A0_BuyNow.edmx.diagram">
-      <DependentUpon>C51A0_BuyNow.edmx</DependentUpon>
+    <None Include="DB0\C53A0_Hcmaterial.edmx.diagram">
+      <DependentUpon>C53A0_Hcmaterial.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -143,21 +143,16 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB0\C51A0_BuyNow.Context.tt">
+    <Content Include="DB0\C53A0_Hcmaterial.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>C51A0_BuyNow.edmx</DependentUpon>
-      <LastGenOutput>C51A0_BuyNow.Context.cs</LastGenOutput>
+      <DependentUpon>C53A0_Hcmaterial.edmx</DependentUpon>
+      <LastGenOutput>C53A0_Hcmaterial.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DB0\C51A0_BuyNow.tt">
+    <Content Include="DB0\C53A0_Hcmaterial.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>C51A0_BuyNow.edmx</DependentUpon>
-      <LastGenOutput>C51A0_BuyNow.cs</LastGenOutput>
+      <DependentUpon>C53A0_Hcmaterial.edmx</DependentUpon>
+      <LastGenOutput>C53A0_Hcmaterial.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="DB0\Community.cs.d.ts">
-      <DependentUpon>Community.cs</DependentUpon>
-    </TypeScriptCompile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

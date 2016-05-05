@@ -34,7 +34,7 @@ namespace DotWeb.Controller
     public abstract class SourceController : System.Web.Mvc.Controller
     {
         //protected string IP;
-        protected C51A0_BuyNowEntities db0;
+        protected C53A0_HcmaterialEntities db0;
         protected bool isTablet = false;
         protected virtual string getRecMessage(string MsgId)
         {
@@ -61,7 +61,7 @@ namespace DotWeb.Controller
         {
             return System.Globalization.CultureInfo.CurrentCulture.Name;
         }
-        protected static C51A0_BuyNowEntities getDB0()
+        protected static C53A0_HcmaterialEntities getDB0()
         {
             LogicCenter.SetDB0EntityString(CommSetup.CommWebSetup.DB0_CodeString);
             return LogicCenter.getDB0;
