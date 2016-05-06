@@ -633,6 +633,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="webpack.config.js" />
+    <None Include="Views\Shared\NoID.cshtml" />
     <Content Include="_Code\cache\memo.txt" />
     <Content Include="_Code\RPTExcel\DownExcel.xls" />
     <Content Include="_Code\RPTExcel\Equipment.xls" />

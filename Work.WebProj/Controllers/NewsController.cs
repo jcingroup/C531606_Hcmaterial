@@ -21,31 +21,33 @@ namespace DotWeb.WebApp.Controllers
 
             return View("list", items);
         }
+
+        [HandleError]
         public ActionResult content(int id)
         {
+
             db0 = getDB0();
             var item = db0.News.Find(id);
             if (item == null)
-            {
-                return Redirect("~/NoID.html");
-            }
-            else
-            {
-                if (item.state != "A") {
-                    return Redirect("~/NoID.html");
-                }
-                item.img_list = ImgSrc("Active", "NewsData", item.news_id, "List", "origin");
-                return View(item);
-            }
+                return View("NoID");
+
+            item.img_list = ImgSrc("Active", "NewsData", item.news_id, "List", "origin");
+            return View(item);
+
         }
         public ActionResult content2()
         {
             return View();
         }
+
         protected override void OnException(ExceptionContext filterContext)
         {
             base.OnException(filterContext);
-            //Response.Redirect("~/NoID.html");
+            filterContext.Result = new ViewResult()
+            {
+                ViewName = "NoID"
+            };
+            filterContext.ExceptionHandled = true;
         }
     }
 }
