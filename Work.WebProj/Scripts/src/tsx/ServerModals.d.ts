@@ -105,6 +105,7 @@
         state?: string
         news_content?: string
         i_Hide?: boolean
+        i_Lang?: string
     }
 
 } 

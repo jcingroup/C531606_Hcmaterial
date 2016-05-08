@@ -12,7 +12,9 @@ namespace DotWeb.WebApp.Controllers
         public ActionResult Index()
         {
             db0 = getDB0();
-            var items = db0.News.Where(x => x.state == "A").OrderByDescending(x => x.set_date).ToList();
+
+            var lang = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+            var items = db0.News.Where(x => x.state == "A" && x.i_Lang == lang).OrderByDescending(x => x.set_date).ToList();
 
             foreach (var item in items)
             {
@@ -29,7 +31,7 @@ namespace DotWeb.WebApp.Controllers
             db0 = getDB0();
             var item = db0.News.Find(id);
             if (item == null)
-                return View("NoID");
+                return View("Error");
 
             item.img_list = ImgSrc("Active", "NewsData", item.news_id, "List", "origin");
             return View(item);
@@ -45,7 +47,7 @@ namespace DotWeb.WebApp.Controllers
             base.OnException(filterContext);
             filterContext.Result = new ViewResult()
             {
-                ViewName = "NoID"
+                ViewName = "Error"
             };
             filterContext.ExceptionHandled = true;
         }

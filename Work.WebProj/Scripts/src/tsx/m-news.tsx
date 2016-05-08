@@ -16,7 +16,8 @@ namespace News {
         check_del?: boolean,
         news_title?: string;
         set_date?: string;
-        i_Hide?: boolean;
+        state?: string;
+        i_Lang?: string;
     }
     interface FormState<G, F> extends BaseDefine.GirdFormStateBase<G, F> {
         searchData?: {
@@ -51,7 +52,8 @@ namespace News {
                 <td className="text-center"><CommCmpt.GridButtonModify modify={this.modify} /></td>
                 <td>{this.props.itemData.news_title}</td>
                 <td>{Moment(this.props.itemData.set_date).format(dt.dateFT) }</td>
-                <td>{this.props.itemData.i_Hide ? <span className="label label-default">隱藏</span> : <span className="label label-primary">顯示</span>}</td>
+                <td>{this.props.itemData.i_Lang}</td>
+                <td>{this.props.itemData.state == 'A' ? <span className="label label-primary">顯示</span> : <span className="label label-default">隱藏</span>}</td>
             </tr>;
 
         }
@@ -216,7 +218,8 @@ namespace News {
                 edit_type: 1,
                 fieldData: {
                     state: 'A',
-                        set_date: Moment().format(dt.dateFT)
+                    set_date: Moment().format(dt.dateFT),
+                    i_Lang: 'zh-TW'
                 }
             });
         }
@@ -317,9 +320,10 @@ namespace News {
                                                     </label>
                                                 </th>
                                                 <th className="col-xs-1 text-center">修改</th>
-                                                <th className="col-xs-4">標題</th>
+                                                <th className="col-xs-3">標題</th>
                                                 <th className="col-xs-3">日期</th>
-                                                <th className="col-xs-3">狀態</th>
+                                                <th className="col-xs-2">語系</th>
+                                                <th className="col-xs-2">狀態</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -409,6 +413,20 @@ namespace News {
                                             onChange={this.changeFDValue.bind(this, 'state') }>
                                             <option value="A">前台顯示</option>
                                             <option value="C">前台關閉</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div className="form-group">
+                                    <label className="col-xs-2 control-label">狀態</label>
+                                    <div className="col-xs-4">
+                                        <select className="form-control"
+                                            required
+                                            value={fieldData.i_Lang}
+                                            onChange={this.changeFDValue.bind(this, 'i_Lang') }>
+                                            <option value="zh-TW">繁體中文</option>
+                                            <option value="zh-CN">簡體中文</option>
                                         </select>
                                     </div>
                                 </div>

@@ -73,7 +73,7 @@ namespace DotWeb.Api
                 item.news_content = md.news_content;
                 item.set_date = md.set_date;
                 item.state = md.state;
-
+                item.i_Lang = md.i_Lang;
                 await db0.SaveChangesAsync();
                 rAjaxResult.result = true;
             }
