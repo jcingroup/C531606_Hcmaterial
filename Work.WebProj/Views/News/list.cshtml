@@ -13,7 +13,7 @@
         <img src="@item.img_list" alt="@item.news_title">
         <a href="~/News/content?id=@item.news_id">READ MORE</a>
         <figcaption>
-            <h4><small>@( ((DateTime)item.set_date).ToString("yyyy-MM-dd"))</small>@item.news_title</h4>
+            <h4><small>@item.set_date.ToString("yyyy-MM-dd")</small>@item.news_title</h4>
         </figcaption>
     </figure>
 }
