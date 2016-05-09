@@ -10,7 +10,7 @@ import dt = require('dt');
 import DatePicker = require('react-datepicker');
 import "react-datepicker/dist/react-datepicker.css";
 
-namespace News { 
+namespace News {
     interface Rows {
         news_id?: string;
         check_del?: boolean,
@@ -47,12 +47,19 @@ namespace News {
         }
         render() {
 
+            var ele_lang = null;
+            if (this.props.itemData.i_Lang == 'zh-TW')
+                ele_lang = '繁體中文';
+
+            if (this.props.itemData.i_Lang == 'zh-CN')
+                ele_lang = '簡體中文';
+
             return <tr>
                 <td className="text-center"><CommCmpt.GridCheckDel iKey={this.props.ikey} chd={this.props.itemData.check_del} delCheck={this.delCheck} /></td>
                 <td className="text-center"><CommCmpt.GridButtonModify modify={this.modify} /></td>
                 <td>{this.props.itemData.news_title}</td>
                 <td>{Moment(this.props.itemData.set_date).format(dt.dateFT) }</td>
-                <td>{this.props.itemData.i_Lang}</td>
+                <td>{ele_lang}</td>
                 <td>{this.props.itemData.state == 'A' ? <span className="label label-primary">顯示</span> : <span className="label label-default">隱藏</span>}</td>
             </tr>;
 
