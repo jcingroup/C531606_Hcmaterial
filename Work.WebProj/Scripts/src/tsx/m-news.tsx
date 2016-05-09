@@ -10,7 +10,7 @@ import dt = require('dt');
 import DatePicker = require('react-datepicker');
 import "react-datepicker/dist/react-datepicker.css";
 
-namespace News {
+namespace News { 
     interface Rows {
         news_id?: string;
         check_del?: boolean,
@@ -372,11 +372,11 @@ namespace News {
                         <form className="form-horizontal" onSubmit={this.handleSubmit}>
                             <div className="col-xs-10">
                                 <div className="form-group">
-                                    <label className="col-xs-2 control-label">首頁列表圖</label>
+                                    <label className="col-xs-2 control-label">列表圖</label>
                                     <div className="col-xs-8">
                                         <CommCmpt.MasterImageUpload FileKind="List" MainId={fieldData.news_id} ParentEditType={this.state.edit_type} url_upload={gb_approot + 'Active/NewsData/aj_FUpload'} url_list={gb_approot + 'Active/NewsData/aj_FList'}
                                             url_delete={gb_approot + 'Active/NewsData/aj_FDelete'} />
-                                        <small className="help-block">最多1張圖，建議尺寸 180*180 px</small>
+                                        <small className="help-block">最多1張圖，建議尺寸 415*160 px</small>
                                     </div>
                                 </div>
 
@@ -419,7 +419,7 @@ namespace News {
 
 
                                 <div className="form-group">
-                                    <label className="col-xs-2 control-label">狀態</label>
+                                    <label className="col-xs-2 control-label">選擇語系</label>
                                     <div className="col-xs-4">
                                         <select className="form-control"
                                             required
