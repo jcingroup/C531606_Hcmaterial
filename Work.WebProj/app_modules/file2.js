@@ -1,3 +1,4 @@
+/// <reference path="file1.tsx" />
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -12,4 +13,4 @@ var Tips2 = (function (_super) {
         return React.createElement("div", null);
     };
     return Tips2;
-}(React.Component));
+})(React.Component);

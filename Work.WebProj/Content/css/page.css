@@ -866,6 +866,9 @@ html, body {
   border-bottom: 1px solid #12556D;
   padding-bottom: 15px; }
 
+.font-sp {
+  font-family: "Open Sans", sans-serif; }
+
 .text-white, .bg-primary, .bg-grays, .bg-success, .bg-info, .bg-warn, .bg-error, .bg-oranges {
   color: #fff; }
 
@@ -934,7 +937,7 @@ html, body {
   text-align: center;
   overflow: hidden;
   width: 100%; }
-  .swiper-slide img {
+  .swiper-slide .bg {
     width: 100%; }
 
 .swiper-button-prev,

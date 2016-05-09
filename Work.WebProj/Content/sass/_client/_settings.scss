@@ -31,7 +31,7 @@ $state-type: (
 
 // == basic
 // ----------------------------------------------------------------------
-$heading-color:         lighten($brand-primary, 10%);
+$heading-color:         lighten($brand-primary, 10%) !default;
 $font-sp:               'Open Sans', sans-serif;
 
 
