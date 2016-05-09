@@ -43,4 +43,11 @@ namespace DotWeb.Areas.Base.Controllers
             return View("ListData", l.ToArray().OrderBy(x => x.Sort));
         }
     }
+    public class DocInfo
+    {
+        public String Name { get; set; }
+        public int Sort { get; set; }
+        public String Momo { get; set; }
+        public String Link { get; set; }
+    }
 }
