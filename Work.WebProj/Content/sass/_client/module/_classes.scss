@@ -36,6 +36,7 @@
     padding-bottom: $gutter;
 }
 
+.font-sp { font-family: $font-sp; }
 
 // 情境 helper/var/ $states: true 時才會輸出
 @if $states {
