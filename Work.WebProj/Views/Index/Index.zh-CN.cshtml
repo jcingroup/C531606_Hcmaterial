@@ -1,8 +1,18 @@
-﻿@{
+﻿@model IList<ProcCore.Business.DB0.News>
+@{
     ViewBag.Title = "次世代高压电正极材";
     ViewBag.IsFirstPage = true;
     ViewBag.BodyClass = "index";
     Layout = "~/Views/Shared/Layout.cshtml";
+
+    ProcCore.Business.DB0.News first_news = null;
+    IList<ProcCore.Business.DB0.News> left_news = null;
+
+    if (Model != null)
+    {
+        first_news = Model.FirstOrDefault();
+        left_news = Model.Skip(1).Take(2).ToList();
+    }
 }
 
 <section id="main">
@@ -16,12 +26,12 @@
     <aside class="sidebar">
         <ul class="list-unstyled text-left">
             @* 最新消息 最多3则 *@
-            <li>
-                <a href="~/News/Content"><em>2015.08.12</em>泓辰开幕典礼</a>
-            </li>
-            <li>
-                <a href="~/News/Content2"><em>2015.04.08</em>平镇厂迁移</a>
-            </li>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <a href="~/News/content?id=@item.news_id"><em>@item.set_date.ToString("yyyy-MM-dd")</em>@item.news_title</a>
+                </li>
+            }
         </ul>
         <a href="~/News" class="btn">MORE</a>
     </aside>
