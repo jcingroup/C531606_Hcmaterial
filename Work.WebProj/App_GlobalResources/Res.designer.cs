@@ -610,6 +610,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   查詢類似 請驗證您不是自動程式。 的當地語系化字串。
+        /// </summary>
+        internal static string Log_Err_googleValideNotEquel {
+            get {
+                return ResourceManager.GetString("Log_Err_googleValideNotEquel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查詢類似 此節仍其下仍有資料，需先刪除其下節點才能刪除此節點。 的當地語系化字串。
         /// </summary>
         internal static string Log_Err_HasSubTreeData {
@@ -633,6 +642,15 @@ namespace Resources {
         internal static string Log_Err_LimitedFileType {
             get {
                 return ResourceManager.GetString("Log_Err_LimitedFileType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 信箱號碼未填寫! 的當地語系化字串。
+        /// </summary>
+        internal static string Log_Err_MailAddressBlank {
+            get {
+                return ResourceManager.GetString("Log_Err_MailAddressBlank", resourceCulture);
             }
         }
         
@@ -736,6 +754,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   查詢類似 信箱號碼不正確導致送信失敗，請確認信箱是否正確。 的當地語系化字串。
+        /// </summary>
+        internal static string Log_Err_SendMailFail {
+            get {
+                return ResourceManager.GetString("Log_Err_SendMailFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查詢類似 庫存不足 的當地語系化字串。
         /// </summary>
         internal static string Log_Err_StockNotEnough {
@@ -750,6 +777,15 @@ namespace Resources {
         internal static string Log_Err_Stock_NotEnough {
             get {
                 return ResourceManager.GetString("Log_Err_Stock_NotEnough", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 Email已送出，我們會儘快與您聯絡! 的當地語系化字串。
+        /// </summary>
+        internal static string Log_Success_SendMail {
+            get {
+                return ResourceManager.GetString("Log_Success_SendMail", resourceCulture);
             }
         }
         

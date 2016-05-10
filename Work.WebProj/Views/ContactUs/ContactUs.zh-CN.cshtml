@@ -5,7 +5,45 @@
     ViewBag.breadCrumb = "联络我们";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
+@section Scripts {
+    <!--
+     <script src="~/Scripts/googleReCAPTCHA.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit'></script>
+        -->
 
+    <script>
+        $("#ContactUsInfo").submit(function (event) {
+            event.preventDefault();
+            var data = {
+                "name": $("#m_name").val().replace(/<|>/g, ""),
+                "company": $("#m_company").val().replace(/<|>/g, ""),
+                "tel": $("#m_tel").val().replace(/<|>/g, ""),
+                "fax": $("#m_fax").val().replace(/<|>/g, ""),
+                "city": $("#m_city").val().replace(/<|>/g, ""),
+                "email": $("#m_email").val().replace(/<|>/g, ""),
+                "content": $("#m_content").val().replace(/<|>/g, "")
+            };
+
+            $.ajax({
+                type: "POST",
+                url: '/ContactUs/sendMail',
+                data: data,
+                dataType: 'json'
+            }).done(function (result, textStatus, jqXHRdata) {
+                if (result.result) {
+                    alert(result.message);
+                    //grecaptcha.reset(widgetId);
+                }
+                else {
+                    alert(result.message);
+                    // grecaptcha.reset(widgetId);
+                }
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            });
+        });
+    </script>
+}
 <section class="container">
     <h2>联络我们</h2>
     <p>欢迎来到泓辰材料公司网站，请留下您的联络方式丶想询问的内容以及您的意见想法， 我们将尽快与您联络，谢谢您!</p>
@@ -51,10 +89,10 @@
         <label for="m_content">您的意见</label>
         <textarea rows="5" id="m_content"></textarea>
         @* @if (CommWebSetup.IsDemo == "0")
-        {
-            <div class="g-recaptcha" data-sitekey="6LexIhoTAAAAAINPFxaeQCa_6XJhKbAx8PtwTviK"></div>
-        }
-        <div id="err" style="color:red" hidden></div> *@
+            {
+                <div class="g-recaptcha" data-sitekey="6LexIhoTAAAAAINPFxaeQCa_6XJhKbAx8PtwTviK"></div>
+            }
+            <div id="err" style="color:red" hidden></div> *@
 
         <button class="btn">发送</button>
     </form>

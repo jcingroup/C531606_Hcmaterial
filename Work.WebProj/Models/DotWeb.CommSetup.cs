@@ -111,6 +111,13 @@ namespace DotWeb.CommSetup
                 return GetKeyValue("MailServer");
             }
         }
+        public static string MailTitle
+        {
+            get
+            {
+                return GetKeyValue("MailTitle");
+            }
+        }
         public static string MailTitle_Order
         {
             get

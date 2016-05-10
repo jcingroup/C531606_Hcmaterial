@@ -1,5 +1,6 @@
 ﻿using DotWeb.CommSetup;
 using DotWeb.Controllers;
+using GooglereCAPTCHa.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -18,6 +19,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -1347,6 +1349,53 @@ namespace DotWeb.Controller
             }
         }
 
+        #endregion
+        #region google驗證碼
+        public ValidateResponse ValidateCaptcha(string response)
+        {
+            ValidateResponse result = new ValidateResponse();
+            var client = new WebClient();
+            var reply =
+                client.DownloadString(
+                    string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", "6LeDvxoTAAAAAOytfdH8tYSN6GuTFU_cRZHCwbv7", response));
+
+            var captchaResponse = JsonConvert.DeserializeObject<CaptchaResponse>(reply);
+
+            //when response is false check for the error message
+            result.Success = captchaResponse.Success;
+            if (!captchaResponse.Success)
+            {
+                if (captchaResponse.ErrorCodes.Count <= 0) result.Message = null;
+
+                var error = captchaResponse.ErrorCodes[0].ToLower();
+                switch (error)
+                {
+                    case ("missing-input-secret"):
+                        result.Message = "The secret parameter is missing.";
+                        break;
+                    case ("invalid-input-secret"):
+                        result.Message = "The secret parameter is invalid or malformed.";
+                        break;
+
+                    case ("missing-input-response"):
+                        result.Message = "The response parameter is missing.";
+                        break;
+                    case ("invalid-input-response"):
+                        result.Message = "The response parameter is invalid or malformed.";
+                        break;
+
+                    default:
+                        result.Message = "Error occured. Please try again";
+                        break;
+                }
+            }
+            else
+            {
+                result.Message = "Valid";
+            }
+
+            return result;
+        }
         #endregion
     }
     #endregion

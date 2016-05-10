@@ -300,6 +300,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CaptchaResponse.cs" />
     <Compile Include="Models\DotWeb.Controller.cs" />
     <Compile Include="Models\DotWeb.Api.cs" />
     <Compile Include="Models\DotWeb.cs" />
@@ -570,6 +571,7 @@
     <Content Include="Scripts\cdn\Sortable.min.js" />
     <Content Include="Scripts\cdn\swfobject.js" />
     <Content Include="Scripts\cdn\toastr.js" />
+    <Content Include="Scripts\googleReCAPTCHA.js" />
     <Content Include="Scripts\src\xformat.html" />
     <Content Include="Views\Index\Index.cshtml" />
     <Content Include="Scripts\cdn\BrowerInfo.js" />
@@ -611,6 +613,7 @@
     <Content Include="Views\News\content.cshtml" />
     <Content Include="Views\Products\sidebar.cshtml" />
     <Content Include="Views\Products\Battery-catalog.cshtml" />
+    <Content Include="Views\ContactUs\ContactUsEmail.cshtml" />
     <None Include="Views\News\Bak\content2.cshtml" />
     <Content Include="Views\Shared\Layout.zh-CN.cshtml" />
     <Content Include="Views\AboutUs\AboutUs.zh-CN.cshtml" />
