@@ -1021,8 +1021,8 @@ html, body {
   height: 35%;
   -webkit-transform-origin: center center;
   transform-origin: center center;
-  -webkit-animation: wind-circle 2s linear infinite;
-  animation: wind-circle 2s linear infinite; }
+  -webkit-animation: wind-circle 3s linear infinite;
+  animation: wind-circle 3s linear infinite; }
 @-webkit-keyframes wind-circle {
   0% {
     -ms-transform: rotate(0);
@@ -1045,7 +1045,7 @@ html, body {
   left: 11.3%; }
 
 .w2 {
-  animation-duration: 2.5s;
+  animation-duration: 3.5s;
   left: -9.5%; }
 
 .car {

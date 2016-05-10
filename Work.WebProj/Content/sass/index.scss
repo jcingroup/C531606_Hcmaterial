@@ -130,13 +130,13 @@ $swiper-button:           false;
 
     @include size(35%);
     @include prefix(transform-origin, center center);
-    @include diy-animation (wind-circle, 2s linear infinite) {
+    @include diy-animation (wind-circle, 3s linear infinite) {
         0%   { @include transform(rotate(0)); }
         100% { @include transform(rotate(360deg)); }
     }
 }
 .w1 { left: 11.3%; }
-.w2 { animation-duration: 2.5s; left: -9.5%; }
+.w2 { animation-duration: 3.5s; left: -9.5%; }
 .car {
     top: 49%; left: 46.1%;
     overflow: hidden;
