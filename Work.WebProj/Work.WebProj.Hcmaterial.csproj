@@ -366,10 +366,12 @@
     <Content Include="Content\images\Index\banner.jpg" />
     <Content Include="Content\images\Index\banner2.jpg" />
     <Content Include="Content\images\Index\banner3.jpg" />
+    <Content Include="Content\images\Index\car.png" />
     <Content Include="Content\images\Index\contentBg.gif" />
     <Content Include="Content\images\Index\icon-plug.png" />
     <Content Include="Content\images\Index\main.jpg" />
     <Content Include="Content\images\Index\pic.png" />
+    <Content Include="Content\images\Index\wind.png" />
     <Content Include="Content\images\JoinUs\pic1-2.jpg" />
     <Content Include="Content\images\JoinUs\pic1-3.jpg" />
     <Content Include="Content\images\JoinUs\pic1-4.jpg" />

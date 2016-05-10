@@ -10,6 +10,9 @@ $font-size-h2:            70px;
 $font-size-h3:            37px;
 $font-size-h4:            35px;
 
+$swiper-pagination:       false;
+$swiper-button:           false;
+
 
 // import
 // ------------------------------------------------------------
@@ -30,27 +33,29 @@ $font-size-h4:            35px;
 
 // layout
 // ----------------------------------------------------------------------
+// == banner
 
-#banner {
-    h2, h3, h4 {
-        @include absolute(left 50%);
-    }
+// #banner {
     .swiper-slide {
+        h2, h3, h4 {
+            @include absolute(left 50%);
+        }
         &:nth-of-type(1) {
             h2 {
                 margin-left: -(em(32));
                 top: em(37.5);
+                font-size: em(70);
 
-                @include mq-max(break(wide,-1)) { font-size: em(50); }
+                @include mq-max(break(wide,-1)) { font-size: em(50px); }
                 @include mq-max(tablet) { font-size: em(37); }
                 @include mq-max(phone) { font-size: em(25); }
                 @include mq-max(mobile) { font-size: em(18); }
             }
             h3 {
-                font-size: em(64px);
-                letter-spacing: 4px;
                 left: 0; right: 0;
                 top: em(20);
+                font-size: em(64);
+                letter-spacing: 4px;
 
                 @include mq-max(break(wide,-1)) { font-size: em(45px); }
                 @include mq-max(tablet) { font-size: em(35); }
@@ -60,6 +65,7 @@ $font-size-h4:            35px;
             h4 {
                 margin-left: em(8);
                 top: em(112);
+                font-size: em(35);
 
                 @include mq-max(break(wide,-1)) { font-size: em(25px); }
                 @include mq-max(tablet) { font-size: em(18); }
@@ -111,8 +117,43 @@ $font-size-h4:            35px;
             }
         }
     }
-}
+// }
 
+.animate {
+    @extend %text-hide;
+    position: absolute;
+}
+.wind {
+    background: url(#{$img-path2}/wind.png?v=6) center center no-repeat;
+    background-size: contain;
+    top: 39%;
+
+    @include size(35%);
+    @include prefix(transform-origin, center center);
+    @include diy-animation (wind-circle, 2s linear infinite) {
+        0%   { @include transform(rotate(0)); }
+        100% { @include transform(rotate(360deg)); }
+    }
+}
+.w1 { left: 11.3%; }
+.w2 { animation-duration: 2.5s; left: -9.5%; }
+.car {
+    top: 49%; left: 46.1%;
+    overflow: hidden;
+
+    @include size(6.6%,9%);
+
+    @include el(before) {
+        background: url(#{$img-path2}/car.png?v=1) 0 0 no-repeat;
+        background-size: contain;
+        @include size(100%);
+        @include diy-animation (car-ply, 3s infinite) {
+            0%   { @include transform(translateX(100%)); }
+            50%  { @include transform(translateX(0)); }
+            100% { @include transform(translateX(-100%)); }
+        }
+    }
+}
 
 // == main
 #main {
