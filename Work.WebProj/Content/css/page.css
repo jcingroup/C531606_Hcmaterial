@@ -937,7 +937,7 @@ html, body {
   text-align: center;
   overflow: hidden;
   width: 100%; }
-  .swiper-slide .bg {
+  .swiper-slide img {
     width: 100%; }
 
 .swiper-button-prev,
