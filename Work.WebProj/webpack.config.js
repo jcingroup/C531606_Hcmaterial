@@ -10,6 +10,7 @@ module.exports = {
         m_roles: path.resolve(__dirname, 'Scripts/src/tsx/m-roles.js'),
         m_change_password: path.resolve(__dirname, 'Scripts/src/tsx/m-change_password.js'),
         m_users: path.resolve(__dirname, 'Scripts/src/tsx/m-users.js'),
+        m_parm: path.resolve(__dirname, 'Scripts/src/tsx/m-parm.js'),
         //後台 管理者
         m_news: path.resolve(__dirname, 'Scripts/src/tsx/m-news.js'),
         vendors: ['jquery', 'react', 'react-bootstrap', 'moment']

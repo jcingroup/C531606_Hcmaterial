@@ -1167,7 +1167,7 @@ namespace DotWeb.Controller
             using (var db = getDB0())
             {
                 var open = openLogic();
-                AboutUs = RemoveHTMLTag((string)open.getParmValue(ParmDefine.AboutUs));
+                //AboutUs = RemoveHTMLTag((string)open.getParmValue(ParmDefine.AboutUs));
             }
             ViewBag.AboutUs = AboutUs;
         }

@@ -215,6 +215,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Active\ActiveAreaRegistration.cs" />
     <Compile Include="Areas\Active\Controllers\NewsDataController.cs" />
+    <Compile Include="Areas\Active\Controllers\ParmDataController.cs" />
     <Compile Include="Areas\Base\Controllers\DocController.cs" />
     <Compile Include="Areas\Base\Controllers\LoginController.cs" />
     <Content Include="app_modules\comm-cmpt\package.js" />
@@ -235,6 +236,8 @@
     <Content Include="app_modules\dt\package.json" />
     <Content Include="Areas\Active\Views\NewsData\Main.cshtml" />
     <Content Include="app_modules\comm-typeahead\package.json" />
+    <Content Include="Areas\Active\Views\ParmData\IndexImg.cshtml" />
+    <Content Include="Areas\Active\Views\ParmData\Parm.cshtml" />
     <None Include="Areas\Base\Controllers\ReportChartController.cs" />
     <Compile Include="Areas\Base\Controllers\RolesController.cs" />
     <Compile Include="Areas\Base\Controllers\MenuController.cs" />
@@ -793,6 +796,7 @@
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Web.en-US.designer.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\Active\Views\ParmData\App_LocalResources\Main.cshtml.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

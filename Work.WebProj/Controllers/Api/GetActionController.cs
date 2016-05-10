@@ -129,24 +129,14 @@ namespace DotWeb.Api
             return t3.ToList();
         }
 
-
-
-
-
-
-
-
-        #region 後台-參數設定
-        [HttpPost]
-        public ResultInfo PostAboutUs([FromBody]AboutUsParm md)
+        public ResultInfo PostParamData([FromBody]Param md)
         {
             ResultInfo rAjaxResult = new ResultInfo();
             try
             {
                 var open = openLogic();
-                md.aboutus = RemoveScriptTag(md.aboutus);//移除script標籤
 
-                open.setParmValue(ParmDefine.AboutUs, md.aboutus);
+                open.setParmValue(ParmDefine.Email, md.Email);
 
                 rAjaxResult.result = true;
             }
@@ -157,15 +147,5 @@ namespace DotWeb.Api
             }
             return rAjaxResult;
         }
-
-        #endregion
-
     }
-    #region Parm
-
-    public class AboutUsParm
-    {
-        public string aboutus { get; set; }
-    }
-    #endregion
 }
