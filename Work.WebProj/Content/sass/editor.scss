@@ -1,19 +1,25 @@
 @charset "UTF-8";
 
+$states:       false;
 $font-size-h2: 62px;
 $font-size-h3: 35px;
 
 // import
 // ------------------------------------------------------------
+@import "_client/settings";
+
 @import "helper/function";
 @import "helper/var";
 @import "helper/mixins";
 
 @import "base/basic";
-@import "base/extend";
-@import "base/classes";
+@import "base/util";
 @import "base/table";
 
+@import "_client/module/classes";
+@import "_client/module/list";
+
+body { padding: $gutter 20px }
 h1,h2,h3,h4,h5,h6,p,blockquote,
 ul,ol,li,dl,dt,dd { text-align: left; }
 h2 { margin-top: 0; margin-bottom: 20px; }
