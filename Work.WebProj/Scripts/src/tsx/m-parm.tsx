@@ -13,7 +13,7 @@ namespace Parm {
     export class GridForm extends React.Component<any, { param?: ParamData }>{
 
 
-        constructor() {
+        constructor() { 
 
             super();
             this.queryInitData = this.queryInitData.bind(this);
