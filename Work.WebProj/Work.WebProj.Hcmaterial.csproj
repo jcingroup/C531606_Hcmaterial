@@ -347,6 +347,7 @@
     <Content Include="Content\css\grid.css" />
     <Content Include="Content\css\icomoon.css" />
     <Content Include="Content\css\index.css" />
+    <Content Include="Content\css\learn.css" />
     <Content Include="Content\css\page.css" />
     <Content Include="Content\css\swiper.min.css" />
     <Content Include="Content\font\fa\fontawesome-webfont.svg" />

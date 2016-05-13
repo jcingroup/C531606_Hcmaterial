@@ -1,16 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <document>
   <file>
-    <sort>2</sort>
-    <name>申報進度與統計.docx</name>
-    <!--須和檔名相同*/-->
-    <memo>文件說明，補充說明2。</memo>
+    <name>BasicList.html</name>
+    <sort>1</sort>
+    <memo>基本操作 - 【新增/修改/刪除】</memo>
   </file>
 
   <file>
-    <name>資料庫使用說明.docx</name>
-    <sort>1</sort>
-    <memo>文件說明，補充說明1testtest。</memo>
+    <name>BasicSearch.html</name>
+    <sort>2</sort>
+    <memo>基本操作 - 【資料搜尋】</memo>
+  </file>
+
+  <file>
+    <name>D01_editor_text.html</name>
+    <sort>3</sort>
+    <memo>編輯器教學 - 【文章編輯】文字段落編排</memo>
+  </file>
+
+  <file>
+    <name>D02_editor_insert.html</name>
+    <sort>4</sort>
+    <memo>編輯器教學 - 【文章編輯】插入圖片/影片</memo>
+  </file>
+
+  <file>
+    <name>D03_editor_table.html</name>
+    <sort>5</sort>
+    <memo>編輯器教學 - 【表格】增加/刪除列</memo>
   </file>
 
 </document>
