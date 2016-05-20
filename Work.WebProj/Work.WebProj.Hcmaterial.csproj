@@ -370,11 +370,13 @@
     <Content Include="Content\images\Index\banner.jpg" />
     <Content Include="Content\images\Index\banner2.jpg" />
     <Content Include="Content\images\Index\banner3.jpg" />
+    <Content Include="Content\images\Index\bicycle.png" />
     <Content Include="Content\images\Index\car.png" />
     <Content Include="Content\images\Index\contentBg.gif" />
     <Content Include="Content\images\Index\icon-plug.png" />
     <Content Include="Content\images\Index\main.jpg" />
     <Content Include="Content\images\Index\pic.png" />
+    <Content Include="Content\images\Index\ship.png" />
     <Content Include="Content\images\Index\wind.png" />
     <Content Include="Content\images\JoinUs\pic1-2.jpg" />
     <Content Include="Content\images\JoinUs\pic1-3.jpg" />
@@ -770,7 +772,9 @@
       <LastGenOutput>Res.designer.cs</LastGenOutput>
     </Content>
     <Content Include="Areas\Base\Views\Doc\App_LocalResources\ListData.cshtml.resx" />
-    <Content Include="Areas\Base\Views\Login\App_LocalResources\index.cshtml.resx" />
+    <Content Include="Areas\Base\Views\Login\App_LocalResources\index.cshtml.resx">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\Base\Views\Login\App_LocalResources\ResetPassword.cshtml.resx" />
     <Content Include="Areas\Base\Views\Parm\App_LocalResources\ListData.cshtml.resx" />
     <Content Include="Areas\Base\Views\Roles\App_LocalResources\Main.cshtml.resx" />

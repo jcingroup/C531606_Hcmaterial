@@ -339,7 +339,7 @@ hr {
 .wrap::after, #header::after, #footer::after, #main::after, .clearfix::after {
   display: table;
   clear: both; }
-  .wrap::after, #header::after, #footer::after, #main::after, .clearfix::after, #header::before, #menu a::before, .list-dot li::before, .hover-underline::before, .car::before, .content::after, .sidebar::before {
+  .wrap::after, #header::after, #footer::after, #main::after, .clearfix::after, #header::before, #menu a::before, .list-dot li::before, .hover-underline::before, .motion::before, .content::after, .sidebar::before {
     content: ''; }
 
 .icon-tel::before, .icon-fax::before, .circle, .list-dot li::before {
@@ -1048,13 +1048,11 @@ html, body {
   animation-duration: 3.5s;
   left: -9.5%; }
 
-.car {
-  top: 49%;
-  left: 46.1%;
+.motion {
   overflow: hidden;
   width: 6.6%;
   height: 9%; }
-  .car::before {
+  .motion::before {
     display: block;
     background: url(../images/index/car.png?v=1) 0 0 no-repeat;
     background-size: contain;
@@ -1088,6 +1086,28 @@ html, body {
     -ms-transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%); } }
+.car {
+  top: 49%;
+  left: 46.1%; }
+
+.ship {
+  top: 34.5%;
+  left: 2.2%; }
+  .ship::before {
+    background-image: url(../images/index/ship.png);
+    animation-direction: alternate;
+    animation-timing-function: ease-out;
+    animation-duration: 5s; }
+
+.bicycle {
+  top: 60%;
+  left: 17.1%;
+  height: 12%; }
+  .bicycle::before {
+    background-image: url(../images/index/bicycle.png);
+    animation-duration: 8s;
+    animation-timing-function: linear; }
+
 #main {
   padding: 13px;
   padding-bottom: 10%; }
@@ -1118,13 +1138,16 @@ html, body {
     height: 60%;
     max-height: 350px;
     position: absolute;
+    top: 155px;
     right: 25.9%;
-    bottom: -1%;
     left: 13px; }
     @media (min-width: 75em) {
       .content::after {
         height: 100%;
-        bottom: -3.6%; } }
+        top: 12.5%; } }
+    @media (min-width: 87.5em) {
+      .content::after {
+        top: 22.5%; } }
     @media (max-width: 39.9375em) {
       .content::after {
         top: 130px;
