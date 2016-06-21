@@ -114,12 +114,10 @@ $foot-pd: ($gutter - 3)*2;
         margin-bottom: $gutter;
         letter-spacing: 1px;
     }
-    nav {
-        padding-left: $foot-pd;
-    }
 }
 
 .foot-nav {
+    padding-left: $foot-pd;
     a {
         display: block;
         margin: 8px 0;

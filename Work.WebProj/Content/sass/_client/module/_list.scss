@@ -11,7 +11,7 @@
     @extend %list-unstyled;
 
     li {
-        @include icon-dot(left, 5px, lighten($brand-secondary, 15%), left 0);
+        @include icon-dot(left, 5px, lighten($brand-secondary, 15%), left 2px);
         line-height: 1.75;
 
         & + & { margin-top: $gutter/2; }

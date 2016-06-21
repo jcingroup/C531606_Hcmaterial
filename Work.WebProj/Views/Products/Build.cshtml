@@ -1,8 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "鋰電池組成:電池材料";
+    ViewBag.Title = "次世代研發";
     ViewBag.BodyClass = "Products";
-    ViewBag.breadCrumb = "鋰電池組成";
+    ViewBag.breadCrumb = "次世代研發";
     ViewBag.ProNav4Class = "current";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
@@ -10,17 +10,89 @@
 @section Scripts {
     <script src="~/Content/js/tab.js"></script>
 }
+@section breadCrumb {
+    <li><a href="~/Products">正極材料</a></li>
+}
 
 @Html.Partial("sidebar")
 
-<h1 class="clear">鋰電池組成</h1>
+<h2 class="text-left">次世代LMFP 研發</h2>
+<img src="~/Content/images/Products/Build/pic.jpg" alt="2009-2016性能進步圖表">
 
-<article class="text-left">
-    <div class="col-6 col-xs-12">
-        <img src="~/Content/images/Products/Build/p1.jpg" alt="">
-    </div>
-    <div class="col-6 col-xs-12">
-        <img src="~/Content/images/Products/Build/p2.jpg" alt="">
-        <h3>鋰電池種類</h3>
-    </div>
-</article>
+<hr>
+
+<h2 class="text-left">次世代LMFP 特性比較表</h2>
+<div class="table-rwd">
+    <table class="full">
+        <caption class="text-center">
+            <span class="label">G1: 目前線上產品</span>
+            <span class="label">G2P/G2E: 開發中</span>
+            <span class="label">G2P : Power type</span>
+            <span class="label">G2E : Energy type</span>
+        </caption>
+        <tbody class="borded">
+            <tr>
+                <th rowspan="2" class="diagonal">
+                    <sup>材料系統</sup>
+                    <sub>效能特性</sub>
+                </th>
+                <th>第一代</th>
+                <th colspan="3">第二代</th>
+            </tr>
+            <tr>
+                <td class="item mark">G1</td>
+                <td class="item mark">G2</td>
+                <td class="item mark">G2P</td>
+                <td class="item mark">G2E</td>
+            </tr>
+            <tr>
+                <td class="item mark">能量密度</td>
+                <td><i class="icon-triangle">三角形</i></td>
+                <td><i class="icon-circle">圓</i></td>
+                <td><i class="icon-circle">圓</i></td>
+                <td><i class="icon-circle-d">2圓</i></td>
+            </tr>
+            <tr>
+                <td class="item mark">倍率放電</td>
+                <td><i class="icon-circle">圓</i></td>
+                <td><i class="icon-circle-d">2圓</i></td>
+                <td><i class="icon-circle-d">2圓</i></td>
+                <td><i class="icon-circle-d">2圓</i></td>
+            </tr>
+            <tr>
+                <td class="item mark">倍率充電</td>
+                <td><i class="icon-triangle">三角形</i></td>
+                <td><i class="icon-circle">圓</i></td>
+                <td><i class="icon-circle-d">2圓</i></td>
+                <td><i class="icon-circle">圓</i></td>
+            </tr>
+            <tr>
+                <td class="item mark">高溫循環壽命</td>
+                <td><i class="icon-triangle">三角形</i></td>
+                <td><i class="icon-circle">圓</i></td>
+                <td><i class="icon-circle">圓</i></td>
+                <td><i class="icon-circle-d">2圓</i></td>
+            </tr>
+            <tr>
+                <td class="item mark">低溫倍率放電</td>
+                <td><i class="icon-triangle">三角形</i></td>
+                <td><i class="icon-circle">圓</i></td>
+                <td><i class="icon-circle-d">2圓</i></td>
+                <td><i class="icon-circle">圓</i></td>
+            </tr>
+            <tr>
+                <td class="item mark">抗吸濕性</td>
+                <td><i class="icon-triangle">三角形</i></td>
+                <td><i class="icon-triangle">三角形</i></td>
+                <td><i class="icon-triangle">三角形</i></td>
+                <td><i class="icon-circle">圓</i></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <td></td>
+            <td colspan="4" class="text-right">
+                相對優勢比較: <i class="icon-circle-d">2圓</i> > <i class="icon-circle">圓</i> > <i class="icon-triangle">三角形</i>
+            </td>
+        </tfoot>
+    </table>
+</div>

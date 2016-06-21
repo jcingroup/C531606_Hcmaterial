@@ -39,6 +39,7 @@ $figure-mg:               2% 1%;
 @import "_client/module/breadcrumb";
 @import "_client/module/figure";
 @import "_client/module/tab";
+@import "_client/module/label";
 
 
 // main
@@ -321,19 +322,33 @@ $pro-nav-pd-l:            10px;
 
 // == about us
 .AboutUs {
-    .table-rwd {
-        float: left;
-        width: percentage(1/2) - 1;
 
-        &:nth-of-type(2) { float: right; }
-
-        @include mq-max(break(desktop,-1)) {
-            float: none;
-            width: 100%;
-
-            th:first-child { width: 28%; }
-        }
+    th,td {
+        padding: 8px 15px;
     }
+    tr {
+        &:hover {
+            background-color: none;
+
+            td { background-color: none; }
+        }
+        &:nth-of-type(even) { background-color: #FFFFef; }
+    }
+
+    // .table-rwd {
+    //     // float: left;
+    //     // width: percentage(1/2) - 1;
+
+    //     // &:nth-of-type(2) { float: right; }
+
+
+    //     @include mq-max(break(desktop,-1)) {
+    //         // float: none;
+    //         // width: 100%;
+
+    //         // td:first-child { width: 28%; }
+    //     }
+    // }
 }
 
 
@@ -381,13 +396,13 @@ figcaption {
     float: left;
     margin-top: 10px;
 
-    &:nth-child(odd) { padding-right: 5px; }
-    &:nth-child(even) { padding-left: 5px; }
+    &:nth-of-type(odd) { padding-right: 5px; }
+    &:nth-of-type(even) { padding-left: 5px; }
 
     @include mq-max(break(desktop,-1)) {
         width: 100%;
-        &:nth-child(odd),
-        &:nth-child(even) { padding: 0; }
+        &:nth-of-type(odd),
+        &:nth-of-type(even) { padding: 0; }
     }
 
     .pic {

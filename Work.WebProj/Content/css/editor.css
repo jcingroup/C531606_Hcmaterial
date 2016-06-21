@@ -332,9 +332,13 @@ mark {
   background-color: #fbdaac;
   padding: .2em; }
 
+.mark {
+  background-color: #ffffe0; }
+
 hr {
   height: 0;
-  border: none; }
+  border: none;
+  margin: 2.4em 0; }
 
 .clearfix::after {
   display: table;
@@ -363,16 +367,18 @@ hr {
 table {
   margin-bottom: 20px;
   border-collapse: collapse;
-  border: 1px solid #E4E5DC;
   color: #12556D;
   font-size: 1.0625em;
   line-height: 1.5; }
 
+tbody {
+  border-bottom: 1px solid #E4E5DC; }
+
 th, td {
   text-align: center;
   vertical-align: middle;
-  padding: 15px;
-  border: 1px solid #E4E5DC; }
+  border-top: 1px solid #E4E5DC;
+  padding: 15px; }
 
 th {
   color: #1E7997;
@@ -380,6 +386,11 @@ th {
 
 td.item {
   color: #7F7F7F; }
+
+.borded {
+  border: 1px solid #E4E5DC; }
+  .borded th, .borded td {
+    border: 1px solid #E4E5DC; }
 
 tr:hover {
   background-color: #f6f6f6; }
@@ -392,6 +403,20 @@ caption {
   font-size: 1.25em;
   line-height: 1.7;
   text-align: left; }
+
+.diagonal {
+  width: 20%;
+  position: relative;
+  background: linear-gradient(to top right, transparent 49.5%, #E4E5DC, transparent 50.5%); }
+  .diagonal sup, .diagonal sub {
+    font-size: 1.0625em;
+    position: absolute; }
+  .diagonal sup {
+    right: 8%;
+    top: 25%; }
+  .diagonal sub {
+    left: 8%;
+    bottom: 25%; }
 
 table.fixed {
   table-layout: fixed;
@@ -431,6 +456,15 @@ table.fixed {
   display: block;
   margin: auto; }
 
+.margin {
+  margin: 16px; }
+
+.margin-top {
+  margin-top: 16px; }
+
+.margin-bottom {
+  margin-bottom: 16px; }
+
 .text-left {
   text-align: left; }
 
@@ -457,7 +491,7 @@ table.fixed {
     height: 5px;
     background-color: #2cabd5;
     position: absolute;
-    left: 0; }
+    left: 2px; }
   .list-dot li + .list-dot li {
     margin-top: 7.5px; }
   .list-dot li::before {

@@ -1,8 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "市場趨勢:電池材料";
+    ViewBag.Title = "材料應用";
     ViewBag.BodyClass = "Products";
-    ViewBag.breadCrumb = "市場趨勢";
+    ViewBag.breadCrumb = "材料應用";
     ViewBag.ProNav3Class = "current";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
@@ -11,9 +11,36 @@
     <script src="~/Content/js/tab.js"></script>
 }
 
+@section breadCrumb {
+    <li><a href="~/Products">正極材料</a></li>
+}
+
 @Html.Partial("sidebar")
 
-<ul class="tabs">
+<h2 class="text-left">材料應用</h2>
+
+<div class="col-6 col-pd-right col-sm-12 margin-bottom">
+    <h3 class="text-left">應用一：</h3>
+    <h5 class="text-left">與三元(NMC)混摻，大幅提高安全性，適用於乘用車。</h5>
+    <img src="~/Content/images/Products/Trend/pic.jpg" alt="軟包電池安全測試">
+    <footer class="text-right text-primary margin-top">軟包電池安全測試 <small>資料提料:中航鋰電</small></footer>
+</div>
+
+<div class="col-6 col-pd-left col-sm-12 margin-bottom">
+    <h3 class="text-left">應用二：</h3>
+    <h5 class="text-left">怠速啟停系統(ISS)</h5>
+    <img src="~/Content/images/Products/Trend/pic2.jpg" alt="鈴木旅行車採用東芝 SCiB LTO電池">
+    <p>日本鈴木旅行車採用東芝 SCiB LTO 電池所組成之 Denso ISS 系統</p>
+</div>
+
+<h3 class="text-left">應用三：</h3>
+<h5 class="text-left">以LMFP為主要正極材料，混摻三元，取代磷酸鋰鐵為主的大巴市場。</h5>
+<ul class="list-unstyled row-padding">
+    <li class="col-6 col-sm-12 margin-bottom"><img src="~/Content/images/Products/Trend/pic3.jpg" alt="大型巴士"></li>
+    <li class="col-6 col-sm-12"><img src="~/Content/images/Products/Trend/pic3_2.jpg" alt="大型巴士電池系統"></li>
+</ul>
+
+@* <ul class="tabs">
     <li class="js-tab"><a href="#tab-1">市場資訊</a></li>
     <li class="js-tab"><a href="#tab-2">動力系統應用</a></li>
     <li class="js-tab"><a href="#tab-3">儲能系統應用</a></li>
@@ -57,3 +84,4 @@
         <p>儲能系統的電池是以長壽命、降低維修、安全也是一大考量，因此LFP&LMFP也是一大選擇，穩定成長的再生能源儲存裝置</p>
     </div>
 </article>
+ *@

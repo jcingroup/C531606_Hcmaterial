@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-$current: current();
+$current: current('AboutUs' 'News' 'Products' 'JoinUs');
 
 #menu {
     @include absolute($menu-pos);

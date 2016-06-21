@@ -3,6 +3,7 @@
 // var 有值 or true 才會顯示，false or null 則不顯示
 // -----------------------------------------------------------------
 $table-margin-bottom:    $line-height-computed !default;
+$table-line:             1px solid #E4E5DC !default;
 
 // 共用
 $table-collapse:         collapse !default;
@@ -10,7 +11,7 @@ $table-bg:               false !default;
 $table-color:            $info !default;
 $table-font-size:        17px !default;
 $table-line-height:      1.5 !default;
-$table-border:           1px solid #E4E5DC !default;
+$table-border:           $table-line !default; // 1px solid #E4E5DC
 $table-pd:               15px !default;
 
 // th
@@ -80,18 +81,19 @@ table {
     // 下列變數有值才會顯示，false or null 則不顯示
     @if $table-collapse    { border-collapse: $table-collapse; }
     @if $table-bg          { background: $table-bg; }
-    @if $table-border      { border: $table-border; }
     @if $table-color       { color: $table-color; }
     @if $table-font-size   { font-size: em($table-font-size); }
     @if $table-line-height { line-height: $table-line-height; }
 }
 
+tbody { border-bottom: $table-line; }
+
 th, td {
     text-align: center;
     vertical-align: middle;
+    border-top: $table-line;
 
     @if $table-pd     { padding: $table-pd; }
-    @if $table-border { border: $table-border; }
 }
 
 th {
@@ -109,6 +111,13 @@ td {
         @if $td-item-bg        { background: $td-item-bg; }
         @if $td-item-color     { color: $td-item-color; }
         @if $td-item-font-size { font-size: em($td-item-font-size); }
+    }
+}
+
+@if $table-border {
+    .borded {
+        border: $table-border;
+        th, td { border: $table-border; }
     }
 }
 
@@ -130,6 +139,22 @@ caption {
     @if $caption-align       { text-align: $caption-align; }
 }
 
+// 對角線
+.diagonal {
+    width: 20%;
+    position: relative;
+
+    background: linear-gradient(to top right, transparent 49.5%, #E4E5DC, transparent 50.5%);
+
+    sup, sub {
+        font-size: em(17);
+        position: absolute;
+    }
+    sup { right: 8%; top: 25%; }
+    sub { left: 8%; bottom: 25%; }
+}
+
+
 // 固定欄寬度
 table.fixed {
     table-layout: fixed;
@@ -139,7 +164,7 @@ table.fixed {
 
 // 斑馬紋條列式表格
 @if $table-bg-accent {
-    tr:nth-of-type(odd) {
+    tr:nth-of-type(even) {
         background-color: $table-bg-accent;
     }
 }

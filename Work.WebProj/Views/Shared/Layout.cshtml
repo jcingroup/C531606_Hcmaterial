@@ -27,6 +27,8 @@
 
 <body class="@ViewBag.BodyClass">
 
+    <div class="demobar">網站已正式上線，此為demo網站</div>
+
     <div id="wrapper">
 
         <header id="header">
@@ -36,14 +38,15 @@
                 <span class="icon-cross toggle"></span>@* 手機close menu *@
                 <a href="~/AboutUs"><i class="icon-trophy"></i>公司簡介</a>
                 <a href="~/News"><i class="icon-megaphone"></i>最新消息</a>
-                <a href="~/Products"><i class="icon-battery"></i>電池材料</a>
+                <a href="~/Products"><i class="icon-battery"></i>正極材料</a>
                 <a href="~/JoinUs"><i class="icon-power-plug"></i>人力資源</a>
-                <a href="~/ContactUs"><i class="icon-paper-plane"></i>聯絡我們</a>
+                <a href="http://www.hstech.com.tw/" target="_blank"><i class="icon-paper-plane"></i>宏瀨科技</a>
             </nav>
             <nav class="lang-nav">
                 <a href="@Url.Action("SetLanguage")?L=zh-TW&A=index">繁體中文</a>
-                <a href="@Url.Action("SetLanguage")?L=zh-CN&A=index">简体中文</a>
+                @* <a href="@Url.Action("SetLanguage")?L=zh-CN&A=index">简体中文</a> *@
                 @* <a href="@Url.Action("SetLanguage")?L=en-US&A=index">English</a> *@
+                <a href="~/ContactUs">聯絡我們</a>
             </nav>
         </header>
 
@@ -54,16 +57,16 @@
                     <li class="swiper-slide">
                         <h3 class="text-white font-sp" data-swiper-parallax="-300">LEADING YOUR ECO-LIFE</h3>
                         <h2 data-swiper-parallax="-500">磷酸鋰鐵錳 LMFP</h2>
-                        <h4 data-swiper-parallax="-700">高品質．綠能．奈米材料</h4>
+                        @* <h4 data-swiper-parallax="-700">高品質．綠能．奈米材料</h4> *@
                         <span class="animate wind w1">風車轉動</span>
                         <span class="animate wind w2">風車轉動</span>
                         <img src="~/Content/images/index/banner.jpg?v=2" alt="輪播圖1">
                     </li>
                     <li class="swiper-slide">
-                        <h2 class="text-white font-sp" data-swiper-parallax="-300">GREEN ENERGY</h2>
-                        <h3 class="t1" data-swiper-parallax="-500">高能量續航力</h3>
+                        <h2 class="text-white font-sp" data-swiper-parallax="-300">GREEN<br>ENERGY</h2>
+                        @* <h3 class="t1" data-swiper-parallax="-500">高能量續航力</h3>
                         <h3 class="t2" data-swiper-parallax="-700">高倍率充、放電</h3>
-                        <h3 class="t3" data-swiper-parallax="-900">循環使用壽命</h3>
+                        <h3 class="t3" data-swiper-parallax="-900">循環使用壽命</h3> *@
                         <span class="animate motion car">汽車開過</span>
                         <span class="animate motion ship">船</span>
                         <span class="animate motion bicycle">腳踏車</span>
@@ -107,11 +110,11 @@
     </div><!-- wrapper //-->
 
     <footer id="footer">
-        <nav class="foot-nav col-7 col-xs-12 col-lg-6">
+        <nav class="foot-nav col-7 col-xs-12">
            <dl class="col-4">
                <dt>INFORMATION</dt>
                <dd>
-                   <a href="~/AboutUs">關於我們</a>
+                   <a href="~/AboutUs">公司簡介</a>
                    <a href="~/News">最新消息</a>
                    <a href="~/ContactUs">聯絡我們</a>
                </dd>
@@ -119,29 +122,29 @@
            <dl class="col-4">
                <dt>PRODUCTS</dt>
                <dd>
-                   <a href="~/Products">正極材料</a>
-                   <a href="~/Products/Technology">核心技術</a>
-                   <a href="~/Products/Trend">市場趨勢</a>
-                   <a href="~/Products/Build">鋰電池組成</a>
+                   <a href="~/Products">核心技術</a>
+                   <a href="~/Products/Technology">特性及比較</a>
+                   <a href="~/Products/Trend">材料應用</a>
+                   <a href="~/Products/Build">次世代研發</a>
                </dd>
            </dl>
            <dl class="col-4">
                <dt>JOIN US</dt>
                <dd>
-                   <a href="~/JoinUs/#tab-1">生活在泓辰</a>
-                   <a href="~/JoinUs/#tab-2">員工福利</a>
-                   <a href="~/JoinUs/#tab-3">社團</a>
-                   <a href="~/Content/download/record.doc">應徵人員資料表(下載)</a>
+                   <a href="~/JoinUs/#tab-1">員工福利</a>
+                   <a href="~/JoinUs/#tab-2">精彩泓辰</a>
+                   @* <a href="~/JoinUs/#tab-3">社團</a> *@
+                   <a href="~/Content/download/record.doc">人才招募</a>
                </dd>
            </dl>
         </nav>
 
-        <dl class="contacts col-5 col-xs-12 offset-lg-1">
+        <dl class="contacts col-5 col-xs-12 col-lg-4 offset-lg-1">
             <dt>CONTACT US</dt>
             <dd class="icon-tel">886-3-4191222</dd>
             <dd class="icon-fax">886-3-4192333</dd>
             <dd>桃園市平鎮區工業一路2-3號</dd>
-            <dd><a href="mailto:hirose@hstech.com.tw">hirose@hstech.com.tw</a></dd>
+            <dd><a href="mailto:sales@hcmaterial.com.tw">sales@hcmaterial.com.tw</a></dd>
         </dl>
 
         <div class="copyright"><em>HCM</em> &copy; 2016</div>

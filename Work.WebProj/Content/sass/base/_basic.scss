@@ -99,18 +99,15 @@ mark {
     background-color: lighten($warning, 30%);
     padding: .2em;
 }
-
-hr, %hr {
-    height: 0;
-
-    // border-top: 1px solid #ccc;
-    // border-bottom: 1px solid #f9f9f9;
-    border: none;
+.mark {
+    background-color: #ffffe0;
 }
-%hr { height: 2px; }
+
 
 hr {
-    // margin: 35px 0;
+    height: 0;
+    border: none;
+    margin: 2.4em 0;
     // margin-top:    $line-height-computed;
     // margin-bottom: $line-height-computed;
     // border: 0;
