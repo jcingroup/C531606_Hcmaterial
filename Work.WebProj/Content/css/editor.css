@@ -270,7 +270,7 @@ body {
   font-family: "Microsoft Jhenghei", \5FAE\8EDF\6B63\9ED1\9AD4, Verdana, Helvetica, Arial, sans-serif;
   line-height: 1.25;
   color: #4C4C4C;
-  background: #F6F6F6; }
+  background: #fff; }
 
 a {
   color: #4C4C4C;
@@ -305,10 +305,10 @@ h1 {
   font-size: 2.25em; }
 
 h2 {
-  font-size: 3.875em; }
+  font-size: 1.75em; }
 
 h3 {
-  font-size: 2.1875em; }
+  font-size: 1.5em; }
 
 h4 {
   font-size: 1.125em; }
@@ -355,6 +355,13 @@ hr {
 
 .half {
   width: 49%; }
+
+.icon-triangle, .icon-cross-img, .icon-circle, .icon-circle-d {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0; }
 
 .list-inline, .list-unstyled, .list-dot {
   list-style: none; }
@@ -497,17 +504,42 @@ table.fixed {
   .list-dot li::before {
     top: 12px; }
 
+.label {
+  color: #fff;
+  background: #1E7997;
+  border-radius: 4px;
+  font-size: 0.8125em;
+  display: inline;
+  padding: 3px 8px; }
+
 body {
   padding: 15px 20px; }
 
-h1, h2, h3, h4, h5, h6, p, blockquote,
-ul, ol, li, dl, dt, dd {
-  text-align: left; }
+h3 {
+  color: #4C4C4C; }
 
-h2 {
-  margin-top: 0;
-  margin-bottom: 20px; }
+h5 {
+  color: #C73677; }
 
 p {
-  color: #333;
-  line-height: 1.9; }
+  line-height: 1.9;
+  margin-bottom: 15px; }
+
+.icon-triangle, .icon-cross-img, .icon-circle, .icon-circle-d {
+  width: 23px;
+  height: 23px;
+  display: inline-block;
+  vertical-align: middle;
+  background-attachment: fixed;
+  background: url(../images/icon-shape.gif) center 0 no-repeat; }
+
+.icon-cross-img {
+  background-position: center -78px; }
+
+.icon-circle {
+  background-position: center -154px; }
+
+.icon-circle-d {
+  background-position: center -233px; }
+  .icon-circle-d.text-error {
+    background-position: center bottom; }

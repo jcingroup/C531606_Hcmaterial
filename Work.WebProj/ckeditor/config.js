@@ -3,7 +3,7 @@ CKEDITOR.editorConfig = function (config) {
     config.language = 'zh';
     // config.uiColor = '#AADC6E';
 
-    config.contentsCss = ['../../Content/css/editor.css'];
+    config.contentsCss = ['/Content/css/editor.css?v1'];
     config.toolbar = [
         {
             name: "basicstyles",
@@ -36,18 +36,18 @@ CKEDITOR.editorConfig = function (config) {
 
 CKEDITOR.stylesSet.add('default', [
     // Block Styles
-    { name: '標題 - 樣式1', element: 'h2' },
-    { name: '標題 - 樣式2', element: 'h3' },
-    { name: '標題 - 樣式3', element: 'h4' },
-    { name: '標題 - 樣式4', element: 'h5' },
+    { name: '標題1', element: 'h2' },
+    { name: '標題2', element: 'h3' },
+    { name: '標題3', element: 'h4' },
+    { name: '標題4', element: 'h5' },
 
     // Object Styles
-    { name: '列表 - 預設', element: 'ul', attributes: { 'class': 'list-unstyled' } },
-    { name: '列表 - 有圖標', element: 'ul', attributes: { 'class': 'list-dot' } },
-    { name: '列表 - 不換行', element: 'ul', attributes: { 'class': 'list-inline' } },
-    { name: '數字列表 - 預設', element: 'ol', attributes: { 'class': 'list-unstyled' } },
-    { name: '數字列表 - 有圖標', element: 'ol', attributes: { 'class': 'list-dot' } },
-    { name: '數字列表 - 不換行', element: 'ol', attributes: { 'class': 'list-inline' } },
+    { name: '列表-無圖標', element: 'ul', attributes: { 'class': 'list-unstyled' } },
+    { name: '列表-有圖標', element: 'ul', attributes: { 'class': 'list-dot' } },
+    { name: '列表-不換行', element: 'ul', attributes: { 'class': 'list-inline' } },
+    { name: '數字列表-無圖標', element: 'ol', attributes: { 'class': 'list-unstyled' } },
+    { name: '數字列表-有圖標', element: 'ol', attributes: { 'class': 'list-dot' } },
+    { name: '數字列表-不換行', element: 'ol', attributes: { 'class': 'list-inline' } },
     { name: '表格 - 預設', element: 'table' },
     // { name: '圖片 - 加框', element: 'img', attributes: { 'class': 'thumb' } }
 ]);

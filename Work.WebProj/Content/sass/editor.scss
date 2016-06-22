@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
+$body-bg:      #fff;
 $states:       false;
-$font-size-h2: 62px;
-$font-size-h3: 35px;
+$font-size-h2: 28px;
 
 // import
 // ------------------------------------------------------------
@@ -18,9 +18,44 @@ $font-size-h3: 35px;
 
 @import "_client/module/classes";
 @import "_client/module/list";
+@import "_client/module/label";
 
-body { padding: $gutter 20px }
-h1,h2,h3,h4,h5,h6,p,blockquote,
-ul,ol,li,dl,dt,dd { text-align: left; }
-h2 { margin-top: 0; margin-bottom: 20px; }
-p { color: #333; line-height: 1.9; }
+body { padding: $gutter 20px; }
+// h1,h2,h3,h4,h5,h6,p,blockquote,
+// ul,ol,li,dl,dt,dd { text-align: left; }
+
+h3 { color: $text-color; }
+h5 { color: $error; }
+p {
+    line-height: 1.9;
+    margin-bottom: $gutter;
+}
+
+// 意象圖標
+%icon-shape {
+    @extend %text-hide;
+    @include size(23px);
+    display: inline-block;
+    vertical-align: middle;
+    background-attachment: fixed;
+    background: url(#{$img-path}/icon-shape.gif) center 0 no-repeat;
+}
+.icon-triangle {
+    @extend %icon-shape;
+}
+.icon-cross-img {
+    @extend %icon-shape;
+    background-position: center -78px;
+}
+.icon-circle {
+    @extend %icon-shape;
+    background-position: center -154px;
+}
+.icon-circle-d {
+    @extend %icon-shape;
+    background-position: center -233px;
+
+    &.text-error {
+        background-position: center bottom;
+    }
+}

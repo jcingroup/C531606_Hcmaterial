@@ -107,7 +107,7 @@ namespace News {
             if ((prevState.edit_type == 0 && (this.state.edit_type == 1 || this.state.edit_type == 2)) ||
                 (prevState.edit_type == 1 && this.state.edit_type == 2)) {
                 //console.log('CKEDITOR');
-                CKEDITOR.replace('news_content');
+                CKEDITOR.replace('news_content', { customConfig: '/ckeditor/Config.js?v=' + CommFunc.uniqid() });
             }
         }
         gridData(page: number) {
@@ -441,6 +441,11 @@ namespace News {
                                 <div className="form-group">
                                     <label className="col-xs-2 control-label">內容</label>
                                     <div className="col-xs-10">
+                                        <div className="alert alert-warning alert-dismissible" role="alert">
+                                            <strong>編輯器注意事項：</strong><br/>
+                                            編輯器上傳圖片或新增表格等時，請勿設定寬度及高度(將數字刪除) ，以免行動裝置顯示時會跑版。<br/>
+                                            檔案尺寸寬度超過 1600 或 高度超過1200 的圖片會被壓縮(PNG透明背景會變成不透明)
+                                        </div>
                                         <textarea type="date" className="form-control" id="news_content" name="news_content" value={fieldData.news_content} onChange={this.changeFDValue.bind(this, 'news_content') } />
                                     </div>
                                 </div>
