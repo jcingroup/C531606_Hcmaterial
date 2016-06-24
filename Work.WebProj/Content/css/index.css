@@ -569,12 +569,12 @@ html, body {
     letter-spacing: 1px;
     padding-top: 54.5px;
     margin-left: 1px;
-    width: 19.89%;
+    width: 16.55667%;
     height: 110px;
     z-index: 2; }
     @media (min-width: 61.25em) and (max-width: 75em) {
       #menu a {
-        width: 19.84%; } }
+        width: 16.50667%; } }
     @media (max-width: 61.1875em) {
       #menu a {
         float: none;
@@ -608,11 +608,13 @@ html, body {
       background-color: #F36B1F; }
     #menu a:nth-of-type(5)::before, .ContactUs #menu a:nth-of-type(5)::before {
       background-color: #C73677; }
-    #menu a:hover, #menu a:active, .AboutUs #menu a:nth-of-type(1), .News #menu a:nth-of-type(2), .Products #menu a:nth-of-type(3), .JoinUs #menu a:nth-of-type(4) {
+    #menu a:nth-of-type(6)::before, .hstech #menu a:nth-of-type(6)::before {
+      background-color: #1F9BA3; }
+    #menu a:hover, #menu a:active, .AboutUs #menu a:nth-of-type(1), .News #menu a:nth-of-type(2), .Products #menu a:nth-of-type(3), .JoinUs #menu a:nth-of-type(4), .ContactUs #menu a:nth-of-type(5), .hstech #menu a:nth-of-type(6) {
       color: #fff; }
-      #menu a:hover::before, #menu a:active::before, .AboutUs #menu a:nth-of-type(1)::before, .News #menu a:nth-of-type(2)::before, .Products #menu a:nth-of-type(3)::before, .JoinUs #menu a:nth-of-type(4)::before {
+      #menu a:hover::before, #menu a:active::before, .AboutUs #menu a:nth-of-type(1)::before, .News #menu a:nth-of-type(2)::before, .Products #menu a:nth-of-type(3)::before, .JoinUs #menu a:nth-of-type(4)::before, .ContactUs #menu a:nth-of-type(5)::before, .hstech #menu a:nth-of-type(6)::before {
         height: 100%; }
-      #menu a:hover i, #menu a:active i, .AboutUs #menu a:nth-of-type(1) i, .News #menu a:nth-of-type(2) i, .Products #menu a:nth-of-type(3) i, .JoinUs #menu a:nth-of-type(4) i {
+      #menu a:hover i, #menu a:active i, .AboutUs #menu a:nth-of-type(1) i, .News #menu a:nth-of-type(2) i, .Products #menu a:nth-of-type(3) i, .JoinUs #menu a:nth-of-type(4) i, .ContactUs #menu a:nth-of-type(5) i, .hstech #menu a:nth-of-type(6) i {
         color: #F1F1F1; }
   #menu .toggle {
     display: none; }
@@ -879,25 +881,27 @@ html, body {
     background-color: #c75313; }
 
 .hover-underline {
-  color: #bebebe;
+  color: #1E7997;
   position: relative; }
   .hover-underline::before {
     display: block;
     height: 1px;
     width: 100%;
-    background: #bebebe;
+    background: #1E7997;
     position: absolute;
     top: 100%;
     right: 0;
-    -webkit-transform: scaleY(1);
-    transform: scaleY(1);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
     -webkit-transform-origin: 50%;
     transform-origin: 50%;
     -webkit-transition: transform .35s ease-out, background .4s;
     transition: transform .35s ease-out, background .4s; }
-  .hover-underline:hover::before, .hover-underline:active::before {
-    -webkit-transform: scaleY(3);
-    transform: scaleY(3); }
+  .hover-underline:hover, .hover-underline:active {
+    color: #C73677; }
+    .hover-underline:hover::before, .hover-underline:active::before {
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0); }
 
 .goTop {
   display: none;

@@ -1,11 +1,12 @@
 @charset "UTF-8";
 
-$underline-color:             darken($brand-gray, 20%);
+$underline-color:             $brand-secondary;
+$underline-hover-color:       $error;
 $underline-position:          top 100% right 0;
 
-$underline-transform:         scaleY(1);
+$underline-transform:         scaleX(1);
 $underline-transform-origin:  50%;
-$underline-transform-hover:   scaleY(3);
+$underline-transform-hover:   scaleX(0);
 $underline-transition:        'transform .35s ease-out, background .4s';
 
 
@@ -23,6 +24,7 @@ $underline-transition:        'transform .35s ease-out, background .4s';
     }
 
     &:hover, &:active {
+        color: $underline-hover-color;
         &::before {
             @include prefix(transform, $underline-transform-hover);
         }

@@ -39,7 +39,7 @@ $font-sp:               'Open Sans', sans-serif;
 // ----------------------------------------------------------------------
 $min-width:              980px;     // 網頁最小尺寸
 $max-width:              1400px;     // 網頁最寬尺寸: .wrap
-$pages:                  'AboutUs' 'News' 'Products' 'JoinUs' 'ContactUs';
+$pages:                  'AboutUs' 'News' 'Products' 'JoinUs' 'ContactUs' 'hstech';
 
 $wrapper-bg:             #fff;
 $content-spacing:        25px !default;
@@ -111,8 +111,7 @@ $menu-trigger-thickness:  2px;
 $menu-trigger-pd:         10px;
 $menu-trigger-color:      $brand-primary;
 
-$menu-color:              #368b39 #80A73D #F39311 #F36B1F #C73677;
-$menu-icon:               0 -187px -377px -562px -749px;
+$menu-color:              #368b39 #80A73D #F39311 #F36B1F #C73677 #1F9BA3;
 
 
 // ## module/slider
