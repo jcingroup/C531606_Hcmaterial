@@ -38,21 +38,21 @@ $font-sp:               'Open Sans', sans-serif;
 // == layout
 // ----------------------------------------------------------------------
 $min-width:              980px;     // 網頁最小尺寸
-$max-width:              1400px;     // 網頁最寬尺寸: .wrap
+$max-width:              1360px;     // 網頁最寬尺寸: .wrap
 $pages:                  'AboutUs' 'News' 'Products' 'JoinUs' 'ContactUs' 'hstech';
 
-$wrapper-bg:             #fff;
+$wrapper-bg:             false; // #fff 2016/6滿版調整
 $content-spacing:        25px !default;
 
 // header
-$header-bg:              #F6F6F6 !default;
-$header-height:          180px !default;
+$header-bg:              false !default; // #f6f6f6 2016/6滿版調整
+$header-height:          130px !default;
 $header-mobile-height:   85px !default;
 
 // logo
 $logo-img:               'logo.gif' !default;
-$logo-size:              126px 83px !default; // width height
-$logo-pos:               left 4.7% top 50% !default;
+$logo-size:              131px 86px !default; // width height 2016/6滿版調整
+$logo-pos:               left 2% top 16% !default; // 2016/6滿版調整
 
 // footer
 $footer-height:          239px;
@@ -87,18 +87,18 @@ $z-index: (
 // ----------------------------------------------------------------------
 // ## module/nav
 // menu
-$menu-bg:                 $wrapper-bg;
-$menu-height:             110px;
-$menu-pos:                left 0 top 70px right 0;
+// $menu-bg:                 $wrapper-bg; // 2016/6滿版調整
+$menu-height:             ($header-height - 36);  // 2016/6滿版調整
+$menu-pos:                left 0 top 36px right 0; // 2016/6滿版調整
 $nav-font-size:           21px;
 $nav-link:                darken(#50414B, 8);
 $nav-link-hover:          #fff;
 $nav-width:               (100% / length($pages)) - 0.11;
 
 // 語系
-$lang-color:              darken($brand-gray, 25%);
-$lang-color-hover:        $brand-primary;
-$lang-position:           right 10%;
+$lang-color:              #ABACA5;
+$lang-color-hover:        $brand-secondary;
+$lang-pos:                right 0 top 5px;
 
 // 行動選單(menu-trigger)
 $menu-mobile-style:       'overlay';                // 行動版選單樣式-push(推拉)/overlay(全螢幕)

@@ -2,13 +2,14 @@
 
 // var 變數，需放在 @import "helper/var" 之上才能覆蓋掉
 // ------------------------------------------------------------
+$index:                   true;
 $img-path2:               '../images/index';
 
 $content-spacing:         0;
 $heading-color:           darken(#1E7997, 15%);
 $font-size-h2:            70px;
-$font-size-h3:            41px;
-$font-size-h4:            35px;
+$font-size-h3:            39px;
+$font-size-h4:            33px;
 
 $swiper-pagination:       false;
 $swiper-button:           false;
@@ -42,22 +43,26 @@ $swiper-button:           false;
     &:nth-of-type(1) {
         h2 {
             margin-left: -(em(32));
-            top: em(37.5);
-            font-size: em(70);
+            // top: em(39);
+            top: 38.5%;
+            font-size: em(72);
 
-            @include mq-max(break(wide,-1)) { font-size: em(50px); }
-            @include mq-max(tablet) { font-size: em(37); }
+            @include mq-max(break(wide,-1)) { font-size: em(55); }
+            @include mq-max(tablet) { font-size: em(46); }
+            @include mq-max(phone-plus) { font-size: em(38); }
             @include mq-max(phone) { font-size: em(25); }
             @include mq-max(mobile) { font-size: em(18); }
         }
         h3 {
             left: 0; right: 0;
-            top: em(20);
-            font-size: em(64);
+            // top: em(20);
+            top: 20%;
+            font-size: em(66);
             letter-spacing: 4px;
 
-            @include mq-max(break(wide,-1)) { font-size: em(45px); }
-            @include mq-max(tablet) { font-size: em(35); }
+            @include mq-max(break(wide,-1)) { font-size: em(50); }
+            @include mq-max(tablet) { font-size: em(40); }
+            @include mq-max(phone-plus) { font-size: em(35); }
             @include mq-max(phone) { font-size: em(20); }
             @include mq-max(mobile) { font-size: em(16); }
         }
@@ -75,15 +80,18 @@ $swiper-button:           false;
     &:nth-of-type(2) {
         h2 {
             text-align: right;
-            top: em(15);
-            margin-left: em(32);
-            margin-top: em(12);
+            // top: em(15);
+            top: 25%;
+            left: 61%;
+            // margin-left: 10.2%;
+            // margin-top: em(12);
             text-shadow: .07em .07em 0 rgba(#000, .2);
 
-            @include mq-max(break(wide,-1)) { font-size: em(45px); }
-            @include mq-max(tablet) { font-size: em(35); }
-            @include mq-max(phone) { font-size: em(20); }
-            @include mq-max(mobile) { font-size: em(16); }
+            @include mq-max(break(wide,-1)) { font-size: em(56); }
+            @include mq-max(tablet) { font-size: em(45); }
+            @include mq-max(phone-plus) { font-size: em(38); }
+            @include mq-max(phone) { font-size: em(28); }
+            @include mq-max(mobile) { font-size: em(19); }
         }
         h3 {
             margin-left: em(45);
@@ -97,24 +105,31 @@ $swiper-button:           false;
             @include mq-max(mobile) { font-size: em(11); }
         }
     }
-    &:nth-of-type(3) { display: none;
+    &:nth-of-type(3) {
         h2 {
-            font-size: em(55px);
+            font-size: em(55);
             letter-spacing: 3px;
 
             &.t1 {
-                left: 10.2%;
-                top: em(19px);
+                // left: 10.2%;
+                // top: em(19px);
+                top: 14%;
+                margin-left: -(em(125));
+                @include mq-max(mobile) { margin-left: -(em(150)); }
             }
             &.t2 {
-                left: 5%;
-                top: em(38px);
+                // left: 5%;
+                // top: em(38px);
+                top: 28%;
+                margin-left: -(em(143));
+                @include mq-max(mobile) { margin-left: -(em(160)); }
             }
 
-            @include mq-max(break(wide,-1)) { font-size: em(42px); }
-            @include mq-max(tablet) { font-size: em(30); }
-            @include mq-max(phone) { font-size: em(19); }
-            @include mq-max(mobile) { font-size: em(10); }
+            @include mq-max(break(wide,-1)) { font-size: em(42); }
+            @include mq-max(tablet) { font-size: em(33); }
+            @include mq-max(phone-plus) { font-size: em(25); }
+            @include mq-max(phone) { font-size: em(21); }
+            @include mq-max(mobile) { font-size: em(14); }
         }
     }
 }
@@ -177,15 +192,10 @@ $swiper-button:           false;
 }
 
 // == main
-#main {
-    padding: 13px;
-    padding-bottom: 10%;
-}
-
 .content, .sidebar {
     float: left;
 
-    @include mq-max(break(phone-plus,-1)) {
+    @include mq-max(tablet) {
         float: none;
     }
 }
@@ -193,38 +203,47 @@ $swiper-button:           false;
 .content {
     width: 65%;
     background: #E6E6E6 url(#{$img-path2}/contentBg.gif) right bottom no-repeat;
-    // text-align: left;
     padding-top: 3%;
-    padding-bottom: 13%;
+    padding-bottom: 12%;
 
-    @include mq-max(break(wide,-1)) {
-        text-align: center;
-    }
-    @include mq-max(break(phone-plus,-1)) {
+    // @include mq-max(break(wide,-1)) {
+    //     text-align: center;
+    // }
+    @include mq-max(tablet) {
         width: 100%;
         padding-bottom: 16%;
     }
 
     // 下方的插圖
     @include el(after) {
-        background: url(#{$img-path2}/pic.png) right bottom no-repeat;
+        background: url(#{$img-path2}/pic.png) right top no-repeat;
         background-size: contain;
-        height: 60%;
+        height: 60%; // 60% 2016/6滿版
         max-height: 320px;
 
-        @include absolute(left 13px right 25.9% top 24%);
+        @include absolute(left 0 right 26.5% top 110px); // left 13px right 25.9% - 2016/6滿版調整
 
-        @include mq(wide) { height: 100%; top: 12.5% }
-        @include mq(wider) { top: 22.5% }
-        @include mq-max(break(phone-plus,-1)) {
-            top: 100px;
+        @include mq(wide) { // top: 12.5%
+            height: 100%;
+            right: 25.9%;
+        }
+        @include mq-max(break(wide,-1)) {
+            top: 160px;
+            left: 13px;
+        }
+        @include mq-max(tablet) {
+            top: 120px;
             right: 13px;
             bottom: none;
             background-position: 0 0;
             background-size: cover;
-            height: 158px;
+            height: 42.4%;
         }
-        // @include mq-max(break(phone,-1)) { top: 110px; }
+        @include mq-max(phone-plus) { height: 38.4%; }
+        @include mq-max(phone) {
+            top: 95px;
+            height: 28%;
+        }
     }
 
     h3 {
@@ -232,18 +251,18 @@ $swiper-button:           false;
         // margin-left: 25px;
         margin-bottom: 0;
 
-        @include mq-max(break(phone-plus,-1)) {
-            font-size: em(26px);
-        }
+        @include mq-max(tablet) { font-size: em(32); }
+        @include mq-max(phone) { font-size: em(26); }
     }
     p {
-        font-size: em(29px);
+        font-size: em(29);
         color: darken($brand-secondary, 9%);
         margin-left: 15px;
 
         @include mq-max(break(wide,-1)) { margin-top: 15px; }
-        @include mq-max(break(phone-plus,-1)) { font-size: em(19); }
-        @include mq-max(break(phone,-1)) { font-size: em(18); }
+        @include mq-max(tablet) { font-size: em(26); }
+        @include mq-max(phone) { font-size: em(19); }
+        // @include mq-max(break(phone,-1)) { font-size: em(18); }
     }
     h3, p {
         display: inline;
@@ -260,7 +279,7 @@ $swiper-button:           false;
     width: 35%;
     position: relative;
 
-    @include mq-max(break(phone-plus,-1)) {
+    @include mq-max(tablet) {
         width: 100%;
         margin-top: 60px;
     }
@@ -272,14 +291,14 @@ $swiper-button:           false;
 
         @include absolute(left 0 right 74% bottom 11px);
 
-        @include mq-max(tablet) { display: none; }
+        @include mq-max(break(desktop,-1)) { display: none; }
     }
 
     ul {
         margin-bottom: 50px;
         margin-left: 20px;
 
-        @include mq-max(break(phone-plus,-1)) {
+        @include mq-max(tablet) {
             margin-bottom: 20px;
         }
     }
@@ -288,7 +307,7 @@ $swiper-button:           false;
         font-size: em(18px);
 
         a {
-            display: block;
+            // display: block;
 
             &:hover, &:active {
                 color: lighten($brand-secondary, 5%);

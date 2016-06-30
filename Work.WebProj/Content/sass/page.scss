@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+$page:                    true;
 
 // base
 $font-size-h2:            28px;
@@ -55,28 +56,6 @@ $figure-mg:               2% 1%;
     }
     @include mq-max(phone) { height: 90px; }
     @include mq-max(mobile) { height: 70px; }
-}
-
-#main {
-    padding: $gutter ($gutter *2);
-
-    @include mq-max(phone) {
-        padding-left: $gutter;
-        padding-right: $gutter;
-    }
-    @include mq-max(phone-plus) {
-        h1 {
-            font-size: em(33px);
-            line-height: 1.5;
-            small { display: block; }
-        }
-    }
-
-    h3 { color: $text-color; }
-    h5 { color: $error; }
-    p { margin-bottom: $gutter; }
-    img { max-width: 100%; }
-    .table-rwd img { max-width: auto; }
 }
 
 .container {

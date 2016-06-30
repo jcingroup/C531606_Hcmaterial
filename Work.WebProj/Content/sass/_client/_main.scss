@@ -11,9 +11,43 @@
 @import "module/hover";
 @import "module/goTop";
 
-.demobar {
-    background: darken(#D9534F,10);
-    color: #fff;
-    padding-top: em(10);
-    padding-bottom: em(10);
+// .demobar {
+//     background: darken(#D9534F,10);
+//     color: #fff;
+//     padding-top: em(10);
+//     padding-bottom: em(10);
+// }
+
+#main {
+    @if $index {
+        padding-top: 13px;
+        padding-bottom: em(45);
+    }
+
+    @if $page {
+        // @extend %center; // 2016/6滿版調整
+        padding: $gutter 0;
+
+        @include mq-max(break(wide, -1)) {
+            padding-left: $gutter*2;
+            padding-right: $gutter*2;
+        }
+        @include mq-max(phone) {
+            padding-left: $gutter;
+            padding-right: $gutter;
+        }
+        @include mq-max(phone-plus) {
+            h1 {
+                font-size: em(33px);
+                line-height: 1.5;
+                small { display: block; }
+            }
+        }
+
+        h3 { color: $text-color; }
+        h5 { color: $error; }
+        p { margin-bottom: $gutter; }
+        img { max-width: 100%; }
+        .table-rwd img { max-width: auto; }
+    }
 }

@@ -27,7 +27,7 @@
 
 <body class="@ViewBag.BodyClass">
 
-    <div class="demobar">網站已正式上線，此為demo網站</div>
+    @* <div class="demobar">網站已正式上線，此為demo網站</div> *@
 
     <div id="wrapper">
 
@@ -81,8 +81,6 @@
                 <div class="swiper-pagination swiper-pagination-white"></div>
             </div><!-- banner //-->
 
-
-
             @RenderBody()
         }
         else
@@ -110,6 +108,7 @@
     </div><!-- wrapper //-->
 
     <footer id="footer">
+        <div class="wrap">
         <nav class="foot-nav col-7 col-xs-12">
            <dl class="col-4">
                <dt>INFORMATION</dt>
@@ -148,6 +147,7 @@
         </dl>
 
         <div class="copyright"><em>HCM</em> &copy; 2016</div>
+        </div>
     </footer>
 
     <script src="//code.jquery.com/jquery-latest.min.js"></script>

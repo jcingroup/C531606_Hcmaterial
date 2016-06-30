@@ -6,15 +6,15 @@ $current: current();
     @include absolute($menu-pos);
     height: $menu-height;
 
-    padding-left: nth($logo-size,1) + 100;
+    padding-left: nth($logo-size,1) + 56; // 100 - 2016/6滿版調整
     z-index: z(menu);
 
 
     i {
         color: #ddd;
-        font-size: em(21px);
+        font-size: em(17px);
 
-        @include absolute(left 50% top 21px);
+        @include absolute(left 50% top 13.5%);
         @include transform(translateX(-50%));
         @include transition(color 1s);
 
@@ -146,19 +146,21 @@ $current: current();
 }
 
 .lang-nav {
-    @include absolute(right 0 top 23px);
+    @include absolute($lang-pos);
 
+    @include mq-max(break(wide, -1)) {
+        right: cp($gutter);
+    }
     @include mq-max(break(desktop, -1)) {
         @include pos-center(vertical);
-        right: cp($gutter+15);
     }
     a {
-        color: #ABACA5;
+        color: $lang-color;
         font-size: em(13px);
         margin-left: 10px;
 
         &:hover, &:active {
-            color: $brand-secondary;
+            color: $lang-color-hover;
         }
 
         @include mq-max(break(phone-plus, -1)) {

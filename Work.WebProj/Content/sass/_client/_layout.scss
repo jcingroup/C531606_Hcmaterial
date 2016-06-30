@@ -6,20 +6,17 @@
 // 置中(有最大寬度限制,非滿版才需要)
 %center {
     max-width: $max-width;
-    margin: 0 ($gutter+21);
-
-    // 臨時
-    // min-width: 1200px;
+    margin: 0 $gutter*3; // +21 - 2016/6 滿版調整
 
     @include mq(wider) { margin: 0 auto; }
-    @include mq-max(tablet) { margin: 0; }
+    @include mq-max(break(wide, -1)) { margin: 0; }
 }
 
 // RWD容器
 %contain {
     @extend %clearfix;
 
-    @include mq-max(tablet) {
+    @include mq-max(break(wide, -1)) {
         padding-left: $gutter;
         padding-right: $gutter;
     }
@@ -103,10 +100,12 @@ $foot-pd: ($gutter - 3)*2;
     z-index: z(footer);
 
     // 專案樣式
-    @extend %center;
-    padding: 25px 0 10px;
+    // @extend %center; // 2016/6滿版調整
     text-align: left;
     font-size: em(15px);
+
+    // padding: 25px 0 10px; // 2016/6滿版調整
+    padding-top: 25px;
 
     dt {
         color: $success;
@@ -117,7 +116,7 @@ $foot-pd: ($gutter - 3)*2;
 }
 
 .foot-nav {
-    padding-left: $foot-pd;
+    // padding-left: $foot-pd; // 2016/6滿版調整
     a {
         display: block;
         margin: 8px 0;
@@ -149,7 +148,7 @@ $foot-pd: ($gutter - 3)*2;
 }
 
 .contacts {
-    padding-right: $foot-pd;
+    // padding-right: $foot-pd; // 2016/6滿版調整
 
     dd {
         margin-bottom: $gutter;
@@ -185,7 +184,8 @@ $foot-pd: ($gutter - 3)*2;
     border-top: 1px solid darken($footer-bg, 5%);
     font-size: em(12px);
     color: #7F7F7F;
-    padding: 10px $foot-pd;
+    // padding: 10px $foot-pd; // 2016/6滿版調整
+    padding: 10px 0;
 
     em {
         @include text-pic('logo_s.gif',41px,27px);
