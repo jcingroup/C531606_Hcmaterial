@@ -1,0 +1,91 @@
+﻿@{
+    Layout = "~/Views/Shared/Manage/RLayout.cshtml";
+    ViewBag.MenuName = "系統設定";
+    ViewBag.Caption = "FAQ-常見問題";
+}
+@section breadCrumb {
+    <li><a href="#"><i class="fa-list-alt"></i> @ViewBag.MenuName</a></li>
+    <li>@ViewBag.Caption</li>
+}
+@section IncludeCSS{
+
+}
+@section sidebar{
+    @Html.Partial("Manage/vucMenu")
+}
+
+<h3 class="title">
+    <span>FAQ - 常見問題</span>
+</h3>
+
+<dl class="faq">
+    <dt>如何修改無後台的網頁？</dt>
+    <dd>
+        <article>
+            進入網站檔案資料夾，使用文字編輯器(<small class="text-danger">* 註1</small>)打開後，修改內容完成，存檔即可。(附檔名勿更動)<br>
+            下為網頁對應位置及名稱。<br>
+            簡體中文頁在相同位置，檔名格式為 <span class="label label-info">.zh-CN</span>，(ex. layout.zh-CN.cshtml)
+            <ol class="list-text list-unstyled">
+                <li>頁首(header)、頁尾(footer)、banner 修改<br>
+                    檔案位置：<span class="text-primary">Views > Shared > layout.cshtml</span>
+                </li>
+                <li>首頁(index) 修改<br>
+                    檔案位置：<span class="text-primary">Views > Index > Index.cshtml</span>
+                </li>
+                <li>公司簡介(AboutUs) - 關於泓辰、公司沿革、公司組織、工廠及研發、業務推展，都在同一頁修改<br>
+                    檔案位置：<span class="text-primary">Views > AboutUs > AboutUs.cshtml</span>
+                </li>
+                <li>正極材料(Products)
+                    <ul>
+                        <li>
+                            核心技術(Battery_intro)<br>
+                            檔案位置：<span class="text-primary">Views > Products > Battery_intro.cshtml</span>
+                        </li>
+                        <li>
+                            特性及比較(Technology)<br>
+                            檔案位置：<span class="text-primary">Views > Products > Technology.cshtml</span>
+                        </li>
+                        <li>
+                            材料應用(Trend)<br>
+                            檔案位置：<span class="text-primary">Views > Products > Trend.cshtml</span>
+                        </li>
+                        <li>
+                            次世代研發(Build)<br>
+                            檔案位置：<span class="text-primary">Views > Products > Build.cshtml</span>
+                        </li>
+                        <li>
+                            正極材料選單(sidebar)<br>
+                            檔案位置：<span class="text-primary">Views > Products > sidebar.cshtml</span>
+                        </li>
+                    </ul>
+                </li>
+                <li>人力資源(JoinUs) - 員工福利、精采泓辰、人才招募，都在同一頁修改<br>
+                    檔案位置：<span class="text-primary">Views > JoinUs > JoinUs.cshtml</span>
+                </li>
+                <li>聯絡我們(ContactUs)<br>
+                    檔案位置：<span class="text-primary">Views > ContactUs > ContactUs.cshtml</span>
+                </li>
+            </ol>
+        </article>
+        <footer>
+            若需要進階修改(如：編輯排版、調色等)，可請略懂html語法的同仁代為幫忙上稿。<br>
+            <small class="text-danger">* 註1</small>: ex. 記事本、Sublime(推薦)
+        </footer>
+    </dd>
+</dl>
+
+<dl class="faq">
+    <dt>如何修改網頁圖片及css？</dt>
+    <dd class="inner-pd">
+        <ol class="list-text list-unstyled">
+            <li>網頁圖片位置<br>檔案位置：<span class="text-primary">Content > images</span></li>
+            <li>css檔案<br>檔案位置：<span class="text-primary">Content > css</span></li>
+        </ol>
+    </dd>
+</dl>
+
+<dl class="faq">
+    <dt>E-mail信箱設定是修改什麼？</dt>
+    <dd class="inner-pd">這是聯絡我們的表單設定，可新增多筆信箱，當有網友寄信詢問時就能同時收到信。<br>
+        並非修改頁腳的信箱</dd>
+</dl>

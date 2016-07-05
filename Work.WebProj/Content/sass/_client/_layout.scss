@@ -85,6 +85,8 @@ html, body {
         background-size: contain;
         height: 85%;
     }
+
+    &.cn { background-image: url(#{$img-path}/logo-CN.gif); }
 }
 
 

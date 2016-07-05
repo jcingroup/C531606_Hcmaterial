@@ -217,6 +217,7 @@
     <Compile Include="Areas\Active\Controllers\NewsDataController.cs" />
     <Compile Include="Areas\Active\Controllers\ParmDataController.cs" />
     <Compile Include="Areas\Base\Controllers\DocController.cs" />
+    <Compile Include="Areas\Base\Controllers\FAQController.cs" />
     <Compile Include="Areas\Base\Controllers\LoginController.cs" />
     <Content Include="app_modules\comm-cmpt\package.js" />
     <Content Include="app_modules\comm-func\package.js" />
@@ -373,8 +374,10 @@
     <Content Include="Content\images\AboutUs\pic_7.jpg" />
     <Content Include="Content\images\AboutUs\pic_8.jpg" />
     <Content Include="Content\images\AboutUs\pic_9.jpg" />
+    <Content Include="Content\images\banner-CN.gif" />
     <Content Include="Content\images\banner.gif" />
     <Content Include="Content\images\banner2.jpg" />
+    <Content Include="Content\images\banner3-CN.jpg" />
     <Content Include="Content\images\banner3.jpg" />
     <Content Include="Content\images\ContactUs\map-CN.gif" />
     <Content Include="Content\images\ContactUs\map.gif" />
@@ -411,6 +414,7 @@
     <Content Include="Content\images\JoinUs\pic3-5.jpg" />
     <Content Include="Content\images\JoinUs\pic3-6.jpg" />
     <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\logo-CN.gif" />
     <Content Include="Content\images\logo.gif" />
     <Content Include="Content\images\logo_s.gif" />
     <Content Include="Content\images\News\pic.jpg" />
@@ -445,9 +449,11 @@
     <Content Include="Content\images\Products\Battery\p3-2-CN.jpg" />
     <Content Include="Content\images\Products\Battery\p3-2.jpg" />
     <Content Include="Content\images\Products\Battery\p3.jpg" />
+    <Content Include="Content\images\Products\Battery\pic-CN.jpg" />
     <Content Include="Content\images\Products\Battery\pic.jpg" />
     <Content Include="Content\images\Products\Build\p1.jpg" />
     <Content Include="Content\images\Products\Build\p2.jpg" />
+    <Content Include="Content\images\Products\Build\pic-CN.jpg" />
     <Content Include="Content\images\Products\Build\pic.jpg" />
     <Content Include="Content\images\Products\icon-catalog.png" />
     <Content Include="Content\images\Products\sub-nav-bg.gif" />
@@ -558,6 +564,7 @@
     <Content Include="Content\images\noIE\line.gif" />
     <Content Include="Content\images\noIE\noIE.css" />
     <Content Include="Content\images\noIE\noIE.html" />
+    <Content Include="Areas\Base\Views\FAQ\FAQ.cshtml" />
     <None Include="Content\publih.wpp.targets" />
     <Content Include="Content\sass\_client\_main.scss" />
     <Content Include="Content\sass\_client\_settings.scss" />
@@ -615,6 +622,7 @@
     <Content Include="Scripts\cdn\toastr.js" />
     <Content Include="Scripts\googleReCAPTCHA.js" />
     <Content Include="Scripts\src\xformat.html" />
+    <Content Include="Views\AboutUs\AboutUs.zh-CN.cshtml" />
     <Content Include="Views\Index\Index.cshtml" />
     <Content Include="Scripts\cdn\BrowerInfo.js" />
     <Content Include="Scripts\cdn\chart\Chart.js" />
@@ -658,7 +666,6 @@
     <Content Include="Views\ContactUs\ContactUsEmail.cshtml" />
     <None Include="Views\News\Bak\content2.cshtml" />
     <Content Include="Views\Shared\Layout.zh-CN.cshtml" />
-    <Content Include="Views\AboutUs\AboutUs.zh-CN.cshtml" />
     <Content Include="Views\ContactUs\ContactUs.zh-CN.cshtml" />
     <Content Include="Views\Index\Index.zh-CN.cshtml" />
     <Content Include="Views\JoinUs\JoinUs.zh-CN.cshtml" />

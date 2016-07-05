@@ -10,10 +10,126 @@
 @section Scripts {
     <script src="~/Content/js/tab.js"></script>
 }
+@section breadCrumb {
+    <li><a href="~/Products">正极材料</a></li>
+}
+
 
 @Html.Partial("sidebar")
 
-<ul class="tabs">
+<h2 class="text-left clear">LMFP特性</h2>
+<article class="row-padding">
+    <div class="col-6 col-xs-12 col-lg-3 margin-bottom">
+        <h5>二次粒子球型化(易堆积)</h5>
+        <img src="~/Content/images/Products/Tech/pic.jpg" alt="二次粒子球型化(易堆积)">
+    </div>
+    <div class="col-6 col-xs-12 col-lg-3 margin-bottom">
+        <h5>一次奈米结构(电/质传距离短)</h5>
+        <img src="~/Content/images/Products/Tech/pic_2.jpg" alt="一次奈米结构(电/质传距离短)">
+    </div>
+    <div class="col-6 col-xs-12 col-lg-3 margin-bottom">
+        <h5>高均匀性覆碳(导电性佳)</h5>
+        <img src="~/Content/images/Products/Tech/pic_3.jpg" alt="高均匀性覆碳(导电性佳)">
+    </div>
+    <div class="col-6 col-xs-12 col-lg-3 margin-bottom">
+        <h5>多孔性结构(离子扩散佳)</h5>
+        <img src="~/Content/images/Products/Tech/pic_4.jpg" alt="多孔性结构(离子扩散佳)">
+    </div>
+</article>
+
+<hr>
+
+<h2 class="text-left clear">正极材料比较</h2>
+<article class="text-left">
+
+    <div class="table-rwd">
+        <table class="full text-center borded">
+            <tr>
+                <th rowspan="2">Structure</th>
+                <th colspan="2">Layer(层状结构)</th>
+                <th>Spinel(尖晶石结构)</th>
+                <th colspan="2">Olivine(橄榄石结构)</th>
+            </tr>
+            <tr>
+                <td class="item">LCoO<sub>2</sub></td>
+                <td class="item">NCM(三元)</td>
+                <td class="item">LiMn<sub>2</sub>O<sub>4</sub></td>
+                <td class="item">LiFePO<sub>4</sub></td>
+                <td class="item mark">LiMnFePO<sub>4</sub></td>
+            </tr>
+            <tr>
+                <td class="item">工作电压(Volt)</td>
+                <td colspan="2">3.6~3.7</td>
+                <td>3.8</td>
+                <td>3.4</td>
+                <td class="text-error mark">3.8~3.9</td>
+            </tr>
+            <tr>
+                <td class="item">克电压(mAh/g)</td>
+                <td>140~160</td>
+                <td class="text-error">160~190</td>
+                <td>110~120</td>
+                <td>150~160</td>
+                <td class="mark">150~155</td>
+            </tr>
+            <tr>
+                <td class="item">安全性</td>
+                <td><i class="icon-triangle">三角形</i></td>
+                <td><i class="icon-cross-img">叉</i></td>
+                <td><i class="icon-circle">圆</i></td>
+                <td class="text-error"><i class="icon-circle-d">2圆</i></td>
+                <td class="text-error mark"><i class="icon-circle-d">2圆</i></td>
+            </tr>
+            <tr>
+                <td class="item">高温特性</td>
+                <td><i class="icon-triangle">三角形</i></td>
+                <td><i class="icon-triangle">三角形</i></td>
+                <td><i class="icon-cross-img">叉</i><i class="icon-cross-img">叉</i></td>
+                <td><i class="icon-circle">圆</i></td>
+                <td class="mark"><i class="icon-circle">圆</i></td>
+            </tr>
+            <tr>
+                <td class="item">低温特性</td>
+                <td><i class="icon-cross-img">叉</i></td>
+                <td><i class="icon-triangle">三角形</i></td>
+                <td><i class="icon-circle">圆</i></td>
+                <td class="bg-gray"><i class="icon-circle-d">2圆</i></td>
+                <td class="text-error mark"><i class="icon-circle-d">2圆</i></td>
+            </tr>
+            <tr>
+                <td class="item">寿命(cycle)</td>
+                <td>1000</td>
+                <td>1200</td>
+                <td>1200</td>
+                <td class="text-error">>2000</td>
+                <td class="mark">>1500</td>
+            </tr>
+            <tr>
+                <td class="item">大电流放电</td>
+                <td><i class="icon-cross-img">叉</i></td>
+                <td><i class="icon-triangle">三角形</i></td>
+                <td class="text-warn"><i class="icon-circle-d text-error">2圆</i></td>
+                <td><i class="icon-circle">圆</i></td>
+                <td class="mark"><i class="icon-circle">圆</i></td>
+            </tr>
+            <tr>
+                <td class="item">材料成本</td>
+                <td colspan="2">高</td>
+                <td>低</td>
+                <td colspan="2" class="text-error">低</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>高电压的LMFP优势：</h3>
+    <ul class="list-dot">
+        <li>能量密度提高</li>
+        <li>Pack串连数减少</li>
+        <li>现有电池管理系统即可使用</li>
+    </ul>
+</article>
+
+@* <ul class="tabs">
     <li class="js-tab"><a href="#tab-1">高品质&稳定奈米材料</a></li>
     <li class="js-tab"><a href="#tab-2">量产技术</a></li>
     <li class="js-tab"><a href="#tab-3">技术资源</a></li>
@@ -22,7 +138,7 @@
 <article id="tab-1" class="tab-content">
     <h3>高品质&稳定奈米材料</h3>
     <div class="text-center">
-        <img src="~/Content/images/Products/Tech/p1-CN.gif" alt="">
+        <img src="~/Content/images/Products/Tech/p1.gif" alt="">
     </div>
 </article>
 
@@ -30,7 +146,7 @@
     <h3>量产技术</h3>
     <div class="col-6 col-xs-12">
         <h4>设备自制</h4>
-        <img src="~/Content/images/Products/Tech/p2-CN.jpg" alt="" width="100%">
+        <img src="~/Content/images/Products/Tech/p2.jpg" alt="" width="100%">
     </div>
     <div class="col-6 col-xs-12">
         <h4>RD开发设备</h4>
@@ -45,4 +161,4 @@
     <h5>奈米结构二次球型专利：</h5>
     <p>具高导电网路设计(高导电性)丶多孔性结构(高离子传导)，已通过中丶台丶日丶韩专利；美丶欧专利申请中</p>
     <img src="~/Content/images/Products/Tech/p2-3.jpg" alt="" width="80%">
-</article>
+</article> *@

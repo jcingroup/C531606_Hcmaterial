@@ -1,8 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "市场趋势:电池材料";
+    ViewBag.Title = "材料应用";
     ViewBag.BodyClass = "Products";
-    ViewBag.breadCrumb = "市场趋势";
+    ViewBag.breadCrumb = "材料应用";
     ViewBag.ProNav3Class = "current";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
@@ -11,9 +11,38 @@
     <script src="~/Content/js/tab.js"></script>
 }
 
+@section breadCrumb {
+    <li><a href="~/Products">正极材料</a></li>
+}
+
 @Html.Partial("sidebar")
 
-<ul class="tabs">
+<h2 class="text-left">材料应用</h2>
+
+<div class="text-left margin-bottom">
+    <h3>应用一：</h3>
+    <h5>与三元(NMC)混掺，大幅提高安全性，适用於乘用车。</h5>
+    <img src="~/Content/images/Products/Trend/pic.jpg" alt="软包电池安全测试">
+    <footer class="text-right text-primary margin-top">软包电池安全测试 <small>资料提料:中航锂电</small></footer>
+
+    <hr class="line">
+
+    <h3>应用二：</h3>
+    <h5>怠速启停系统(ISS)</h5>
+    <img src="~/Content/images/Products/Trend/pic2.jpg" alt="铃木旅行车采用东芝 SCiB LTO电池">
+    <p>日本铃木旅行车采用东芝 SCiB LTO 电池所组成之 Denso ISS 系统</p>
+</div>
+
+<hr class="line">
+
+<h3 class="text-left">应用三：</h3>
+<h5 class="text-left">以LMFP为主要正极材料，混掺三元，取代磷酸锂铁为主的大巴市场。</h5>
+<ul class="list-unstyled row-padding">
+    <li class="col-6 col-sm-12 margin-bottom"><img src="~/Content/images/Products/Trend/pic3.jpg" alt="大型巴士"></li>
+    <li class="col-6 col-sm-12"><img src="~/Content/images/Products/Trend/pic3_2.jpg" alt="大型巴士电池系统"></li>
+</ul>
+
+@* <ul class="tabs">
     <li class="js-tab"><a href="#tab-1">市场资讯</a></li>
     <li class="js-tab"><a href="#tab-2">动力系统应用</a></li>
     <li class="js-tab"><a href="#tab-3">储能系统应用</a></li>
@@ -31,7 +60,7 @@
     </div>
 
     <h4>未来锂电池市场需求目标</h4>
-    <img src="~/Content/images/Products/Trend/p1-3-CN.jpg" alt="">
+    <img src="~/Content/images/Products/Trend/p1-3.jpg" alt="">
 </article>
 
 <article id="tab-2" class="tab-content">
@@ -45,7 +74,7 @@
     </div>
     <div class="col-6 col-xs-12">
         <h4>电动车趋势</h4>
-        <img src="~/Content/images/Products/Trend/p2-CN.jpg" alt="">
+        <img src="~/Content/images/Products/Trend/p2.jpg" alt="">
     </div>
 </article>
 
@@ -53,7 +82,8 @@
     <h3>储能系统应用</h3>
     <div class="text-center">
         <img src="~/Content/images/Products/Trend/p3.jpg" alt="">
-        <img src="~/Content/images/Products/Trend/p3-2-CN.jpg" alt="">
+        <img src="~/Content/images/Products/Trend/p3-2.jpg" alt="">
         <p>储能系统的电池是以长寿命丶降低维修丶安全也是一大考量，因此LFP&LMFP也是一大选择，稳定成长的再生能源储存装置</p>
     </div>
 </article>
+ *@

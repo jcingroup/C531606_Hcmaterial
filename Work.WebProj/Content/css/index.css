@@ -442,6 +442,8 @@ html, body {
       transform: translate(-50%, -50%);
       background-size: contain;
       height: 85%; } }
+  .logo.cn {
+    background-image: url(../images/logo-CN.gif); }
 
 #footer {
   background: #f1f1f1;

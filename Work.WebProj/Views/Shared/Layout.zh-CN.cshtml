@@ -6,10 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <title>::@Resources.Res.System_FrontName::@ViewBag.Title</title>
+    <meta name="keywords" content="磷酸锰铁锂,LMFP,NMC+LMFP二代磷酸铁锂,电池材料,软包电池,高电压,高电压三元,高导电设计,高离子,高品质稳定奈米材料,自制奈米化设备,泓辰量产技术,泓辰电池材料,适用於车用电池,适用於大巴电池">
+    <meta name="description" content="泓辰电池材料是正极材料厂中唯一具有设备研制能力的公司，并於2014年成为全世界第一家量产磷酸锰铁锂的公司。">
+    <title>@Resources.Res.System_FrontName:@ViewBag.Title::磷酸锰铁锂,LMFP,NMC+LMFP二代磷酸铁锂,电池材料,软包电池,高电压,高电压三元,高导电设计,高离子,高品质稳定奈米材料,自制奈米化设备,泓辰量产技术,泓辰电池材料,适用於车用电池,适用於大巴电池</title>
     <!--[if lt IE 9]><script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script><![endif]-->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="bookmark" href="/favicon.ico" />
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
     <link rel="stylesheet" href="~/Content/css/swiper.min.css">
     <link rel="stylesheet" href="~/Content/css/grid.css?v=@CommWebSetup.CacheVer">
@@ -27,18 +29,21 @@
 
 <body class="@ViewBag.BodyClass">
 
+    @* <div class="demobar">网站已正式上线，此为demo网站</div> *@
+
     <div id="wrapper">
 
         <header id="header">
-            <h1 onclick="location.href='@Url.Content("~/index")'" title="回首页" class="logo">@Resources.Res.System_FrontName</h1>
+            <h1 onclick="location.href='@Url.Content("~/index")'" title="回首页" class="logo cn">@Resources.Res.System_FrontName</h1>
             <button class="menu-trigger"><span class="icon-menu2">MENU</span></button>@* 手机menu *@
             <nav id="menu">
                 <span class="icon-cross toggle"></span>@* 手机close menu *@
                 <a href="~/AboutUs"><i class="icon-trophy"></i>公司简介</a>
                 <a href="~/News"><i class="icon-megaphone"></i>最新消息</a>
-                <a href="~/Products"><i class="icon-battery"></i>电池材料</a>
+                <a href="~/Products"><i class="icon-battery"></i>正极材料</a>
                 <a href="~/JoinUs"><i class="icon-power-plug"></i>人力资源</a>
                 <a href="~/ContactUs"><i class="icon-paper-plane"></i>联络我们</a>
+                <a href="http://www.hstech.com.tw/" target="_blank"><i class="icon-switch"></i>宏濑科技</a>
             </nav>
             <nav class="lang-nav">
                 <a href="@Url.Action("SetLanguage")?L=zh-TW&A=index">繁体中文</a>
@@ -53,18 +58,18 @@
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide">
                         <h3 class="text-white font-sp" data-swiper-parallax="-300">LEADING YOUR ECO-LIFE</h3>
-                        <h2 data-swiper-parallax="-500">磷酸锂铁锰 LMFP</h2>
-                        <h4 data-swiper-parallax="-700">高品质．绿能．奈米材料</h4>
-                        <span class="animate wind w1">風車轉動</span>
-                        <span class="animate wind w2">風車轉動</span>
+                        <h2 data-swiper-parallax="-500">磷酸锰铁锂 LMFP</h2>
+                        @* <h4 data-swiper-parallax="-700">高品质．绿能．奈米材料</h4> *@
+                        <span class="animate wind w1">风车转动</span>
+                        <span class="animate wind w2">风车转动</span>
                         <img src="~/Content/images/index/banner.jpg?v=2" alt="轮播图1">
                     </li>
                     <li class="swiper-slide">
-                        <h2 class="text-white font-sp" data-swiper-parallax="-300">GREEN ENERGY</h2>
-                        <h3 class="t1" data-swiper-parallax="-500">高能量续航力</h3>
+                        <h2 class="text-white font-sp" data-swiper-parallax="-300">GREEN<br>ENERGY</h2>
+                        @* <h3 class="t1" data-swiper-parallax="-500">高能量续航力</h3>
                         <h3 class="t2" data-swiper-parallax="-700">高倍率充丶放电</h3>
-                        <h3 class="t3" data-swiper-parallax="-900">循环使用寿命</h3>
-                        <span class="animate motion car">沈车</span>
+                        <h3 class="t3" data-swiper-parallax="-900">循环使用寿命</h3> *@
+                        <span class="animate motion car">汽车开过</span>
                         <span class="animate motion ship">船</span>
                         <span class="animate motion bicycle">脚踏车</span>
                         <img src="~/Content/images/index/banner2.jpg?v=2" alt="轮播图2">
@@ -84,9 +89,9 @@
         {
             <div id="banner" class="swiper-container">
                 <ul class="swiper-wrapper">
-                    <li class="swiper-slide"><img src="~/Content/images/banner.gif" alt="轮播图1"></li>
+                    <li class="swiper-slide"><img src="~/Content/images/banner-CN.gif" alt="轮播图1"></li>
                     <li class="swiper-slide"><img src="~/Content/images/banner2.jpg" alt="轮播图2"></li>
-                    <li class="swiper-slide"><img src="~/Content/images/banner3.jpg" alt="轮播图3"></li>
+                    <li class="swiper-slide"><img src="~/Content/images/banner3-CN.jpg" alt="轮播图3"></li>
                 </ul>
             </div><!-- banner //-->
 
@@ -105,11 +110,12 @@
     </div><!-- wrapper //-->
 
     <footer id="footer">
-        <nav class="foot-nav col-7 col-xs-12 col-lg-6">
+        <div class="wrap">
+        <nav class="foot-nav col-7 col-xs-12">
            <dl class="col-4">
                <dt>INFORMATION</dt>
                <dd>
-                   <a href="~/AboutUs">关於我们</a>
+                   <a href="~/AboutUs">公司简介</a>
                    <a href="~/News">最新消息</a>
                    <a href="~/ContactUs">联络我们</a>
                </dd>
@@ -117,32 +123,33 @@
            <dl class="col-4">
                <dt>PRODUCTS</dt>
                <dd>
-                   <a href="~/Products">正极材料</a>
-                   <a href="~/Products/Technology">核心技术</a>
-                   <a href="~/Products/Trend">市场趋势</a>
-                   <a href="~/Products/Build">锂电池组成</a>
+                   <a href="~/Products">核心技术</a>
+                   <a href="~/Products/Technology">特性及比较</a>
+                   <a href="~/Products/Trend">材料应用</a>
+                   <a href="~/Products/Build">次世代研发</a>
                </dd>
            </dl>
            <dl class="col-4">
                <dt>JOIN US</dt>
                <dd>
-                   <a href="~/JoinUs/#tab-1">生活在泓辰</a>
-                   <a href="~/JoinUs/#tab-2">员工福利</a>
-                   <a href="~/JoinUs/#tab-3">社团</a>
-                   <a href="~/Content/download/record.doc">应徵人员资料表(下载)</a>
+                   <a href="~/JoinUs/#tab-1">员工福利</a>
+                   <a href="~/JoinUs/#tab-2">精彩泓辰</a>
+                   @* <a href="~/JoinUs/#tab-3">社团</a> *@
+                   <a href="http://www.104.com.tw/jobbank/custjob/index.php?r=cust&j=553f4770393b436c35373f683d433b1e12e2e2e71464b592634j53&jobsource=checkc" target="_blank">人才招募</a>
                </dd>
            </dl>
         </nav>
 
-        <dl class="contacts col-5 col-xs-12 offset-lg-1">
+        <dl class="contacts col-5 col-xs-12 col-lg-4 offset-lg-1">
             <dt>CONTACT US</dt>
             <dd class="icon-tel">886-3-4191222</dd>
             <dd class="icon-fax">886-3-4192333</dd>
             <dd>桃园市平镇区工业一路2-3号</dd>
-            <dd><a href="mailto:hirose@hstech.com.tw">hirose@hstech.com.tw</a></dd>
+            <dd><a href="mailto:sales@hcmaterial.com.tw">sales@hcmaterial.com.tw</a></dd>
         </dl>
 
         <div class="copyright"><em>HCM</em> &copy; 2016</div>
+        </div>
     </footer>
 
     <script src="//code.jquery.com/jquery-latest.min.js"></script>

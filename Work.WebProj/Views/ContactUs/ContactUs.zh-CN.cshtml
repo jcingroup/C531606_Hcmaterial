@@ -48,39 +48,39 @@
     <h2>联络我们</h2>
     <p>欢迎来到泓辰材料公司网站，请留下您的联络方式丶想询问的内容以及您的意见想法， 我们将尽快与您联络，谢谢您!</p>
 
-    <form action="" class="contact-form col-7 col-sm-12" id="ContactUsInfo">
+    <form class="contact-form col-7 col-sm-12" id="ContactUsInfo">
 
         <div class="row">
-            <label class="col-6">
+            <label class="col-6 col-pd-right">
                 <em class="text-error">*</em> 联络人
                 <input type="text" id="m_name" required>
             </label>
 
-            <label class="col-6">
+            <label class="col-6 col-pd-left">
                 公司名称
                 <input type="text" id="m_company">
             </label>
         </div>
 
         <div class="row">
-            <label class="col-6">
+            <label class="col-6 col-pd-right">
                 联络电话
                 <input type="tel" id="m_tel">
             </label>
 
-            <label class="col-6">
+            <label class="col-6 col-pd-left">
                 联络传真
                 <input type="tel" id="m_fax">
             </label>
         </div>
 
         <div class="row">
-            <label class="col-6">
+            <label class="col-6 col-pd-right">
                 城市
                 <input type="text" id="m_city">
             </label>
 
-            <label class="col-6">
+            <label class="col-6 col-pd-left">
                 <em class="text-error">*</em> 电子信箱
                 <input type="email" id="m_email" required>
             </label>
@@ -88,24 +88,10 @@
 
         <label for="m_content">您的意见</label>
         <textarea rows="5" id="m_content"></textarea>
-        @* @if (CommWebSetup.IsDemo == "0")
-            {
-                <div class="g-recaptcha" data-sitekey="6LexIhoTAAAAAINPFxaeQCa_6XJhKbAx8PtwTviK"></div>
-            }
-            <div id="err" style="color:red" hidden></div> *@
-
-        <button class="btn">发送</button>
+        <button class="btn" type="submit">发送</button>
     </form>
 
     <div class="contact col-5 col-sm-12">
         <img src="~/Content/images/ContactUs/map-CN.gif" class="img-center">
-        <!-- <ul class="list-dot">
-            <li>电话: 886-3-4191222</li>
-            <li>传真: 886-3-4192333 </li>
-            <li>地址：桃园市平镇区工业一路2-3号 </li>
-            <li>E-mail：hirose@hstech.com.tw </li>
-            <li>网址：http://www.hstech.com.tw</li>
-        </ul> -->
     </div>
-
 </section>

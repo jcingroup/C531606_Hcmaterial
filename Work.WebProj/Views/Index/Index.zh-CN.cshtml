@@ -13,19 +13,21 @@
         first_news = Model.FirstOrDefault();
         left_news = Model.Skip(1).Take(2).ToList();
     }
+
 }
 
 <section id="main">
 
     <article class="content">
-        <h3>次世代高电压正极材</h3>
-        <p>与国际前三大化学厂共同合作开发<br>2014正式量产次世代高电压LMFP</p>
-        @* <img src="~/Content/images/index/pic.png" alt="电池应用图"> *@
+        <h3>次世代磷酸锰铁锂</h3>
+        <p>奈米·安全·高能量密度</p>
+        @* <p>与国际前三大化学厂共同合作开发<br>2014正式量产次世代高电压LMFP</p> *@
     </article>
 
     <aside class="sidebar">
         <ul class="list-unstyled text-left">
             @* 最新消息 最多3则 *@
+
             @foreach (var item in Model)
             {
                 <li>

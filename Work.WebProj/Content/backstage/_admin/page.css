@@ -8040,7 +8040,7 @@ img {
     background-color: transparent !important;
   }
 
-  /* Undo forms 
+  /* Undo forms
   .form-inline {
     [class*="-group"],
     .form-control {
@@ -12340,4 +12340,52 @@ div.editor hr {
   height: 1px;
   border: 0;
   border-top: 1px dotted #ddd;
+}
+
+/* 列表縮進 */
+.indent {
+  padding-left: 30px;
+}
+
+/* 系統設定faq */
+.faq {
+  border: 1px solid #e7e7e7;
+  border-left: 4px solid #F0AD4E;
+  border-radius: 5px;
+}
+.faq article,
+.faq .inner-pd {
+  padding: 15px;
+  padding-top: 0;
+}
+.faq dt {
+  font-size: 20px;
+  font-weight: normal;
+  color: #DA9130;
+  padding: 15px;
+  padding-bottom: 0;
+  margin-bottom: 5px;
+}
+.faq article {
+  line-height: 1.65;
+}
+.faq .list-text {
+  margin: 16px 0;
+  border-top: 1px solid #efefef;
+}
+.faq .list-text > li {
+  padding: 10px;
+  border-bottom: 1px solid #efefef;
+}
+.faq .list-text > li:hover {
+  background: #fcf8e3;
+}
+.faq .list-text li li { margin: 7px 0; }
+.faq img {
+  margin: 5px 0;
+}
+.faq footer {
+  padding: 15px;
+  background: #f7f7f7;
+  border-top: 1px solid #e7e7e7;
 }
