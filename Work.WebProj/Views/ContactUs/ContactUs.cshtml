@@ -1,8 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "聯絡我們";
+    ViewBag.Title = Resources.Web.nav_contactus;
     ViewBag.BodyClass = "ContactUs";
-    ViewBag.breadCrumb = "聯絡我們";
+    ViewBag.breadCrumb = Resources.Web.nav_contactus;
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 @section Scripts {
@@ -45,53 +45,53 @@
     </script>
 }
 <section class="container">
-    <h2>聯絡我們</h2>
-    <p>歡迎來到泓辰材料公司網站，請留下您的聯絡方式、想詢問的內容以及您的意見想法， 我們將盡快與您聯絡，謝謝您!</p>
+    <h2>@Resources.Web.nav_contactus</h2>
+    <p>@Resources.Web.contactus_info</p>
 
     <form class="contact-form col-7 col-sm-12" id="ContactUsInfo">
 
         <div class="row">
             <label class="col-6 col-pd-right">
-                <em class="text-error">*</em> 聯絡人
+                <em class="text-error">*</em> @Resources.Web.contactus_person
                 <input type="text" id="m_name" required>
             </label>
 
             <label class="col-6 col-pd-left">
-                公司名稱
+                @Resources.Web.contactus_companyname
                 <input type="text" id="m_company">
             </label>
         </div>
 
         <div class="row">
             <label class="col-6 col-pd-right">
-                聯絡電話
+                @Resources.Web.contactus_tel
                 <input type="tel" id="m_tel">
             </label>
 
             <label class="col-6 col-pd-left">
-                聯絡傳真
+                @Resources.Web.contactus_fax
                 <input type="tel" id="m_fax">
             </label>
         </div>
 
         <div class="row">
             <label class="col-6 col-pd-right">
-                城市
+                @Resources.Web.contactus_city
                 <input type="text" id="m_city">
             </label>
 
             <label class="col-6 col-pd-left">
-                <em class="text-error">*</em> 電子信箱
+                <em class="text-error">*</em> @Resources.Web.contactus_email
                 <input type="email" id="m_email" required>
             </label>
         </div>
 
-        <label for="m_content">您的意見</label>
+        <label for="m_content">@Resources.Web.contactus_opinion</label>
         <textarea rows="5" id="m_content"></textarea>
-        <button class="btn" type="submit">發送</button>
+        <button class="btn" type="submit">@Resources.Web.contactus_send</button>
     </form>
 
     <div class="contact col-5 col-sm-12">
-        <img src="~/Content/images/ContactUs/map.gif" class="img-center">
+        <img src="@Url.Content(Resources.Web.contactus_map)" class="img-center">
     </div>
 </section>

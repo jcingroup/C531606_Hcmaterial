@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="磷酸錳鐵鋰,LMFP,NMC+LMFP二代磷酸鐵鋰,電池材料,軟包電池,高電壓,高電壓三元,高導電設計,高離子,高品質穩定奈米材料,自製奈米化設備,泓辰量產技術,泓辰電池材料,適用於車用電池,適用於大巴電池">
-    <meta name="description" content="泓辰電池材料是正極材料廠中唯一具有設備研製能力的公司，並於2014年成為全世界第一家量產磷酸錳鐵鋰的公司。">
-    <title>@Resources.Res.System_FrontName:@ViewBag.Title::磷酸錳鐵鋰,LMFP,NMC+LMFP二代磷酸鐵鋰,電池材料,軟包電池,高電壓,高電壓三元,高導電設計,高離子,高品質穩定奈米材料,自製奈米化設備,泓辰量產技術,泓辰電池材料,適用於車用電池,適用於大巴電池</title>
+    <meta name="keywords" content="@Resources.Web.keywords">
+    <meta name="description" content="@Resources.Web.description">
+    <title>@Resources.Res.System_FrontName:@ViewBag.Title::@Resources.Web.keywords</title>
     <!--[if lt IE 9]><script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script><![endif]-->
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="bookmark" href="/favicon.ico" />
@@ -34,22 +34,21 @@
     <div id="wrapper">
 
         <header id="header">
-            <h1 onclick="location.href='@Url.Content("~/index")'" title="回首頁" class="logo">@Resources.Res.System_FrontName</h1>
+            <h1 onclick="location.href='@Url.Content("~/index")'" title="@Resources.Web.back_home" class="logo">@Resources.Res.System_FrontName</h1>
             <button class="menu-trigger"><span class="icon-menu2">MENU</span></button>@* 手機menu *@
             <nav id="menu">
                 <span class="icon-cross toggle"></span>@* 手機close menu *@
-                <a href="~/AboutUs"><i class="icon-trophy"></i>公司簡介</a>
-                <a href="~/News"><i class="icon-megaphone"></i>最新消息</a>
-                <a href="~/Products"><i class="icon-battery"></i>正極材料</a>
-                <a href="~/JoinUs"><i class="icon-power-plug"></i>人力資源</a>
-                <a href="~/ContactUs"><i class="icon-paper-plane"></i>聯絡我們</a>
-                <a href="http://www.hstech.com.tw/" target="_blank"><i class="icon-switch"></i>宏瀨科技</a>
+                <a href="~/AboutUs"><i class="icon-trophy"></i>@Resources.Web.nav_aboutus</a>
+                <a href="~/News"><i class="icon-megaphone"></i>@Resources.Web.nav_news</a>
+                <a href="~/Products"><i class="icon-battery"></i>@Resources.Web.nav_products</a>
+                <a href="~/JoinUs"><i class="icon-power-plug"></i>@Resources.Web.nav_joinus</a>
+                <a href="~/ContactUs"><i class="icon-paper-plane"></i>@Resources.Web.nav_contactus</a>
+                <a href="http://www.hstech.com.tw/" target="_blank"><i class="icon-switch"></i>@Resources.Web.System_FrontName</a>
             </nav>
             <nav class="lang-nav">
                 <a href="@Url.Action("SetLanguage")?L=zh-TW&A=index">繁體中文</a>
                 <a href="@Url.Action("SetLanguage")?L=zh-CN&A=index">简体中文</a>
                 <a href="@Url.Action("SetLanguage")?L=en-US&A=index">English</a>
-                @* <a href="@Url.Action("SetLanguage")?L=en-US&A=index">English</a> *@
             </nav>
         </header>
 
@@ -59,26 +58,26 @@
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide">
                         <h3 class="text-white font-sp" data-swiper-parallax="-300">LEADING YOUR ECO-LIFE</h3>
-                        <h2 data-swiper-parallax="-500">磷酸錳鐵鋰 LMFP</h2>
+                        <h2 data-swiper-parallax="-500">@Resources.Web.banner_title1</h2>
                         @* <h4 data-swiper-parallax="-700">高品質．綠能．奈米材料</h4> *@
-                        <span class="animate wind w1">風車轉動</span>
-                        <span class="animate wind w2">風車轉動</span>
-                        <img src="~/Content/images/index/banner.jpg?v=2" alt="輪播圖1">
+                        <span class="animate wind w1">@Resources.Web.banner_wind</span>
+                        <span class="animate wind w2">@Resources.Web.banner_wind</span>
+                        <img src="~/Content/images/index/banner.jpg?v=2" alt="@Resources.Web.banner_img1">
                     </li>
                     <li class="swiper-slide">
                         <h2 class="text-white font-sp" data-swiper-parallax="-300">GREEN<br>ENERGY</h2>
                         @* <h3 class="t1" data-swiper-parallax="-500">高能量續航力</h3>
-                        <h3 class="t2" data-swiper-parallax="-700">高倍率充、放電</h3>
-                        <h3 class="t3" data-swiper-parallax="-900">循環使用壽命</h3> *@
-                        <span class="animate motion car">汽車開過</span>
-                        <span class="animate motion ship">船</span>
-                        <span class="animate motion bicycle">腳踏車</span>
-                        <img src="~/Content/images/index/banner2.jpg?v=2" alt="輪播圖2">
+                            <h3 class="t2" data-swiper-parallax="-700">高倍率充、放電</h3>
+                            <h3 class="t3" data-swiper-parallax="-900">循環使用壽命</h3> *@
+                        <span class="animate motion car">@Resources.Web.banner_car</span>
+                        <span class="animate motion ship">@Resources.Web.banner_ship</span>
+                        <span class="animate motion bicycle">@Resources.Web.banner_bicycle</span>
+                        <img src="~/Content/images/index/banner2.jpg?v=2" alt="@Resources.Web.banner_img2">
                     </li>
                     <li class="swiper-slide">
                         <h2 class="t1 text-white font-sp" data-swiper-parallax="-300">PROFESSIONAL</h2>
                         <h2 class="t2 text-white font-sp" data-swiper-parallax="-500">TECHNICAL TEAM</h2>
-                        <img src="~/Content/images/index/banner3.jpg" alt="輪播圖3">
+                        <img src="~/Content/images/index/banner3.jpg" alt="@Resources.Web.banner_img3">
                     </li>
                 </ul>
                 <div class="swiper-pagination swiper-pagination-white"></div>
@@ -90,9 +89,9 @@
         {
             <div id="banner" class="swiper-container">
                 <ul class="swiper-wrapper">
-                    <li class="swiper-slide"><img src="~/Content/images/banner.gif" alt="輪播圖1"></li>
-                    <li class="swiper-slide"><img src="~/Content/images/banner2.jpg" alt="輪播圖2"></li>
-                    <li class="swiper-slide"><img src="~/Content/images/banner3.jpg" alt="輪播圖3"></li>
+                    <li class="swiper-slide"><img src="~/Content/images/banner.gif" alt="@Resources.Web.banner_img1"></li>
+                    <li class="swiper-slide"><img src="~/Content/images/banner2.jpg" alt="@Resources.Web.banner_img2"></li>
+                    <li class="swiper-slide"><img src="~/Content/images/banner3.jpg" alt="@Resources.Web.banner_img3"></li>
                 </ul>
             </div><!-- banner //-->
 
@@ -112,44 +111,44 @@
 
     <footer id="footer">
         <div class="wrap">
-        <nav class="foot-nav col-7 col-xs-12">
-           <dl class="col-4">
-               <dt>INFORMATION</dt>
-               <dd>
-                   <a href="~/AboutUs">公司簡介</a>
-                   <a href="~/News">最新消息</a>
-                   <a href="~/ContactUs">聯絡我們</a>
-               </dd>
-           </dl>
-           <dl class="col-4">
-               <dt>PRODUCTS</dt>
-               <dd>
-                   <a href="~/Products">核心技術</a>
-                   <a href="~/Products/Technology">特性及比較</a>
-                   <a href="~/Products/Trend">材料應用</a>
-                   <a href="~/Products/Build">次世代研發</a>
-               </dd>
-           </dl>
-           <dl class="col-4">
-               <dt>JOIN US</dt>
-               <dd>
-                   <a href="~/JoinUs/#tab-1">員工福利</a>
-                   <a href="~/JoinUs/#tab-2">精彩泓辰</a>
-                   @* <a href="~/JoinUs/#tab-3">社團</a> *@
-                   <a href="http://www.104.com.tw/jobbank/custjob/index.php?r=cust&j=553f4770393b436c35373f683d433b1e12e2e2e71464b592634j53&jobsource=checkc" target="_blank">人才招募</a>
-               </dd>
-           </dl>
-        </nav>
+            <nav class="foot-nav col-7 col-xs-12">
+                <dl class="col-4">
+                    <dt>INFORMATION</dt>
+                    <dd>
+                        <a href="~/AboutUs">@Resources.Web.nav_aboutus</a>
+                        <a href="~/News">@Resources.Web.nav_news</a>
+                        <a href="~/ContactUs">@Resources.Web.nav_contactus</a>
+                    </dd>
+                </dl>
+                <dl class="col-4">
+                    <dt>PRODUCTS</dt>
+                    <dd>
+                        <a href="~/Products">@Resources.Web.products_item1</a>
+                        <a href="~/Products/Technology">@Resources.Web.products_item2</a>
+                        <a href="~/Products/Trend">@Resources.Web.products_item3</a>
+                        <a href="~/Products/Build">@Resources.Web.products_item4</a>
+                    </dd>
+                </dl>
+                <dl class="col-4">
+                    <dt>JOIN US</dt>
+                    <dd>
+                        <a href="~/JoinUs/#tab-1">@Resources.Web.joinus_item1</a>
+                        <a href="~/JoinUs/#tab-2">@Resources.Web.joinus_item2</a>
+                        @* <a href="~/JoinUs/#tab-3">社團</a> *@
+                        <a href="http://www.104.com.tw/jobbank/custjob/index.php?r=cust&j=553f4770393b436c35373f683d433b1e12e2e2e71464b592634j53&jobsource=checkc" target="_blank">@Resources.Web.joinus_item3</a>
+                    </dd>
+                </dl>
+            </nav>
 
-        <dl class="contacts col-5 col-xs-12 col-lg-4 offset-lg-1">
-            <dt>CONTACT US</dt>
-            <dd class="icon-tel">886-3-4191222</dd>
-            <dd class="icon-fax">886-3-4192333</dd>
-            <dd>桃園市平鎮區工業一路2-3號</dd>
-            <dd><a href="mailto:sales@hcmaterial.com.tw">sales@hcmaterial.com.tw</a></dd>
-        </dl>
+            <dl class="contacts col-5 col-xs-12 col-lg-4 offset-lg-1">
+                <dt>CONTACT US</dt>
+                <dd class="icon-tel">886-3-4191222</dd>
+                <dd class="icon-fax">886-3-4192333</dd>
+                <dd>@Resources.Web.address</dd>
+                <dd><a href="mailto:sales@hcmaterial.com.tw">sales@hcmaterial.com.tw</a></dd>
+            </dl>
 
-        <div class="copyright"><em>HCM</em> &copy; 2016</div>
+            <div class="copyright"><em>HCM</em> &copy; 2016</div>
         </div>
     </footer>
 
@@ -163,10 +162,10 @@
             effect: 'fade',
             autoplayDisableOnInteraction: false,
             fade: {
-              crossFade: true
+                crossFade: true
             },
-            pagination : '.swiper-pagination',
-            paginationClickable :true,
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
             parallax: true
         })
     </script>

@@ -117,10 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="News" xml:space="preserve">
+  <data name="keywords" xml:space="preserve">
+    <value>磷酸錳鐵鋰,LMFP,NMC+LMFP二代磷酸鐵鋰,電池材料,軟包電池,高電壓,高電壓三元,高導電設計,高離子,高品質穩定奈米材料,自製奈米化設備,泓辰量產技術,泓辰電池材料,適用於車用電池,適用於大巴電池</value>
+  </data>
+  <data name="nav_news" xml:space="preserve">
     <value>News</value>
   </data>
-  <data name="ReturnList" xml:space="preserve">
+  <data name="return_list" xml:space="preserve">
     <value>List</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>泓辰電池材料是正極材料廠中唯一具有設備研製能力的公司，並於2014年成為全世界第一家量產磷酸錳鐵鋰的公司。</value>
+  </data>
+  <data name="back_home" xml:space="preserve">
+    <value>Back to home</value>
+  </data>
+  <data name="nav_aboutus" xml:space="preserve">
+    <value>AboutUs</value>
+  </data>
+  <data name="nav_products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="nav_joinus" xml:space="preserve">
+    <value>JoinUs</value>
+  </data>
+  <data name="nav_contactus" xml:space="preserve">
+    <value>ContactUs</value>
+  </data>
+  <data name="System_FrontName" xml:space="preserve">
+    <value>宏瀨科技</value>
+  </data>
+  <data name="products_item1" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="products_item2" xml:space="preserve">
+    <value>Products Technology</value>
+  </data>
+  <data name="products_item3" xml:space="preserve">
+    <value>Products Trend</value>
+  </data>
+  <data name="products_item4" xml:space="preserve">
+    <value>Products Build</value>
+  </data>
+  <data name="banner_wind" xml:space="preserve">
+    <value>wind</value>
+  </data>
+  <data name="banner_car" xml:space="preserve">
+    <value>car</value>
+  </data>
+  <data name="banner_ship" xml:space="preserve">
+    <value>ship</value>
+  </data>
+  <data name="banner_bicycle" xml:space="preserve">
+    <value>bicycle</value>
+  </data>
+  <data name="banner_title1" xml:space="preserve">
+    <value>磷酸錳鐵鋰 LMFP</value>
+  </data>
+  <data name="banner_img1" xml:space="preserve">
+    <value>img1</value>
+  </data>
+  <data name="banner_img2" xml:space="preserve">
+    <value>img2</value>
+  </data>
+  <data name="banner_img3" xml:space="preserve">
+    <value>img3</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>桃園市平鎮區工業一路2-3號</value>
+  </data>
+  <data name="contactus_info" xml:space="preserve">
+    <value>歡迎來到泓辰材料公司網站，請留下您的聯絡方式、想詢問的內容以及您的意見想法， 我們將盡快與您聯絡，謝謝您!</value>
+  </data>
+  <data name="contactus_send" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="contactus_opinion" xml:space="preserve">
+    <value>Opinion</value>
+  </data>
+  <data name="contactus_map" xml:space="preserve">
+    <value>~/Content/images/ContactUs/map-CN.gif</value>
+  </data>
+  <data name="contactus_email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="contactus_city" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="contactus_fax" xml:space="preserve">
+    <value>FAX</value>
+  </data>
+  <data name="contactus_tel" xml:space="preserve">
+    <value>TEL</value>
+  </data>
+  <data name="contactus_companyname" xml:space="preserve">
+    <value>company name</value>
+  </data>
+  <data name="contactus_person" xml:space="preserve">
+    <value>Contact person</value>
+  </data>
+  <data name="products_list" xml:space="preserve">
+    <value>Product List</value>
   </data>
 </root>

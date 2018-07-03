@@ -1,12 +1,12 @@
 ﻿@model IList<ProcCore.Business.DB0.News>
 @{
-    ViewBag.Title = Resources.Web.News;
+    ViewBag.Title = Resources.Web.nav_news;
     ViewBag.BodyClass = "News";
-    ViewBag.breadCrumb = Resources.Web.News;
+    ViewBag.breadCrumb = Resources.Web.nav_news;
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h1>@Resources.Web.News</h1>
+<h1>@Resources.Web.nav_news</h1>
 @foreach (var item in Model)
 {
     <figure>

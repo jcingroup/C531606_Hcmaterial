@@ -117,10 +117,115 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="News" xml:space="preserve">
+  <data name="description" xml:space="preserve">
+    <value>泓辰电池材料是正极材料厂中唯一具有设备研制能力的公司，并於2014年成为全世界第一家量产磷酸锰铁锂的公司。</value>
+  </data>
+  <data name="keywords" xml:space="preserve">
+    <value>磷酸锰铁锂,LMFP,NMC+LMFP二代磷酸铁锂,电池材料,软包电池,高电压,高电压三元,高导电设计,高离子,高品质稳定奈米材料,自制奈米化设备,泓辰量产技术,泓辰电池材料,适用於车用电池,适用於大巴电池</value>
+  </data>
+  <data name="nav_news" xml:space="preserve">
     <value>最新消息</value>
   </data>
-  <data name="ReturnList" xml:space="preserve">
+  <data name="return_list" xml:space="preserve">
     <value>回列表</value>
+  </data>
+  <data name="back_home" xml:space="preserve">
+    <value>回首页</value>
+  </data>
+  <data name="nav_aboutus" xml:space="preserve">
+    <value>公司简介</value>
+  </data>
+  <data name="nav_products" xml:space="preserve">
+    <value>正极材料</value>
+  </data>
+  <data name="nav_joinus" xml:space="preserve">
+    <value>人力资源</value>
+  </data>
+  <data name="nav_contactus" xml:space="preserve">
+    <value>联络我们</value>
+  </data>
+  <data name="System_FrontName" xml:space="preserve">
+    <value>宏濑科技</value>
+  </data>
+  <data name="products_item1" xml:space="preserve">
+    <value>核心技术</value>
+  </data>
+  <data name="products_item2" xml:space="preserve">
+    <value>特性及比较</value>
+  </data>
+  <data name="products_item3" xml:space="preserve">
+    <value>材料应用</value>
+  </data>
+  <data name="products_item4" xml:space="preserve">
+    <value>次世代研发</value>
+  </data>
+  <data name="joinus_item1" xml:space="preserve">
+    <value>员工福利</value>
+  </data>
+  <data name="joinus_item2" xml:space="preserve">
+    <value>精彩泓辰</value>
+  </data>
+  <data name="joinus_item3" xml:space="preserve">
+    <value>人才招募</value>
+  </data>
+  <data name="banner_wind" xml:space="preserve">
+    <value>风车转动</value>
+  </data>
+  <data name="banner_car" xml:space="preserve">
+    <value>汽车开过</value>
+  </data>
+  <data name="banner_ship" xml:space="preserve">
+    <value>船</value>
+  </data>
+  <data name="banner_bicycle" xml:space="preserve">
+    <value>脚踏车</value>
+  </data>
+  <data name="banner_title1" xml:space="preserve">
+    <value>磷酸锰铁锂 LMFP</value>
+  </data>
+  <data name="banner_img1" xml:space="preserve">
+    <value>轮播图1</value>
+  </data>
+  <data name="banner_img2" xml:space="preserve">
+    <value>轮播图2</value>
+  </data>
+  <data name="banner_img3" xml:space="preserve">
+    <value>轮播图3</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>桃园市平镇区工业一路2-3号</value>
+  </data>
+  <data name="contactus_info" xml:space="preserve">
+    <value>欢迎来到泓辰材料公司网站，请留下您的联络方式丶想询问的内容以及您的意见想法， 我们将尽快与您联络，谢谢您!</value>
+  </data>
+  <data name="contactus_person" xml:space="preserve">
+    <value>联络人</value>
+  </data>
+  <data name="contactus_companyname" xml:space="preserve">
+    <value>公司名称</value>
+  </data>
+  <data name="contactus_tel" xml:space="preserve">
+    <value>联络电话</value>
+  </data>
+  <data name="contactus_fax" xml:space="preserve">
+    <value>联络传真</value>
+  </data>
+  <data name="contactus_city" xml:space="preserve">
+    <value>城市</value>
+  </data>
+  <data name="contactus_email" xml:space="preserve">
+    <value>电子信箱</value>
+  </data>
+  <data name="contactus_opinion" xml:space="preserve">
+    <value>您的意见</value>
+  </data>
+  <data name="contactus_map" xml:space="preserve">
+    <value>~/Content/images/ContactUs/map-CN.gif</value>
+  </data>
+  <data name="contactus_send" xml:space="preserve">
+    <value>发送</value>
+  </data>
+  <data name="products_list" xml:space="preserve">
+    <value>产品选单</value>
   </data>
 </root>

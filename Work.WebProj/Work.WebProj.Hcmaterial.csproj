@@ -27,9 +27,10 @@
     <SccProvider>SAK</SccProvider>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -667,8 +668,7 @@
     <Content Include="Views\Products\Battery-catalog.cshtml" />
     <Content Include="Views\ContactUs\ContactUsEmail.cshtml" />
     <None Include="Views\News\Bak\content2.cshtml" />
-    <Content Include="Views\Shared\Layout.zh-CN.cshtml" />
-    <Content Include="Views\ContactUs\ContactUs.zh-CN.cshtml" />
+    <Content Include="Views\ContactUs\Bak\ContactUs.zh-CN.cshtml" />
     <Content Include="Views\Index\Index.zh-CN.cshtml" />
     <Content Include="Views\JoinUs\JoinUs.zh-CN.cshtml" />
     <None Include="Views\News\Bak\list.zh-CN.cshtml" />
@@ -680,7 +680,6 @@
     <Content Include="Views\Products\Battery3.zh-CN.cshtml" />
     <Content Include="Views\Products\Battery_intro.zh-CN.cshtml" />
     <Content Include="Views\Products\Build.zh-CN.cshtml" />
-    <Content Include="Views\Products\sidebar.zh-CN.cshtml" />
     <Content Include="Views\Products\Technology.zh-CN.cshtml" />
     <Content Include="Views\Products\Trend.zh-CN.cshtml" />
     <None Include="Web.Release.config">

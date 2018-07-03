@@ -19,7 +19,7 @@ namespace Resources {
     // 類別透過 ResGen 或 Visual Studio 這類工具產生。
     // 若要加入或移除成員，請編輯您的 .ResX 檔，然後重新執行 ResGen
     // (利用 /str 選項)，或重建 Visual Studio 專案。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Web {
@@ -61,20 +61,335 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   查詢類似 桃園市平鎮區工業一路2-3號 的當地語系化字串。
+        /// </summary>
+        internal static string address {
+            get {
+                return ResourceManager.GetString("address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 回首頁 的當地語系化字串。
+        /// </summary>
+        internal static string back_home {
+            get {
+                return ResourceManager.GetString("back_home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 腳踏車 的當地語系化字串。
+        /// </summary>
+        internal static string banner_bicycle {
+            get {
+                return ResourceManager.GetString("banner_bicycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 汽車開過 的當地語系化字串。
+        /// </summary>
+        internal static string banner_car {
+            get {
+                return ResourceManager.GetString("banner_car", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 輪播圖1 的當地語系化字串。
+        /// </summary>
+        internal static string banner_img1 {
+            get {
+                return ResourceManager.GetString("banner_img1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 輪播圖2 的當地語系化字串。
+        /// </summary>
+        internal static string banner_img2 {
+            get {
+                return ResourceManager.GetString("banner_img2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 輪播圖3 的當地語系化字串。
+        /// </summary>
+        internal static string banner_img3 {
+            get {
+                return ResourceManager.GetString("banner_img3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 船 的當地語系化字串。
+        /// </summary>
+        internal static string banner_ship {
+            get {
+                return ResourceManager.GetString("banner_ship", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 磷酸錳鐵鋰 LMFP 的當地語系化字串。
+        /// </summary>
+        internal static string banner_title1 {
+            get {
+                return ResourceManager.GetString("banner_title1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 風車轉動 的當地語系化字串。
+        /// </summary>
+        internal static string banner_wind {
+            get {
+                return ResourceManager.GetString("banner_wind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 城市 的當地語系化字串。
+        /// </summary>
+        internal static string contactus_city {
+            get {
+                return ResourceManager.GetString("contactus_city", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 公司名稱 的當地語系化字串。
+        /// </summary>
+        internal static string contactus_companyname {
+            get {
+                return ResourceManager.GetString("contactus_companyname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 電子信箱 的當地語系化字串。
+        /// </summary>
+        internal static string contactus_email {
+            get {
+                return ResourceManager.GetString("contactus_email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 聯絡傳真 的當地語系化字串。
+        /// </summary>
+        internal static string contactus_fax {
+            get {
+                return ResourceManager.GetString("contactus_fax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 歡迎來到泓辰材料公司網站，請留下您的聯絡方式、想詢問的內容以及您的意見想法， 我們將盡快與您聯絡，謝謝您! 的當地語系化字串。
+        /// </summary>
+        internal static string contactus_info {
+            get {
+                return ResourceManager.GetString("contactus_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 ~/Content/images/ContactUs/map.gif 的當地語系化字串。
+        /// </summary>
+        internal static string contactus_map {
+            get {
+                return ResourceManager.GetString("contactus_map", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 您的意見 的當地語系化字串。
+        /// </summary>
+        internal static string contactus_opinion {
+            get {
+                return ResourceManager.GetString("contactus_opinion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 聯絡人 的當地語系化字串。
+        /// </summary>
+        internal static string contactus_person {
+            get {
+                return ResourceManager.GetString("contactus_person", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 發送 的當地語系化字串。
+        /// </summary>
+        internal static string contactus_send {
+            get {
+                return ResourceManager.GetString("contactus_send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 聯絡電話 的當地語系化字串。
+        /// </summary>
+        internal static string contactus_tel {
+            get {
+                return ResourceManager.GetString("contactus_tel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 泓辰電池材料是正極材料廠中唯一具有設備研製能力的公司，並於2014年成為全世界第一家量產磷酸錳鐵鋰的公司。 的當地語系化字串。
+        /// </summary>
+        internal static string description {
+            get {
+                return ResourceManager.GetString("description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 員工福利 的當地語系化字串。
+        /// </summary>
+        internal static string joinus_item1 {
+            get {
+                return ResourceManager.GetString("joinus_item1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 精彩泓辰 的當地語系化字串。
+        /// </summary>
+        internal static string joinus_item2 {
+            get {
+                return ResourceManager.GetString("joinus_item2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 人才招募 的當地語系化字串。
+        /// </summary>
+        internal static string joinus_item3 {
+            get {
+                return ResourceManager.GetString("joinus_item3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 磷酸錳鐵鋰,LMFP,NMC+LMFP二代磷酸鐵鋰,電池材料,軟包電池,高電壓,高電壓三元,高導電設計,高離子,高品質穩定奈米材料,自製奈米化設備,泓辰量產技術,泓辰電池材料,適用於車用電池,適用於大巴電池 的當地語系化字串。
+        /// </summary>
+        internal static string keywords {
+            get {
+                return ResourceManager.GetString("keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 公司簡介 的當地語系化字串。
+        /// </summary>
+        internal static string nav_aboutus {
+            get {
+                return ResourceManager.GetString("nav_aboutus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 聯絡我們 的當地語系化字串。
+        /// </summary>
+        internal static string nav_contactus {
+            get {
+                return ResourceManager.GetString("nav_contactus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 人力資源 的當地語系化字串。
+        /// </summary>
+        internal static string nav_joinus {
+            get {
+                return ResourceManager.GetString("nav_joinus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查詢類似 最新消息 的當地語系化字串。
         /// </summary>
-        internal static string News {
+        internal static string nav_news {
             get {
-                return ResourceManager.GetString("News", resourceCulture);
+                return ResourceManager.GetString("nav_news", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 正極材料 的當地語系化字串。
+        /// </summary>
+        internal static string nav_products {
+            get {
+                return ResourceManager.GetString("nav_products", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 核心技術 的當地語系化字串。
+        /// </summary>
+        internal static string products_item1 {
+            get {
+                return ResourceManager.GetString("products_item1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 特性及比較 的當地語系化字串。
+        /// </summary>
+        internal static string products_item2 {
+            get {
+                return ResourceManager.GetString("products_item2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 材料應用 的當地語系化字串。
+        /// </summary>
+        internal static string products_item3 {
+            get {
+                return ResourceManager.GetString("products_item3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 次世代研發 的當地語系化字串。
+        /// </summary>
+        internal static string products_item4 {
+            get {
+                return ResourceManager.GetString("products_item4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 產品選單 的當地語系化字串。
+        /// </summary>
+        internal static string products_list {
+            get {
+                return ResourceManager.GetString("products_list", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類似 回列表 的當地語系化字串。
         /// </summary>
-        internal static string ReturnList {
+        internal static string return_list {
             get {
-                return ResourceManager.GetString("ReturnList", resourceCulture);
+                return ResourceManager.GetString("return_list", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 宏瀨科技 的當地語系化字串。
+        /// </summary>
+        internal static string System_FrontName {
+            get {
+                return ResourceManager.GetString("System_FrontName", resourceCulture);
             }
         }
     }

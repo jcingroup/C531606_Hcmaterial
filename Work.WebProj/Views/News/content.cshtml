@@ -1,8 +1,8 @@
 ﻿@model ProcCore.Business.DB0.News
 @{
-    ViewBag.Title = Resources.Web.News + ":" + Model.news_title;
+    ViewBag.Title = Resources.Web.nav_news + ":" + Model.news_title;
     ViewBag.BodyClass = "News";
-    ViewBag.breadCrumb = Resources.Web.News;
+    ViewBag.breadCrumb = Resources.Web.nav_news;
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
@@ -17,5 +17,5 @@
 </article>
 
 <footer class="text-center clear">
-    <a href="~/News" class="btn">@Resources.Web.ReturnList</a>
+    <a href="~/News" class="btn">@Resources.Web.return_list</a>
 </footer>
