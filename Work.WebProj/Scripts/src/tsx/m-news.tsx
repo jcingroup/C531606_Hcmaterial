@@ -54,6 +54,9 @@ namespace News {
             if (this.props.itemData.i_Lang == 'zh-CN')
                 ele_lang = '簡體中文';
 
+            if (this.props.itemData.i_Lang == 'en-US')
+                ele_lang = 'English';
+
             return <tr>
                 <td className="text-center"><CommCmpt.GridCheckDel iKey={this.props.ikey} chd={this.props.itemData.check_del} delCheck={this.delCheck} /></td>
                 <td className="text-center"><CommCmpt.GridButtonModify modify={this.modify} /></td>
@@ -434,6 +437,7 @@ namespace News {
                                             onChange={this.changeFDValue.bind(this, 'i_Lang') }>
                                             <option value="zh-TW">繁體中文</option>
                                             <option value="zh-CN">簡體中文</option>
+                                            <option value="en-US">English</option>
                                         </select>
                                     </div>
                                 </div>
