@@ -97,7 +97,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   查詢類似 輪播圖1 的當地語系化字串。
+        ///   查詢類似 LEADING YOUR ECO-LIFE磷酸錳鐵鋰 LMFP 的當地語系化字串。
         /// </summary>
         internal static string banner_img1 {
             get {
@@ -106,7 +106,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   查詢類似 輪播圖2 的當地語系化字串。
+        ///   查詢類似 GREENENERGY 的當地語系化字串。
         /// </summary>
         internal static string banner_img2 {
             get {
@@ -115,7 +115,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   查詢類似 輪播圖3 的當地語系化字串。
+        ///   查詢類似 PROFESSIONALTECHNICAL TEAM 的當地語系化字串。
         /// </summary>
         internal static string banner_img3 {
             get {
@@ -187,6 +187,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   查詢類似 03-4192333 的當地語系化字串。
+        /// </summary>
+        internal static string contactus_fax_info {
+            get {
+                return ResourceManager.GetString("contactus_fax_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查詢類似 歡迎來到泓辰材料公司網站，請留下您的聯絡方式、想詢問的內容以及您的意見想法， 我們將盡快與您聯絡，謝謝您! 的當地語系化字串。
         /// </summary>
         internal static string contactus_info {
@@ -237,6 +246,15 @@ namespace Resources {
         internal static string contactus_tel {
             get {
                 return ResourceManager.GetString("contactus_tel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 03-4191222 的當地語系化字串。
+        /// </summary>
+        internal static string contactus_tel_info {
+            get {
+                return ResourceManager.GetString("contactus_tel_info", resourceCulture);
             }
         }
         

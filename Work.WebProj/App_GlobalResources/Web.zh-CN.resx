@@ -184,13 +184,13 @@
     <value>磷酸锰铁锂 LMFP</value>
   </data>
   <data name="banner_img1" xml:space="preserve">
-    <value>轮播图1</value>
+    <value>LEADING YOUR ECO-LIFE磷酸锰铁锂 LMFP</value>
   </data>
   <data name="banner_img2" xml:space="preserve">
-    <value>轮播图2</value>
+    <value>GREENENERGY</value>
   </data>
   <data name="banner_img3" xml:space="preserve">
-    <value>轮播图3</value>
+    <value>PROFESSIONALTECHNICAL TEAM</value>
   </data>
   <data name="address" xml:space="preserve">
     <value>桃园市平镇区工业一路2-3号</value>
@@ -227,5 +227,11 @@
   </data>
   <data name="products_list" xml:space="preserve">
     <value>产品选单</value>
+  </data>
+  <data name="contactus_tel_info" xml:space="preserve">
+    <value>886-3-4191222</value>
+  </data>
+  <data name="contactus_fax_info" xml:space="preserve">
+    <value>886-3-4192333</value>
   </data>
 </root>

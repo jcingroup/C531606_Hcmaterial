@@ -1,0 +1,41 @@
+﻿@model IList<ProcCore.Business.DB0.News>
+@{
+    ViewBag.Title = "次世代高壓電正極材";
+    ViewBag.IsFirstPage = true;
+    ViewBag.BodyClass = "index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+
+    ProcCore.Business.DB0.News first_news = null;
+    IList<ProcCore.Business.DB0.News> left_news = null;
+
+    if (Model != null)
+    {
+        first_news = Model.FirstOrDefault();
+        left_news = Model.Skip(1).Take(2).ToList();
+    }
+
+}
+
+<section id="main">
+
+    <article class="content">
+        <h3>次世代磷酸錳鐵鋰</h3>
+        <p>奈米‧安全‧高能量密度</p>
+        @* <p>與國際前三大化學廠共同合作開發<br>2014正式量產次世代高電壓LMFP</p> *@
+    </article>
+
+    <aside class="sidebar">
+        <ul class="list-unstyled text-left">
+            @* 最新消息 最多3則 *@
+
+            @foreach (var item in Model)
+            {
+                <li>
+                    <a href="~/News/content?id=@item.news_id"><em>@item.set_date.ToString("yyyy-MM-dd")</em>@item.news_title</a>
+                </li>
+            }
+        </ul>
+        <a href="~/News" class="btn">MORE</a>
+    </aside>
+
+</section><!-- main //-->

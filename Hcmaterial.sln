@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Work.WebProj.Hcmaterial", "Work.WebProj\Work.WebProj.Hcmaterial.csproj", "{821195B6-1744-4E05-B003-7DA64385CFB6}"
 EndProject
@@ -31,5 +31,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_SaveFilesImmediatelyUponChange = False
+		RESX_NeutralResourcesLanguage = zh-TW
+		SolutionGuid = {38064746-2AC7-4719-A8D3-98FA1E1F4B2B}
 	EndGlobalSection
 EndGlobal

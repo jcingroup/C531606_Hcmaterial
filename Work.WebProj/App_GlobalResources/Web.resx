@@ -184,13 +184,13 @@
     <value>磷酸錳鐵鋰 LMFP</value>
   </data>
   <data name="banner_img1" xml:space="preserve">
-    <value>輪播圖1</value>
+    <value>LEADING YOUR ECO-LIFE磷酸錳鐵鋰 LMFP</value>
   </data>
   <data name="banner_img2" xml:space="preserve">
-    <value>輪播圖2</value>
+    <value>GREENENERGY</value>
   </data>
   <data name="banner_img3" xml:space="preserve">
-    <value>輪播圖3</value>
+    <value>PROFESSIONALTECHNICAL TEAM</value>
   </data>
   <data name="address" xml:space="preserve">
     <value>桃園市平鎮區工業一路2-3號</value>
@@ -227,5 +227,11 @@
   </data>
   <data name="products_list" xml:space="preserve">
     <value>產品選單</value>
+  </data>
+  <data name="contactus_tel_info" xml:space="preserve">
+    <value>03-4191222</value>
+  </data>
+  <data name="contactus_fax_info" xml:space="preserve">
+    <value>03-4192333</value>
   </data>
 </root>
