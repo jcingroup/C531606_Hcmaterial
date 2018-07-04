@@ -59,3 +59,29 @@ p {
         background-position: center bottom;
     }
 }
+
+// 表格對角線
+.diagonal {
+    width: 20%;
+    position: relative;
+
+    background: linear-gradient(to top right, transparent 49.5%, #E4E5DC, transparent 50.5%);
+
+    sup, sub {
+        font-size: em(17);
+        position: relative;
+        display: block;
+        float: left;
+        width: 50%;
+        line-height: 100%;
+        text-align: center;
+    }
+    // 左下
+    sup {
+        padding-bottom: 15%;
+    }
+    // 右上
+    sub {
+        padding-top: 15%;
+    }
+}

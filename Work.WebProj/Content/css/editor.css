@@ -532,3 +532,20 @@ p {
   background-position: center -233px; }
   .icon-circle-d.text-error {
     background-position: center bottom; }
+
+.diagonal {
+  width: 20%;
+  position: relative;
+  background: linear-gradient(to top right, transparent 49.5%, #E4E5DC, transparent 50.5%); }
+  .diagonal sup, .diagonal sub {
+    font-size: 1.0625em;
+    position: relative;
+    display: block;
+    float: left;
+    width: 50%;
+    line-height: 100%;
+    text-align: center; }
+  .diagonal sup {
+    padding-bottom: 15%; }
+  .diagonal sub {
+    padding-top: 15%; }
