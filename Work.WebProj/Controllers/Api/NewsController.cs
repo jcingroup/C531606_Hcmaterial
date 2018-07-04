@@ -36,6 +36,9 @@ namespace DotWeb.Api
             if (q.title != null)
                 predicate = predicate.And(x => x.news_title.Contains(q.title));
 
+            if (q.i_Lang != null)
+                predicate = predicate.And(x => x.i_Lang == q.i_Lang);
+
             int page = (q.page == null ? 1 : (int)q.page);
             var result = db0.News.AsExpandable().Where(predicate);
             var resultCount = await result.CountAsync();
@@ -180,6 +183,7 @@ namespace DotWeb.Api
     public class q_News : QueryBase
     {
         public string title { set; get; }
+        public string i_Lang { get; set; }
 
     }
 }

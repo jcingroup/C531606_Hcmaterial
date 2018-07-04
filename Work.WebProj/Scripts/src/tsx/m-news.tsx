@@ -21,7 +21,8 @@ namespace News {
     }
     interface FormState<G, F> extends BaseDefine.GirdFormStateBase<G, F> {
         searchData?: {
-            keyword: string
+            keyword: string,
+            i_Lang: string
         }
     }
     interface FormResult extends IResultBase {
@@ -61,7 +62,7 @@ namespace News {
                 <td className="text-center"><CommCmpt.GridCheckDel iKey={this.props.ikey} chd={this.props.itemData.check_del} delCheck={this.delCheck} /></td>
                 <td className="text-center"><CommCmpt.GridButtonModify modify={this.modify} /></td>
                 <td>{this.props.itemData.news_title}</td>
-                <td>{Moment(this.props.itemData.set_date).format(dt.dateFT) }</td>
+                <td>{Moment(this.props.itemData.set_date).format(dt.dateFT)}</td>
                 <td>{ele_lang}</td>
                 <td>{this.props.itemData.state == 'A' ? <span className="label label-primary">顯示</span> : <span className="label label-default">隱藏</span>}</td>
             </tr>;
@@ -95,7 +96,7 @@ namespace News {
                 fieldData: {},
                 gridData: { rows: [], page: 1 },
                 edit_type: 0,
-                searchData: { keyword: null }
+                searchData: { keyword: null, i_Lang: null }
             }
         }
         static defaultProps: BaseDefine.GridFormPropsBase = {
@@ -277,11 +278,11 @@ namespace News {
             var v = date == null ? null : date.format();
             var objForUpdate = {
                 [collentName]:
-                {
-                    [name]: {
-                        $set: v
+                    {
+                        [name]: {
+                            $set: v
+                        }
                     }
-                }
             };
             var newState = update(this.state, objForUpdate);
             this.setState(newState);
@@ -310,11 +311,20 @@ namespace News {
                                         <div className="table-filter">
                                             <div className="form-inline">
                                                 <div className="form-group">
-                                                    <label>標題</label> { }
+                                                    <label>標題</label> {}
                                                     <input type="text" className="form-control"
-                                                        onChange={this.changeGDValue.bind(this, 'keyword') }
+                                                        onChange={this.changeGDValue.bind(this, 'keyword')}
                                                         value={searchData.keyword}
-                                                        placeholder="請輸入關鍵字..." /> { }
+                                                        placeholder="請輸入關鍵字..." /> {}
+                                                    <label>語系</label> {}
+                                                    <select className="form-control"
+                                                        value={searchData.i_Lang}
+                                                        onChange={this.changeGDValue.bind(this, 'i_Lang')}>
+                                                        <option value="">全部</option>
+                                                        <option value="zh-TW">繁體中文</option>
+                                                        <option value="zh-CN">簡體中文</option>
+                                                        <option value="en-US">English</option>
+                                                    </select> {}
                                                     <button className="btn-primary" type="submit"><i className="fa-search"></i> 搜尋</button>
                                                 </div>
                                             </div>
@@ -360,7 +370,7 @@ namespace News {
                                     onQueryGridData={this.queryGridData}
                                     InsertType={this.insertType}
                                     deleteSubmit={this.deleteSubmit}
-                                    />
+                                />
                             </form>
                         </div>
                     );
@@ -393,7 +403,7 @@ namespace News {
                                 <div className="form-group">
                                     <label className="col-xs-2 control-label">標題</label>
                                     <div className="col-xs-8">
-                                        <input type="text" className="form-control" onChange={this.changeFDValue.bind(this, 'news_title') } value={fieldData.news_title} maxLength={300}
+                                        <input type="text" className="form-control" onChange={this.changeFDValue.bind(this, 'news_title')} value={fieldData.news_title} maxLength={300}
                                             required />
                                     </div>
                                     <small className="col-xs-2 text-danger">(必填) </small>
@@ -408,7 +418,7 @@ namespace News {
                                             required={true}
                                             locale="zh-TW"
                                             showYearDropdown
-                                            onChange={this.setChangeDate.bind(this, this.props.fdName, 'set_date') }
+                                            onChange={this.setChangeDate.bind(this, this.props.fdName, 'set_date')}
                                             className="form-control" />
                                     </div>
                                     <small className="col-xs-2 text-danger">(必填) </small>
@@ -420,7 +430,7 @@ namespace News {
                                         <select className="form-control"
                                             required
                                             value={fieldData.state}
-                                            onChange={this.changeFDValue.bind(this, 'state') }>
+                                            onChange={this.changeFDValue.bind(this, 'state')}>
                                             <option value="A">前台顯示</option>
                                             <option value="C">前台關閉</option>
                                         </select>
@@ -434,7 +444,7 @@ namespace News {
                                         <select className="form-control"
                                             required
                                             value={fieldData.i_Lang}
-                                            onChange={this.changeFDValue.bind(this, 'i_Lang') }>
+                                            onChange={this.changeFDValue.bind(this, 'i_Lang')}>
                                             <option value="zh-TW">繁體中文</option>
                                             <option value="zh-CN">簡體中文</option>
                                             <option value="en-US">English</option>
@@ -446,11 +456,11 @@ namespace News {
                                     <label className="col-xs-2 control-label">內容</label>
                                     <div className="col-xs-10">
                                         <div className="alert alert-warning alert-dismissible" role="alert">
-                                            <strong>編輯器注意事項：</strong><br/>
-                                            編輯器上傳圖片或新增表格等時，請勿設定寬度及高度(將數字刪除) ，以免行動裝置顯示時會跑版。<br/>
+                                            <strong>編輯器注意事項：</strong><br />
+                                            編輯器上傳圖片或新增表格等時，請勿設定寬度及高度(將數字刪除) ，以免行動裝置顯示時會跑版。<br />
                                             檔案尺寸寬度超過 1600 或 高度超過1200 的圖片會被壓縮(PNG透明背景會變成不透明)
                                         </div>
-                                        <textarea type="date" className="form-control" id="news_content" name="news_content" value={fieldData.news_content} onChange={this.changeFDValue.bind(this, 'news_content') } />
+                                        <textarea type="date" className="form-control" id="news_content" name="news_content" value={fieldData.news_content} onChange={this.changeFDValue.bind(this, 'news_content')} />
                                     </div>
                                 </div>
 
