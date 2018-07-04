@@ -139,7 +139,7 @@
             <PropertyRef Name="news_id" />
           </Key>
           <Property Name="news_id" Type="int" Nullable="false" />
-          <Property Name="news_title" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="news_title" Type="nvarchar" MaxLength="300" />
           <Property Name="set_date" Type="smalldatetime" Nullable="false" />
           <Property Name="sort" Type="int" Nullable="false" />
           <Property Name="state" Type="char" MaxLength="1" Nullable="false" />
@@ -394,7 +394,7 @@
             <PropertyRef Name="news_id" />
           </Key>
           <Property Name="news_id" Type="Int32" Nullable="false" />
-          <Property Name="news_title" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="news_title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="news_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="sort" Type="Int32" Nullable="false" />
           <Property Name="i_Hide" Type="Boolean" Nullable="false" />

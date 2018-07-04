@@ -393,7 +393,7 @@ namespace News {
                                 <div className="form-group">
                                     <label className="col-xs-2 control-label">標題</label>
                                     <div className="col-xs-8">
-                                        <input type="text" className="form-control" onChange={this.changeFDValue.bind(this, 'news_title') } value={fieldData.news_title} maxLength={64}
+                                        <input type="text" className="form-control" onChange={this.changeFDValue.bind(this, 'news_title') } value={fieldData.news_title} maxLength={300}
                                             required />
                                     </div>
                                     <small className="col-xs-2 text-danger">(必填) </small>
