@@ -47,6 +47,10 @@ $swiper-button:           false;
             top: 38.5%;
             font-size: em(72);
 
+            [lang='en'] & {
+                margin-left: -(em(10));
+            }
+
             @include mq-max(break(wide,-1)) { font-size: em(55); }
             @include mq-max(tablet) { font-size: em(46); }
             @include mq-max(phone-plus) { font-size: em(38); }
@@ -193,105 +197,96 @@ $swiper-button:           false;
 
 // == main
 .content, .sidebar {
-    float: left;
-
-    @include mq-max(tablet) {
-        float: none;
+    @include mq(desktop) {
+        float: left;
     }
 }
 
 .content {
-    width: 65%;
     background: #E6E6E6 url(#{$img-path2}/contentBg.gif) right bottom no-repeat;
     padding-top: 3%;
-    padding-bottom: 12%;
 
-    // @include mq-max(break(wide,-1)) {
-    //     text-align: center;
-    // }
-    @include mq-max(tablet) {
-        width: 100%;
-        padding-bottom: 16%;
+    @include mq(desktop) {
+        width: 65%;
+        padding-bottom: 12%;
+    }
+    @include mq-max(break(desktop, -1)) {
+        background-image: url(#{$img-path2}/main.jpg);
+        background-position: 0 bottom;
+        background-size: contain;
+        padding-bottom: 40%;
     }
 
     // 下方的插圖
     @include el(after) {
-        background: url(#{$img-path2}/pic.png) right top no-repeat;
-        background-size: contain;
-        height: 60%; // 60% 2016/6滿版
-        max-height: 320px;
-
-        @include absolute(left 0 right 26.5% top 110px); // left 13px right 25.9% - 2016/6滿版調整
-
-        @include mq(wide) { // top: 12.5%
+        @include mq(desktop) {
+            background: url(#{$img-path2}/pic.png) right top no-repeat;
+            background-size: contain;
             height: 100%;
+
+            @include absolute(left 13px right 26.5% top 160px); //  right 26.5%
+        }
+        @include mq(wide) {
+            left: 0;
             right: 25.9%;
+            top: 140px;
         }
-        @include mq-max(break(wide,-1)) {
-            top: 160px;
-            left: 13px;
-        }
-        @include mq-max(tablet) {
-            top: 120px;
-            right: 13px;
-            bottom: none;
-            background-position: 0 0;
-            background-size: cover;
-            height: 42.4%;
-        }
-        @include mq-max(phone-plus) { height: 38.4%; }
-        @include mq-max(phone) {
-            top: 95px;
-            height: 28%;
+        @include mq(wider) { // top: 12.5%
+            top: 110px;
         }
     }
 
+    // 次世代磷酸錳鐵鋰
     h3 {
         color: darken($brand-secondary, 16%);
-        // margin-left: 25px;
         margin-bottom: 0;
 
         @include mq-max(tablet) { font-size: em(32); }
         @include mq-max(phone) { font-size: em(26); }
     }
+
+    // 奈米‧安全‧高能量密度
     p {
         font-size: em(29);
         color: darken($brand-secondary, 9%);
         margin-left: 15px;
 
+        [lang='en'] & {
+            font-size: em(20);
+        }
+
         @include mq-max(break(wide,-1)) { margin-top: 15px; }
         @include mq-max(tablet) { font-size: em(26); }
         @include mq-max(phone) { font-size: em(19); }
-        // @include mq-max(break(phone,-1)) { font-size: em(18); }
     }
+
     h3, p {
         display: inline;
-        // float: left;
 
         @include mq-max(break(wide,-1)) {
             display: block;
             margin-left: 0;
-        //     float: none;
         }
     }
 }
 .sidebar {
-    width: 35%;
     position: relative;
 
-    @include mq-max(tablet) {
-        width: 100%;
-        margin-top: 60px;
+    @include mq(desktop) {
+        width: 35%;
+    }
+    @include mq-max(break(desktop, -1)) {
+        margin-top: -6%;
     }
 
     // more的插頭icon
     @include el(before) {
-        background: url(#{$img-path2}/icon-plug.png) right center no-repeat;
-        height: 24px;
+        @include mq(desktop) {
+            background: url(#{$img-path2}/icon-plug.png) right center no-repeat;
+            height: 24px;
 
-        @include absolute(left 0 right 74% bottom 11px);
-
-        @include mq-max(break(desktop,-1)) { display: none; }
+            @include absolute(left 0 right 74% bottom 11px);
+        }
     }
 
     ul {

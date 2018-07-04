@@ -119,6 +119,9 @@ $foot-pd: ($gutter - 3)*2;
 
 .foot-nav {
     // padding-left: $foot-pd; // 2016/6滿版調整
+    @include mq-max(tablet) {
+        margin-left: 0;
+    }
     a {
         display: block;
         margin: 8px 0;
@@ -141,7 +144,7 @@ $foot-pd: ($gutter - 3)*2;
             width: auto;
             padding: 0;
             margin-bottom: $gutter;
-            // margin-left: $foot-pd;
+            margin-left: 0;
         }
         @at-root #footer #{&} dt {
             margin-bottom: 0;
@@ -160,7 +163,6 @@ $foot-pd: ($gutter - 3)*2;
 
     @include mq-max(tablet) {
         margin-left: 0;
-        padding-left: $foot-pd
     }
 }
 .icon-tel, .icon-fax {

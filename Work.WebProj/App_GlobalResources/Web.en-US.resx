@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="keywords" xml:space="preserve">
-    <value>磷酸錳鐵鋰,LMFP,NMC+LMFP二代磷酸鐵鋰,電池材料,軟包電池,高電壓,高電壓三元,高導電設計,高離子,高品質穩定奈米材料,自製奈米化設備,泓辰量產技術,泓辰電池材料,適用於車用電池,適用於大巴電池</value>
+    <value>LMFP,NMC+LMFP,battery,Cathode Material,Soft pack battery,high voltage NMC, High Electrical Conductivity, High Ion Diffusivity, HCM</value>
   </data>
   <data name="nav_news" xml:space="preserve">
     <value>Latest News</value>
@@ -127,7 +127,7 @@
     <value>BACK</value>
   </data>
   <data name="description" xml:space="preserve">
-    <value>泓辰電池材料是正極材料廠中唯一具有設備研製能力的公司，並於2014年成為全世界第一家量產磷酸錳鐵鋰的公司。</value>
+    <value>HCM are the only company with equipment development capabilities in the cathode materials factories and we also became the first company in the world to putLMFP into mass production.</value>
   </data>
   <data name="back_home" xml:space="preserve">
     <value>Back to home</value>
@@ -171,9 +171,6 @@
   <data name="banner_bicycle" xml:space="preserve">
     <value>bicycle</value>
   </data>
-  <data name="banner_title1" xml:space="preserve">
-    <value>LiFePO4 LMFP</value>
-  </data>
   <data name="banner_img1" xml:space="preserve">
     <value>LEADING YOUR ECO-LIFE LMFP</value>
   </data>
@@ -187,19 +184,19 @@
     <value>No.2-3, Gongye 1st Rd., Pingzhen Dist., Taoyuan City 324, Taiwan (R.O.C.)</value>
   </data>
   <data name="contactus_info" xml:space="preserve">
-    <value>歡迎來到泓辰材料公司網站，請留下您的聯絡方式、想詢問的內容以及您的意見想法， 我們將盡快與您聯絡，謝謝您!</value>
+    <value>Welcome to HCM. Please leave your contact information, the content you would like to inquire, and your opinions and ideas. We will contact you as soon as possible. Thank you!</value>
   </data>
   <data name="contactus_send" xml:space="preserve">
-    <value>Submit</value>
+    <value>Send</value>
   </data>
   <data name="contactus_opinion" xml:space="preserve">
-    <value>Opinion</value>
+    <value>Your Opinion</value>
   </data>
   <data name="contactus_map" xml:space="preserve">
-    <value>~/Content/images/ContactUs/map-CN.gif</value>
+    <value>~/Content/images/ContactUs/map-EN.gif</value>
   </data>
   <data name="contactus_email" xml:space="preserve">
-    <value>Email</value>
+    <value>E-mail</value>
   </data>
   <data name="contactus_city" xml:space="preserve">
     <value>City</value>
@@ -208,7 +205,7 @@
     <value>FAX</value>
   </data>
   <data name="contactus_tel" xml:space="preserve">
-    <value>TEL</value>
+    <value>Phone Number</value>
   </data>
   <data name="contactus_companyname" xml:space="preserve">
     <value>company name</value>
@@ -233,5 +230,20 @@
   </data>
   <data name="contactus_fax_info" xml:space="preserve">
     <value>886-3-4192333</value>
+  </data>
+  <data name="logo" xml:space="preserve">
+    <value>HCM::High Electrical Conductivity．High Ion Diffusivity．Focus On the Future</value>
+  </data>
+  <data name="lang" xml:space="preserve">
+    <value>en</value>
+  </data>
+  <data name="nav_new_title" xml:space="preserve">
+    <value>(Open another window)</value>
+  </data>
+  <data name="lang_nav1" xml:space="preserve">
+    <value>Traditional Chinese</value>
+  </data>
+  <data name="lang_nav2" xml:space="preserve">
+    <value>Simplified Chinese</value>
   </data>
 </root>

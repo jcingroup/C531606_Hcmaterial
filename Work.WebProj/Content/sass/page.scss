@@ -107,6 +107,10 @@ $pro-nav-pd-l:            10px;
     text-align: center;
     z-index: 3;
 
+    [lang='en'] & {
+        font-size: em(18);
+    }
+
     @include el(before) {
         @include absolute(left 0 top 0);
         @include prefix(transition, width 1s);
@@ -169,7 +173,16 @@ $pro-nav-pd-l:            10px;
             width: (100% / 2) - 4%;
         }
     }
-    a { line-height: $pro-nav-height; }
+    a {
+        height: $pro-nav-height;
+
+        span {
+            display: block;
+            position: relative;
+            top: 50%;
+            @include transform(translateY(-50%));
+        }
+    }
 
     // 手機用
     @include mq-max(phone) {

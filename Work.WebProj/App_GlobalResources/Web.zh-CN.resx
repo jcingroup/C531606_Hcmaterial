@@ -180,9 +180,6 @@
   <data name="banner_bicycle" xml:space="preserve">
     <value>脚踏车</value>
   </data>
-  <data name="banner_title1" xml:space="preserve">
-    <value>磷酸锰铁锂 LMFP</value>
-  </data>
   <data name="banner_img1" xml:space="preserve">
     <value>LEADING YOUR ECO-LIFE磷酸锰铁锂 LMFP</value>
   </data>
@@ -233,5 +230,14 @@
   </data>
   <data name="contactus_fax_info" xml:space="preserve">
     <value>886-3-4192333</value>
+  </data>
+  <data name="logo" xml:space="preserve">
+    <value>泓辰材料::高导电性设计．高离子传导．专注未来::</value>
+  </data>
+  <data name="lang" xml:space="preserve">
+    <value>zh-Hans</value>
+  </data>
+  <data name="nav_new_title" xml:space="preserve">
+    <value>(另开新视窗)</value>
   </data>
 </root>

@@ -1,8 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "次世代研發";
+    ViewBag.Title = @Resources.Web.products_item4 + @Resources.Web.nav_products;
     ViewBag.BodyClass = "Products";
-    ViewBag.breadCrumb = "次世代研發";
+    ViewBag.breadCrumb = @Resources.Web.products_item4;
     ViewBag.ProNav4Class = "current";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
@@ -11,33 +11,31 @@
     <script src="~/Content/js/tab.js"></script>
 }
 @section breadCrumb {
-    <li><a href="~/Products">正極材料</a></li>
+    <li><a href="~/Products">@Resources.Web.nav_products</a></li>
 }
 
 @Html.Partial("sidebar")
 
-<h2 class="text-left">次世代LMFP 研發</h2>
-<img src="~/Content/images/Products/Build/pic.jpg" alt="2009-2016性能進步圖表">
+<h2 class="text-left">@Resources.Web.products_item4</h2>
+<img src="~/Content/images/Products/Build/pic-EN.jpg" alt="Performance Progress Chart">
 
 <hr>
 
-<h2 class="text-left">次世代LMFP 特性比較表</h2>
+<h2 class="text-left">Next Generation LMFP Comparison Table</h2>
 <div class="table-rwd">
     <table class="full">
         <caption class="text-center">
-            @* <span class="label">G1: 目前線上產品</span>
-            <span class="label">G2P/G2E: 開發中</span> *@
             <span class="label">G2P : Power type</span>
             <span class="label">G2E : Energy type</span>
         </caption>
         <tbody class="borded">
             <tr>
                 <th rowspan="2" class="diagonal">
-                    <sup>材料系統</sup>
-                    <sub>效能特性</sub>
+                    <sup>Material System</sup>
+                    <sub><span>Performance<br>Characteristics</span></sub>
                 </th>
-                <th>第一代</th>
-                <th colspan="2">第二代</th>
+                <th>G1</th>
+                <th colspan="2">G2P G2E</th>
             </tr>
             <tr>
                 <td class="item mark">G1</td>
@@ -46,52 +44,52 @@
                 <td class="item mark">G2E</td>
             </tr>
             <tr>
-                <td class="item mark">能量密度</td>
-                @* <td><i class="icon-triangle">三角形</i></td> *@
-                <td><i class="icon-circle">圓</i></td>
-                <td><i class="icon-circle">圓</i></td>
-                <td><i class="icon-circle-d">2圓</i></td>
+                <td class="item mark">Energy Density</td>
+                @* <td><i class="icon-triangle">triangle</i></td> *@
+                <td><i class="icon-circle">circle</i></td>
+                <td><i class="icon-circle">circle</i></td>
+                <td><i class="icon-circle-d">2circle</i></td>
             </tr>
             <tr>
-                <td class="item mark">倍率放電</td>
-                @* <td><i class="icon-circle">圓</i></td> *@
-                <td><i class="icon-circle-d">2圓</i></td>
-                <td><i class="icon-circle-d">2圓</i></td>
-                <td><i class="icon-circle-d">2圓</i></td>
+                <td class="item mark">Discharge Rate</td>
+                @* <td><i class="icon-circle">circle</i></td> *@
+                <td><i class="icon-circle-d">2circle</i></td>
+                <td><i class="icon-circle-d">2circle</i></td>
+                <td><i class="icon-circle-d">2circle</i></td>
             </tr>
             <tr>
-                <td class="item mark">倍率充電</td>
-                @* <td><i class="icon-triangle">三角形</i></td> *@
-                <td><i class="icon-circle">圓</i></td>
-                <td><i class="icon-circle-d">2圓</i></td>
-                <td><i class="icon-circle">圓</i></td>
+                <td class="item mark">Charge Rate</td>
+                @* <td><i class="icon-triangle">triangle</i></td> *@
+                <td><i class="icon-circle">circle</i></td>
+                <td><i class="icon-circle-d">2circle</i></td>
+                <td><i class="icon-circle">circle</i></td>
             </tr>
             <tr>
-                <td class="item mark">高溫循環壽命</td>
-                @* <td><i class="icon-triangle">三角形</i></td> *@
-                <td><i class="icon-circle">圓</i></td>
-                <td><i class="icon-circle">圓</i></td>
-                <td><i class="icon-circle-d">2圓</i></td>
+                <td class="item mark">High Temperature Cycle Life</td>
+                @* <td><i class="icon-triangle">triangle</i></td> *@
+                <td><i class="icon-circle">circle</i></td>
+                <td><i class="icon-circle">circle</i></td>
+                <td><i class="icon-circle-d">2circle</i></td>
             </tr>
             <tr>
-                <td class="item mark">低溫倍率放電</td>
-                @* <td><i class="icon-triangle">三角形</i></td> *@
-                <td><i class="icon-triangle">三角形</i></td>
-                <td><i class="icon-circle-d">2圓</i></td>
-                <td><i class="icon-circle">圓</i></td>
+                <td class="item mark">Low-Temperature Discharge Rate</td>
+                @* <td><i class="icon-triangle">triangle</i></td> *@
+                <td><i class="icon-triangle">triangle</i></td>
+                <td><i class="icon-circle-d">2circle</i></td>
+                <td><i class="icon-circle">circle</i></td>
             </tr>
             <tr>
-                <td class="item mark">抗吸濕性</td>
-                @* <td><i class="icon-triangle">三角形</i></td> *@
-                <td><i class="icon-triangle">三角形</i></td>
-                <td><i class="icon-triangle">三角形</i></td>
-                <td><i class="icon-circle">圓</i></td>
+                <td class="item mark">Anti-Hygroscopicity</td>
+                @* <td><i class="icon-triangle">triangle</i></td> *@
+                <td><i class="icon-triangle">triangle</i></td>
+                <td><i class="icon-triangle">triangle</i></td>
+                <td><i class="icon-circle">circle</i></td>
             </tr>
         </tbody>
         <tfoot>
             <td></td>
             <td colspan="3" class="text-right">
-                相對優勢比較: <i class="icon-circle-d">2圓</i> > <i class="icon-circle">圓</i> > <i class="icon-triangle">三角形</i>
+                Comparative Advantage: <i class="icon-circle-d">2circle</i> > <i class="icon-circle">circle</i> > <i class="icon-triangle">triangle</i>
             </td>
         </tfoot>
     </table>

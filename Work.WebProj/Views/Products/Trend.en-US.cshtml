@@ -1,8 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "材料應用";
+    ViewBag.Title = @Resources.Web.products_item3 + @Resources.Web.nav_products;
     ViewBag.BodyClass = "Products";
-    ViewBag.breadCrumb = "材料應用";
+    ViewBag.breadCrumb = @Resources.Web.products_item3;
     ViewBag.ProNav3Class = "current";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
@@ -12,78 +12,32 @@
 }
 
 @section breadCrumb {
-    <li><a href="~/Products">正極材料</a></li>
+    <li><a href="~/Products">@Resources.Web.nav_products</a></li>
 }
 
 @Html.Partial("sidebar")
 
-<h2 class="text-left">材料應用</h2>
+<h2 class="text-left">@Resources.Web.products_item3</h2>
 
 <div class="text-left margin-bottom">
-    <h3>應用一：</h3>
-    <h5>與三元(NMC)混摻，大幅提高安全性，適用於乘用車。</h5>
-    <img src="~/Content/images/Products/Trend/pic.jpg" alt="軟包電池安全測試">
-    <footer class="text-right text-primary margin-top">軟包電池安全測試 <small>資料提料:中航鋰電</small></footer>
+    <h3>Application 1:</h3>
+    <h5>Blended with NMC to significantly increase safety and is suitable for passenger cars.</h5>
+    <img src="~/Content/images/Products/Trend/pic.jpg" alt="Soft pack battery safety test">
+    <footer class="text-right text-primary margin-top">Soft pack battery safety test <small>Data materials: China Aviation Lithium Battery Co., Ltd</small></footer>
 
     <hr class="line">
 
-    <h3>應用二：</h3>
-    <h5>怠速啟停系統(ISS)</h5>
-    <img src="~/Content/images/Products/Trend/pic2.jpg" alt="鈴木旅行車採用東芝 SCiB LTO電池">
-    <p>日本鈴木旅行車採用東芝 SCiB LTO 電池所組成之 Denso ISS 系統</p>
+    <h3>Application 2:</h3>
+    <h5>Idle Start and Stop System (ISS)</h5>
+    <img src="~/Content/images/Products/Trend/pic2.jpg" alt="Suzuki station wagon adopts Toshiba SCiB LTO battery">
+    <p>Japan's Suzuki station wagon adopts Denso ISS system consisting of Toshiba's SCiB LTO battery</p>
 </div>
 
 <hr class="line">
 
-<h3 class="text-left">應用三：</h3>
-<h5 class="text-left">以LMFP為主要正極材料，混摻三元，取代磷酸鋰鐵為主的大巴市場。</h5>
+<h3 class="text-left">Application 3:</h3>
+<h5 class="text-left">Use LMFP as the main cathode material, mixed with NMC, to replace LFP -based bus market</h5>
 <ul class="list-unstyled row-padding">
-    <li class="col-6 col-sm-12 margin-bottom"><img src="~/Content/images/Products/Trend/pic3.jpg" alt="大型巴士"></li>
-    <li class="col-6 col-sm-12"><img src="~/Content/images/Products/Trend/pic3_2.jpg" alt="大型巴士電池系統"></li>
+    <li class="col-6 col-sm-12 margin-bottom"><img src="~/Content/images/Products/Trend/pic3.jpg" alt="Large bus"></li>
+    <li class="col-6 col-sm-12"><img src="~/Content/images/Products/Trend/pic3_2.jpg" alt="Large bus battery system"></li>
 </ul>
-
-@* <ul class="tabs">
-    <li class="js-tab"><a href="#tab-1">市場資訊</a></li>
-    <li class="js-tab"><a href="#tab-2">動力系統應用</a></li>
-    <li class="js-tab"><a href="#tab-3">儲能系統應用</a></li>
-</ul>
-
-<article id="tab-1" class="tab-content">
-    <h3>市場資訊</h3>
-    <div class="col-6 col-xs-12">
-        <h4>鋰電池產業分布</h4>
-        <img src="~/Content/images/Products/Trend/p1.jpg" alt="">
-    </div>
-    <div class="col-6 col-xs-12">
-        <h4>電池材料應用分佈</h4>
-        <img src="~/Content/images/Products/Trend/p1-2.jpg" alt="">
-    </div>
-
-    <h4>未來鋰電池市場需求目標</h4>
-    <img src="~/Content/images/Products/Trend/p1-3.jpg" alt="">
-</article>
-
-<article id="tab-2" class="tab-content">
-    <div class="col-6 col-xs-12">
-        <h3>動力系統應用</h3>
-        <p>目前鋰電池的市場集中在IT產業，未來的鋰電池市場將擴大到</p>
-        <ol class="list-unstyled">
-            <li>(1) 電動車包含(<span class="text-error">電動大巴、HEV</span>、<span class="text-info">PHEV</span>、BEV);</li>
-            <li>(2) 儲能裝置</li>
-        </ol>
-    </div>
-    <div class="col-6 col-xs-12">
-        <h4>電動車趨勢</h4>
-        <img src="~/Content/images/Products/Trend/p2.jpg" alt="">
-    </div>
-</article>
-
-<article id="tab-3" class="tab-content">
-    <h3>儲能系統應用</h3>
-    <div class="text-center">
-        <img src="~/Content/images/Products/Trend/p3.jpg" alt="">
-        <img src="~/Content/images/Products/Trend/p3-2.jpg" alt="">
-        <p>儲能系統的電池是以長壽命、降低維修、安全也是一大考量，因此LFP&LMFP也是一大選擇，穩定成長的再生能源儲存裝置</p>
-    </div>
-</article>
- *@

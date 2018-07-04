@@ -1,14 +1,14 @@
 ﻿
 @{
-    ViewBag.Title = "锂电池正极材料核心技术";
+    ViewBag.Title = "锂电池" + @Resources.Web.products_item1 + @Resources.Web.nav_products;
     ViewBag.BodyClass = "Products";
-    ViewBag.breadCrumb = "核心技术";
+    ViewBag.breadCrumb = "@Resources.Web.products_item1";
     ViewBag.proNavClass = "current";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
 @section breadCrumb {
-    <li><a href="~/Products">正极材料</a></li>
+    <li><a href="~/Products">@Resources.Web.nav_products</a></li>
 }
 
 @Html.Partial("sidebar")

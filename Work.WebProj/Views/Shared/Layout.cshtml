@@ -1,14 +1,17 @@
-﻿<!DOCTYPE html>
-<html lang="zh-TW">
-<!-- saved from url=(0014)about:internet -->
+﻿@{
+    var lang = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+}
 
+<!DOCTYPE html>
+<html lang="@Resources.Web.lang">
+<!-- saved from url=(0014)about:internet -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="@Resources.Web.keywords">
     <meta name="description" content="@Resources.Web.description">
-    <title>@Resources.Res.System_FrontName:@ViewBag.Title::@Resources.Web.keywords</title>
+    <title>@ViewBag.Title::@Resources.Web.logo:@Resources.Web.keywords</title>
     <!--[if lt IE 9]><script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script><![endif]-->
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="bookmark" href="/favicon.ico" />
@@ -34,7 +37,7 @@
     <div id="wrapper">
 
         <header id="header">
-            <h1 onclick="location.href='@Url.Content("~/index")'" title="@Resources.Web.back_home" class="logo">@Resources.Res.System_FrontName</h1>
+            <h1 onclick="location.href='@Url.Content("~/index")'" title="@Resources.Web.back_home" class="logo">@Resources.Web.logo</h1>
             <button class="menu-trigger"><span class="icon-menu2">MENU</span></button>@* 手機menu *@
             <nav id="menu">
                 <span class="icon-cross toggle"></span>@* 手機close menu *@
@@ -43,11 +46,11 @@
                 <a href="~/Products"><i class="icon-battery"></i>@Resources.Web.nav_products</a>
                 <a href="~/JoinUs"><i class="icon-power-plug"></i>@Resources.Web.nav_joinus</a>
                 <a href="~/ContactUs"><i class="icon-paper-plane"></i>@Resources.Web.nav_contactus</a>
-                <a href="http://www.hstech.com.tw/" target="_blank"><i class="icon-switch"></i>@Resources.Web.System_FrontName</a>
+                <a href="http://www.hstech.com.tw/" target="_blank" title="@Resources.Web.nav_new_title"><i class="icon-switch"></i>@Resources.Web.System_FrontName</a>
             </nav>
             <nav class="lang-nav">
-                <a href="@Url.Action("SetLanguage")?L=zh-TW&A=index">繁體中文</a>
-                <a href="@Url.Action("SetLanguage")?L=zh-CN&A=index">简体中文</a>
+                <a href="@Url.Action("SetLanguage")?L=zh-TW&A=index">@Resources.Web.lang_nav1</a>
+                <a href="@Url.Action("SetLanguage")?L=zh-CN&A=index">@Resources.Web.lang_nav2</a>
                 <a href="@Url.Action("SetLanguage")?L=en-US&A=index">English</a>
             </nav>
         </header>
@@ -58,7 +61,18 @@
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide">
                         <h3 class="text-white font-sp" data-swiper-parallax="-300">LEADING YOUR ECO-LIFE</h3>
-                        <h2 data-swiper-parallax="-500">@Resources.Web.banner_title1</h2>
+                        @switch (lang)
+                        {
+                            case "zh-CN":
+                                <h2 data-swiper-parallax="-500">磷酸锰铁锂 LMFP</h2>
+                                break;
+                            case "en-US":
+                                <h2 data-swiper-parallax="-500">LiFePO<sub>4</sub> LMFP</h2>
+                                break;
+                            default:
+                                <h2 data-swiper-parallax="-500">磷酸錳鐵鋰 LMFP</h2>
+                                break;
+                        }
                         <span class="animate wind w1">@Resources.Web.banner_wind</span>
                         <span class="animate wind w2">@Resources.Web.banner_wind</span>
                         <img src="~/Content/images/index/banner.jpg?v=2" alt="@Resources.Web.banner_img1">
@@ -83,28 +97,26 @@
         }
         else
         {
-            var lang = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
             <div id="banner" class="swiper-container">
                 <ul class="swiper-wrapper">
                     @switch (lang)
                     {
                         case "zh-CN":
-                            <li class="swiper-slide"><img src="~/Content/images/banner.gif" alt="@Resources.Web.banner_img1"></li>
-                            <li class="swiper-slide"><img src="~/Content/images/banner2.jpg" alt="@Resources.Web.banner_img2"></li>
-                            <li class="swiper-slide"><img src="~/Content/images/banner3.jpg" alt="@Resources.Web.banner_img3"></li>
+                            <li class="swiper-slide"><img src="~/Content/images/banner-CN.gif" alt="LEADING YOUR ECO-LIFE 高导电性设计．高离子传导．专注未来"></li>
+                            <li class="swiper-slide"><img src="~/Content/images/banner2.jpg" alt="GREEN POWER"></li>
+                            <li class="swiper-slide"><img src="~/Content/images/banner3-CN.jpg" alt="情谊与成就塑造幸福企业"></li>
                             break;
                         case "en-US":
-                            <li class="swiper-slide"><img src="~/Content/images/banner.gif" alt="@Resources.Web.banner_img1"></li>
-                            <li class="swiper-slide"><img src="~/Content/images/banner2.jpg" alt="@Resources.Web.banner_img2"></li>
-                            <li class="swiper-slide"><img src="~/Content/images/banner3.jpg" alt="@Resources.Web.banner_img3"></li>
+                            <li class="swiper-slide"><img src="~/Content/images/banner-EN.gif" alt="LEADING YOUR ECO-LIFE Electrical Conductivity．High Ion Diffusivity．Focus On the Future"></li>
+                            <li class="swiper-slide"><img src="~/Content/images/banner2.jpg" alt="GREEN POWER"></li>
+                            <li class="swiper-slide"><img src="~/Content/images/banner3-EN.jpg" alt="Friendship and Achievements Shape a Happy Enterprise"></li>
                             break;
                         default:
-                            <li class="swiper-slide"><img src="~/Content/images/banner.gif" alt="@Resources.Web.banner_img1"></li>
-                            <li class="swiper-slide"><img src="~/Content/images/banner2.jpg" alt="@Resources.Web.banner_img2"></li>
-                            <li class="swiper-slide"><img src="~/Content/images/banner3.jpg" alt="@Resources.Web.banner_img3"></li>
+                            <li class="swiper-slide"><img src="~/Content/images/banner.gif" alt="LEADING YOUR ECO-LIFE 高導電性設計．高離子傳導．專注未來"></li>
+                            <li class="swiper-slide"><img src="~/Content/images/banner2.jpg" alt="GREEN POWER"></li>
+                            <li class="swiper-slide"><img src="~/Content/images/banner3.jpg" alt="情誼與成就塑造幸福企業"></li>
                             break;
                     }
-
                 </ul>
             </div><!-- banner //-->
 
@@ -155,8 +167,8 @@
 
             <dl class="contacts col-5 col-xs-12 col-lg-4 offset-lg-1">
                 <dt>CONTACT US</dt>
-                <dd class="icon-tel">@Resources.Web.contactus_tel_info</dd> @* 886-3-4191222 *@
-                <dd class="icon-fax">@Resources.Web.contactus_fax_info</dd> @* 886-3-4192333 *@
+                <dd class="icon-tel">@Resources.Web.contactus_tel_info</dd>
+                <dd class="icon-fax">@Resources.Web.contactus_fax_info</dd>
                 <dd>@Resources.Web.address</dd>
                 <dd><a href="mailto:sales@hcmaterial.com.tw">sales@hcmaterial.com.tw</a></dd>
             </dl>

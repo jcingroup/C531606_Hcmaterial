@@ -1,8 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "核心技術:電池材料";
+    ViewBag.Title = @Resources.Web.products_item2 + @Resources.Web.nav_products;
     ViewBag.BodyClass = "Products";
-    ViewBag.breadCrumb = "核心技術";
+    ViewBag.breadCrumb = @Resources.Web.products_item2;
     ViewBag.ProNav2Class = "current";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
@@ -11,61 +11,61 @@
     <script src="~/Content/js/tab.js"></script>
 }
 @section breadCrumb {
-    <li><a href="~/Products">正極材料</a></li>
+    <li><a href="~/Products">@Resources.Web.nav_products</a></li>
 }
 
 
 @Html.Partial("sidebar")
 
-<h2 class="text-left clear">LMFP特性</h2>
+<h2 class="text-left clear">LMFP Features</h2>
 <article class="row-padding">
     <div class="col-6 col-xs-12 col-lg-3 margin-bottom">
-        <h5>二次粒子球型化(易堆積)</h5>
-        <img src="~/Content/images/Products/Tech/pic.jpg" alt="二次粒子球型化(易堆積)">
+        <h5>Secondary particle spheroidization (easy to pile up)</h5>
+        <img src="~/Content/images/Products/Tech/pic.jpg" alt="Secondary particle spheroidization (easy to pile up)">
     </div>
     <div class="col-6 col-xs-12 col-lg-3 margin-bottom">
-        <h5>一次奈米结構(電/質傳距離短)</h5>
-        <img src="~/Content/images/Products/Tech/pic_2.jpg" alt="一次奈米结構(電/質傳距離短)">
+        <h5>One-time nanostructure (short distance of electricity/mass transmission)</h5>
+        <img src="~/Content/images/Products/Tech/pic_2.jpg" alt="One-time nanostructure (short distance of electricity/mass transmission)">
     </div>
     <div class="col-6 col-xs-12 col-lg-3 margin-bottom">
-        <h5>高均勻性覆碳(導電性佳)</h5>
-        <img src="~/Content/images/Products/Tech/pic_3.jpg" alt="高均勻性覆碳(導電性佳)">
+        <h5>High uniformity carbon coating (good conductivity)</h5>
+        <img src="~/Content/images/Products/Tech/pic_3.jpg" alt="High uniformity carbon coating (good conductivity)">
     </div>
     <div class="col-6 col-xs-12 col-lg-3 margin-bottom">
-        <h5>多孔性结構(離子擴散佳)</h5>
-        <img src="~/Content/images/Products/Tech/pic_4.jpg" alt="多孔性结構(離子擴散佳)">
+        <h5>Pore structure (good ion diffusion)</h5>
+        <img src="~/Content/images/Products/Tech/pic_4.jpg" alt="Pore structure (good ion diffusion)">
     </div>
 </article>
 
 <hr>
 
-<h2 class="text-left clear">正極材料比較</h2>
+<h2 class="text-left clear">Comparison of cathode materials</h2>
 <article class="text-left">
 
     <div class="table-rwd">
         <table class="full text-center borded">
             <tr>
                 <th rowspan="2">Structure</th>
-                <th colspan="2">Layer(層狀結構)</th>
-                <th>Spinel(尖晶石結構)</th>
-                <th colspan="2">Olivine(橄欖石結構)</th>
+                <th colspan="2">Structure   Layer</th>
+                <th>Spinel</th>
+                <th colspan="2">Olivine</th>
             </tr>
             <tr>
                 <td class="item">LCoO<sub>2</sub></td>
-                <td class="item">NCM(三元)</td>
+                <td class="item">NCM</td>
                 <td class="item">LiMn<sub>2</sub>O<sub>4</sub></td>
                 <td class="item">LiFePO<sub>4</sub></td>
                 <td class="item mark">LiMnFePO<sub>4</sub></td>
             </tr>
             <tr>
-                <td class="item">工作電壓(Volt)</td>
+                <td class="item">Volt</td>
                 <td colspan="2">3.6~3.7</td>
                 <td>3.8</td>
                 <td>3.4</td>
                 <td class="text-error mark">3.8~3.9</td>
             </tr>
             <tr>
-                <td class="item">克電壓(mAh/g)</td>
+                <td class="item">mAh/g</td>
                 <td>140~160</td>
                 <td class="text-error">160~190</td>
                 <td>110~120</td>
@@ -73,31 +73,31 @@
                 <td class="mark">150~155</td>
             </tr>
             <tr>
-                <td class="item">安全性</td>
-                <td><i class="icon-triangle">三角形</i></td>
-                <td><i class="icon-cross-img">叉</i></td>
-                <td><i class="icon-circle">圓</i></td>
-                <td class="text-error"><i class="icon-circle-d">2圓</i></td>
-                <td class="text-error mark"><i class="icon-circle-d">2圓</i></td>
+                <td class="item">Safety</td>
+                <td><i class="icon-triangle">triangle</i></td>
+                <td><i class="icon-cross-img">cross</i></td>
+                <td><i class="icon-circle">circle</i></td>
+                <td class="text-error"><i class="icon-circle-d">2circle</i></td>
+                <td class="text-error mark"><i class="icon-circle-d">2circle</i></td>
             </tr>
             <tr>
-                <td class="item">高溫特性</td>
-                <td><i class="icon-triangle">三角形</i></td>
-                <td><i class="icon-triangle">三角形</i></td>
-                <td><i class="icon-cross-img">叉</i><i class="icon-cross-img">叉</i></td>
-                <td><i class="icon-circle">圓</i></td>
-                <td class="mark"><i class="icon-circle">圓</i></td>
+                <td class="item">High Temperature Characteristics</td>
+                <td><i class="icon-triangle">triangle</i></td>
+                <td><i class="icon-triangle">triangle</i></td>
+                <td><i class="icon-cross-img">cross</i><i class="icon-cross-img">cross</i></td>
+                <td><i class="icon-circle">circle</i></td>
+                <td class="mark"><i class="icon-circle">circle</i></td>
             </tr>
             <tr>
-                <td class="item">低溫特性</td>
-                <td><i class="icon-cross-img">叉</i></td>
-                <td><i class="icon-triangle">三角形</i></td>
-                <td><i class="icon-circle">圓</i></td>
-                <td class="bg-gray"><i class="icon-circle-d">2圓</i></td>
-                <td class="text-error mark"><i class="icon-circle-d">2圓</i></td>
+                <td class="item">Low Temperature Characteristics</td>
+                <td><i class="icon-cross-img">cross</i></td>
+                <td><i class="icon-triangle">triangle</i></td>
+                <td><i class="icon-circle">circle</i></td>
+                <td class="bg-gray"><i class="icon-circle-d">2circle</i></td>
+                <td class="text-error mark"><i class="icon-circle-d">2circle</i></td>
             </tr>
             <tr>
-                <td class="item">壽命(cycle)</td>
+                <td class="item">Cycle</td>
                 <td>1000</td>
                 <td>1200</td>
                 <td>1200</td>
@@ -105,60 +105,26 @@
                 <td class="mark">>1500</td>
             </tr>
             <tr>
-                <td class="item">大電流放電</td>
-                <td><i class="icon-cross-img">叉</i></td>
-                <td><i class="icon-triangle">三角形</i></td>
-                <td class="text-warn"><i class="icon-circle-d text-error">2圓</i></td>
-                <td><i class="icon-circle">圓</i></td>
-                <td class="mark"><i class="icon-circle">圓</i></td>
+                <td class="item">Large Current Discharge</td>
+                <td><i class="icon-cross-img">cross</i></td>
+                <td><i class="icon-triangle">triangle</i></td>
+                <td class="text-warn"><i class="icon-circle-d text-error">2circle</i></td>
+                <td><i class="icon-circle">circle</i></td>
+                <td class="mark"><i class="icon-circle">circle</i></td>
             </tr>
             <tr>
-                <td class="item">材料成本</td>
-                <td colspan="2">高</td>
-                <td>低</td>
-                <td colspan="2" class="text-error">低</td>
+                <td class="item">Material Cost</td>
+                <td colspan="2">High</td>
+                <td>Low</td>
+                <td colspan="2" class="text-error">Low</td>
             </tr>
         </table>
     </div>
 
-    <h3>高電壓的LMFP優勢：</h3>
+    <h3>High-Voltage LMFP Advantages:</h3>
     <ul class="list-dot">
-        <li>能量密度提高</li>
-        <li>Pack串連數減少</li>
-        <li>現有電池管理系统即可使用</li>
+        <li>Increased Energy Density</li>
+        <li>Reduced Number of Pack Concatenations</li>
+        <li>Can Be Used on Existing Battery Management System</li>
     </ul>
 </article>
-
-@* <ul class="tabs">
-    <li class="js-tab"><a href="#tab-1">高品質&穩定奈米材料</a></li>
-    <li class="js-tab"><a href="#tab-2">量產技術</a></li>
-    <li class="js-tab"><a href="#tab-3">技術資源</a></li>
-</ul>
-
-<article id="tab-1" class="tab-content">
-    <h3>高品質&穩定奈米材料</h3>
-    <div class="text-center">
-        <img src="~/Content/images/Products/Tech/p1.gif" alt="">
-    </div>
-</article>
-
-<article id="tab-2" class="tab-content">
-    <h3>量產技術</h3>
-    <div class="col-6 col-xs-12">
-        <h4>設備自制</h4>
-        <img src="~/Content/images/Products/Tech/p2.jpg" alt="" width="100%">
-    </div>
-    <div class="col-6 col-xs-12">
-        <h4>RD開發設備</h4>
-        <h5>具有中、小量產能量，大幅增口量產掌握度</h5>
-        <img src="~/Content/images/Products/Tech/p2-2.jpg" alt="" width="100%">
-    </div>
-</article>
-
-<article id="tab-3" class="tab-content">
-    <h3>技術資源</h3>
-    <h4>專利支持</h4>
-    <h5>奈米結構二次球型專利：</h5>
-    <p>具高導電網路設計(高導電性)、多孔性結構(高離子傳導)，已通過中、台、日、韓專利；美、歐專利申請中</p>
-    <img src="~/Content/images/Products/Tech/p2-3.jpg" alt="" width="80%">
-</article> *@

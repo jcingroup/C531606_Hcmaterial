@@ -133,15 +133,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   查詢類似 磷酸錳鐵鋰 LMFP 的當地語系化字串。
-        /// </summary>
-        internal static string banner_title1 {
-            get {
-                return ResourceManager.GetString("banner_title1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查詢類似 風車轉動 的當地語系化字串。
         /// </summary>
         internal static string banner_wind {
@@ -304,6 +295,42 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   查詢類似 zh-Hant 的當地語系化字串。
+        /// </summary>
+        internal static string lang {
+            get {
+                return ResourceManager.GetString("lang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 繁體中文 的當地語系化字串。
+        /// </summary>
+        internal static string lang_nav1 {
+            get {
+                return ResourceManager.GetString("lang_nav1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 简体中文 的當地語系化字串。
+        /// </summary>
+        internal static string lang_nav2 {
+            get {
+                return ResourceManager.GetString("lang_nav2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 泓辰材料::高導電性設計．高離子傳導．專注未來:: 的當地語系化字串。
+        /// </summary>
+        internal static string logo {
+            get {
+                return ResourceManager.GetString("logo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查詢類似 公司簡介 的當地語系化字串。
         /// </summary>
         internal static string nav_aboutus {
@@ -336,6 +363,15 @@ namespace Resources {
         internal static string nav_news {
             get {
                 return ResourceManager.GetString("nav_news", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 (另開新視窗) 的當地語系化字串。
+        /// </summary>
+        internal static string nav_new_title {
+            get {
+                return ResourceManager.GetString("nav_new_title", resourceCulture);
             }
         }
         

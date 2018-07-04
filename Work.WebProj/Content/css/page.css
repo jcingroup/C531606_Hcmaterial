@@ -249,7 +249,7 @@ button {
 html {
   box-sizing: border-box;
   font-size: 16px;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 *,
 *::before,
@@ -347,8 +347,7 @@ hr {
   display: table;
   clear: both; }
   .wrap::after, #header::after, #footer::after, #main::after, .clearfix::after, .pro-nav::after, #header::before, #menu a::before, .list-dot li::before, .hover-underline::before, .pro-nav li::before,
-  .pro-mobile-nav::before, .pro-nav a::before,
-  .pro-mobile-nav span::before {
+  .pro-mobile-nav::before, .pro-nav a::before, .pro-mobile-nav span::before {
     content: ''; }
 
 .icon-tel::before, .icon-fax::before, .circle, .list-dot li::before, .catalog a {
@@ -625,6 +624,9 @@ html, body {
     margin-bottom: 15px;
     letter-spacing: 1px; }
 
+@media (max-width: 48em) {
+  .foot-nav {
+    margin-left: 0; } }
 .foot-nav a {
   display: block;
   margin: 8px 0; }
@@ -642,7 +644,8 @@ html, body {
     display: block;
     width: auto;
     padding: 0;
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    margin-left: 0; }
   #footer .foot-nav dt {
     margin-bottom: 0; } }
 
@@ -655,8 +658,7 @@ html, body {
       margin-bottom: 10px; } }
 @media (max-width: 48em) {
   .contacts {
-    margin-left: 0;
-    padding-left: 24px; } }
+    margin-left: 0; } }
 
 .icon-tel, .icon-fax {
   float: left; }
@@ -723,7 +725,7 @@ html, body {
         top: 50%;
         margin-left: -50px;
         color: rgba(255, 255, 255, 0.4);
-        font-size: 0.96667em; } }
+        font-size: 0.9666666667em; } }
   #menu a {
     display: block;
     float: left;
@@ -733,12 +735,15 @@ html, body {
     letter-spacing: 1px;
     padding-top: 46.5px;
     margin-left: 1px;
-    width: 16.55667%;
+    width: 16.5566666667%;
     height: 94px;
     z-index: 2; }
+    [lang='en'] #menu a {
+      font-size: 1.125em;
+      padding-top: 43.5px; }
     @media (min-width: 61.25em) and (max-width: 75em) {
       #menu a {
-        width: 16.50667%; } }
+        width: 16.5066666667%; } }
     @media (max-width: 61.1875em) {
       #menu a {
         float: none;
@@ -834,6 +839,12 @@ html, body {
     color: #ABACA5;
     font-size: 0.8125em;
     margin-left: 10px; }
+    [lang='en'] .lang-nav a {
+      font-size: 0.75em; }
+      @media (max-width: 61.1875em) {
+        [lang='en'] .lang-nav a {
+          margin-left: 2px;
+          transform: scale(0.8); } }
     .lang-nav a:hover, .lang-nav a:active {
       color: #1E7997; }
     @media (max-width: 39.9375em) {
@@ -1234,7 +1245,7 @@ figcaption {
       text-align: left; } }
   .tabs a {
     display: block;
-    color: #717171;
+    color: #727272;
     background: #fff;
     box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.3);
     border-radius: 4px;
@@ -1285,13 +1296,9 @@ figcaption {
   line-height: 1.5;
   margin-bottom: 30px; }
 
-.pro-nav a:hover, .pro-nav a:active,
-.pro-mobile-nav span:hover,
-.pro-mobile-nav span:active, .pro-mobile-nav.active span, .pro-nav li.current a {
+.pro-nav a:hover, .pro-nav a:active, .pro-mobile-nav span:hover, .pro-mobile-nav span:active, .pro-mobile-nav.active span, .pro-nav li.current a {
   color: #fff; }
-  .pro-nav a:hover::before, .pro-nav a:active::before,
-  .pro-mobile-nav span:hover::before,
-  .pro-mobile-nav span:active::before, .pro-mobile-nav.active span::before, .pro-nav li.current a::before {
+  .pro-nav a:hover::before, .pro-nav a:active::before, .pro-mobile-nav span:hover::before, .pro-mobile-nav span:active::before, .pro-mobile-nav.active span::before, .pro-nav li.current a::before {
     width: 100%; }
 
 .pro-nav li,
@@ -1312,15 +1319,16 @@ figcaption {
     bottom: 0;
     left: -10px; }
 
-.pro-nav a,
-.pro-mobile-nav span {
+.pro-nav a, .pro-mobile-nav span {
   display: block;
   color: #14AE11;
   font-size: 1.625em;
   text-align: center;
   z-index: 3; }
-  .pro-nav a::before,
-  .pro-mobile-nav span::before {
+  [lang='en'] .pro-nav a,
+  [lang='en'] .pro-mobile-nav span {
+    font-size: 1.125em; }
+  .pro-nav a::before, .pro-mobile-nav span::before {
     display: block;
     position: absolute;
     top: 0;
@@ -1369,7 +1377,14 @@ figcaption {
       .pro-nav li {
         width: 46%; } }
   .pro-nav a {
-    line-height: 71px; }
+    height: 71px; }
+    .pro-nav a span {
+      display: block;
+      position: relative;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%); }
   @media (max-width: 30em) {
     .pro-nav {
       display: none;

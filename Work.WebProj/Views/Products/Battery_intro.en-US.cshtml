@@ -1,19 +1,19 @@
 ﻿
 @{
-    ViewBag.Title = "鋰電池正極材料核心技術";
+    ViewBag.Title = "Lithium battery " + @Resources.Web.products_item1 + @Resources.Web.nav_products;
     ViewBag.BodyClass = "Products";
-    ViewBag.breadCrumb = "核心技術";
+    ViewBag.breadCrumb = @Resources.Web.products_item1;
     ViewBag.proNavClass = "current";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
 @section breadCrumb {
-    <li><a href="~/Products">正極材料</a></li>
+    <li><a href="~/Products">@Resources.Web.nav_products</a></li>
 }
 
 @Html.Partial("sidebar")
 
-<img src="~/Content/images/Products/Battery/pic.jpg" alt="高品質&穩定正極材料,泓辰生產設備自製,工研院專利技術">
+<img src="~/Content/images/Products/Battery/pic-EN.jpg" alt="High Quality & Stable Cathode Material,HCM Homemade production equipment,ITRI Technology Patent">
 
 @* @Html.Partial("Battery-catalog")
 

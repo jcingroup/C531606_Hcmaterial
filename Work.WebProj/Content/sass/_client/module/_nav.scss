@@ -41,6 +41,12 @@ $current: current();
         height: $menu-height;
         z-index: 2;
 
+        // 英文版縮小menu字級
+        [lang='en'] & {
+            font-size: em(18);
+            padding-top: ( ($menu-height - $nav-font-size)/2 + 7px );
+        }
+
         @include mq(desktop, wide) {
             width: $nav-width - 0.05;
         }
@@ -158,6 +164,15 @@ $current: current();
         color: $lang-color;
         font-size: em(13px);
         margin-left: 10px;
+
+        [lang='en'] & {
+            font-size: em(12);
+
+            @include mq-max(break(desktop, -1)) {
+                margin-left: 2px;
+                transform: scale(.8);
+            }
+        }
 
         &:hover, &:active {
             color: $lang-color-hover;
