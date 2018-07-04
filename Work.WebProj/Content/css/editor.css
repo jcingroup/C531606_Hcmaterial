@@ -249,7 +249,7 @@ button {
 html {
   box-sizing: border-box;
   font-size: 16px;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 *,
 *::before,
@@ -413,20 +413,6 @@ caption {
   font-size: 1.25em;
   line-height: 1.7;
   text-align: left; }
-
-.diagonal {
-  width: 20%;
-  position: relative;
-  background: linear-gradient(to top right, transparent 49.5%, #E4E5DC, transparent 50.5%); }
-  .diagonal sup, .diagonal sub {
-    font-size: 1.0625em;
-    position: absolute; }
-  .diagonal sup {
-    right: 8%;
-    top: 35%; }
-  .diagonal sub {
-    left: 8%;
-    bottom: 35%; }
 
 table.fixed {
   table-layout: fixed;

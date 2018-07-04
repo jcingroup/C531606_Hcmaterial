@@ -139,22 +139,6 @@ caption {
     @if $caption-align       { text-align: $caption-align; }
 }
 
-// 對角線
-.diagonal {
-    width: 20%;
-    position: relative;
-
-    background: linear-gradient(to top right, transparent 49.5%, #E4E5DC, transparent 50.5%);
-
-    sup, sub {
-        font-size: em(17);
-        position: absolute;
-    }
-    sup { right: 8%; top: 35%; }
-    sub { left: 8%; bottom: 35%; }
-}
-
-
 // 固定欄寬度
 table.fixed {
     table-layout: fixed;

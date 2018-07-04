@@ -423,20 +423,6 @@ caption {
   line-height: 1.7;
   text-align: left; }
 
-.diagonal {
-  width: 20%;
-  position: relative;
-  background: linear-gradient(to top right, transparent 49.5%, #E4E5DC, transparent 50.5%); }
-  .diagonal sup, .diagonal sub {
-    font-size: 1.0625em;
-    position: absolute; }
-  .diagonal sup {
-    right: 8%;
-    top: 35%; }
-  .diagonal sub {
-    left: 8%;
-    bottom: 35%; }
-
 table.fixed {
   table-layout: fixed;
   word-wrap: break-word;
@@ -1598,3 +1584,20 @@ figcaption {
       width: 100%;
       padding: 0;
       margin-bottom: 10px; } }
+
+.diagonal {
+  width: 20%;
+  position: relative;
+  background: linear-gradient(to top right, transparent 49.5%, #E4E5DC, transparent 50.5%); }
+  .diagonal sup, .diagonal sub {
+    font-size: 1.0625em;
+    position: relative;
+    display: block;
+    float: left;
+    width: 50%;
+    line-height: 100%;
+    text-align: center; }
+  .diagonal sup {
+    padding-bottom: 15%; }
+  .diagonal sub {
+    padding-top: 15%; }
