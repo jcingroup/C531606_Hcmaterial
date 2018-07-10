@@ -384,7 +384,7 @@ export class MasterImageUpload extends React.Component<FileUpProps, any>{
             return;
 
         let btn = document.getElementById('upload-btn-' + this.props.MainId + '-' + this.props.FileKind);
-        let _this = this;
+        let _save = this;
 
         var uploader = new upload.SimpleUpload({
             button: btn,
@@ -401,7 +401,7 @@ export class MasterImageUpload extends React.Component<FileUpProps, any>{
             responseType: 'json',
             encodeCustomHeaders: true,
             onSubmit: function (filename, ext) {
-                if (_this.props.MainId == 0) {
+                if (_save.props.MainId == 0) {
                     alert('此筆資料未完成新增，無法上傳檔案!')
                     return false;
                 }
@@ -410,7 +410,7 @@ export class MasterImageUpload extends React.Component<FileUpProps, any>{
                     bar = document.createElement('div'), // actual progress bar
                     fileSize = document.createElement('div'), // container for upload file size
                     wrapper = document.createElement('div'), // container for this progress bar
-                    progressBox = document.getElementById('progressBox-' + _this.props.MainId + '-' + _this.props.FileKind); // on page container for progress bars
+                    progressBox = document.getElementById('progressBox-' + _save.props.MainId + '-' + _save.props.FileKind); // on page container for progress bars
 
                 // Assign each element its corresponding class
                 progress.className = 'progress';
@@ -438,7 +438,7 @@ export class MasterImageUpload extends React.Component<FileUpProps, any>{
             },
             onComplete: function (file, response) {
                 if (response.result) {
-                    _this.getFileList();
+                    _save.getFileList();
                 } else {
                     alert(response.message);
                 }
@@ -581,7 +581,7 @@ export class MasterFileUpload extends React.Component<FileUpProps, any>{
             return;
 
         let btn = document.getElementById('upload-btn-' + this.props.MainId + '-' + this.props.FileKind);
-        let _this = this;
+        let _save = this;
 
         var uploader = new upload.SimpleUpload({
             button: btn,
@@ -598,7 +598,7 @@ export class MasterFileUpload extends React.Component<FileUpProps, any>{
             responseType: 'json',
             encodeCustomHeaders: true,
             onSubmit: function (filename, ext) {
-                if (_this.props.MainId == 0) {
+                if (_save.props.MainId == 0) {
                     alert('此筆資料未完成新增，無法上傳檔案!')
                     return false;
                 }
@@ -607,7 +607,7 @@ export class MasterFileUpload extends React.Component<FileUpProps, any>{
                     bar = document.createElement('div'), // actual progress bar
                     fileSize = document.createElement('div'), // container for upload file size
                     wrapper = document.createElement('div'), // container for this progress bar
-                    progressBox = document.getElementById('progressBox-' + _this.props.MainId); // on page container for progress bars
+                    progressBox = document.getElementById('progressBox-' + _save.props.MainId); // on page container for progress bars
 
                 // Assign each element its corresponding class
                 progress.className = 'progress';
@@ -635,7 +635,7 @@ export class MasterFileUpload extends React.Component<FileUpProps, any>{
             },
             onComplete: function (file, response) {
                 if (response.result) {
-                    _this.getFileList();
+                    _save.getFileList();
                 } else {
                     alert(response.message);
                 }
