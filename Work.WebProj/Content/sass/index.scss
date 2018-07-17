@@ -267,6 +267,13 @@ $swiper-button:           false;
             display: block;
             margin-left: 0;
         }
+        [lang='en'] & {
+            @include mq-max(wider) {
+                display: block;
+                margin-left: 0;
+            }
+        }
+
     }
 }
 .sidebar {

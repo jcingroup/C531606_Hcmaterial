@@ -1229,6 +1229,10 @@ html, body {
       .content h3, .content p {
         display: block;
         margin-left: 0; } }
+    @media (max-width: 87.5em) {
+      [lang='en'] .content h3, [lang='en'] .content p {
+        display: block;
+        margin-left: 0; } }
 
 .sidebar {
   position: relative; }

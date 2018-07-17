@@ -1453,6 +1453,21 @@ figcaption {
       .catalog small {
         display: none; } }
 
+.uphigh {
+  height: 35px; }
+  @media (max-width: 87.5em) {
+    .uphigh {
+      height: 50px; } }
+  @media (max-width: 74.9375em) {
+    .uphigh {
+      height: unset; } }
+  @media (max-width: 74.375em) {
+    .uphigh {
+      height: 30px; } }
+  @media (max-width: 48em) {
+    .uphigh {
+      height: unset; } }
+
 .icon-triangle, .icon-cross-img, .icon-circle, .icon-circle-d {
   width: 23px;
   height: 23px;

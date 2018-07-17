@@ -282,6 +282,22 @@ $pro-nav-pd-l:            10px;
         }
     }
 }
+.uphigh{
+    height: 35px;
+
+    @include mq-max(wider) {
+        height: 50px;
+    }
+    @include mq-max(break(wide,-1)) {
+        height: unset;
+    }
+    @include mq-max(break(wide,-10)) {
+        height: 30px;
+    }
+    @include mq-max(tablet) {
+        height: unset;
+    }
+}
 
 // 正極材料優缺點的圖標
 %icon-shape {
