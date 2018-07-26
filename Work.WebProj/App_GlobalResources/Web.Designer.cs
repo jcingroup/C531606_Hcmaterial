@@ -376,6 +376,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   查詢類似 http://www.hstech.com.tw 的當地語系化字串。
+        /// </summary>
+        internal static string nav_new_url {
+            get {
+                return ResourceManager.GetString("nav_new_url", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查詢類似 正極材料 的當地語系化字串。
         /// </summary>
         internal static string nav_products {

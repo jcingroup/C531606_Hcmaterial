@@ -246,4 +246,7 @@
   <data name="lang_nav2" xml:space="preserve">
     <value>简体中文</value>
   </data>
+  <data name="nav_new_url" xml:space="preserve">
+    <value>http://www.hstech.com.tw</value>
+  </data>
 </root>

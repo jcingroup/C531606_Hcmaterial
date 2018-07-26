@@ -240,4 +240,7 @@
   <data name="nav_new_title" xml:space="preserve">
     <value>(另开新视窗)</value>
   </data>
+  <data name="nav_new_url" xml:space="preserve">
+    <value>http://www.hstech.com.tw/L_CN/index/index.html</value>
+  </data>
 </root>

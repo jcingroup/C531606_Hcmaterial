@@ -246,4 +246,7 @@
   <data name="lang_nav2" xml:space="preserve">
     <value>Simplified Chinese</value>
   </data>
+  <data name="nav_new_url" xml:space="preserve">
+    <value>http://www.hstech.com.tw/L_EN/index/index.html</value>
+  </data>
 </root>
