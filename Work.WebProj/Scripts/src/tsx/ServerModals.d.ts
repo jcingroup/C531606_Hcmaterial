@@ -99,6 +99,7 @@
 
     interface News extends BaseEntityTable {
         news_id?: number
+        news_category_id?: number
         news_title?: string
         sort?: string
         set_date?: string
@@ -107,5 +108,12 @@
         i_Hide?: boolean
         i_Lang?: string
     }
-
+    interface NewsCategory extends BaseEntityTable {
+        news_category_id?: number
+        name?: string
+        sort?: string
+        state?: string
+        i_Hide?: boolean
+        i_Lang?: string
+    }
 } 

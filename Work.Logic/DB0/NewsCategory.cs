@@ -12,15 +12,18 @@ namespace ProcCore.Business.DB0
     using System;
     using System.Collections.Generic;
     
-    public partial class News
+    public partial class NewsCategory
     {
-        public int news_id { get; set; }
-        public Nullable<int> news_category_id { get; set; }
-        public string news_title { get; set; }
-        public System.DateTime set_date { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public NewsCategory()
+        {
+            this.News = new HashSet<News>();
+        }
+    
+        public int news_category_id { get; set; }
+        public string name { get; set; }
         public int sort { get; set; }
         public string state { get; set; }
-        public string news_content { get; set; }
         public bool i_Hide { get; set; }
         public string i_InsertUserID { get; set; }
         public Nullable<int> i_InsertDeptID { get; set; }
@@ -30,6 +33,7 @@ namespace ProcCore.Business.DB0
         public Nullable<System.DateTime> i_UpdateDateTime { get; set; }
         public string i_Lang { get; set; }
     
-        public virtual NewsCategory NewsCategory { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<News> News { get; set; }
     }
 }

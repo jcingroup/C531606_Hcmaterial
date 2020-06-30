@@ -14,12 +14,14 @@
         <EntityTypeShape EntityType="C53A0_HcmaterialModel.i_Parm" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="C53A0_HcmaterialModel.i_SN" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="C53A0_HcmaterialModel.Menu" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="C53A0_HcmaterialModel.News" Width="2.625" PointX="9.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="C53A0_HcmaterialModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="C53A0_HcmaterialModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="C53A0_HcmaterialModel.AspNetUserRoles" ManuallyRouted="false" />
         <AssociationConnector Association="C53A0_HcmaterialModel.MenuRole" ManuallyRouted="false" />
         <EntityTypeShape EntityType="C53A0_HcmaterialModel.Department" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="C53A0_HcmaterialModel.News" Width="1.875" PointX="12.625" PointY="1" />
+        <EntityTypeShape EntityType="C53A0_HcmaterialModel.NewsCategory" Width="1.875" PointX="10.375" PointY="1.25" />
+        <AssociationConnector Association="C53A0_HcmaterialModel.FK_News_NewsCategory" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

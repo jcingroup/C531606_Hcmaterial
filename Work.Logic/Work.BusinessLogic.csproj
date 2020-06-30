@@ -122,7 +122,11 @@
     <Compile Include="DB0\News.cs">
       <DependentUpon>C53A0_Hcmaterial.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB0\NewsCategory.cs">
+      <DependentUpon>C53A0_Hcmaterial.tt</DependentUpon>
+    </Compile>
     <Compile Include="LogicCenter.cs" />
+    <Compile Include="Models\NewsCategory.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

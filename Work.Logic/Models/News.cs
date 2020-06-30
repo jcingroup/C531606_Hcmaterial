@@ -13,6 +13,8 @@ namespace ProcCore.Business.DB0
 
         private class NewsMetadata
         {
+            [JsonIgnore]
+            public virtual NewsCategory NewsCategory { get; set; }
         }
     }
 }

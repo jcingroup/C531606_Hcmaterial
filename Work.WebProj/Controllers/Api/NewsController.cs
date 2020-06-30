@@ -26,7 +26,7 @@ namespace DotWeb.Api
                 return Ok(r);
             }
         }
-        public async Task<IHttpActionResult> Get([FromUri]q_News q)
+        public async Task<IHttpActionResult> Get([FromUri] q_News q)
         {
             #region 連接BusinessLogicLibary資料庫並取得資料
 
@@ -38,6 +38,9 @@ namespace DotWeb.Api
 
             if (q.i_Lang != null)
                 predicate = predicate.And(x => x.i_Lang == q.i_Lang);
+
+            if (q.category_id != null)
+                predicate = predicate.And(x => x.news_category_id == q.category_id);
 
             int page = (q.page == null ? 1 : (int)q.page);
             var result = db0.News.AsExpandable().Where(predicate);
@@ -64,7 +67,7 @@ namespace DotWeb.Api
 
             #endregion
         }
-        public async Task<IHttpActionResult> Put([FromBody]News md)
+        public async Task<IHttpActionResult> Put([FromBody] News md)
         {
             ResultInfo rAjaxResult = new ResultInfo();
             try
@@ -77,6 +80,7 @@ namespace DotWeb.Api
                 item.set_date = md.set_date;
                 item.state = md.state;
                 item.i_Lang = md.i_Lang;
+                item.news_category_id = md.news_category_id;
                 await db0.SaveChangesAsync();
                 rAjaxResult.result = true;
             }
@@ -91,7 +95,7 @@ namespace DotWeb.Api
             }
             return Ok(rAjaxResult);
         }
-        public async Task<IHttpActionResult> Post([FromBody]News md)
+        public async Task<IHttpActionResult> Post([FromBody] News md)
         {
             md.news_id = GetNewId(CodeTable.Base);
 
@@ -137,7 +141,7 @@ namespace DotWeb.Api
                 db0.Dispose();
             }
         }
-        public async Task<IHttpActionResult> Delete([FromUri]int[] ids)
+        public async Task<IHttpActionResult> Delete([FromUri] int[] ids)
         {
             try
             {
@@ -179,11 +183,25 @@ namespace DotWeb.Api
                 db0.Dispose();
             }
         }
+
+        [Route("api/News/Init")]
+        [HttpGet]
+        public async Task<IHttpActionResult> Init()
+        {
+            using (db0 = getDB0())
+            {
+                var items = db0.NewsCategory.Where(x => x.state == "A")
+                               .OrderBy(x => x.news_category_id).ThenByDescending(x => x.sort).ToList();
+                var r = new ResultInfo<List<NewsCategory>>() { data = items };
+                return Ok(r);
+            }
+        }
     }
     public class q_News : QueryBase
     {
         public string title { set; get; }
         public string i_Lang { get; set; }
+        public int? category_id { get; set; }
 
     }
 }

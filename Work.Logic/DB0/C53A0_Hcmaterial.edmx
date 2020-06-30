@@ -139,11 +139,29 @@
             <PropertyRef Name="news_id" />
           </Key>
           <Property Name="news_id" Type="int" Nullable="false" />
+          <Property Name="news_category_id" Type="int" />
           <Property Name="news_title" Type="nvarchar" MaxLength="300" />
           <Property Name="set_date" Type="smalldatetime" Nullable="false" />
           <Property Name="sort" Type="int" Nullable="false" />
           <Property Name="state" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="news_content" Type="ntext" />
+          <Property Name="i_Hide" Type="bit" Nullable="false" />
+          <Property Name="i_InsertUserID" Type="nvarchar" MaxLength="128" />
+          <Property Name="i_InsertDeptID" Type="int" />
+          <Property Name="i_InsertDateTime" Type="datetime" />
+          <Property Name="i_UpdateUserID" Type="nvarchar" MaxLength="128" />
+          <Property Name="i_UpdateDeptID" Type="int" />
+          <Property Name="i_UpdateDateTime" Type="datetime" />
+          <Property Name="i_Lang" Type="char" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="NewsCategory">
+          <Key>
+            <PropertyRef Name="news_category_id" />
+          </Key>
+          <Property Name="news_category_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="sort" Type="int" Nullable="false" />
+          <Property Name="state" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="i_Hide" Type="bit" Nullable="false" />
           <Property Name="i_InsertUserID" Type="nvarchar" MaxLength="128" />
           <Property Name="i_InsertDeptID" Type="int" />
@@ -233,6 +251,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_News_NewsCategory">
+          <End Role="NewsCategory" Type="Self.NewsCategory" Multiplicity="0..1" />
+          <End Role="News" Type="Self.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewsCategory">
+              <PropertyRef Name="news_category_id" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="news_category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="C53A0_HcmaterialModelStoreContainer">
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
@@ -247,6 +277,7 @@
           <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MenuRole" EntityType="Self.MenuRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewsCategory" EntityType="Self.NewsCategory" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
@@ -270,6 +301,10 @@
           <AssociationSet Name="FK_MenuRole_Menu" Association="Self.FK_MenuRole_Menu">
             <End Role="Menu" EntitySet="Menu" />
             <End Role="MenuRole" EntitySet="MenuRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_News_NewsCategory" Association="Self.FK_News_NewsCategory">
+            <End Role="NewsCategory" EntitySet="NewsCategory" />
+            <End Role="News" EntitySet="News" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -389,25 +424,6 @@
           <Property Name="is_only_tablet" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="AspNetRoles" Relationship="Self.MenuRole" FromRole="Menu" ToRole="AspNetRoles" />
         </EntityType>
-        <EntityType Name="News">
-          <Key>
-            <PropertyRef Name="news_id" />
-          </Key>
-          <Property Name="news_id" Type="Int32" Nullable="false" />
-          <Property Name="news_title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="news_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="sort" Type="Int32" Nullable="false" />
-          <Property Name="i_Hide" Type="Boolean" Nullable="false" />
-          <Property Name="i_InsertUserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="i_InsertDeptID" Type="Int32" />
-          <Property Name="i_InsertDateTime" Type="DateTime" Precision="3" />
-          <Property Name="i_UpdateUserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="i_UpdateDeptID" Type="Int32" />
-          <Property Name="i_UpdateDateTime" Type="DateTime" Precision="3" />
-          <Property Name="i_Lang" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
-          <Property Name="state" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="set_date" Type="DateTime" Precision="0" Nullable="false" />
-        </EntityType>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -454,7 +470,6 @@
           <EntitySet Name="i_Parm" EntityType="Self.i_Parm" />
           <EntitySet Name="i_SN" EntityType="Self.i_SN" />
           <EntitySet Name="Menu" EntityType="Self.Menu" />
-          <EntitySet Name="News" EntityType="Self.News" />
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
@@ -472,6 +487,12 @@
             <End Role="Menu" EntitySet="Menu" />
           </AssociationSet>
           <EntitySet Name="Department" EntityType="C53A0_HcmaterialModel.Department" />
+          <EntitySet Name="News" EntityType="C53A0_HcmaterialModel.News" />
+          <EntitySet Name="NewsCategory" EntityType="C53A0_HcmaterialModel.NewsCategory" />
+          <AssociationSet Name="FK_News_NewsCategory" Association="C53A0_HcmaterialModel.FK_News_NewsCategory">
+            <End Role="NewsCategory" EntitySet="NewsCategory" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Department">
           <Key>
@@ -481,6 +502,57 @@
           <Property Name="department_name" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
           <Property Name="i_Hide" Type="Boolean" Nullable="false" />
         </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="news_id" />
+          </Key>
+          <Property Name="news_id" Type="Int32" Nullable="false" />
+          <Property Name="news_category_id" Type="Int32" />
+          <Property Name="news_title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="set_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="state" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="news_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="i_Hide" Type="Boolean" Nullable="false" />
+          <Property Name="i_InsertUserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="i_InsertDeptID" Type="Int32" />
+          <Property Name="i_InsertDateTime" Type="DateTime" Precision="3" />
+          <Property Name="i_UpdateUserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="i_UpdateDeptID" Type="Int32" />
+          <Property Name="i_UpdateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="i_Lang" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="NewsCategory" Relationship="C53A0_HcmaterialModel.FK_News_NewsCategory" FromRole="News" ToRole="NewsCategory" />
+        </EntityType>
+        <EntityType Name="NewsCategory">
+          <Key>
+            <PropertyRef Name="news_category_id" />
+          </Key>
+          <Property Name="news_category_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sort" Type="Int32" Nullable="false" />
+          <Property Name="state" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="i_Hide" Type="Boolean" Nullable="false" />
+          <Property Name="i_InsertUserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="i_InsertDeptID" Type="Int32" />
+          <Property Name="i_InsertDateTime" Type="DateTime" Precision="3" />
+          <Property Name="i_UpdateUserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="i_UpdateDeptID" Type="Int32" />
+          <Property Name="i_UpdateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="i_Lang" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="News" Relationship="C53A0_HcmaterialModel.FK_News_NewsCategory" FromRole="NewsCategory" ToRole="News" />
+        </EntityType>
+        <Association Name="FK_News_NewsCategory">
+          <End Type="C53A0_HcmaterialModel.NewsCategory" Role="NewsCategory" Multiplicity="0..1" />
+          <End Type="C53A0_HcmaterialModel.News" Role="News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewsCategory">
+              <PropertyRef Name="news_category_id" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="news_category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -599,26 +671,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="News">
-            <EntityTypeMapping TypeName="C53A0_HcmaterialModel.News">
-              <MappingFragment StoreEntitySet="News">
-                <ScalarProperty Name="set_date" ColumnName="set_date" />
-                <ScalarProperty Name="state" ColumnName="state" />
-                <ScalarProperty Name="news_id" ColumnName="news_id" />
-                <ScalarProperty Name="news_title" ColumnName="news_title" />
-                <ScalarProperty Name="news_content" ColumnName="news_content" />
-                <ScalarProperty Name="sort" ColumnName="sort" />
-                <ScalarProperty Name="i_Hide" ColumnName="i_Hide" />
-                <ScalarProperty Name="i_InsertUserID" ColumnName="i_InsertUserID" />
-                <ScalarProperty Name="i_InsertDeptID" ColumnName="i_InsertDeptID" />
-                <ScalarProperty Name="i_InsertDateTime" ColumnName="i_InsertDateTime" />
-                <ScalarProperty Name="i_UpdateUserID" ColumnName="i_UpdateUserID" />
-                <ScalarProperty Name="i_UpdateDeptID" ColumnName="i_UpdateDeptID" />
-                <ScalarProperty Name="i_UpdateDateTime" ColumnName="i_UpdateDateTime" />
-                <ScalarProperty Name="i_Lang" ColumnName="i_Lang" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <AssociationSetMapping Name="AspNetUserRoles" TypeName="C53A0_HcmaterialModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
             <EndProperty Name="AspNetRoles">
               <ScalarProperty Name="Id" ColumnName="RoleId" />
@@ -641,6 +693,45 @@
                 <ScalarProperty Name="i_Hide" ColumnName="i_Hide" />
                 <ScalarProperty Name="department_name" ColumnName="department_name" />
                 <ScalarProperty Name="department_id" ColumnName="department_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="C53A0_HcmaterialModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="i_Lang" ColumnName="i_Lang" />
+                <ScalarProperty Name="i_UpdateDateTime" ColumnName="i_UpdateDateTime" />
+                <ScalarProperty Name="i_UpdateDeptID" ColumnName="i_UpdateDeptID" />
+                <ScalarProperty Name="i_UpdateUserID" ColumnName="i_UpdateUserID" />
+                <ScalarProperty Name="i_InsertDateTime" ColumnName="i_InsertDateTime" />
+                <ScalarProperty Name="i_InsertDeptID" ColumnName="i_InsertDeptID" />
+                <ScalarProperty Name="i_InsertUserID" ColumnName="i_InsertUserID" />
+                <ScalarProperty Name="i_Hide" ColumnName="i_Hide" />
+                <ScalarProperty Name="news_content" ColumnName="news_content" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="set_date" ColumnName="set_date" />
+                <ScalarProperty Name="news_title" ColumnName="news_title" />
+                <ScalarProperty Name="news_category_id" ColumnName="news_category_id" />
+                <ScalarProperty Name="news_id" ColumnName="news_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewsCategory">
+            <EntityTypeMapping TypeName="C53A0_HcmaterialModel.NewsCategory">
+              <MappingFragment StoreEntitySet="NewsCategory">
+                <ScalarProperty Name="i_Lang" ColumnName="i_Lang" />
+                <ScalarProperty Name="i_UpdateDateTime" ColumnName="i_UpdateDateTime" />
+                <ScalarProperty Name="i_UpdateDeptID" ColumnName="i_UpdateDeptID" />
+                <ScalarProperty Name="i_UpdateUserID" ColumnName="i_UpdateUserID" />
+                <ScalarProperty Name="i_InsertDateTime" ColumnName="i_InsertDateTime" />
+                <ScalarProperty Name="i_InsertDeptID" ColumnName="i_InsertDeptID" />
+                <ScalarProperty Name="i_InsertUserID" ColumnName="i_InsertUserID" />
+                <ScalarProperty Name="i_Hide" ColumnName="i_Hide" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="news_category_id" ColumnName="news_category_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

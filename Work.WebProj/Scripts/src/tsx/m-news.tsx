@@ -13,6 +13,7 @@ import "react-datepicker/dist/react-datepicker.css";
 namespace News {
     interface Rows {
         news_id?: string;
+        news_category_id?: number;
         check_del?: boolean,
         news_title?: string;
         set_date?: string;
@@ -22,14 +23,22 @@ namespace News {
     interface FormState<G, F> extends BaseDefine.GirdFormStateBase<G, F> {
         searchData?: {
             keyword: string,
-            i_Lang: string
+            i_Lang: string,
+            category_id: number
         }
+        option_category_all?: Array<server.NewsCategory>
+        option_category_search?: Array<server.NewsCategory>
+        option_category_edit?: Array<server.NewsCategory>
     }
     interface FormResult extends IResultBase {
         id: string
     }
 
-    class GridRow extends React.Component<BaseDefine.GridRowPropsBase<Rows>, BaseDefine.GridRowStateBase> {
+    interface GridRowProps extends BaseDefine.GridRowPropsBase<Rows> {
+        option_category_all?: Array<server.NewsCategory>
+    }
+
+    class GridRow extends React.Component<GridRowProps, BaseDefine.GridRowStateBase> {
         constructor() {
             super();
             this.delCheck = this.delCheck.bind(this);
@@ -45,6 +54,15 @@ namespace News {
         }
         modify() {
             this.props.updateType(this.props.primKey)
+        }
+        opt_name(id) {
+            let name = "";
+            let opt = this.props.option_category_all.filter(x => x.news_category_id == id);
+
+            if (opt.length > 0) {
+                name = opt[0].name;
+            }
+            return name;
         }
         render() {
 
@@ -63,6 +81,7 @@ namespace News {
                 <td className="text-center"><CommCmpt.GridButtonModify modify={this.modify} /></td>
                 <td>{this.props.itemData.news_title}</td>
                 <td>{Moment(this.props.itemData.set_date).format(dt.dateFT)}</td>
+                <td>{this.opt_name(this.props.itemData.news_category_id)}</td>
                 <td>{ele_lang}</td>
                 <td>{this.props.itemData.state == 'A' ? <span className="label label-primary">顯示</span> : <span className="label label-default">隱藏</span>}</td>
             </tr>;
@@ -89,6 +108,7 @@ namespace News {
             this.setChangeDate = this.setChangeDate.bind(this);
             this.componentDidUpdate = this.componentDidUpdate.bind(this);
             this.handleSearch = this.handleSearch.bind(this);
+            this.initData = this.initData.bind(this);
             this.render = this.render.bind(this);
 
 
@@ -96,23 +116,44 @@ namespace News {
                 fieldData: {},
                 gridData: { rows: [], page: 1 },
                 edit_type: 0,
-                searchData: { keyword: null, i_Lang: null }
+                searchData: { keyword: null, i_Lang: null, category_id: null },
+                option_category_all: [],
+                option_category_search: [],
+                option_category_edit: []
             }
         }
         static defaultProps: BaseDefine.GridFormPropsBase = {
             fdName: 'fieldData',
             gdName: 'searchData',
-            apiPath: gb_approot + 'api/News'
+            apiPath: gb_approot + 'api/News',
+            apiInitPath: gb_approot + 'api/News/Init'
         }
         componentDidMount() {
             this.queryGridData(1);
+            this.initData();
         }
         componentDidUpdate(prevProps, prevState) {
             if ((prevState.edit_type == 0 && (this.state.edit_type == 1 || this.state.edit_type == 2)) ||
                 (prevState.edit_type == 1 && this.state.edit_type == 2)) {
                 //console.log('CKEDITOR');
                 CKEDITOR.replace('news_content', { customConfig: '/ckeditor/Config.js?v=' + CommFunc.uniqid() });
+
+
+                let opt = this.state.option_category_all.filter(x => x.i_Lang == this.state.fieldData.i_Lang);
+                let clone = $.extend([], opt);
+                this.setState({ option_category_edit: clone });
             }
+        }
+        initData() {
+            var parms = {
+            };
+            CommFunc.jqGet(this.props.apiInitPath, parms)
+                .done((data, textStatus, jqXHRdata) => {
+                    this.setState({ option_category_all: data.data });
+                })
+                .fail((jqXHR, textStatus, errorThrown) => {
+                    CommFunc.showAjaxError(errorThrown);
+                });
         }
         gridData(page: number) {
 
@@ -270,7 +311,18 @@ namespace News {
             } else {
                 obj[name] = input.value;
             }
-            this.setState({ fieldData: obj });
+            if (collentName == this.props.gdName && name == "i_Lang" && input.value) {
+                let opt = this.state.option_category_all.filter(x => x.i_Lang == input.value);
+                let clone = $.extend([], opt);
+                this.setState({ fieldData: obj, option_category_search: clone });
+            } else if (collentName == this.props.fdName && name == "i_Lang" && input.value) {
+                let opt = this.state.option_category_all.filter(x => x.i_Lang == input.value);
+                let clone = $.extend([], opt);
+                this.setState({ fieldData: obj, option_category_edit: clone });
+            }
+            else {
+                this.setState({ fieldData: obj });
+            }
         }
 
         setChangeDate(collentName: string, name: string, date: moment.Moment) {
@@ -278,11 +330,11 @@ namespace News {
             var v = date == null ? null : date.format();
             var objForUpdate = {
                 [collentName]:
-                    {
-                        [name]: {
-                            $set: v
-                        }
+                {
+                    [name]: {
+                        $set: v
                     }
+                }
             };
             var newState = update(this.state, objForUpdate);
             this.setState(newState);
@@ -293,6 +345,7 @@ namespace News {
 
             if (this.state.edit_type == 0) {
                 let searchData = this.state.searchData;
+                let option_category_search = this.state.option_category_search;
                 let GridNavPage = CommCmpt.GridNavPage;
 
                 outHtml =
@@ -325,6 +378,17 @@ namespace News {
                                                         <option value="zh-CN">簡體中文</option>
                                                         <option value="en-US">English</option>
                                                     </select> {}
+                                                    <label>分類</label> {}
+                                                    <select className="form-control"
+                                                        value={searchData.category_id}
+                                                        onChange={this.changeGDValue.bind(this, 'category_id')}>
+                                                        <option value="">全部</option>
+                                                        {
+                                                            option_category_search.map((item, i) => {
+                                                                return <option key={i} value={item.news_category_id}>{item.name}</option>;
+                                                            })
+                                                        }
+                                                    </select> {}
                                                     <button className="btn-primary" type="submit"><i className="fa-search"></i> 搜尋</button>
                                                 </div>
                                             </div>
@@ -342,6 +406,7 @@ namespace News {
                                                 <th className="col-xs-1 text-center">修改</th>
                                                 <th className="col-xs-3">標題</th>
                                                 <th className="col-xs-3">日期</th>
+                                                <th className="col-xs-2">分類</th>
                                                 <th className="col-xs-2">語系</th>
                                                 <th className="col-xs-2">狀態</th>
                                             </tr>
@@ -355,7 +420,8 @@ namespace News {
                                                             primKey={itemData.news_id}
                                                             itemData={itemData}
                                                             delCheck={this.delCheck}
-                                                            updateType={this.updateType} />
+                                                            updateType={this.updateType}
+                                                            option_category_all={this.state.option_category_all} />
                                                 )
                                             }
                                         </tbody>
@@ -377,6 +443,7 @@ namespace News {
             }
             else if (this.state.edit_type == 1 || this.state.edit_type == 2) {
                 let fieldData = this.state.fieldData;
+                let option_category_edit = this.state.option_category_edit;
                 let InputDate = CommCmpt.InputDate;
 
                 let mnt_set_date = CommFunc.MntV(fieldData.set_date);
@@ -452,6 +519,22 @@ namespace News {
                                     </div>
                                 </div>
 
+                                <div className="form-group">
+                                    <label className="col-xs-2 control-label">分類</label>
+                                    <div className="col-xs-4">
+                                        <select className="form-control"
+                                            required
+                                            value={fieldData.news_category_id}
+                                            onChange={this.changeFDValue.bind(this, 'news_category_id')}>
+                                            <option value="">請選擇</option>
+                                            {
+                                                option_category_edit.map((item, i) => {
+                                                    return <option key={i} value={item.news_category_id}>{item.name}</option>;
+                                                })
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
                                 <div className="form-group">
                                     <label className="col-xs-2 control-label">內容</label>
                                     <div className="col-xs-10">
