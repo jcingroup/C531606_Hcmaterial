@@ -131,7 +131,8 @@ declare namespace __React {
     // ----------------------------------------------------------------------
 
     // Base component for plain JS classes
-    class Component<P, S> implements ComponentLifecycle<P, S> {
+    //interface Component<P = {}, S = {}> extends ComponentLifecycle<P, S> { }
+    class Component<P, S> {
         constructor(props?: P, context?: any);
         setState(f: (prevState: S, props: P) => S, callback?: () => any): void;
         setState(state: S, callback?: () => any): void;
@@ -171,7 +172,7 @@ declare namespace __React {
     // ----------------------------------------------------------------------
 
     interface ComponentClass<P> {
-        new (props?: P, context?: any): Component<P, any>;
+        new(props?: P, context?: any): Component<P, any>;
         propTypes?: ValidationMap<P>;
         contextTypes?: ValidationMap<any>;
         childContextTypes?: ValidationMap<any>;
@@ -179,7 +180,7 @@ declare namespace __React {
     }
 
     interface ClassicComponentClass<P> extends ComponentClass<P> {
-        new (props?: P, context?: any): ClassicComponent<P, any>;
+        new(props?: P, context?: any): ClassicComponent<P, any>;
         getDefaultProps?(): P;
         displayName?: string;
     }
@@ -933,7 +934,8 @@ declare module "react/addons" {
     // ----------------------------------------------------------------------
 
     // Base component for plain JS classes
-    class Component<P, S> implements ComponentLifecycle<P, S> {
+    //interface Component<P = {}, S = {}> extends ComponentLifecycle<P, S> { }
+    class Component<P, S> {
         constructor(props?: P, context?: any);
         setState(f: (prevState: S, props: P) => S, callback?: () => any): void;
         setState(state: S, callback?: () => any): void;
@@ -973,7 +975,7 @@ declare module "react/addons" {
     // ----------------------------------------------------------------------
 
     interface ComponentClass<P> {
-        new (props?: P, context?: any): Component<P, any>;
+        new(props?: P, context?: any): Component<P, any>;
         propTypes?: ValidationMap<P>;
         contextTypes?: ValidationMap<any>;
         childContextTypes?: ValidationMap<any>;
@@ -981,7 +983,7 @@ declare module "react/addons" {
     }
 
     interface ClassicComponentClass<P> extends ComponentClass<P> {
-        new (props?: P, context?: any): ClassicComponent<P, any>;
+        new(props?: P, context?: any): ClassicComponent<P, any>;
         getDefaultProps?(): P;
         displayName?: string;
     }
@@ -1601,7 +1603,7 @@ declare module "react/addons" {
         item(index: number): Touch;
         identifiedTouch(identifier: number): Touch;
     }
-    
+
     //
     // React.addons
     // ----------------------------------------------------------------------
@@ -1732,7 +1734,7 @@ declare module "react/addons" {
     // ----------------------------------------------------------------------
 
     interface MockedComponentClass {
-        new (): any;
+        new(): any;
     }
 
     module ReactTestUtils {

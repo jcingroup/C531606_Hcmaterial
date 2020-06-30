@@ -40,7 +40,7 @@ $figure-mg:               2% 1%;
 @import "_client/module/breadcrumb";
 @import "_client/module/hover";
 @import "_client/module/label";
-@import "_client/module/figure";
+// @import "_client/module/figure";
 @import "_client/module/tab";
 
 
@@ -130,7 +130,9 @@ $pro-nav-pd-l:            10px;
     cursor: pointer;
     margin: 20px auto;
 
-    &, span { position: relative; }
+    &, span {
+        position: relative;
+    }
     span {
         line-height: 2;
     }
@@ -282,7 +284,7 @@ $pro-nav-pd-l:            10px;
         }
     }
 }
-.uphigh{
+.uphigh {
     height: 35px;
 
     @include mq-max(wider) {
@@ -331,8 +333,7 @@ $pro-nav-pd-l:            10px;
 
 // == about us
 .AboutUs {
-
-    th,td { padding: 8px 15px; }
+    th, td { padding: 8px 15px; }
     tr {
         &:hover {
             background-color: none;
@@ -341,42 +342,54 @@ $pro-nav-pd-l:            10px;
         }
         &:nth-of-type(even) { background-color: #FFFFef; }
     }
-
-    // .table-rwd {
-    //     // float: left;
-    //     // width: percentage(1/2) - 1;
-
-    //     // &:nth-of-type(2) { float: right; }
-
-
-    //     @include mq-max(break(desktop,-1)) {
-    //         // float: none;
-    //         // width: 100%;
-
-    //         // td:first-child { width: 28%; }
-    //     }
-    // }
 }
 
 
 // == News
-figure {
-    &:hover {
-        box-shadow: 0 0 20px $gray-light;
-        img {
-            @include prefix(filter, contrast(120%) brightness(105%), webkit moz o ms);
+.news {
+    &-list {
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid $brand-gray;
+
+        @include mq(tablet) {
+            display: flex;
+        }
+
+        &:hover {
+            .news-pic {
+                box-shadow: 0 0 5px rgba(#000, .35);
+                @include prefix(filter, contrast(120%) brightness(105%), webkit moz o ms);
+            }
+        }
+        figcaption {
+            text-align: left;
+
+            @include mq(tablet) {
+                margin-left: 16px;
+            }
+        }
+        small {
+            display: block;
+            margin-bottom: 10px;
+            color: $brand-primary;
+        }
+        .more {
+            font-size: em(12);
         }
     }
-}
-figcaption {
-    position: static;
-    background: #fff;
-    padding: $gutter - 5;
+    &-pic {
+        transition: 350ms;
 
-    small {
-        display: block;
-        margin-bottom: 10px;
-        color: $brand-primary;
+        @include mq(tablet) {
+            width: 300px;
+        }
+        @include mq(desktop) {
+            width: 360px;
+        }
+        @include mq-max(break(tablet, -1)) {
+            margin-bottom: 16px;
+        }
     }
 }
 
@@ -506,5 +519,28 @@ figcaption {
     // 右上
     sub {
         padding-top: 15%;
+    }
+}
+
+// 分頁(最新消息)
+.pages {
+    a {
+        display: inline-block;
+        vertical-align: middle;
+        background-color: color(grays);
+        padding: 0 5px;
+        margin: 0 3px 5px;
+        line-height: 22px;
+
+        &.active {
+            background-color: color(primary);
+            color: #fff;
+        }
+        &:hover {
+            background-color: lighten(color(primary), 50);
+        }
+    }
+    .back {
+        margin-right: -6px;
     }
 }
