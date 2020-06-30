@@ -1,17 +1,24 @@
-﻿@model IList<ProcCore.Business.DB0.News>
+﻿@model DotWeb.WebApp.Controllers.NewsController.NewsList
 @{
     ViewBag.Title = Resources.Web.nav_news;
     ViewBag.BodyClass = "News";
     ViewBag.breadCrumb = Resources.Web.nav_news;
     Layout = "~/Views/Shared/Layout.cshtml";
+
+    string page_url = ViewBag.c_id != null ? ("~/News?c_id=" + ViewBag.c_id) : "~/News?";
+    string pre_page = Model.page == 1 ? "#" : page_url + "q_page=" + (Model.page - 1);
+    string next_page = Model.page == Model.total ? "#" : page_url + "q_page=" + (Model.page + 1);
+
 }
 
 <h1>@Resources.Web.nav_news</h1>
 <ul class="tabs">
-    <li class="active"><a href="">公司消息</a></li>
-    <li><a href="">產業新聞</a></li>
+    @foreach (var cdata in Model.category)
+    {
+        <li class="@(ViewBag.c_id==cdata.news_category_id?"active":"")"><a href="~/News?c_id=@cdata.news_category_id">@cdata.name</a></li>
+    }
 </ul>
-@foreach (var item in Model)
+@foreach (var item in Model.list)
 {
     <figure class="news-list">
         <a href="~/News/content?id=@item.news_id"><img class="news-pic" src="@item.img_list" alt="@item.news_title"></a>
@@ -23,8 +30,11 @@
 }
 <nav class="pages">
     @* 當前頁：class=active 沒有 href *@
-    <a class="active">1</a>
-    <a href="">2</a>
-    <a href="" class="back icon-chevron-thin-left" title="上一頁"></a>
-    <a href="" class="next icon-chevron-thin-right" title="下一頁"></a>
+    @for (int page = 1; page <= Model.total; page++)
+    {
+        string n_url = page != Model.page ? page_url + "q_page=" + page : "#";
+        <a class="@(page==Model.page?"active":"")" href="@Url.Content(n_url)">@page</a>
+    }
+    <a href="@Url.Content(pre_page)" class="back icon-chevron-thin-left" title="上一頁"></a>
+    <a href="@Url.Content(next_page)" class="next icon-chevron-thin-right" title="下一頁"></a>
 </nav>
