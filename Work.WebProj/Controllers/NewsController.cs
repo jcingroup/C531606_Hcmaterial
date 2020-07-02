@@ -48,7 +48,7 @@ namespace DotWeb.WebApp.Controllers
 
             foreach (var item in md.list)
             {
-                item.img_list = ImgSrc("Active", "NewsData", item.news_id, "List", "origin");
+                item.img_list = ImgSrc("Active", "NewsData", item.news_id, "List", null);
             }
 
             return View("list", md);
