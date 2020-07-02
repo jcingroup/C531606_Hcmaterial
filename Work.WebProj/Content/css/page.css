@@ -1889,6 +1889,7 @@ html, body {
   font-size: 0.75em;
 }
 .news-pic {
+  display: block;
   transition: 350ms;
 }
 @media (min-width: 48em) {
@@ -1905,6 +1906,9 @@ html, body {
   .news-pic {
     margin-bottom: 16px;
   }
+}
+.news-pic img {
+  max-height: 240px;
 }
 
 .news-panel header {

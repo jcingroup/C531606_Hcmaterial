@@ -21,7 +21,7 @@
 @foreach (var item in Model.list)
 {
     <figure class="news-list">
-        <a href="~/News/content?id=@item.news_id"><img class="news-pic" src="@item.img_list" alt="@item.news_title"></a>
+        <a class="news-pic" href="~/News/content?id=@item.news_id"><img src="@item.img_list" alt="@item.news_title"></a>
         <figcaption>
             <h4><small>@item.set_date.ToString("yyyy-MM-dd")</small>@item.news_title</h4>
             <a class="more" href="~/News/content?id=@item.news_id">READ MORE</a>

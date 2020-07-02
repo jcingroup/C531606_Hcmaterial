@@ -379,6 +379,7 @@ $pro-nav-pd-l:            10px;
         }
     }
     &-pic {
+        display: block;
         transition: 350ms;
 
         @include mq(tablet) {
@@ -389,6 +390,10 @@ $pro-nav-pd-l:            10px;
         }
         @include mq-max(break(tablet, -1)) {
             margin-bottom: 16px;
+        }
+
+        img {
+            max-height: 240px;
         }
     }
 }
