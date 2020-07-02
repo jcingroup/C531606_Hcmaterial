@@ -524,6 +524,10 @@ namespace DotWeb.Controller
             //FileInfo firstFileInfo = new FileInfo(sFile);
             if (sfsc == true && sFile.Length < size * 1024)
             {
+                using (FileStream outputFileStream = new FileStream(dFile, FileMode.Create))
+                {
+                    sFile.CopyTo(outputFileStream);
+                }
                 //firstFileInfo.CopyTo(dFile);
                 return true;
             }
