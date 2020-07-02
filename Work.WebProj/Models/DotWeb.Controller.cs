@@ -425,7 +425,7 @@ namespace DotWeb.Controller
                 foreach (ImageSizeParm imSize in fp.Parm)
                 {
                     var save_path = server_path_parm + "\\" + Path.GetFileName(file_name);
-                    CompressImage(binary_read.BaseStream, save_path, 90, 300);
+                    CompressImage(binary_read.BaseStream, save_path, 90, 400);
                     //System.IO.File.WriteAllBytes(server_path_parm + "\\" + Path.GetFileName(file_name), sm.ToArray());
                     //sm.Dispose();
                 }

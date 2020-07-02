@@ -463,7 +463,7 @@ namespace News {
                                     <div className="col-xs-8">
                                         <CommCmpt.MasterImageUpload FileKind="List" MainId={fieldData.news_id} ParentEditType={this.state.edit_type} url_upload={gb_approot + 'Active/NewsData/aj_FUpload'} url_list={gb_approot + 'Active/NewsData/aj_FList'}
                                             url_delete={gb_approot + 'Active/NewsData/aj_FDelete'} />
-                                        <small className="help-block">最多1張圖，建議尺寸 415*160 px</small>
+                                        <small className="help-block">最多上傳 1 張圖，請勿上傳超過10m圖片。推薦使用<a href="https://squoosh.app" target="_blank">Google線上壓圖程式</a></small>
                                     </div>
                                 </div>
 
