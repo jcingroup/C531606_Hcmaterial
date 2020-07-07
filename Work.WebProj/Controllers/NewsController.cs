@@ -22,12 +22,13 @@ namespace DotWeb.WebApp.Controllers
             ProcCore.Business.DB0.NewsCategory category_data = null;
             if (c_id != null)
                 category_data = db0.NewsCategory.Where(x => x.state == "A" && x.i_Lang == lang && x.news_category_id == c_id).FirstOrDefault();
-
-            if (category_data != null)
-            {
-                md.list = md.list.Where(x => x.news_category_id == category_data.news_category_id).ToList();
-                ViewBag.c_id = category_data.news_category_id;
+            if (category_data == null)
+            {//預設抓第一筆分類
+                category_data = db0.NewsCategory.Where(x => x.state == "A" && x.i_Lang == lang).OrderByDescending(x => x.sort).FirstOrDefault();
             }
+
+            md.list = md.list.Where(x => x.news_category_id == category_data.news_category_id).ToList();
+            ViewBag.c_id = category_data.news_category_id;
             #endregion
             #region 分頁設定
             int defPageSize = 3;

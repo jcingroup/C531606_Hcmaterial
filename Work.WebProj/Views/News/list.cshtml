@@ -6,8 +6,8 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 
     string page_url = ViewBag.c_id != null ? ("~/News?c_id=" + ViewBag.c_id) : "~/News?";
-    string pre_page = Model.page == 1 ? "#" : page_url + "q_page=" + (Model.page - 1);
-    string next_page = Model.page == Model.total ? "#" : page_url + "q_page=" + (Model.page + 1);
+    string pre_page = Model.page == 1 ? "#" : page_url + "&q_page=" + (Model.page - 1);
+    string next_page = Model.page == Model.total ? "#" : page_url + "&q_page=" + (Model.page + 1);
 
 }
 
@@ -32,7 +32,7 @@
     @* 當前頁：class=active 沒有 href *@
     @for (int page = 1; page <= Model.total; page++)
     {
-        string n_url = page != Model.page ? page_url + "q_page=" + page : "#";
+        string n_url = page != Model.page ? page_url + "&q_page=" + page : "#";
         <a class="@(page==Model.page?"active":"")" href="@Url.Content(n_url)">@page</a>
     }
     <a href="@Url.Content(pre_page)" class="back icon-chevron-thin-left" title="上一頁"></a>
