@@ -30,7 +30,7 @@ namespace DotWeb.WebApp.Controllers
             }
             #endregion
             #region 分頁設定
-            int defPageSize = 10;
+            int defPageSize = 3;
             int page = (q_page == null ? 1 : (int)q_page);
             var resultCount = md.list.Count();
             int startRecord = PageCount.PageInfo(page, defPageSize, resultCount);
