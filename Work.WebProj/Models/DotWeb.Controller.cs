@@ -526,6 +526,7 @@ namespace DotWeb.Controller
             {
                 using (FileStream outputFileStream = new FileStream(dFile, FileMode.Create))
                 {
+                    sFile.Seek(0, SeekOrigin.Begin);
                     sFile.CopyTo(outputFileStream);
                 }
                 //firstFileInfo.CopyTo(dFile);
