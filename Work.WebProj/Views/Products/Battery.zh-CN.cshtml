@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "次世代高电压正极材料-磷酸锂铁锰 LMFP:电池材料";
+    ViewBag.BodyClass = "Products";
+    ViewBag.breadCrumb = "磷酸锂铁锰 LMFP";
+    ViewBag.ProNavClass = "current";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section Scripts {
+    <script src="~/Content/js/tab.js"></script>
+}
+
+@section breadCrumb {
+    <li><a href="~/Products">正极材料</a></li>
+}
+
+@Html.Partial("sidebar")
+
+@Html.Partial("Battery-catalog")
+
+
+<h1 class="clear"><small>次世代高电压正极材料</small> 磷酸锂铁锰 LMFP</h1>
+
+<ul class="tabs">
+    <li class="js-tab"><a href="#tab-1">LMFP结构与特色</a></li>
+    <li class="js-tab"><a href="#tab-2">LMFP规格</a></li>
+</ul>
+
+<article id="tab-1" class="tab-content">
+    <h3>LMFP 结构与特色</h3>
+    <p>与国际前三大化学厂共同合作开发，2014正式量产次世代高电压LMFP</p>
+    <h4>优点</h4>
+    <ul class="list-dot">
+        <li>提高能量密度20%</li>
+        <li>放电平台利於电池管理系统</li>
+        <li>具专利保护</li>
+    </ul>
+</article>
+
+<article id="tab-2" class="tab-content">
+    <h3>LMFP规格</h3>
+    <div class="col-4 col-xs-12">
+        <h4>基本规格</h4>
+        <img src="~/Content/images/Products/Battery/p1-2-CN.jpg" alt="" height="186">
+    </div>
+    <div class="col-4 col-xs-12">
+        <h4>粒径分布</h4>
+        <img src="~/Content/images/Products/Battery/p1-2-2.jpg" alt="">
+    </div>
+    <div class="col-4 col-xs-12">
+        <img src="~/Content/images/Products/Battery/p1-2-3.jpg" alt="">
+    </div>
+
+    <div class="col-7 col-xs-12">
+        <h4>Coin Cell电性</h4>
+        <p>25 ℃，活物比例90%，导电碳添加比例5%，涂物重10 mg/cm<sup>2</sup></p>
+        <img src="~/Content/images/Products/Battery/p1-3-CN.jpg" alt="" width="100%">
+    </div>
+
+    <div class="col-5 col-xs-12">
+        <h4>Coin Cell Cycle Life</h4>
+        <p>1C charge/3C discharge : <span class="text-info">50cycle, 98%</span></p>
+        <p>25 ℃，活物比例90%，导电碳添加比例5%，涂物重10 mg/cm2</p>
+        <img src="~/Content/images/Products/Battery/p1-4-CN.jpg" alt="" width="100%">
+    </div>
+</article>

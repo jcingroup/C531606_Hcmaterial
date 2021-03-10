@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+$cols: 12 !default;
+
+// 函數程式
+// ------------------------------------------------------------
+// $one_col: (100% - (cp($gutter) * ($cols - 1))) / $cols;
+// width: ($one_col * $num) + (cp($gutter) * ($num - 1));
+
+$one_col: 100% / $cols;
+
+@mixin make-cols($class: md) {
+    @for $i from 1 through $cols {
+        $selector: if($class == 'md', '.col-#{$i}', '.col-#{$class}-#{$i}');
+
+        #{$selector} {
+            width: ($one_col * $i);
+            // @include col($i, $cols, $first: true, $last: true);
+        }
+    }
+}
+
+// 偏移
+@mixin make-offset($class: md) {
+    @for $i from 0 through ($cols - 1) {
+        $selector: if($class == 'md', '.offset-#{$i}', '.offset-#{$class}-#{$i}');
+
+        #{$selector} {
+            margin-left: ($one_col * $i);
+        }
+    }
+}
+
+@mixin make-col-ratio($num) {
+    @for $i from 1 through ($num - 1) {
+        .col-#{$i}-#{$num} {
+            @include col($i, $num);
+        }
+    }
+}
+
+
+// output
+// ------------------------------------------------------------
+.row {
+    @extend %clearfix;
+    // @extend %center;
+
+    // margin-left:-$gutter/2;
+    // margin-right:-$gutter/2;
+
+    // form & {
+    //     margin-bottom: $gutter;
+    // }
+
+    & + & {
+        margin: 1% 0;
+    }
+
+    // @at-root p#{&} {
+    //     margin-top: 0;
+    // }
+}
+
+[class*="col-"] {
+    // float: left;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: $gutter/2;
+    padding-right: $gutter/2;
+
+    // inline-block模式時 刪除多出間距
+    margin-right: -4px;
+
+    @if $lte7 {
+        *display: inline;
+        zoom: 1
+    }
+    &:first-child { padding-left: 0; }
+    &:last-child { padding-right: 0; }
+}
+
+[data-col*="first"],
+[data-col*="1-2"] .col-6:nth-of-type(2n+1),
+[data-col*="1-3"] .col-4:nth-of-type(3n+1),
+[data-col*="1-4"] .col-3:nth-of-type(4n+1) { padding-left: 0; }
+[data-col*="last"],
+[data-col*="1-2"] .col-6:nth-of-type(2n),
+[data-col*="1-3"] .col-4:nth-of-type(3n),
+[data-col*="1-4"] .col-3:nth-of-type(4n) { padding-right: 0; }
+
+
+// 等比例(1/3)
+// @include make-col-ratio(3);
+@include make-col-ratio(5);
+
+
+// 12 grid
+@include make-cols(md); // 預設: md
+@include make-offset(md); // 預設: md
+
+@include mq-max(break(tablet,-1)) {
+    @include make-cols(xs);
+    @include make-offset(xs);
+}
+
+@include mq-max(break(desktop,-1)) {
+    @include make-cols(sm);
+    @include make-offset(sm);
+}
+
+@include mq(wide) {
+    @include make-cols(lg);
+    @include make-offset(lg);
+}
+
+@include mq(wider) {
+    @include make-cols(xl);
+    @include make-offset(xl);
+}

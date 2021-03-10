@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Powder Fabrication Equipment:RELATED PROJECTS";
+    ViewBag.BodyClass = "Equipment";
+    ViewBag.breadCrumb = "RELATED PROJECTS";
+    ViewBag.Subnav3 = "current";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section breadCrumb {
+    <li><a href="~/Equipment">EQUIPMENT</a></li>
+}
+
+@Html.Partial("sidebar")
+
+<h1 class="clear"><small>Powder Fabrication Equipment</small> @ViewBag.breadCrumb</h1>
+
+<img class="img-center" src="~/Content/images/equipment/equi3_en.jpg">
+
+<br><br>
+
+<section class="text-left flex">
+    <div class="text-left">
+        <h2>High Quality Peripheral Devices and Consumables</h2>
+        <ul class="list-dot">
+            <li>Quantitative Pumps of All Varieties</li>
+            <li>Automatic Control Components</li>
+            <li>Precision Bearings</li>
+            <li>Imported Transmission Equipment</li>
+        </ul>
+    </div>
+    <img class="img-center" src="~/Content/images/equipment/equi3_2.jpg">
+</section>

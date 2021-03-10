@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+$underline-color:             darken($brand-gray, 20%);
+$underline-position:          top 100% right 0;
+
+$underline-transform:         scaleY(1);
+$underline-transform-origin:  50%;
+$underline-transform-hover:   scaleY(3);
+$underline-transition:        'transform .35s ease-out, background .4s';
+
+
+.tabs, .tabs-main {
+    border-bottom: 1px solid $brand-gray;
+}
+.tabs {
+    @extend %list-inline;
+    margin-top: 35px;
+
+    a {
+        display: block;
+        color: darken($brand-gray, 50%);
+        background: lighten($brand-gray, 2%);
+        padding: 12px 20px;
+        outline: none;
+        &:hover, &:active {
+            color: #fff;
+            background: lighten($brand-secondary, 20%);
+        }
+    }
+    li {
+        &.active {
+            a {
+                color: #fff;
+                background: $brand-secondary;
+                font-size: em(19px);
+            }
+        }
+    }
+}
+
+.tabs-main {
+    padding-bottom: 40px;
+}
+.tab-content {
+    @extend .text-left;
+}

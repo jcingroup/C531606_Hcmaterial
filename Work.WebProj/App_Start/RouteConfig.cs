@@ -9,6 +9,8 @@ namespace DotWeb.AppStart
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes();
+
             routes.MapRoute(
             name: "Manager",
             url: "_SysAdm",

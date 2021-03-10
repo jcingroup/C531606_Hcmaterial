@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+// var 變數，需放在 @import "helper/var" 之上才能覆蓋掉
+// ------------------------------------------------------------
+$img-path2:               '../images/index';
+$sidebar-width:           450px;
+$info-height:             253px;
+
+$font-size-h2:            65px;
+$font-size-h3:            35px;
+$heading-color:           #fff;
+
+$content-spacing:         125px;
+
+$swiper-pagination:       false;
+
+
+// import
+// ------------------------------------------------------------
+@import "helper/function";
+@import "helper/var";
+@import "helper/mixins";
+
+@import "base/basic";
+@import "base/extend";
+@import "base/classes";
+
+@import "layout/layout";
+
+@import "module/slider";
+@import "module/btn";
+@import "module/hover";
+
+
+
+// layout
+// ----------------------------------------------------------------------
+
+// == banner
+#banner {
+    height: 516px;
+}
+// #banner, .swiper-slide {
+//     width: 100%;
+// }
+// .swiper-slide {
+//     img {
+//         top: 0;
+//         @include prefix(transform, translateX(-50%))
+//     }
+// }
+
+// == main
+main {
+    background: url(#{$img-path2}/mainBg.jpg) center bottom no-repeat fixed;
+}
+section {
+    @extend %clearfix;
+}

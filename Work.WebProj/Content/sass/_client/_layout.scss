@@ -44,10 +44,9 @@ html, body {
     @if $lte7 { _height: 100%; }
     min-height: 100%;
     padding-bottom: $footer-height + $content-spacing; // 內容與footer間距
-
-    @if $wrapper-bg {
-        background: $wrapper-bg;
-    }
+    // @if $wrapper-bg {
+    //     background: $wrapper-bg;
+    // }
 
     // 專案樣式
     @extend %center;
@@ -64,7 +63,7 @@ html, body {
     // 專案樣式
     @include el(before) {
         @include absolute($menu-pos);
-        background: $wrapper-bg;
+        // background: $wrapper-bg;
         height: $menu-height;
     }
     @include mq-max(break(desktop, -1)) {

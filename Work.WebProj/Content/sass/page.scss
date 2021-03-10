@@ -143,8 +143,7 @@ $pro-nav-pd-l:            10px;
 }
 
 .pro-nav {
-    @extend %clearfix;
-    @extend %list-unstyled;
+    @extend %clearfix, %list-unstyled;
 
     background: url(#{$img-path}/Products/sub-nav-bg2.gif) right bottom no-repeat;
     padding-bottom: 10px;
@@ -153,8 +152,17 @@ $pro-nav-pd-l:            10px;
     position: relative;
     z-index: 2;
 
+    .Equipment & {
+        background-position: 640px bottom;
+    }
+
     @include mq(break(wide,+1)) {
         background-position: 850px bottom;
+    }
+    @include mq-max(break(desktop,-1)) {
+        .Equipment & {
+            background-position: center bottom;
+        }
     }
 
     li, a { position: relative; }
@@ -547,5 +555,11 @@ $pro-nav-pd-l:            10px;
     }
     .back {
         margin-right: -6px;
+    }
+}
+
+.flex {
+    @include mq(break(tablet, +1)) {
+        display: flex;
     }
 }

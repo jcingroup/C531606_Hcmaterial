@@ -708,7 +708,6 @@ html, body {
   top: 36px;
   right: 0;
   left: 0;
-  background: false;
   height: 94px;
 }
 @media (max-width: 61.1875em) {
@@ -955,22 +954,22 @@ html, body {
 #menu a:nth-of-type(3)::before, .Products #menu a:nth-of-type(3)::before {
   background-color: #F39311;
 }
-#menu a:nth-of-type(4)::before, .JoinUs #menu a:nth-of-type(4)::before {
+#menu a:nth-of-type(4)::before, .Equipment #menu a:nth-of-type(4)::before {
   background-color: #F36B1F;
 }
-#menu a:nth-of-type(5)::before, .ContactUs #menu a:nth-of-type(5)::before {
+#menu a:nth-of-type(5)::before, .JoinUs #menu a:nth-of-type(5)::before {
   background-color: #C73677;
 }
-#menu a:nth-of-type(6)::before, .hstech #menu a:nth-of-type(6)::before {
+#menu a:nth-of-type(6)::before, .ContactUs #menu a:nth-of-type(6)::before {
   background-color: #1F9BA3;
 }
-#menu a:hover, #menu a:active, .AboutUs #menu a:nth-of-type(1), .News #menu a:nth-of-type(2), .Products #menu a:nth-of-type(3), .JoinUs #menu a:nth-of-type(4), .ContactUs #menu a:nth-of-type(5), .hstech #menu a:nth-of-type(6) {
+#menu a:hover, #menu a:active, .AboutUs #menu a:nth-of-type(1), .News #menu a:nth-of-type(2), .Products #menu a:nth-of-type(3), .Equipment #menu a:nth-of-type(4), .JoinUs #menu a:nth-of-type(5), .ContactUs #menu a:nth-of-type(6) {
   color: #fff;
 }
-#menu a:hover::before, #menu a:active::before, .AboutUs #menu a:nth-of-type(1)::before, .News #menu a:nth-of-type(2)::before, .Products #menu a:nth-of-type(3)::before, .JoinUs #menu a:nth-of-type(4)::before, .ContactUs #menu a:nth-of-type(5)::before, .hstech #menu a:nth-of-type(6)::before {
+#menu a:hover::before, #menu a:active::before, .AboutUs #menu a:nth-of-type(1)::before, .News #menu a:nth-of-type(2)::before, .Products #menu a:nth-of-type(3)::before, .Equipment #menu a:nth-of-type(4)::before, .JoinUs #menu a:nth-of-type(5)::before, .ContactUs #menu a:nth-of-type(6)::before {
   height: 100%;
 }
-#menu a:hover i, #menu a:active i, .AboutUs #menu a:nth-of-type(1) i, .News #menu a:nth-of-type(2) i, .Products #menu a:nth-of-type(3) i, .JoinUs #menu a:nth-of-type(4) i, .ContactUs #menu a:nth-of-type(5) i, .hstech #menu a:nth-of-type(6) i {
+#menu a:hover i, #menu a:active i, .AboutUs #menu a:nth-of-type(1) i, .News #menu a:nth-of-type(2) i, .Products #menu a:nth-of-type(3) i, .Equipment #menu a:nth-of-type(4) i, .JoinUs #menu a:nth-of-type(5) i, .ContactUs #menu a:nth-of-type(6) i {
   color: #F1F1F1;
 }
 #menu .toggle {
@@ -1649,9 +1648,17 @@ html, body {
   position: relative;
   z-index: 2;
 }
+.Equipment .pro-nav {
+  background-position: 640px bottom;
+}
 @media (min-width: 75.0625em) {
   .pro-nav {
     background-position: 850px bottom;
+  }
+}
+@media (max-width: 61.1875em) {
+  .Equipment .pro-nav {
+    background-position: center bottom;
   }
 }
 .pro-nav li, .pro-nav a {
@@ -2070,4 +2077,10 @@ html, body {
 }
 .pages .back {
   margin-right: -6px;
+}
+
+@media (min-width: 48.0625em) {
+  .flex {
+    display: flex;
+  }
 }

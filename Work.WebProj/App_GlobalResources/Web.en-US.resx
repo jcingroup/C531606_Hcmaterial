@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="keywords" xml:space="preserve">
     <value>LMFP,NMC+LMFP,battery,Cathode Material,Soft pack battery,high voltage NMC, High Electrical Conductivity, High Ion Diffusivity, HCM</value>
@@ -145,7 +145,7 @@
     <value>Contact Us</value>
   </data>
   <data name="System_FrontName" xml:space="preserve">
-    <value>HIROSE</value>
+    <value>Equipment</value>
   </data>
   <data name="products_item1" xml:space="preserve">
     <value>Core Technology</value>

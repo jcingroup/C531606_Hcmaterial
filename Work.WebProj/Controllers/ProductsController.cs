@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using DotWeb.Controller;
 using System.Web.Mvc;
-using DotWeb.Controller;
 
 namespace DotWeb.WebApp.Controllers
 {
@@ -46,5 +42,7 @@ namespace DotWeb.WebApp.Controllers
         {
             return View();
         }
+
+        
     }
 }

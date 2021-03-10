@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "粉體製造設備:噴霧乾燥機";
+    ViewBag.BodyClass = "Equipment";
+    ViewBag.breadCrumb = "噴霧乾燥機";
+    ViewBag.Subnav = "current";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section breadCrumb {
+    <li><a href="~/Equipment">設備</a></li>
+}
+
+@Html.Partial("sidebar")
+
+<h1 class="clear"><small>粉體製造設備</small> @ViewBag.breadCrumb</h1>
+
+<img class="img-center" src="~/Content/images/equipment/equi1.jpg" alt="噴霧乾燥機">
+
+<br><br>
+
+<section class="row">
+    <article class="text-left col-6 col-sm-12">
+        <h2>原理與特長</h2>
+        <p>噴霧乾燥機是一種利用熱風的連續乾燥裝置，將漿料瞬間乾燥成粉末的機器，並且經由氣流的運送，利用適當的收集方法，收集乾燥後的原料。</p>
+        <p>利用特殊的噴嘴(壓力式或二流體式)、或者是高速旋轉圓盤(離心式)把漿料球粒化，使其表面積增大，並同時施以連續的熱風，以達到瞬間乾燥的目的。因此噴霧造粒技術應用於對熱敏感的材料也鮮少有變質的情形，而且可以省略濃縮、過濾、粉碎、分級、乾燥等繁瑣的工程。</p>
+        <p>此外，粉體乾燥成品成球形，所以流動性佳，對於食品業來說，其優點為易溶於水；對於電子材料、粉末冶金、精密陶瓷來說，可以製造出高密度且一致性的產品。</p>
+    </article>
+    <picture class="col-6 col-sm-12">
+        <img src="~/Content/images/equipment/equi1_2.jpg">
+    </picture>
+</section>
+
+<h2>機型選用參考(霧化形式)</h2>
+<img class="img-center" src="~/Content/images/equipment/equi1_t1.jpg">
+
+<br><br>
+
+<h2>機型選用參考(作業形式)</h2>
+<img class="img-center" src="~/Content/images/equipment/equi1_t2.jpg">

@@ -297,6 +297,7 @@
     <Compile Include="Controllers\Api\NewsController.cs" />
     <Compile Include="Controllers\Api\UsersController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
+    <Compile Include="Controllers\EquipmentController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\JoinUsController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
@@ -386,6 +387,16 @@
     <Content Include="Content\images\ContactUs\map-CN.gif" />
     <Content Include="Content\images\ContactUs\map-EN.gif" />
     <Content Include="Content\images\ContactUs\map.gif" />
+    <Content Include="Content\images\equipment\equi1.jpg" />
+    <Content Include="Content\images\equipment\equi1_2.jpg" />
+    <Content Include="Content\images\equipment\equi1_t1.jpg" />
+    <Content Include="Content\images\equipment\equi1_t2.jpg" />
+    <Content Include="Content\images\equipment\equi2.jpg" />
+    <Content Include="Content\images\equipment\equi2_2.jpg" />
+    <Content Include="Content\images\equipment\equi2_t1.jpg" />
+    <Content Include="Content\images\equipment\equi2_t2.jpg" />
+    <Content Include="Content\images\equipment\equi3.jpg" />
+    <Content Include="Content\images\equipment\equi3_2.jpg" />
     <Content Include="Content\images\icon-menu.png" />
     <Content Include="Content\images\icon-menu2.png" />
     <Content Include="Content\images\icon-shape.gif" />
@@ -676,6 +687,16 @@
     <Content Include="Views\AboutUs\AboutUs.en-US.cshtml" />
     <Content Include="Views\Index\Index.en-US.cshtml" />
     <Content Include="Views\JoinUs\JoinUs.en-US.cshtml" />
+    <Content Include="Views\Equipment\Equipment.cshtml" />
+    <Content Include="Views\Equipment\sidebar.cshtml" />
+    <Content Include="Views\Equipment\Equipment.zh-CN.cshtml" />
+    <Content Include="Views\Equipment\Equipment_other.zh-CN.cshtml" />
+    <Content Include="Views\Equipment\Equipment2.zh-CN.cshtml" />
+    <Content Include="Views\Equipment\sidebar.zh-CN.cshtml" />
+    <Content Include="Views\Equipment\Equipment.en-US.cshtml" />
+    <Content Include="Views\Equipment\Equipment_other.en-US.cshtml" />
+    <Content Include="Views\Equipment\Equipment2.en-US.cshtml" />
+    <Content Include="Views\Equipment\sidebar.en-US.cshtml" />
     <None Include="Views\News\Bak\content2.cshtml" />
     <Content Include="Views\ContactUs\Bak\ContactUs.zh-CN.cshtml" />
     <Content Include="Views\Index\Index.zh-CN.cshtml" />
@@ -691,6 +712,16 @@
     <Content Include="Views\Products\Build.en-US.cshtml" />
     <Content Include="Views\Products\Technology.en-US.cshtml" />
     <Content Include="Views\Products\Trend.en-US.cshtml" />
+    <Content Include="Views\Equipment\Equipment2.cshtml" />
+    <Content Include="Views\Equipment\Equipment_other.cshtml" />
+    <Content Include="Views\Products\Battery-catalog.en-US.cshtml" />
+    <Content Include="Views\Products\Battery-catalog.zh-CN.cshtml" />
+    <Content Include="Views\Products\Battery.en-US.cshtml" />
+    <Content Include="Views\Products\Battery.zh-CN.cshtml" />
+    <Content Include="Views\Products\Battery2.en-US.cshtml" />
+    <Content Include="Views\Products\Battery2.zh-CN.cshtml" />
+    <Content Include="Views\Products\Battery3.en-US.cshtml" />
+    <Content Include="Views\Products\Battery3.zh-CN.cshtml" />
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

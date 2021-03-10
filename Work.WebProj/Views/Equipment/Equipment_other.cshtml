@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "粉體製造設備:相關項目";
+    ViewBag.BodyClass = "Equipment";
+    ViewBag.breadCrumb = "相關項目";
+    ViewBag.Subnav3 = "current";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section breadCrumb {
+    <li><a href="~/Equipment">設備</a></li>
+}
+
+@Html.Partial("sidebar")
+
+<h1 class="clear"><small>粉體製造設備</small> @ViewBag.breadCrumb</h1>
+
+<img class="img-center" src="~/Content/images/equipment/equi3.jpg">
+
+<br><br>
+
+<section class="text-left flex">
+    <div class="text-left">
+        <h2>高品質的週邊設備及耗材</h2>
+        <ul class="list-dot">
+            <li>各式定量幫浦</li>
+            <li>自動控制零組件</li>
+            <li>精密軸承</li>
+            <li>進口傳動設備</li>
+        </ul>
+    </div>
+    <img class="img-center" src="~/Content/images/equipment/equi3_2.jpg">
+</section>

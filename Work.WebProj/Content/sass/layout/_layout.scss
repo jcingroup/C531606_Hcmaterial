@@ -1,0 +1,330 @@
+@charset "UTF-8";
+
+// wrapper
+$wrapper-bg:             #fff !default;
+$header-height:          195px !default;
+$footer-height:          239px !default;
+$content-spacing:        25px !default;
+
+// header
+$header-bg:              $body-bg !default;
+
+// logo
+$logo-img:               'logo.gif' !default;
+$logo-size:              126px 83px !default; // width height
+$logo-position:          left 60px top 89px !default;
+
+// 主選單
+$menu-bg:                $wrapper-bg !default;
+$menu-height:            125px !default;
+$menu-height-fixed:      60px !default;
+$nav-font-size:          19px !default;
+$nav-link:               #50414B;
+$nav-link-hover:         #fff;
+$menu-position:          left 0 top 70px right 0 !default;
+$menu-trigger-width:     250px !default; // 行動版時推拉主選單寬度
+$nav-width:              (100% / length($pages)) - 0.1 !default;
+
+// 第 2 層選單
+$sub-nav-bg:             lighten($header-bg, 2%) !default;
+$sub-nav-transition:     'opacity .3s, visibility .35s' !default;
+$sub-nav-width:          percentage(1/4) !default;
+
+// 行動選單(menu-trigger)
+$menu-trigger-width:     50px !default;
+$menu-trigger-height:    46px !default;
+$menu-trigger-thickness: 2px !default;
+$menu-trigger-pd:        10px !default;
+$menu-trigger-color:     $header-bg !default;
+
+// footer
+$footer-bg:              $brand-gray;
+$footer-color:           #323232;
+$goTop-position:         bottom 30px right 10px !default;
+
+
+/*      layout
+-----------------------------------------------------------------------*/
+// 置中(有最大寬度限制,非滿版才需要)
+%center {
+    max-width: $max-width;
+    margin: 0 ($gutter+10);
+
+    @include mq(wider) { margin: 0 auto; }
+}
+
+// RWD容器
+%contain {
+    @extend %clearfix;
+
+    @include mq-max(tablet) {
+        padding-left: $gutter;
+        padding-right: $gutter;
+        margin: 0;
+    }
+}
+
+.wrap {
+    @extend %center;
+    @extend %contain;
+}
+
+#header, #footer, #main {
+    @extend %contain;
+}
+
+#wrapper, #header, #footer, #main, .wrap {
+    position: relative;
+}
+
+#wrapper {
+    @if $lte7 { _height: 100%; }
+    min-height: 100%;
+    padding-bottom: $footer-height + $content-spacing; // 內容與footer間距
+
+    @include mq-max(phone) {
+        padding-bottom: 0;
+        min-height: auto;
+    }
+}
+
+#header {
+    z-index: z(header);
+    height: $header-height;
+    background: $header-bg;
+}
+
+#footer {
+    z-index: z(footer);
+    background: $footer-bg;
+    color: $footer-color;
+    min-height: $footer-height;
+    margin-top: -($footer-height);
+
+    @include mq-max(phone) {
+        margin-top: 0;
+    }
+}
+
+// header
+// ----------------------------------------------------------------------
+
+.logo {
+    cursor: pointer; cursor: hand; // for ie
+    z-index: z(logo);
+
+    @include text-pic($logo-img, nth($logo-size,1), nth($logo-size,2));
+    @include absolute($logo-position);
+
+    @include mq-max(break(desktop, -1)) {
+        left: 50%;
+        margin-left: -(nth($logo-size,1) / 2);
+    }
+    // @include mq-max(break(phone, -1)) {
+    //     right: -10px; left: auto;
+    //     margin-left: 0;
+    // }
+}
+
+// == 主選單
+#menu {
+    @include absolute($menu-position);
+
+    background: $menu-bg;
+    width: 100%;
+    height: $menu-height;
+
+    > li {
+        width: $nav-width;
+        margin-right: -4px;
+
+        > a {
+            display: block;
+
+            color: $nav-link;
+            font-size: em($nav-font-size);
+            letter-spacing: 1px;
+
+            &:hover, &:active {
+                color: $nav-link-hover;
+            }
+        }
+    }
+
+    @include mq-max(break(desktop,-1)) {
+        // background: #333;
+        // width: $menu-trigger-width;
+        // height: 100%;
+        // overflow-y: auto;
+        // z-index: z(overlay) + 1;
+
+        // @include fixed(top 0);
+        // @include prefix(transition, left .35s);
+        // left: -$menu-trigger-width;
+
+        // .toggle {
+        //     display: block;
+        //     cursor: pointer; cursor: hand;
+        //     background: $brand-primary url(#{$img-path}/icon.png) no-repeat right 6px;
+
+        //     color: #fff;
+        //     font-size: em(20px);
+        //     letter-spacing: 0.1em;
+
+        //     padding: 20px 0;
+        // }
+        // .push & { left: 0; }
+
+        // > a {
+        //     border-bottom: 1px solid #454545;
+        //     color: #fff;
+        //     text-align: left;
+
+        //     width: 100%;
+        //     padding: $gutter;
+
+        //     &:hover, &:active,
+        //     #{$selector} {
+        //         background: $brand-primary;
+        //         padding: ($gutter + 10) $gutter;
+        //     }
+        // }
+    }
+}
+
+// == 第二層選單
+.sub-nav {
+    background: $sub-nav-bg;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+
+    @include absolute(top 100% left 0 right 0);
+    @include prefix(transition, $sub-nav-transition);
+
+    #menu > li:hover &,
+    #menu > li:active & {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    li {
+        vertical-align: top;
+        width: $sub-nav-width;
+    }
+    a {
+        display: block;
+    }
+}
+
+
+// == 行動版主選單
+.push {
+    left: $menu-trigger-width;
+    overflow-y: hidden;
+    // .md-overlay {
+    //     opacity: 1;
+    //     visibility: visible;
+    //     left: $menu-trigger-width;
+    // }
+}
+.menu-trigger {
+    @extend %text-hide;
+    display: none;
+    cursor: pointer;
+    // z-index: z(overlay) + 1;
+
+
+    position: relative;
+    left: 0; top: 20px;
+    overflow: hidden;
+    width: $menu-trigger-width;
+    height: $menu-trigger-height;
+
+    @include prefix(transition, background 0.3s);
+    @include prefix(apperance, none, webkit moz);
+    @include mq-max(break(desktop,-1)) { display: block; }
+    @include mq-max(break(phone, -1)) { top: 40px; }
+
+    &:active, &.active {
+        background-color: darken($brand-primary, 10%);
+        span {
+            background: none;
+            &::before {
+                top: 0;
+                @include prefix(transform, rotate(45deg));
+            }
+            &::after {
+                bottom: 0;
+                @include prefix(transform, rotate(-45deg));
+            }
+            &::before, &::after {
+                @include prefix(transition-delay, '0, .3s');
+            }
+        }
+    }
+
+    span {
+        @include absolute(left $menu-trigger-pd right $menu-trigger-pd top (($menu-trigger-height / 2) - ($menu-trigger-thickness / 2)));
+        display: block;
+
+        background: $menu-trigger-color;
+        height: $menu-trigger-thickness;
+        margin: auto;
+        @include prefix(transition, background 0s 0.3s);
+
+        @include el(all) {
+            width: 100%;
+            height: $menu-trigger-thickness;
+            background-color: $menu-trigger-color;
+            @include absolute(left 0);
+            @include prefix(transition-duration, '.3s, .3s');
+            @include prefix(transition-delay, '.3s, 0');
+        }
+        &::before {
+            top: -(($menu-trigger-height / 2) - ($menu-trigger-thickness / 2) - $menu-trigger-pd);
+            @include prefix(transition-property, 'top, transform');
+        }
+        &::after {
+            bottom: -(($menu-trigger-height / 2) - ($menu-trigger-thickness / 2) - $menu-trigger-pd);
+            @include prefix(transition-property, 'bottom, transform');
+        }
+    }
+}
+
+// 滾動到指定y軸時，讓指定物件固定位置
+// .fixed {
+//     .sub-nav { top: $menu-height-fixed - 5px; }
+//     #menu {
+//         height: $menu-height-fixed;
+//         top: 0;
+
+//         li {
+//             &:hover, &:active {
+//                 .sub-nav { top: $menu-height-fixed; }
+//             }
+//             > a {
+//                 // padding: ($menu-height-fixed - $nav-font-size)/2 0;
+//                 line-height: $menu-height-fixed;
+//             }
+//         }
+//     }
+// }
+
+
+// footer
+// ----------------------------------------------------------------------
+
+
+// .goTop {
+//     @extend %effect-all;
+//     display: none;
+//     z-index: z(goTop);
+
+//     opacity: .65;
+
+//     @include fixed($goTop-position);
+//     @include text-pic('goTop.png',42px,23px);
+
+//     &:hover, &:active { opacity: 1; }
+// }

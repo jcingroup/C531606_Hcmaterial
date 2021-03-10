@@ -1,53 +1,54 @@
-ï»¿
+
 @{
-    ViewBag.Title = "é‹°é›»æ± æ­£æ¥µææ–™æ ¸å¿ƒæŠ€è¡“";
+    ViewBag.Title = "¾Y¹q¦À¥¿·¥§÷®Æ®Ö¤ß§Ş³N";
     ViewBag.BodyClass = "Products";
-    ViewBag.breadCrumb = "æ ¸å¿ƒæŠ€è¡“";
+    ViewBag.breadCrumb = "®Ö¤ß§Ş³N";
     ViewBag.proNavClass = "current";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
 @section breadCrumb {
-    <li><a href="~/Products">æ­£æ¥µææ–™</a></li>
+    <li><a href="~/Products">¥¿·¥§÷®Æ</a></li>
 }
 
 @Html.Partial("sidebar")
 
-<img src="~/Content/images/Products/Battery/pic.jpg" alt="é«˜å“è³ª&ç©©å®šæ­£æ¥µææ–™,æ³“è¾°ç”Ÿç”¢è¨­å‚™è‡ªè£½,å·¥ç ”é™¢å°ˆåˆ©æŠ€è¡“">
+<img src="~/Content/images/Products/Battery/pic.jpg" alt="°ª«~½è&Ã­©w¥¿·¥§÷®Æ,ªl¨°¥Í²£³]³Æ¦Û»s,¤u¬ã°|±M§Q§Ş³N">
+<img src="~/Content/images/Products/Battery/pic2.jpg" alt="±M§Q§Ş³N">
 
 @* @Html.Partial("Battery-catalog")
 
-<h2 class="text-left clear">é‹°é›»æ± æ­£æ¥µææ–™å„ªã€ç¼ºé»</h2>
+<h2 class="text-left clear">¾Y¹q¦À¥¿·¥§÷®ÆÀu¡B¯ÊÂI</h2>
 
 <article class="text-left table-rwd">
 
     <table class="full text-center">
         <caption>
-            é‹°éµç³»ï¼šé«˜å€ç‡å¿«é€Ÿå……ã€æ”¾é›»<br>
-            ä¸‰å…ƒç³»ï¼šè¶…é«˜é›»å®¹é‡
+            ¾YÅK¨t¡G°ª­¿²v§Ö³t¥R¡B©ñ¹q<br>
+            ¤T¤¸¨t¡G¶W°ª¹q®e¶q
         </caption>
         <tr>
             <th rowspan="2">Structure</th>
-            <th colspan="2">Layer(å±¤ç‹€çµæ§‹)</th>
-            <th>Spinel(å°–æ™¶çŸ³çµæ§‹)</th>
-            <th colspan="2">Olivine(æ©„æ¬–çŸ³çµæ§‹)</th>
+            <th colspan="2">Layer(¼hª¬µ²ºc)</th>
+            <th>Spinel(¦y´¹¥Ûµ²ºc)</th>
+            <th colspan="2">Olivine(¾ñÆV¥Ûµ²ºc)</th>
         </tr>
         <tr>
             <td class="item">LCO</td>
-            <td class="item">NCM(ä¸‰å…ƒ)</td>
+            <td class="item">NCM(¤T¤¸)</td>
             <td class="item">LMO</td>
             <td class="item">LFP</td>
             <td class="item">LMFP</td>
         </tr>
         <tr>
-            <td class="item">å·¥ä½œé›»å£“(Volt)</td>
+            <td class="item">¤u§@¹qÀ£(Volt)</td>
             <td colspan="2">3.6~3.7</td>
             <td>3.7</td>
             <td>3.4</td>
             <td class="text-error bg-gray">3.8~3.9</td>
         </tr>
         <tr>
-            <td class="item">å…‹é›»å£“(mh/g)</td>
+            <td class="item">§J¹qÀ£(mh/g)</td>
             <td>140~160</td>
             <td class="text-error bg-gray">160~190</td>
             <td>1110~120</td>
@@ -55,31 +56,31 @@
             <td>150~155</td>
         </tr>
         <tr>
-            <td class="item">å®‰å…¨æ€§</td>
-            <td><i class="icon-triangle">ä¸‰è§’å½¢</i></td>
-            <td><i class="icon-cross-img">å‰</i></td>
-            <td><i class="icon-circle">åœ“</i></td>
-            <td class="text-error bg-gray"><i class="icon-circle-d">2åœ“</i></td>
-            <td class="text-error bg-gray"><i class="icon-circle-d">2åœ“</i></td>
+            <td class="item">¦w¥ş©Ê</td>
+            <td><i class="icon-triangle">¤T¨¤§Î</i></td>
+            <td><i class="icon-cross-img">¤e</i></td>
+            <td><i class="icon-circle">¶ê</i></td>
+            <td class="text-error bg-gray"><i class="icon-circle-d">2¶ê</i></td>
+            <td class="text-error bg-gray"><i class="icon-circle-d">2¶ê</i></td>
         </tr>
         <tr>
-            <td class="item">é«˜æº«ç‰¹æ€§</td>
-            <td><i class="icon-triangle">ä¸‰è§’å½¢</i></td>
-            <td><i class="icon-triangle">ä¸‰è§’å½¢</i></td>
-            <td><i class="icon-cross-img">å‰</i><i class="icon-cross-img">å‰</i></td>
-            <td><i class="icon-circle">åœ“</i></td>
-            <td><i class="icon-circle">åœ“</i></td>
+            <td class="item">°ª·Å¯S©Ê</td>
+            <td><i class="icon-triangle">¤T¨¤§Î</i></td>
+            <td><i class="icon-triangle">¤T¨¤§Î</i></td>
+            <td><i class="icon-cross-img">¤e</i><i class="icon-cross-img">¤e</i></td>
+            <td><i class="icon-circle">¶ê</i></td>
+            <td><i class="icon-circle">¶ê</i></td>
         </tr>
         <tr>
-            <td class="item">ä½æº«ç‰¹æ€§</td>
-            <td><i class="icon-cross-img">å‰</i></td>
-            <td><i class="icon-triangle">ä¸‰è§’å½¢</i></td>
-            <td><i class="icon-circle">åœ“</i></td>
-            <td class="bg-gray"><i class="icon-circle-d">2åœ“</i></td>
-            <td class="text-error bg-gray"><i class="icon-circle-d">2åœ“</i></td>
+            <td class="item">§C·Å¯S©Ê</td>
+            <td><i class="icon-cross-img">¤e</i></td>
+            <td><i class="icon-triangle">¤T¨¤§Î</i></td>
+            <td><i class="icon-circle">¶ê</i></td>
+            <td class="bg-gray"><i class="icon-circle-d">2¶ê</i></td>
+            <td class="text-error bg-gray"><i class="icon-circle-d">2¶ê</i></td>
         </tr>
         <tr>
-            <td class="item">å£½å‘½(cycle)</td>
+            <td class="item">¹Ø©R(cycle)</td>
             <td>500</td>
             <td>500</td>
             <td>500</td>
@@ -87,18 +88,18 @@
             <td>>1000</td>
         </tr>
         <tr>
-            <td class="item">å¤§é›»æµæ”¾é›»èƒ½åŠ›</td>
-            <td><i class="icon-cross-img">å‰</i></td>
-            <td><i class="icon-triangle">ä¸‰è§’å½¢</i></td>
-            <td class="text-warn"><i class="icon-circle-d text-error">2åœ“</i></td>
-            <td><i class="icon-circle">åœ“</i></td>
-            <td><i class="icon-circle">åœ“</i></td>
+            <td class="item">¤j¹q¬y©ñ¹q¯à¤O</td>
+            <td><i class="icon-cross-img">¤e</i></td>
+            <td><i class="icon-triangle">¤T¨¤§Î</i></td>
+            <td class="text-warn"><i class="icon-circle-d text-error">2¶ê</i></td>
+            <td><i class="icon-circle">¶ê</i></td>
+            <td><i class="icon-circle">¶ê</i></td>
         </tr>
         <tr>
-            <td class="item">ææ–™æˆæœ¬</td>
-            <td colspan="2">é«˜</td>
-            <td>ä½</td>
-            <td colspan="2" class="text-error bg-gray">ä½</td>
+            <td class="item">§÷®Æ¦¨¥»</td>
+            <td colspan="2">°ª</td>
+            <td>§C</td>
+            <td colspan="2" class="text-error bg-gray">§C</td>
         </tr>
     </table>
 </article>*@

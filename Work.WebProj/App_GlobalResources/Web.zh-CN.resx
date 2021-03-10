@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="description" xml:space="preserve">
     <value>泓辰电池材料是正极材料厂中唯一具有设备研制能力的公司，并於2014年成为全世界第一家量产磷酸锰铁锂的公司。</value>
@@ -145,7 +145,7 @@
     <value>联络我们</value>
   </data>
   <data name="System_FrontName" xml:space="preserve">
-    <value>宏濑科技</value>
+    <value>设备</value>
   </data>
   <data name="products_item1" xml:space="preserve">
     <value>核心技术</value>
