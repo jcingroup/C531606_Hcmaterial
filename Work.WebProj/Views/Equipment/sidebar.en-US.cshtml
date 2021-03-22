@@ -1,16 +1,12 @@
 ﻿
-<button class="pro-mobile-nav" data-dropdown="btn">
-    <span>Equipment <i class="icon-chevron-small-down"></i></span>
-</button>
-
-<ul class="pro-nav" data-dropdown="content">
-    <li class="@ViewBag.Subnav">
+<ul class="tabs">
+    <li class="js-tab @ViewBag.Subnav">
         <a href="~/Equipment"><span>SPRAY DRYER</span></a>
     </li>
-    <li class="@ViewBag.Subnav2">
+    <li class="js-tab @ViewBag.Subnav2">
         <a href="~/Equipment/2"><span>HORIZONTAL SAND MILL</span></a>
     </li>
-    <li class="@ViewBag.Subnav3">
+    <li class="js-tab @ViewBag.Subnav3">
         <a href="~/Equipment/other"><span>RELATED PROJECTS</span></a>
     </li>
 </ul>
